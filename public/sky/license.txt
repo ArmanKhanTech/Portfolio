@@ -1,0 +1,11 @@
+Model Information:
+* title:	Alien Terrain 05 HDRI
+* source:	https://sketchfab.com/3d-models/alien-terrain-05-hdri-7ba0da88576d4f4592beaaa0e9e3ff2d
+* author:	Giimann (https://sketchfab.com/giimann)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Alien Terrain 05 HDRI" (https://sketchfab.com/3d-models/alien-terrain-05-hdri-7ba0da88576d4f4592beaaa0e9e3ff2d) by Giimann (https://sketchfab.com/giimann) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

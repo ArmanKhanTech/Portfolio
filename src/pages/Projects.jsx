@@ -4,7 +4,7 @@ import { CTA } from "../components";
 import { projects } from "../constants";
 import { arrow } from "../assets/icons";
 
-import { Navbar } from "../components";
+import React from "react";
 
 const Projects = () => {
   return (

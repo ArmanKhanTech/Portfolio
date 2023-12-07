@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import React from "react";
 
 import { HomeInfo, Loader } from "../components";
 import { Navbar } from "../components";

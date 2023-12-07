@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { TfiAlignRight } from "react-icons/tfi";
+import React from "react";
 
 import { logo } from "../assets/images";
 

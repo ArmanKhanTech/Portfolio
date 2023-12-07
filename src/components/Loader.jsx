@@ -1,5 +1,6 @@
 import { Html } from "@react-three/drei";
 import StarsCanvas from "./Stars";
+import React from "react";
 
 const Loader = ({
     wholePage
