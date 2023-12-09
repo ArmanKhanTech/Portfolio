@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
+import React from "react";
 
+import { Link } from "react-router-dom";
 import { CTA } from "../components";
 import { projects } from "../constants";
 import { arrow } from "../assets/icons";
-
-import React from "react";
 
 const Projects = () => {
   return (
@@ -15,7 +14,6 @@ const Projects = () => {
           Projects
         </span>
       </h1>
-
       <p className='text-slate-500 mt-2 leading-relaxed'>
         I've embarked on numerous projects throughout the years, but these are
         the ones I hold closest to my heart. Many of them are open-source, so if
@@ -23,7 +21,6 @@ const Projects = () => {
         explore the codebase and contribute your ideas for further enhancements.
         Your collaboration is highly valued!
       </p>
-
       <div className='flex flex-wrap my-20 gap-16'>
         {projects.map((project) => (
           <div className='lg:w-[400px] w-full' key={project.name}>
@@ -37,7 +34,6 @@ const Projects = () => {
                 />
               </div>
             </div>
-
             <div className='mt-5 flex flex-col'>
               <h4 className='text-2xl font-poppins font-semibold'>
                 {project.name}
@@ -48,8 +44,7 @@ const Projects = () => {
                   to={project.link}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='font-semibold text-blue-600'
-                >
+                  className='font-semibold text-blue-600' >
                   Live Link
                 </Link>
                 <img
@@ -62,9 +57,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-
       <hr className='border-slate-200' />
-
       <CTA />
     </section>
   );

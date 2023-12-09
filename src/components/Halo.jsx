@@ -4,7 +4,7 @@ import HALO from 'vanta/dist/vanta.halo.min'
 import {
     VerticalTimeline,
     VerticalTimelineElement,
-  } from "react-vertical-timeline-component";
+} from "react-vertical-timeline-component";
   
 import { CTA, Navbar } from "../components";
 import { experiences, skills } from "../constants";
@@ -39,22 +39,18 @@ class Halo extends React.Component {
     ref={this.vantaRef} 
     className="fixed inset-0 z-0">
         <section className="max-container absolute inset-0 overflow-y-auto">
-            
             <Navbar {
                 ...{
                 textColor: "text-white-100",
                 }
             } />
-
             <h1 className='head-text'>
                 <span className='blue-gradient_text drop-shadow font-semibold'>
                     About Me
                 </span>
             </h1>
-
             <div className='py-10 flex flex-col'>
                 <h3 className='subhead-text text-white'>My Skills</h3>
-
                 <div className='mt-16 flex flex-wrap gap-12'>
                 {skills.map((skill) => (
                     <div className='block-container w-20 h-20' key={skill.name}>
@@ -70,13 +66,9 @@ class Halo extends React.Component {
                 ))}
                 </div>
             </div>
-
             <div className='py-16'>
-
                 <h3 className='subhead-text text-white'>My Education</h3>
-
                 <div className='mt-12 flex'>
-
                 <VerticalTimeline>
                     {experiences.map((experience) => (
                         <VerticalTimelineElement
@@ -87,12 +79,10 @@ class Halo extends React.Component {
                              }}
                             icon={
                                 <div className='flex justify-center items-center w-full h-full'>
-
                                     <img
                                         src={experience.icon}
                                         alt={experience.company_name}
                                         className='w-[60%] h-[60%] object-contain'/>
-
                                 </div>
                             }
                             contentStyle={{
@@ -104,19 +94,16 @@ class Halo extends React.Component {
                                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                                 boxShadow: "none",
                             }}>
-
                             <div>
                                 <h3 className='text-white text-xl font-poppins font-semibold'>
                                     {experience.title}
                                 </h3>
-
                                 <p
                                     className='text-white font-medium text-base'
                                     style={{ margin: 0 }}>
                                     {experience.date}
                                 </p>
                             </div>
-
                             <ul className='my-5 list-disc ml-5 space-y-2'>
                                 {experience.points.map((point, index) => (
 
@@ -128,15 +115,12 @@ class Halo extends React.Component {
 
                                 ))}
                             </ul>
-
                         </VerticalTimelineElement>
                     ))}
                 </VerticalTimeline>
                 </div>
             </div>
-
             <hr className='border-slate-200' />
-
             <CTA />
         </section>
     </div>

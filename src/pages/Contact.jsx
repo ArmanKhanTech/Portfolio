@@ -80,19 +80,15 @@ const Contact = () => {
           textColor: "text-white-100",
         }
       } />
-
       <StarsCanvas />
-
       <section className='flex lg:flex-row flex-col max-container'>
         {alert.show && <Alert {...alert} />}
-
         <div className='flex-1 min-w-[40%] flex flex-col'>
         <h1 className='head-text'>
           <span className='blue-gradient_text drop-shadow font-semibold'>
             Get in Touch
           </span>
         </h1>
-
           <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -108,7 +104,6 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange} />
             </label>
-
             <label className='text-white-100 font-semibold'>
               Email
               <input
@@ -120,7 +115,6 @@ const Contact = () => {
                 placeholder='arman@gmail.com'
                 required />
             </label>
-
             <label className='text-white-100 font-semibold'>
               Your Message
               <textarea
@@ -131,7 +125,6 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange} />
             </label>
-
             <button
               type='submit'
               disabled={loading}
@@ -140,13 +133,10 @@ const Contact = () => {
             </button>
           </form>
         </div>
-
         <div className='min-w-[55%] h-[80vh] object-cover'>
           <EarthCanvas />
         </div>
-
       </section>
-      
       <Footer {
         ...{
           textColor: "text-white-100",

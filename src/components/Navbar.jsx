@@ -1,9 +1,9 @@
+import React from "react";
+
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { TfiAlignRight } from "react-icons/tfi";
-import React from "react";
-
 import { logo } from "../assets/images";
 
 const Navbar = ({
@@ -20,8 +20,7 @@ const Navbar = ({
   if (isMenuOpen) {
     return (
       <div
-        className="sidebar fixed top-0 bottom-0 lg:right-0 p-2 w-[100%] z-10 overflow-y-auto text-center backdrop-blur-md bg-opacity-80"
-      >
+        className="sidebar fixed top-0 bottom-0 lg:right-0 p-2 w-[100%] z-10 overflow-y-auto text-center backdrop-blur-md bg-opacity-80" >
       <div className="text-gray-100 text-xl">
         <div className="p-2.5 mt-1 ml-1 flex items-center" onClick={toggleMenu}>
           <svg
@@ -29,20 +28,17 @@ const Navbar = ({
             fill='none'
             viewBox='0 0 24 24'
             stroke='currentColor'
-            className='w-8 h-8'
-          >
+            className='w-8 h-8' >
             <path
               strokeLinecap='round'
               strokeLinejoin='round'
               strokeWidth='2'
-              d='M15 19l-7-7 7-7'
-            />
+              d='M15 19l-7-7 7-7' />
           </svg>
         </div>
         </div>
         <div
-          className="p-2.5 mt-10 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer"
-        >
+          className="p-2.5 mt-10 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
           <span className="text-2xl font-medium text-white">
             <NavLink to='/'>
               Home
@@ -50,8 +46,7 @@ const Navbar = ({
           </span>
         </div>
         <div
-          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer"
-        >
+          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
           <span className="text-2xl font-medium text-white">
             <NavLink to='/about'>
               About
@@ -59,8 +54,7 @@ const Navbar = ({
           </span>
         </div>
         <div
-          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer"
-        >
+          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
           <span className="text-2xl font-medium text-white">
             <NavLink to='/projects'>
               Projects
@@ -68,8 +62,7 @@ const Navbar = ({
           </span>
         </div>
         <div
-          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer"
-        >
+          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
           <span className="text-2xl font-medium text-white">
             <NavLink to='/contact'>
               Contact
