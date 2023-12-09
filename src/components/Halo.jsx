@@ -46,8 +46,10 @@ class Halo extends React.Component {
                 }
             } />
 
-            <h1 className='head-text text-white'>
-                About Me
+            <h1 className='head-text'>
+                <span className='blue-gradient_text drop-shadow font-semibold'>
+                    About Me
+                </span>
             </h1>
 
             <div className='py-10 flex flex-col'>
@@ -71,7 +73,7 @@ class Halo extends React.Component {
 
             <div className='py-16'>
 
-                <h3 className='subhead-text text-white'>Education</h3>
+                <h3 className='subhead-text text-white'>My Education</h3>
 
                 <div className='mt-12 flex'>
 
@@ -98,7 +100,7 @@ class Halo extends React.Component {
                                 borderStyle: "solid",
                                 borderBottomColor: '#00c6ff',
                                 borderRadius: '10px',
-                                backdropFilter: "blur(10px)",
+                                backdropFilter: "blur(50px)",
                                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                                 boxShadow: "none",
                             }}>

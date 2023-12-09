@@ -42,7 +42,7 @@ const Home = () => {
             groundColor='#000000'
             intensity={1} />
 
-          <Sky  />
+          <Sky />
         </Suspense>
       </Canvas>
     </section>

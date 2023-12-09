@@ -87,13 +87,16 @@ const Contact = () => {
         {alert.show && <Alert {...alert} />}
 
         <div className='flex-1 min-w-[40%] flex flex-col'>
-          <h1 className='head-text text-white-100'>Get in Touch</h1>
+        <h1 className='head-text'>
+          <span className='blue-gradient_text drop-shadow font-semibold'>
+            Get in Touch
+          </span>
+        </h1>
 
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className='w-full flex flex-col gap-7 mt-14'
-          >
+            className='w-full flex flex-col gap-7 mt-14'>
             <label className='text-white-100 font-semibold'>
               Name
               <input
@@ -103,8 +106,7 @@ const Contact = () => {
                 placeholder='Arman Khan'
                 required
                 value={form.name}
-                onChange={handleChange}
-              />
+                onChange={handleChange} />
             </label>
 
             <label className='text-white-100 font-semibold'>
@@ -116,8 +118,7 @@ const Contact = () => {
                 name='email'
                 className='input'
                 placeholder='arman@gmail.com'
-                required
-              />
+                required />
             </label>
 
             <label className='text-white-100 font-semibold'>
@@ -128,21 +129,19 @@ const Contact = () => {
                 className='textarea'
                 placeholder='Write your thoughts here...'
                 value={form.message}
-                onChange={handleChange}
-              />
+                onChange={handleChange} />
             </label>
 
             <button
               type='submit'
               disabled={loading}
-              className='btn mb-10'
-            >
+              className='btn mb-10' >
               {loading ? "Sending..." : "Submit"}
             </button>
           </form>
         </div>
 
-        <div className={`${!isMobile ? 'min-w-[75%] h-[90vh]' : 'min-w-[60%] h-[55vh]'} object-cover`}>
+        <div className='min-w-[55%] h-[80vh] object-cover'>
           <EarthCanvas />
         </div>
 
