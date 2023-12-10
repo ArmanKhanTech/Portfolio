@@ -44,31 +44,44 @@ class Halo extends React.Component {
                 textColor: "text-white-100",
                 }
             } />
-            <h1 className='head-text'>
+            <h1 className='text-5xl'>
                 <span className='blue-gradient_text drop-shadow font-semibold'>
                     About Me
                 </span>
             </h1>
+            <p className='mt-4 text-white bold'>
+                Hello there! I'm Arman Khan, a passionate and motivated 
+                individual pursuing a degree in Computer Engineering from India. 
+                Currently in my third year of studies, I am deeply fascinated 
+                by the world of technology and its endless possibilities. 
+                My academic journey has equipped me with a strong foundation in 
+                computer science, problem-solving, and a keen interest in cutting-edge 
+                technologies. Beyond the classroom, I am an avid learner, always 
+                seeking new challenges to expand my skill set. Whether it's coding,
+                designing, or exploring the latest advancements, I am dedicated to 
+                continuous growth and leveraging my knowledge to make a positive impact. 
+                Join me on this exciting journey as I blend my educational background 
+                with practical skills to contribute meaningfully to the world of technology.
+            </p>
             <div className='py-10 flex flex-col'>
-                <h3 className='subhead-text text-white'>My Skills</h3>
-                <div className='mt-16 flex flex-wrap gap-12'>
+                <h1 className='text-3xl text-white font-semibold'>My Skills</h1>
+                <div className='mt-10 flex flex-wrap gap-12'>
                 {skills.map((skill) => (
                     <div className='block-container w-20 h-20' key={skill.name}>
                         <div className='btn-front rounded-xl flex justify-center items-center'>
-
                             <img
                                 src={skill.imageUrl}
                                 alt={skill.name}
-                                className='w-1/2 h-1/2 object-contain'/>
+                                className='w-1/2 h-1/2 object-contain' />
 
                         </div>
                     </div>
                 ))}
                 </div>
             </div>
-            <div className='py-16'>
-                <h3 className='subhead-text text-white'>My Education</h3>
-                <div className='mt-12 flex'>
+            <div className='py-2'>
+                <h1 className='text-3xl text-white font-semibold'>My Education</h1>
+                <div className='mt-10 flex'>
                 <VerticalTimeline>
                     {experiences.map((experience) => (
                         <VerticalTimelineElement

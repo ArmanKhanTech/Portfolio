@@ -1,4 +1,5 @@
 import React from 'react';
+
 import TextTransition, { presets } from 'react-text-transition';
 
 const TEXTS = [
@@ -36,12 +37,16 @@ const HomeInfo = () => {
             direction="down" 
             style={{
               marginTop: '0.5rem',
-              marginBottom: '0.5rem',
               fontSize: '2.25rem',
               lineHeight: '2.5rem',
               fontWeight: '700',
+              display: 'inline',
               color: '#ec144a' }}>
-            {TEXTS[index % TEXTS.length]}
+            {
+              <span>
+                {TEXTS[index % TEXTS.length]}
+              </span>
+            }
           </TextTransition>
         </div>
         <div className='mt-3 font-bold text-1xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
@@ -80,7 +85,11 @@ const HomeInfo = () => {
               lineHeight: '1',
               fontWeight: '700',
               color: '#ec144a'}}>
-            {TEXTS[index % TEXTS.length]}
+            {
+              <span>
+                {TEXTS[index % TEXTS.length]}
+              </span>
+            }
           </TextTransition>
         </div>
         <div className='mt-5 font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>

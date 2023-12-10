@@ -19,7 +19,7 @@ const Navbar = ({
   if (isMenuOpen) {
     return (
       <div
-        className="sidebar fixed top-0 bottom-0 lg:right-0 p-2 w-[100%] z-10 overflow-y-auto text-center backdrop-blur-md bg-opacity-80" >
+        className="sidebar fixed top-0 bottom-0 right-0 left-0 p-2 w-[100%] z-10 overflow-y-auto text-center backdrop-blur-md bg-opacity-80" >
       <div className="text-gray-100 text-xl">
         <div className="p-2.5 mt-1 ml-1 flex items-center" onClick={toggleMenu}>
           <svg
@@ -75,7 +75,7 @@ const Navbar = ({
   if (isMobile) {
     return (
       <header className='header'>
-        <img src={logo} alt='logo' className='min-w-[20%] min-h-[20%]  w-[25%] h-[25%] max-w-[30%] max-h-[30%]' onClick={toggleMenu} />
+        <img src={logo} alt='logo' className='min-w-[20%] min-h-[20%] w-[20%] h-[20%]' onClick={toggleMenu} />
       </header>
     );
   } else {
