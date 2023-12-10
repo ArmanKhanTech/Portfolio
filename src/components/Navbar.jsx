@@ -3,7 +3,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
-import { TfiAlignRight } from "react-icons/tfi";
 import { logo } from "../assets/images";
 
 const Navbar = ({
@@ -76,10 +75,7 @@ const Navbar = ({
   if (isMobile) {
     return (
       <header className='header'>
-        <img src={logo} alt='logo' className='w-[21%] h-[21%]' />
-        <div className='p-2 flex items-center border rounded-md' onClick={toggleMenu}>
-          <TfiAlignRight className='w-7 h-7' color="orange" />
-        </div>
+        <img src={logo} alt='logo' className='min-w-[20%] min-h-[20%]  w-[25%] h-[25%] max-w-[30%] max-h-[30%]' onClick={toggleMenu} />
       </header>
     );
   } else {

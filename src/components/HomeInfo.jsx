@@ -36,6 +36,7 @@ const HomeInfo = () => {
             direction="down" 
             style={{
               marginTop: '0.5rem',
+              marginBottom: '0.5rem',
               fontSize: '2.25rem',
               lineHeight: '2.5rem',
               fontWeight: '700',
@@ -44,9 +45,9 @@ const HomeInfo = () => {
           </TextTransition>
         </div>
         <div className='mt-3 font-bold text-1xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
-          <p>
+          <span>
             Currently a third year Computer Engineering student from India.
-          </p>
+          </span>
         </div>
         <div className='mt-3'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
@@ -54,6 +55,11 @@ const HomeInfo = () => {
               Resume
             </button>
           </a>
+        </div>
+        <div className='m-2 items-center justify-center fixed bottom-0 font-bold text-1xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
+          <span>
+            Click on icon above to learn more.
+          </span>
         </div>
       </section>
     );
@@ -78,9 +84,9 @@ const HomeInfo = () => {
           </TextTransition>
         </div>
         <div className='mt-5 font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
-          <p>
+          <span>
             Currently a third year Computer Engineering student from India.
-          </p>
+          </span>
         </div>
         <div className='mt-5'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>

@@ -73,77 +73,148 @@ const Contact = () => {
       );
   };
 
-  return (
-    <section className="relative z-0 overflow-y-scroll no-scrollbar">
-      <Navbar {
-        ...{
-          textColor: "text-white-100",
-        }
-      } />
-      <StarsCanvas />
-      <section className='flex lg:flex-row flex-col max-container'>
-        {alert.show && <Alert {...alert} />}
-        <div className='flex-1 min-w-[40%] flex flex-col'>
-        <h1 className='head-text'>
-          <span className='blue-gradient_text drop-shadow font-semibold'>
-            Get in Touch
-          </span>
-        </h1>
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className='w-full flex flex-col gap-7 mt-14'>
-            <label className='text-white-100 font-semibold'>
-              Name
-              <input
-                type='text'
-                name='name'
-                className='input'
-                placeholder='Arman Khan'
-                required
-                value={form.name}
-                onChange={handleChange} />
-            </label>
-            <label className='text-white-100 font-semibold'>
-              Email
-              <input
-                type='email'
-                value={form.email}
-                onChange={handleChange}
-                name='email'
-                className='input'
-                placeholder='arman@gmail.com'
-                required />
-            </label>
-            <label className='text-white-100 font-semibold'>
-              Your Message
-              <textarea
-                name='message'
-                rows='4'
-                className='textarea'
-                placeholder='Write your thoughts here...'
-                value={form.message}
-                onChange={handleChange} />
-            </label>
-            <button
-              type='submit'
-              disabled={loading}
-              className='btn mb-10' >
-              {loading ? "Sending..." : "Submit"}
-            </button>
-          </form>
-        </div>
-        <div className='min-w-[55%] h-[80vh] object-cover'>
-          <EarthCanvas />
-        </div>
+  if(!isMobile) {
+    return (
+      <section className="relative z-0 overflow-y-scroll no-scrollbar">
+        <Navbar {
+          ...{
+            textColor: "text-white-100",
+          }
+        } />
+        <StarsCanvas />
+        <section className='flex lg:flex-row flex-col max-container'>
+          {alert.show && <Alert {...alert} />}
+          <div className='flex-1 min-w-[40%] flex flex-col'>
+          <h1 className='head-text'>
+            <span className='blue-gradient_text drop-shadow font-semibold'>
+              Get in Touch
+            </span>
+          </h1>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className='w-full flex flex-col gap-7 mt-14'>
+              <label className='text-white-100 font-semibold'>
+                Name
+                <input
+                  type='text'
+                  name='name'
+                  className='input'
+                  placeholder='Arman Khan'
+                  required
+                  value={form.name}
+                  onChange={handleChange} />
+              </label>
+              <label className='text-white-100 font-semibold'>
+                Email
+                <input
+                  type='email'
+                  value={form.email}
+                  onChange={handleChange}
+                  name='email'
+                  className='input'
+                  placeholder='arman@gmail.com'
+                  required />
+              </label>
+              <label className='text-white-100 font-semibold'>
+                Your Message
+                <textarea
+                  name='message'
+                  rows='4'
+                  className='textarea'
+                  placeholder='Write your thoughts here...'
+                  value={form.message}
+                  onChange={handleChange} />
+              </label>
+              <button
+                type='submit'
+                disabled={loading}
+                className='btn mb-10' >
+                {loading ? "Sending..." : "Submit"}
+              </button>
+            </form>
+          </div>
+          <div className='min-w-[75%] h-[80vh] object-cover'>
+            <EarthCanvas />
+          </div>
+        </section>
+        <Footer {
+          ...{
+            textColor: "text-white-100",
+          }
+        }/>
       </section>
-      <Footer {
-        ...{
-          textColor: "text-white-100",
-        }
-      }/>
-    </section>
-  );
+    );
+  } else {
+    return (
+      <section className="relative z-0 overflow-y-scroll no-scrollbar">
+        <Navbar {
+          ...{
+            textColor: "text-white-100",
+          }
+        } />
+        <StarsCanvas />
+        <section className='flex lg:flex-row flex-col max-container'>
+          {alert.show && <Alert {...alert} />}
+          <div className='flex-1 min-w-[40%] flex flex-col'>
+          <h1 className='head-text'>
+            <span className='blue-gradient_text drop-shadow font-semibold'>
+              Get in Touch
+            </span>
+          </h1>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className='w-full flex flex-col gap-7 mt-14'>
+              <label className='text-white-100 font-semibold'>
+                Name
+                <input
+                  type='text'
+                  name='name'
+                  className='input'
+                  placeholder='Arman Khan'
+                  required
+                  value={form.name}
+                  onChange={handleChange} />
+              </label>
+              <label className='text-white-100 font-semibold'>
+                Email
+                <input
+                  type='email'
+                  value={form.email}
+                  onChange={handleChange}
+                  name='email'
+                  className='input'
+                  placeholder='arman@gmail.com'
+                  required />
+              </label>
+              <label className='text-white-100 font-semibold'>
+                Your Message
+                <textarea
+                  name='message'
+                  rows='4'
+                  className='textarea'
+                  placeholder='Write your thoughts here...'
+                  value={form.message}
+                  onChange={handleChange} />
+              </label>
+              <button
+                type='submit'
+                disabled={loading}
+                className='btn mb-10' >
+                {loading ? "Sending..." : "Submit"}
+              </button>
+            </form>
+          </div>
+        </section>
+        <Footer {
+          ...{
+            textColor: "text-white-100",
+          }
+        }/>
+      </section>
+    );
+  }
 };
 
 export default Contact;
