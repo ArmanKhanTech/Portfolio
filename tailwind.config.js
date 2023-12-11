@@ -25,10 +25,16 @@ export default {
           DEFAULT: "#5D3EBC",
           500: "#081448"
         },
+        red: {
+          100: '#ec144a'
+        }
       },
       fontFamily: {
         worksans: ["Work Sans", "sans-serif"],
         poppins: ['Poppins', "sans-serif"]
+      },
+      fontSize: {
+        headingMobile: "2.5rem",
       },
       boxShadow: {
         card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)'

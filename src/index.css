@@ -9,6 +9,12 @@
   --green-rgb: 125 161 35;
 }
 
+@media screen and (max-device-width: 640px){
+  body{
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
 body {
   font-family: "Work Sans", sans-serif;
 }
@@ -81,6 +87,18 @@ body:has(.card[data-color="green"]:hover) {
   .cta-text {
     @apply text-white font-extrabold flex-1 text-3xl max-md:text-center;
   }
+
+  .orange-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600;
+  }
+}
+
+.gradient-box {
+  border-radius: 10px;
+  border: 3px solid #FB923C;
+  width: fit-content;
+  font-weight: bold;
+  color: #DC2626;
 }
 
 .glassmorphism {
@@ -183,4 +201,14 @@ body:has(.card[data-color="green"]:hover) {
   border: #fff;
   box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  border-top-color: #3498db;
+  animation: spin 2s linear infinite;
 }

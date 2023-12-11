@@ -1,14 +1,13 @@
 import React from "react";
 
 import { NavLink } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import { logo } from "../assets/images";
 
 const Navbar = ({
   textColor
 }) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const isMobile = window.innerWidth <= 640;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -55,6 +54,14 @@ const Navbar = ({
         <div
           className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
           <span className="text-2xl font-medium text-white">
+            <NavLink to='/services'>
+              Services
+            </NavLink>
+          </span>
+        </div>
+        <div
+          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
+          <span className="text-2xl font-medium text-white">
             <NavLink to='/projects'>
               Projects
             </NavLink>
@@ -75,7 +82,7 @@ const Navbar = ({
   if (isMobile) {
     return (
       <header className='header'>
-        <img src={logo} alt='logo' className='min-w-[20%] min-h-[20%] w-[20%] h-[20%]' onClick={toggleMenu} />
+        <img src={logo} alt='logo' className='w-[22%] h-[22%]' onClick={toggleMenu} />
       </header>
     );
   } else {

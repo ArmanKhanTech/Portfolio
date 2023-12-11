@@ -1,11 +1,12 @@
 import React from 'react';
 
+import { NavLink } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
+import { FaArrowRight } from "react-icons/fa";
 
 const TEXTS = [
   'Web Development', 
-  'Android Development', 
-  'Flutter Development', 
+  'App Development', 
   'UI/UX Design', 
   'Machine Learning',
   '& much more...'
@@ -28,9 +29,9 @@ const HomeInfo = () => {
     return (
       <section className='max-container'>
         <div>
-          <div className='text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
-            <h1>Hello 👋🏻,</h1>
-            <h1>I am Arman Khan</h1>
+          <div className='text-4xl font-bold orange-gradient-text'>
+            <h1>Hello,</h1>
+            <h1>I am Arman Khan & I do</h1>
           </div>
           <TextTransition 
             springConfig={presets.gentle} 
@@ -49,21 +50,27 @@ const HomeInfo = () => {
             }
           </TextTransition>
         </div>
-        <div className='mt-3 font-bold text-1xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
+        <div className='mt-5 p-2 text-2xl gradient-box'>
+          <NavLink to='/services'>
+            Hire Me
+          </NavLink>
+          <FaArrowRight className='inline-block ml-5 mb-1' />
+        </div>
+        <div className='mt-5 font-bold text-xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
         </div>
         <div className='mt-3'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
-            <button className='px-4 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-4 py-2 font-semibold text-base text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
         </div>
-        <div className='m-2 items-center justify-center fixed bottom-0 font-bold text-1xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
+        <div className='mr-5 fixed bottom-0 font-bold text-1xl orange-gradient-text'>
           <span>
-            Click on icon above to learn more.
+            Click on the icon at the top to learn more.
           </span>
         </div>
       </section>
@@ -72,9 +79,9 @@ const HomeInfo = () => {
     return (
       <section className='max-container'>
         <div>
-          <div className='text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
-            <h1>Hello 👋🏻,</h1>
-            <h1>I am Arman Khan</h1>
+          <div className='text-6xl font-bold orange-gradient-text'>
+            <h1>Hello,</h1>
+            <h1>I am Arman Khan & I do</h1>
           </div>
           <TextTransition 
             springConfig={presets.gentle} 
@@ -92,14 +99,20 @@ const HomeInfo = () => {
             }
           </TextTransition>
         </div>
-        <div className='mt-5 font-semibold text-2xl text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600'>
+        <div className='mt-5 p-3 text-3xl gradient-box'>
+          <NavLink to='/services'>
+            Hire Me
+          </NavLink>
+          <FaArrowRight className='inline-block ml-5 mb-1' />
+        </div>
+        <div className='mt-5 font-semibold text-3xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
         </div>
         <div className='mt-5'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
-            <button className='px-4 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-4 py-2 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
