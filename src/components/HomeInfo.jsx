@@ -50,11 +50,11 @@ const HomeInfo = () => {
             }
           </TextTransition>
         </div>
-        <div className='mt-5 p-2 text-2xl gradient-box'>
+        <div className='mt-5 p-2 text-2xl font-bold gradient-box'>
           <NavLink to='/services'>
             Hire Me
+            <FaArrowRight className='inline-block ml-5 mb-1' />
           </NavLink>
-          <FaArrowRight className='inline-block ml-5 mb-1' />
         </div>
         <div className='mt-5 font-bold text-xl orange-gradient-text'>
           <span>
@@ -63,12 +63,12 @@ const HomeInfo = () => {
         </div>
         <div className='mt-3'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
-            <button className='px-4 py-2 font-semibold text-base text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-2 font-semibold text-lg text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
         </div>
-        <div className='mr-5 fixed bottom-0 font-bold text-1xl orange-gradient-text'>
+        <div className='mr-6 mb-4 fixed bottom-0 font-bold text-base orange-gradient-text'>
           <span>
             Click on the icon at the top to learn more.
           </span>
@@ -99,11 +99,11 @@ const HomeInfo = () => {
             }
           </TextTransition>
         </div>
-        <div className='mt-5 p-3 text-3xl gradient-box'>
+        <div className='mt-5 p-2 text-3xl font-bold gradient-box'>
           <NavLink to='/services'>
             Hire Me
+            <FaArrowRight className='inline-block ml-5 mb-1' />
           </NavLink>
-          <FaArrowRight className='inline-block ml-5 mb-1' />
         </div>
         <div className='mt-5 font-semibold text-3xl orange-gradient-text'>
           <span>
@@ -112,7 +112,7 @@ const HomeInfo = () => {
         </div>
         <div className='mt-5'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
-            <button className='px-4 py-2 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-2 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>

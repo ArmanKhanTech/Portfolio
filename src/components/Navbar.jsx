@@ -54,14 +54,6 @@ const Navbar = ({
         <div
           className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
           <span className="text-2xl font-medium text-white">
-            <NavLink to='/services'>
-              Services
-            </NavLink>
-          </span>
-        </div>
-        <div
-          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
-          <span className="text-2xl font-medium text-white">
             <NavLink to='/projects'>
               Projects
             </NavLink>
@@ -82,14 +74,20 @@ const Navbar = ({
   if (isMobile) {
     return (
       <header className='header'>
-        <img src={logo} alt='logo' className='w-[22%] h-[22%]' onClick={toggleMenu} />
+        <button 
+          className='text-3xl orange-gradient-text font-semibold font-poppins rounded-xl border px-2 py-2.5'
+          onClick={toggleMenu}>
+          AK
+        </button>
       </header>
     );
   } else {
     return (
       <header className='header'>
         <NavLink to='/'>
-          <img src={logo} alt='logo' className='w-[25%] h-[25%]' />
+          <button className='text-3xl orange-gradient-text font-semibold font-poppins rounded-xl border px-2 py-2.5'>
+            AK
+          </button>
         </NavLink>
         <nav className='flex text-xl gap-8 font-medium border py-3.5 px-5 rounded-xl'>
           <NavLink to='/' className={textColor}>

@@ -1,4 +1,4 @@
-import { education } from "../assets/images";
+import { educationIcon } from "../assets/images";
 import {
     car,
     css,
@@ -108,11 +108,11 @@ export const skills = [
     }
 ];
 
-export const experiences = [
+export const education = [
     {
         title: "Anjuman-I-Islam's Kalsekar Technical Campus",
         date: "Dec 2022 - Aug 2025",
-        icon: education,
+        icon: educationIcon,
         iconBg: "#00c6ff",
         points: [
             "I am currently pursuing my undergraduate degree with a focus on B.E. in Computer Engineering at Mumbai University.",
@@ -122,7 +122,7 @@ export const experiences = [
     {
         title: "Anjuman-I-Islam's Abdul Razzak Kalsekar Polytechnic",
         date: "Aug 2019 - July 2022",
-        icon: education,
+        icon: educationIcon,
         iconBg: "#00c6ff",
         points: [
             "I successfully completed the Maharashtra State Board of Technical Education (MSBTE) Diploma program, acquiring comprehensive knowledge and practical skills in Computer Engineering.",
@@ -132,7 +132,7 @@ export const experiences = [
     {
         title: "J.M Rathi English School & Junior College",
         date: "June 2013 - Mar 2019",
-        icon: education,
+        icon: educationIcon,
         iconBg: "#00c6ff",
         points: [
             "I successfully navigated a rigorous high school curriculum, demonstrating exceptional academic aptitude and a commitment to excellence.",

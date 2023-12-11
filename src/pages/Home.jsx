@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Suspense } from "react";
-
 import { Canvas } from "@react-three/fiber";
 import { HomeInfo } from "../components";
 import { Navbar } from "../components";
@@ -20,9 +19,9 @@ const Home = () => {
   }
 
   return (
-    <section className='w-full h-screen fixed'>
-      <div className={`absolute right-0 left-0 z-10 top-14 ${isMobile ? 'top-4' : 'top-8'}`}>
-        <HomeInfo style={{ zIndex: 1 }}/>
+    <section className='w-screen h-screen'>
+      <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-8'}`}>
+        <HomeInfo />
       </div>
       <Navbar {
         ...{
@@ -30,7 +29,7 @@ const Home = () => {
         }
       } />
       <Canvas
-        camera={{ near: 0.1, far: 1000 }}
+        camera={{ near: 0.1, far: 100 }}
         style={{pointerEvents: 'none'}}>
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />

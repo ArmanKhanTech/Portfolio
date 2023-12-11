@@ -7,7 +7,7 @@ import {
 } from "react-vertical-timeline-component";
   
 import { CTA, Navbar } from "../components";
-import { experiences, skills } from "../constants";
+import { education, skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -52,7 +52,7 @@ class About extends React.Component {
                     About Me
                 </span>
             </h1>
-            <p className='mt-5 text-white p-4 rounded-xl' style={{ backdropFilter: 'blur(50px)' }}>
+            <p className='mt-5 text-white p-4 text-xl rounded-xl' style={{ backdropFilter: 'blur(50px)' }}>
                 I'm Arman Khan, a passionate third-year Computer Engineering student from India. 
                 Fascinated by technology's endless possibilities, my academic journey has built a 
                 strong foundation in computer science and problem-solving. Beyond the classroom, 
@@ -66,7 +66,7 @@ class About extends React.Component {
                 <div className='mt-10 flex flex-wrap gap-12'>
                 {skills.map((skill) => (
                     <div 
-                        className={`${this.isMobile ? 'w-14 h-14' : 'w-20 h-20'} block-container`} 
+                        className={`${this.isMobile ? 'w-16 h-16' : 'w-20 h-20'} block-container`} 
                         key={skill.name}>
                         <div className='btn-front rounded-xl flex justify-center items-center'>
                             <img
@@ -83,18 +83,17 @@ class About extends React.Component {
                 <h1 className='text-4xl blue-gradient_text drop-shadow font-semibold'>My Education</h1>
                 <div className='mt-10 flex'>
                 <VerticalTimeline>
-                    {experiences.map((experience) => (
+                    {education.map((education) => (
                         <VerticalTimelineElement
                             iconStyle={{ 
-                                background: experience.iconBg,
+                                background: education.iconBg,
                                 innerWidth: '100%',
                                 innerHeight: '100%',
                              }}
                             icon={
                                 <div className='flex justify-center items-center w-full h-full'>
                                     <img
-                                        src={experience.icon}
-                                        alt={experience.company_name}
+                                        src={education.icon}
                                         className='w-[60%] h-[60%] object-contain'/>
                                 </div>
                             }
@@ -108,23 +107,18 @@ class About extends React.Component {
                                 boxShadow: "none",
                             }}>
                             <div>
-                                <h3 className='text-white text-xl font-poppins font-bold'>
-                                    {experience.title}
-                                </h3>
-                                <p
-                                    className='text-white'
-                                    style={{ margin: 0 }}>
-                                        {experience.date}
-                                </p>
+                                <h1 className='text-white text-xl font-bold mb-2'>
+                                    {education.title}
+                                </h1>
+                                <span className='text-white text-lg font-semibold'>
+                                    {education.date}
+                                </span>
                             </div>
-                            <ul className='my-5 list-disc ml-5 space-y-2'>
-                                {experience.points.map((point, index) => (
-                                    <li
-                                        key={`experience-point-${index}`}
-                                        className='text-white pl-1'>
-                                            {point}
+                            <ul className='my-5 list-disc ml-5 space-y-2 text-lg'>
+                                {education.points.map((point, index) => (
+                                    <li className='text-white pl-1'>
+                                        {point}
                                     </li>
-
                                 ))}
                             </ul>
                         </VerticalTimelineElement>
