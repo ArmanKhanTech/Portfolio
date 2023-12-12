@@ -1,25 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { HomeInfo } from "../components";
-import { Navbar } from "../components";
+import { HomeInfo, Navbar, Welcome } from "../components";
 import { Sky } from "../models";
-import { Html } from "@react-three/drei";
 
 const Home = () => {
   const isMobile = window.innerWidth < 640;
-
-  const Loader = () => {
-    return (
-      <Html>
-        
-      </Html>
-    );
-  }
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
   return (
     <section className='w-screen h-screen'>
+      {loadingProgress < 100 ? <Welcome /> : null}
       <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-8'}`}>
         <HomeInfo />
       </div>
@@ -29,10 +20,10 @@ const Home = () => {
         }
       } />
       <Canvas
+        className='fixed inset-0 z-0'
         camera={{ near: 0.1, far: 100 }}
         style={{pointerEvents: 'none'}}>
-        <Suspense fallback={<Loader />}>
-          <directionalLight position={[1, 1, 1]} intensity={2} />
+        <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 5, 10]} intensity={2} />
           <spotLight
@@ -43,9 +34,8 @@ const Home = () => {
           <hemisphereLight
             skyColor='#000000'
             groundColor='#000000'
-            intensity={1} />
-          <Sky />
-        </Suspense>
+            intensity={2} />
+          <Sky setLoadingProgress={setLoadingProgress} />
       </Canvas>
     </section>
   );

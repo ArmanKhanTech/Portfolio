@@ -1,21 +1,28 @@
 import React from "react";
 
-import { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useEffect, useRef } from "react";
+import { useProgress } from "@react-three/drei";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-export function Sky() {
-  const sky = useGLTF("./sky/scene.gltf");
+export function Sky({ setLoadingProgress }) {
+  const { progress } = useProgress();
+  const sky = useLoader(GLTFLoader, './sky/scene.gltf');
   const skyRef = useRef();
 
   useFrame((_, delta) => {
     skyRef.current.rotation.y += 0.05 * delta;
   });
 
+  useEffect(() => {
+    setLoadingProgress(progress);
+  }, [progress, setLoadingProgress]);
+
+
   return (
-    <mesh 
+    <mesh
       ref={skyRef} 
-      scale={[50, 50, 50]} >
+      scale={[50, 50, 50]}>
       <primitive object={sky.scene} />
     </mesh>
   );

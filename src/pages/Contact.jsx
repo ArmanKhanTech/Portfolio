@@ -75,13 +75,13 @@ const Contact = () => {
 
   if(!isMobile) {
     return (
-      <section className="relative z-0 overflow-y-scroll no-scrollbar">
+      <section className="relative z-0">
         <Navbar {
           ...{
             textColor: "text-white-100",
           }
         } />
-        <StarsCanvas className='fixed'/>
+        <StarsCanvas />
         <section className='flex lg:flex-row flex-col max-container'>
           {alert.show && <Alert {...alert} />}
           <div className='flex-1 min-w-[40%] flex flex-col'>

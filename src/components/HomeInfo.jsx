@@ -63,7 +63,7 @@ const HomeInfo = () => {
         </div>
         <div className='mt-3'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-2 font-semibold text-lg text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
@@ -112,7 +112,7 @@ const HomeInfo = () => {
         </div>
         <div className='mt-5'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-2 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>

@@ -20,7 +20,7 @@ const EarthCanvas = () => {
         position: [0, 0, 6],
         fov: 45,
         near: 0.1,
-        far: 1000,
+        far: 100,
       }} >
       <OrbitControls
           autoRotate={true}

@@ -52,7 +52,10 @@ class About extends React.Component {
                     About Me
                 </span>
             </h1>
-            <p className='mt-5 text-white p-4 text-xl rounded-xl' style={{ backdropFilter: 'blur(50px)' }}>
+            <p className='mt-5 text-white p-4 text-xl rounded-xl' 
+                style={{ 
+                    backdropFilter: 'blur(50px)', 
+                    WebkitBackdropFilter: 'blur(50px)'}}>
                 I'm Arman Khan, a passionate third-year Computer Engineering student from India. 
                 Fascinated by technology's endless possibilities, my academic journey has built a 
                 strong foundation in computer science and problem-solving. Beyond the classroom, 
@@ -103,6 +106,7 @@ class About extends React.Component {
                                 borderBottomColor: '#00c6ff',
                                 borderRadius: '10px',
                                 backdropFilter: "blur(50px)",
+                                WebkitBackdropFilter: 'blur(50px',
                                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                                 boxShadow: "none",
                             }}>
