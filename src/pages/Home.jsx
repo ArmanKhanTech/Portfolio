@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
+import { HomeContext } from '../context';
 import { Canvas } from "@react-three/fiber";
 import { HomeInfo, Navbar, Welcome } from "../components";
 import { Sky } from "../models";
 
 const Home = () => {
-  const isMobile = window.innerWidth < 640;
-  const [loadingProgress, setLoadingProgress] = useState(0);
+  const { 
+    isMobile, 
+    loadingProgress, 
+    setLoadingProgress, 
+    hasWelcomeShown } = useContext(HomeContext); 
 
   return (
     <section className='w-screen h-screen'>
-      {loadingProgress < 100 ? <Welcome /> : null}
+      {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
       <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-8'}`}>
         <HomeInfo />
       </div>
@@ -35,7 +39,7 @@ const Home = () => {
             skyColor='#000000'
             groundColor='#000000'
             intensity={2} />
-          <Sky setLoadingProgress={setLoadingProgress} />
+          <Sky setLoadingProgress={setLoadingProgress} className='fixed' />
       </Canvas>
     </section>
   );

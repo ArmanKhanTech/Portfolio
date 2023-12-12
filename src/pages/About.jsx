@@ -1,4 +1,5 @@
 import React from 'react'
+
 import HALO from 'vanta/dist/vanta.halo.min'
 
 import {
@@ -20,19 +21,28 @@ class About extends React.Component {
 
   componentDidMount() {
     this.vantaEffect = HALO({
-        el: this.vantaRef.current,
-        mouseControls: false,
-        touchControls: false,
-        gyroControls: false,
-        backgroundColor: 0x131a43,
-        amplitudeFactor: 1.00,
-        size: 1
+      el: this.vantaRef.current,
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      backgroundColor: 0x131a43,
+      amplitudeFactor: 0.50,
+      size: 1
     })
+    this.frameId = requestAnimationFrame(this.animateFrame);
   }
-
+  
+  animateFrame = () => {
+    this.vantaEffect && this.vantaEffect.refresh();
+    this.frameId = requestAnimationFrame(this.animateFrame);
+  }
+  
   componentWillUnmount() {
+    if (this.frameId) {
+      cancelAnimationFrame(this.frameId);
+    }
     if (this.vantaEffect) {
-        this.vantaEffect.destroy()
+      this.vantaEffect.destroy();
     }
   }
 
@@ -53,9 +63,7 @@ class About extends React.Component {
                 </span>
             </h1>
             <p className='mt-5 text-white p-4 text-xl rounded-xl' 
-                style={{ 
-                    backdropFilter: 'blur(50px)', 
-                    WebkitBackdropFilter: 'blur(50px)'}}>
+                style={{ backdropFilter: 'blur(50px)', WebkitBackdropFilter: 'blur(50px)'}}>
                 I'm Arman Khan, a passionate third-year Computer Engineering student from India. 
                 Fascinated by technology's endless possibilities, my academic journey has built a 
                 strong foundation in computer science and problem-solving. Beyond the classroom, 
@@ -93,6 +101,7 @@ class About extends React.Component {
                                 innerWidth: '100%',
                                 innerHeight: '100%',
                              }}
+                            animateFrame={this.animateFrame}
                             icon={
                                 <div className='flex justify-center items-center w-full h-full'>
                                     <img
