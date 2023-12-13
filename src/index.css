@@ -1,30 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --blue-rgb: 237 245 255;
-  --green-rgb: 125 161 35;
-}
-
 @media screen and (max-device-width: 640px){
   body{
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
   }
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
-}
-
-body:has(.card[data-color="blue"]:hover) {
-  background-color: rgb(var(--blue-rgb) / 25%);
-}
-
-body:has(.card[data-color="green"]:hover) {
-  background-color: rgb(var(--green-rgb) / 25%);
+  font-family: 'open sans', sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -80,10 +66,6 @@ body:has(.card[data-color="green"]:hover) {
     @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
   }
 
-  .neo-btn {
-    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
-  }
-
   .cta {
     @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
   }
@@ -103,21 +85,6 @@ body:has(.card[data-color="green"]:hover) {
   width: fit-content;
   font-weight: bold;
   color: #DC2626;
-}
-
-.glassmorphism {
-  background: rgba(8, 116, 239, 0.07);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.logo {
-  border-radius: 8.889px;
-  background: #fff;
-  box-shadow: 0px 10px 35px -4px rgba(67, 83, 255, 0.15),
-    0px 1.5px 4px -1px rgba(67, 83, 255, 0.2);
 }
 
 .block-container {
@@ -159,14 +126,6 @@ body:has(.card[data-color="green"]:hover) {
   background: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
 }
 
-.block-container .btn-back-pink {
-  background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
-}
-
-.block-container .btn-back-black {
-  background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
-}
-
 .block-container .btn-front {
   position: absolute;
   inset: 0;
@@ -202,13 +161,6 @@ body:has(.card[data-color="green"]:hover) {
   border: #2b77e7;
   box-shadow: 0.6vmin 0.6vmin #336cc1, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
     0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
-}
-
-.neo-brutalism-white {
-  background: #fff;
-  border: #fff;
-  box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
-    0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
 
 
