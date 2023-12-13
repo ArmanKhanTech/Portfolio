@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export function Sky({ setLoadingProgress }) {
   const { progress } = useProgress();
-  const sky = useLoader(GLTFLoader, './sky/scene.gltf');
+  const sky = useLoader(GLTFLoader, './sky.glb');
   const skyRef = useRef();
 
   useFrame((_, delta) => {
@@ -17,7 +17,6 @@ export function Sky({ setLoadingProgress }) {
   useEffect(() => {
     setLoadingProgress(progress);
   }, [progress, setLoadingProgress]);
-
 
   return (
     <mesh

@@ -34,7 +34,7 @@ export default {
         poppins: ['Poppins', "sans-serif"]
       },
       fontSize: {
-        headingMobile: "2.5rem",
+        headingMobile: "2.8rem",
       },
       boxShadow: {
         card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)'

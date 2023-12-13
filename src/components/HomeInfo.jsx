@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NavLink } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
-import { FaArrowRight } from "react-icons/fa";
+import HireButton from './HireButton';
 
 const TEXTS = [
   'Web Development', 
@@ -50,25 +50,22 @@ const HomeInfo = () => {
             }
           </TextTransition>
         </div>
-        <div className='mt-5 p-2 text-2xl font-bold gradient-box'>
-          <NavLink to='/services'>
-            Hire Me
-            <FaArrowRight className='inline-block ml-5 mb-1' />
-          </NavLink>
-        </div>
+        <NavLink to='/services'>
+          <HireButton />
+        </NavLink>
         <div className='mt-5 font-bold text-xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
         </div>
-        <div className='mt-3'>
+        <div className='my-3'>
           <a href='https://drive.google.com/file/d/1XZl9eZLcGw7x5FQZG6w8i8z9vQw3wW0u/view?usp=sharing' target='_blank' rel='noreferrer'>
             <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
         </div>
-        <div className='mr-6 mb-4 fixed bottom-0 font-bold text-base orange-gradient-text'>
+        <div className='mr-5 my-3 fixed bottom-0 font-bold text-base orange-gradient-text'>
           <span>
             Click on the icon at the top to learn more.
           </span>
@@ -99,12 +96,9 @@ const HomeInfo = () => {
             }
           </TextTransition>
         </div>
-        <div className='mt-5 p-2 text-3xl font-bold gradient-box'>
           <NavLink to='/services'>
-            Hire Me
-            <FaArrowRight className='inline-block ml-5 mb-1' />
+            <HireButton />
           </NavLink>
-        </div>
         <div className='mt-5 font-semibold text-3xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.

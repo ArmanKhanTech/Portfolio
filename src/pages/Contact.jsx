@@ -1,6 +1,6 @@
+import React, { useRef, useState } from "react";
+
 import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
-import React from "react";
 
 import useAlert from "../hooks/useAlert";
 import { Alert } from "../components";
@@ -10,7 +10,6 @@ import EarthCanvas from "../models/Earth";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-
 
 const Contact = () => {
   const formRef = useRef();
@@ -28,7 +27,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
+    
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,

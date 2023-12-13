@@ -6,7 +6,7 @@ import { HomeProvider } from '../src/context/HomeContext';
 
 const App = () => {
   return (
-    <main className='bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-slate-900 via-black to-slate-900'>
+    <main>
       <HomeProvider>
         <Router>
           <Routes>

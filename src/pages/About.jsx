@@ -33,7 +33,6 @@ class About extends React.Component {
   }
   
   animateFrame = () => {
-    this.vantaEffect && this.vantaEffect.refresh();
     this.frameId = requestAnimationFrame(this.animateFrame);
   }
   
@@ -73,7 +72,7 @@ class About extends React.Component {
                 to the world of technology.
             </p>
             <div className='py-10 flex flex-col'>
-                <h1 className='text-4xl blue-gradient_text drop-shadow font-semibold'>My Skills</h1>
+                <h1 className='text-4xl blue-gradient_text font-semibold'>My Skills</h1>
                 <div className='mt-10 flex flex-wrap gap-12'>
                 {skills.map((skill) => (
                     <div 
@@ -91,7 +90,7 @@ class About extends React.Component {
                 </div>
             </div>
             <div className='py-2'>
-                <h1 className='text-4xl blue-gradient_text drop-shadow font-semibold'>My Education</h1>
+                <h1 className='text-4xl blue-gradient_text font-semibold'>My Education</h1>
                 <div className='mt-10 flex'>
                 <VerticalTimeline>
                     {education.map((education) => (

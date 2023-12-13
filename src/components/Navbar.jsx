@@ -74,7 +74,7 @@ const Navbar = ({
     return (
       <header className='header'>
         <button 
-          className='text-3xl orange-gradient-text font-semibold font-poppins rounded-xl border px-2 py-2.5'
+          className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'
           onClick={toggleMenu}>
           AK
         </button>
@@ -84,7 +84,7 @@ const Navbar = ({
     return (
       <header className='header'>
         <NavLink to='/'>
-          <button className='text-3xl orange-gradient-text font-semibold font-poppins rounded-xl border px-2 py-2.5'>
+          <button className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'>
             AK
           </button>
         </NavLink>
