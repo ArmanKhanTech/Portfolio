@@ -25,7 +25,8 @@ class Projects extends React.Component {
           scale: 1.00,
           color: 0xea580c,
           backgroundColor: 0x131a43,
-          spacing: 15
+          spacing: 15,
+          minDistance: 15.00,
       })
   }
 
@@ -71,7 +72,7 @@ class Projects extends React.Component {
                     />
                   </div>
                 </div>
-                <div className='mt-5 flex flex-col bg-blur p-2 rounded-md'>
+                <div className='mt-5 flex flex-col bg-blur p-3 rounded-xl'>
                   <h4 className='text-2xl font-poppins text-white font-semibold'>
                     {project.name}
                   </h4>
