@@ -14,7 +14,7 @@ const Home = () => {
   } = useContext(HomeContext); 
 
   return (
-    <section className='absolute w-screen h-screen overflow-auto bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black'>
+    <section className='absolute w-screen h-screen overflow-auto bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-400 via-gray-800 to-black'>
       {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
       <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-8'}`}>
         <HomeInfo />

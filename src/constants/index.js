@@ -178,14 +178,14 @@ export const projects = [
     },
     {
         iconUrl: snapgram,
-        theme: 'btn-back-pink',
+        theme: 'btn-back-green',
         name: 'Full Stack Instagram Clone',
         description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
         link: 'https://github.com/adrianhajdin/social_media_app',
     },
     {
         iconUrl: estate,
-        theme: 'btn-back-black',
+        theme: 'btn-back-blue',
         name: 'Real-Estate Application',
         description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
         link: 'https://github.com/adrianhajdin/projects_realestate',

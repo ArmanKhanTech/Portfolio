@@ -24,8 +24,8 @@ class Projects extends React.Component {
           minWidth: 200.00,
           scale: 1.00,
           color: 0xea580c,
-          showDots: false,  
           backgroundColor: 0x131a43,
+          spacing: 15
       })
   }
 
@@ -51,8 +51,7 @@ class Projects extends React.Component {
                   Projects
               </span>
           </h1>
-          <p className='mt-5 text-white p-4 text-xl rounded-xl' 
-              style={{ backdropFilter: 'blur(50px)', WebkitBackdropFilter: 'blur(50px)'}}>
+          <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
             I've embarked on numerous projects throughout the years, but these are
             the ones I hold closest to my heart. Many of them are open-source, so if
             you come across something that piques your interest, feel free to
@@ -72,7 +71,7 @@ class Projects extends React.Component {
                     />
                   </div>
                 </div>
-                <div className='mt-5 flex flex-col'>
+                <div className='mt-5 flex flex-col bg-blur p-2 rounded-md'>
                   <h4 className='text-2xl font-poppins text-white font-semibold'>
                     {project.name}
                   </h4>
