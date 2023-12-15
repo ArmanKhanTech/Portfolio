@@ -198,3 +198,36 @@ export const projects = [
         link: 'https://github.com/adrianhajdin/project_ai_summarizer',
     }
 ];
+
+export const services = [
+    {
+        iconUrl: html,
+        name: 'Full-Stack Web Development',
+        description: 'I develop static and dynamic websites and web applications using the latest technologies available in the market.',
+    },
+    {
+        iconUrl: css,
+        name: 'UI/UX Design',
+        description: 'I design attractive, responsive, and intuitive user interfaces to maximize user experience.',
+    },
+    {
+        iconUrl: motion,
+        name: 'Native Android App Development',
+        description: 'I build native Android apps using Java and Kotlin.',
+    },
+    {
+        iconUrl: javascript,
+        name: 'Cross-Platform App Development',
+        description: 'I build cross-platform mobile apps using Flutter.',
+    },
+    {
+        iconUrl: react,
+        name: 'Machine Learning',
+        description: 'I build & fine-tune machine learning models using Python and TensorFlow.',
+    },
+    {
+        iconUrl: nodejs,
+        name: 'Serverless Computing',
+        description: 'I build serverless applications using Cloud Computing.',
+    }
+];

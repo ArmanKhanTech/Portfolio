@@ -41,7 +41,7 @@ class Projects extends React.Component {
       <div 
         ref={this.vantaRef} 
         className="fixed inset-0 z-50 w-screen h-screen bg-black">
-        <section className='max-container absolute inset-0 overflow-y-auto'>
+        <section className='max-container absolute ml-0 inset-0 overflow-y-auto'>
           <Navbar {
               ...{
                 textColor: "text-white-100",
@@ -49,7 +49,7 @@ class Projects extends React.Component {
           } />
           <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
               <span className='font-bold orange-gradient-text font-semibold'>
-                  Projects
+                  My Projects
               </span>
           </h1>
           <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
