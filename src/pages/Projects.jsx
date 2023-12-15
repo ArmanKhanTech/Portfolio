@@ -23,6 +23,7 @@ class Projects extends React.Component {
           minHeight: 200.00,
           minWidth: 200.00,
           scale: 1.00,
+          mobileScale: 1.00,
           color: 0xea580c,
           backgroundColor: 0x131a43,
           spacing: 15,
@@ -40,7 +41,7 @@ class Projects extends React.Component {
     return (
       <div 
         ref={this.vantaRef} 
-        className="fixed inset-0 z-50 w-screen h-screen bg-black">
+        className="fixed inset-0 z-50 w-screen h-screen bg-[#131a43]">
         <section className='max-container absolute ml-0 inset-0 overflow-y-auto'>
           <Navbar {
               ...{

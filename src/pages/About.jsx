@@ -27,7 +27,9 @@ class About extends React.Component {
       gyroControls: false,
       backgroundColor: 0x131a43,
       amplitudeFactor: 0.25,
-      size: 1
+      size: 1,
+      scale: 1.00,
+      mobileScale: 1.00,
     })
     this.frameId = requestAnimationFrame(this.animateFrame);
   }

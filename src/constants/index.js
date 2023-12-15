@@ -202,32 +202,44 @@ export const projects = [
 export const services = [
     {
         iconUrl: html,
+        theme: 'btn-back-blue',
         name: 'Full-Stack Web Development',
         description: 'I develop static and dynamic websites and web applications using the latest technologies available in the market.',
+        link: 'www.google.com',
     },
     {
         iconUrl: css,
+        theme: 'btn-back-blue',
         name: 'UI/UX Design',
         description: 'I design attractive, responsive, and intuitive user interfaces to maximize user experience.',
+        link: 'www.google.com',
     },
     {
         iconUrl: motion,
+        theme: 'btn-back-blue',
         name: 'Native Android App Development',
         description: 'I build native Android apps using Java and Kotlin.',
+        link: 'www.google.com',
     },
     {
         iconUrl: javascript,
+        theme: 'btn-back-blue',
         name: 'Cross-Platform App Development',
         description: 'I build cross-platform mobile apps using Flutter.',
+        link: 'www.google.com',
     },
     {
         iconUrl: react,
+        theme: 'btn-back-blue',
         name: 'Machine Learning',
         description: 'I build & fine-tune machine learning models using Python and TensorFlow.',
+        link: 'www.google.com',
     },
     {
         iconUrl: nodejs,
+        theme: 'btn-back-blue',
         name: 'Serverless Computing',
         description: 'I build serverless applications using Cloud Computing.',
+        link: 'www.google.com',
     }
 ];
