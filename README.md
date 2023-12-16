@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ArmanKhanTech/Portfolio/">
-    <img src="https://github.com/ArmanKhanTech/Portfolio/assets/92728787/12b0765e-dc89-49ed-9915-d72481baa327" alt="Logo" width="80" height="80">
+    <img src="https://github.com/ArmanKhanTech/Portfolio/assets/92728787/1c773079-463f-4cd9-a9b7-a265820cbbc2" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Portfolio</h3>
@@ -63,11 +63,7 @@
 
 ### Built With
 
-* [![Flutter][Flutter]][Flutter-url]
-* [![Dart][Dart]][Dart-url]
-* [![IntellIj IDEA][IntelliJ IDEA]][IntelliJ IDEA-url]
-* [![Firebase][Firebase]][Firebase-url]
-* [![Figma][Figma]][Figma-url]
+....
 
 
 
@@ -80,61 +76,29 @@ Follow the below instructions to get started.
 
 <ol>
   <li>
-    <p>Intellij or VS Code IDE</a>
+    <p>NPM</a>
   </li>
   <li>
-    <p>Flutter</a>
-  </li>
-  <li>
-    <p>Firebase Account</a>
+    <p>Email.js</a>
   </li>
 </ol>
 
 
 
-### Installation
+### Setup
 
-1. Clone this repo : 
-   ```sh
-   git clone https://github.com/ArmanKhanTech/Portfolio.git
-   ```
-
-
-
-## Usage
-
-### Compatible with :
-* [![Android][Android]][Android-url]
-* [![iOS][iOS]][iOS-url]
+....
 
 
 
 ## Roadmap
 
-- [x] New User Signup
-- [x] Existing User Login
-- [x] Animated Splash Screen
-- [x] Image Cropper for Profile Image
-- [x] User-Profile Customization
-- [x] Main Screen
-- [x] Add & Populate Feeds Page
-- [x] Stories Editor 
-- [x] Stories Widget
-- [x] Post & View Stories
-- [x] User Profile Page
-- [x] Settings Screen
-- [x] Dark Mode
-- [x] Private Account
-- [x] Image Editor for Posts
-- [x] Custom Camera for Posts, Stories & Profile Picture
-- [x] Post & View Single/Multiple Images
-- [ ] Add or Upload Custom Music/Sound to Posts or Reels 
-- [x] Custom Camera for Reels 
-- [x] Custom Gallery Media Picker 
-- [x] Video Editor for Reels
-- [x] Implicit Content Detector using ML
-- [x] View Post Screen
-- [ ] Like, Comment, Save & Share a Post
+- [x] Home Page
+- [x] Welome Page
+- [x] About Page
+- [x] Service Page
+- [x] Contact Page
+- [x] Project Page
 
 See the [open issues](https://github.com/ArmanKhanTech/Portfolio/issues) for a full list of proposed features (and known issues)
 
@@ -166,13 +130,6 @@ Project Link - [https://github.com/ArmanKhanTech/Portfolio](https://github.com/A
 
 
 
-## Acknowledgments
-
-**3rd Party Libraries**
-* [Lottie Animations](https://github.com/airbnb/lottie-android)
-
-
-
 [contributors-shield]: https://img.shields.io/github/contributors/ArmanKhanTech/Portfolio.svg?style=for-the-badge
 [contributors-url]: https://github.com/ArmanKhanTech/Portfolio/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/ArmanKhanTech/Portfolio.svg?style=for-the-badge
@@ -185,19 +142,3 @@ Project Link - [https://github.com/ArmanKhanTech/Portfolio](https://github.com/A
 [license-url]: https://github.com/ArmanKhanTech/Portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/arman-khan-25b624205/
-[Figma]: https://img.shields.io/badge/Figma-FFC0CB?style=for-the-badge&logo=Figma&logoColor=white
-[Figma-url]: https://www.figma.com/
-[Flutter]: https://img.shields.io/badge/Flutter-0096FF.svg?style=for-the-badge&logo=Flutter&logoColor=white
-[Flutter-url]: https://flutter.dev/
-[IntelliJ IDEA]: https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white
-[IntelliJ IDEA-url]: https://www.jetbrains.com/idea/
-[Dart]: https://img.shields.io/badge/dart-FF0000.svg?style=for-the-badge&logo=dart&logoColor=white
-[Dart-url]: https://dart.dev/
-[iOS]: https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white
-[iOS-url]: https://developer.apple.com/
-[Android]: https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white
-[Android-url]: https://developer.android.com/
-[Firebase]: https://img.shields.io/badge/Firebase-ffd700?style=for-the-badge&logo=Firebase&logoColor=white
-[Firebase-url]: https://firebase.google.com/
-[Google Chrome]: https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white
-[Chrome-url]: https://www.google.com/
