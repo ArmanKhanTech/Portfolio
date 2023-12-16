@@ -1,35 +1,62 @@
-import { educationIcon } from "../assets/images";
+import { 
+    educationIcon, 
+    logo,
+    divine,
+    dailydoze,
+    medicomm,
+    achievix 
+} from "../assets/images";
+
 import {
-    car,
     css,
-    estate,
     express,
     git,
     github,
     html,
     javascript,
     linkedin,
-    mongodb,
     motion,
-    mui,
-    nextjs,
     nodejs,
-    pricewise,
-    react,
-    redux,
-    sass,
-    snapgram,
-    summiz,
     tailwindcss,
-    threads,
-    typescript
+    threejs,
+    react
 } from "../assets/icons";
 
 export const skills = [
     {
+        imageUrl: html,
+        name: "HTML",
+        type: "Frontend",
+    },
+    {
         imageUrl: css,
         name: "CSS",
         type: "Frontend",
+    },
+    {
+        imageUrl: javascript,
+        name: "JavaScript",
+        type: "Frontend",
+    },
+    {
+        imageUrl: react,
+        name: "React",
+        type: "Frontend",
+    },
+    {
+        imageUrl: threejs,
+        name: "Three.js",
+        type: "Frontend",
+    },
+    {
+        imageUrl: tailwindcss,
+        name: "Tailwind CSS",
+        type: "Frontend",
+    },
+    {
+        imageUrl: nodejs,
+        name: "Node.js",
+        type: "Backend",
     },
     {
         imageUrl: express,
@@ -46,66 +73,7 @@ export const skills = [
         name: "GitHub",
         type: "Version Control",
     },
-    {
-        imageUrl: html,
-        name: "HTML",
-        type: "Frontend",
-    },
-    {
-        imageUrl: javascript,
-        name: "JavaScript",
-        type: "Frontend",
-    },
-    {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
-    },
-    {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
-    },
-    {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nextjs,
-        name: "Next.js",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nodejs,
-        name: "Node.js",
-        type: "Backend",
-    },
-    {
-        imageUrl: react,
-        name: "React",
-        type: "Frontend",
-    },
-    {
-        imageUrl: redux,
-        name: "Redux",
-        type: "State Management",
-    },
-    {
-        imageUrl: sass,
-        name: "Sass",
-        type: "Frontend",
-    },
-    {
-        imageUrl: tailwindcss,
-        name: "Tailwind CSS",
-        type: "Frontend",
-    },
-    {
-        imageUrl: typescript,
-        name: "TypeScript",
-        type: "Frontend",
-    }
+
 ];
 
 export const education = [
@@ -156,46 +124,39 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
+        iconUrl: divine,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'Divine',
+        description: 'A social media app made on Flutter.',
+        link: 'https://github.com/armankhantech/divine',
     },
     {
-        iconUrl: snapgram,
-        theme: 'btn-back-green',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
-    },
-    {
-        iconUrl: estate,
+        iconUrl: dailydoze,
         theme: 'btn-back-blue',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        name: 'DailyDoze',
+        description: 'A checklist to help you live a healthy life & much more.',
+        link: 'https://github.com/armankhantech/dailydoze',
     },
     {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+        iconUrl: achievix,
+        theme: 'btn-back-blue',
+        name: 'Achievix',
+        description: 'A checklist to help you live a healthy life & much more.',
+        link: 'https://github.com/armankhantech/achievix',
+    },
+    {
+        iconUrl: logo,
+        theme: 'btn-back-blue',
+        name: 'Portfolio',
+        description: 'My 3D personl portfolio website.',
+        link: 'https://github.com/armankhantech/portfolio',
+    },
+    {
+        iconUrl: medicomm,
+        theme: 'btn-back-blue',
+        name: 'Medicomm',
+        description: 'A pharmacy e-commerce website.',
+        link: 'https://github.com/armankhantech/medicomm',
     }
 ];
 
@@ -205,41 +166,41 @@ export const services = [
         theme: 'btn-back-blue',
         name: 'Full-Stack Web Development',
         description: 'I develop static and dynamic websites and web applications using the latest technologies available in the market.',
-        link: 'www.google.com',
+        link: 'https://www.mongodb.com/mern-stack',
     },
     {
         iconUrl: css,
         theme: 'btn-back-blue',
         name: 'UI/UX Design',
-        description: 'I design attractive, responsive, and intuitive user interfaces to maximize user experience.',
-        link: 'www.google.com',
+        description: 'I design attractive, responsive, and intuitive user interfaces to maximize user experience allowing to create attractive and responsive products.',
+        link: 'https://www.browserstack.com/guide/what-is-user-interface',
     },
     {
         iconUrl: motion,
         theme: 'btn-back-blue',
         name: 'Native Android App Development',
-        description: 'I build native Android apps using Java and Kotlin.',
-        link: 'www.google.com',
+        description: 'I build native Android apps using Java and Kotlin. I utilize the technologies such as Jetpack Compose to create modern Android apps.',
+        link: 'https://www.android.com/intl/en_in/',
     },
     {
         iconUrl: javascript,
         theme: 'btn-back-blue',
         name: 'Cross-Platform App Development',
-        description: 'I build cross-platform mobile apps using Flutter.',
-        link: 'www.google.com',
+        description: 'I build cross-platform mobile apps using Flutter. Flutter allows us to create responsive apps for Android & iOS using a single codebase.',
+        link: 'https://flutter.dev/',
     },
     {
         iconUrl: react,
         theme: 'btn-back-blue',
         name: 'Machine Learning',
-        description: 'I build & fine-tune machine learning models using Python and TensorFlow.',
-        link: 'www.google.com',
+        description: 'I train & fine-tune machine learning models using Python and TensorFlow & also have the ability to integrate existing ML solutions into our products.',
+        link: 'https://www.tensorflow.org/',
     },
     {
         iconUrl: nodejs,
         theme: 'btn-back-blue',
         name: 'Serverless Computing',
-        description: 'I build serverless applications using Cloud Computing.',
-        link: 'www.google.com',
+        description: 'I build serverless applications using Serverless Computing. I use Firebase to build serverless applications that scale automatically.',
+        link: 'https://firebase.google.com/',
     }
 ];

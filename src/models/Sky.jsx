@@ -11,7 +11,7 @@ export const Sky = memo(({ setLoadingProgress }) => {
 
   useFrame((_, delta) => {
     if (skyRef.current) {
-      skyRef.current.rotation.y += delta / 50;
+      skyRef.current.rotation.y += delta / 40;
     }
   });
 

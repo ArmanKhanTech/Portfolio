@@ -53,7 +53,7 @@ const HomeInfo = () => {
         <NavLink to='/services'>
           <HireButton />
         </NavLink>
-        <div className='mt-5 font-bold text-xl orange-gradient-text'>
+        <div className='mt-4 font-bold text-xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>

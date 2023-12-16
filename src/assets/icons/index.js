@@ -24,6 +24,7 @@ import summiz from './summiz.svg'
 import threads from './threads.svg'
 import arrow from './arrow.svg'
 import contact from './contact.svg'
+import threejs from './threejs.svg'
 
 export {
     css,
@@ -52,4 +53,5 @@ export {
     threads,
     arrow,
     contact,
+    threejs
 }
