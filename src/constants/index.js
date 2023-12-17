@@ -15,11 +15,11 @@ import {
     html,
     javascript,
     linkedin,
-    motion,
     nodejs,
     tailwindcss,
     threejs,
-    react
+    react,
+    java
 } from "../assets/icons";
 
 export const skills = [
@@ -73,6 +73,11 @@ export const skills = [
         name: "GitHub",
         type: "Version Control",
     },
+    {
+        imageUrl: java,
+        name: "Java",
+        type: "Programming Language",
+    }
 
 ];
 
@@ -127,35 +132,35 @@ export const projects = [
         iconUrl: divine,
         theme: 'btn-back-blue',
         name: 'Divine',
-        description: 'A social media app made on Flutter.',
+        description: 'A social media app made on Flutter. It is a social media app that allows users to share their thoughts and ideas with the world.',
         link: 'https://github.com/armankhantech/divine',
     },
     {
         iconUrl: dailydoze,
         theme: 'btn-back-blue',
         name: 'DailyDoze',
-        description: 'A checklist to help you live a healthy life & much more.',
+        description: 'A checklist to help you live a healthy life & much more. It is a checklist app that helps you to keep track of your daily tasks.',
         link: 'https://github.com/armankhantech/dailydoze',
     },
     {
         iconUrl: achievix,
         theme: 'btn-back-blue',
         name: 'Achievix',
-        description: 'A checklist to help you live a healthy life & much more.',
+        description: 'An Android productivity app. It is a productivity app that helps you to keep track of your daily tasks.',
         link: 'https://github.com/armankhantech/achievix',
     },
     {
         iconUrl: logo,
         theme: 'btn-back-blue',
         name: 'Portfolio',
-        description: 'My 3D personl portfolio website.',
+        description: 'My 3D personl portfolio website. It is a portfolio website that showcases my skills, education and projects.',
         link: 'https://github.com/armankhantech/portfolio',
     },
     {
         iconUrl: medicomm,
         theme: 'btn-back-blue',
         name: 'Medicomm',
-        description: 'A pharmacy e-commerce website.',
+        description: 'A pharmacy e-commerce website. It is an e-commerce website that allows users to buy medicines online.',
         link: 'https://github.com/armankhantech/medicomm',
     }
 ];
@@ -176,7 +181,7 @@ export const services = [
         link: 'https://www.browserstack.com/guide/what-is-user-interface',
     },
     {
-        iconUrl: motion,
+        iconUrl: threejs,
         theme: 'btn-back-blue',
         name: 'Native Android App Development',
         description: 'I build native Android apps using Java and Kotlin. I utilize the technologies such as Jetpack Compose to create modern Android apps.',
