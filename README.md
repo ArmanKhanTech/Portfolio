@@ -43,15 +43,14 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">Setup</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Images</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -59,11 +58,22 @@
 
 ## About The Project
 
-....
+A 3D personal portfolio website is an immersive and interactive online exhibition of your skills and accomplishments. It goes beyond the static text and images of traditional portfolios by utilizing the power of 3D graphics and animation to wow viewers and leave a lasting impression.
+
 
 ### Built With
 
-....
+<ul>
+  <li>
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+  </li>
+  <li>
+    <img src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" />
+  </li>
+  <li>
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  </li>
+</ul>
 
 
 
@@ -79,7 +89,7 @@ Follow the below instructions to get started.
     <p>NPM</a>
   </li>
   <li>
-    <p>Email.js</a>
+    <p>Email.js Account</a>
   </li>
 </ol>
 
@@ -88,6 +98,9 @@ Follow the below instructions to get started.
 ### Setup
 
 ....
+
+
+## Images
 
 
 
