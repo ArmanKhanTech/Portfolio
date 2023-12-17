@@ -20,7 +20,7 @@
     <a href="https://github.com/ArmanKhanTech/Portfolio"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://www.armankhan.tech">View Demo</a>
+    <a href="https://armankhan.tech">View Demo</a>
     ·
     <a href="https://github.com/ArmanKhanTech/Portfolio/issues">Report a Bug</a>
     ·
@@ -46,11 +46,11 @@
         <li><a href="#installation">Setup</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Images</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -100,10 +100,6 @@ Follow the below instructions to get started.
 ....
 
 
-## Images
-
-
-
 ## Roadmap
 
 - [x] Home Page
@@ -140,6 +136,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Arman Khan - ak2341776@gmail.com
 
 Project Link - [https://github.com/ArmanKhanTech/Portfolio](https://github.com/ArmanKhanTech/Portfolio)
+
+
+## Acknowledgements
+
+<a href="https://www.youtube.com/c/JavaScriptMastery">JS Mystery</a>
+
+<a href="https://sketchfab.com/3d-models/alien-terrain-05-hdri-7ba0da88576d4f4592beaaa0e9e3ff2d">3D Model (Home Page)</a>
+
 
 
 
