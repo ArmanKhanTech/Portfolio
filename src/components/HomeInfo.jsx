@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
 import HireButton from './HireButton';
+import { github, linkedin } from '../assets/icons';
 
 const TEXTS = [
   'Web Development', 
@@ -65,6 +66,14 @@ const HomeInfo = () => {
             </button>
           </a>
         </div>
+        <div className='flex space-x-2 mt-3'>
+          <a href='https://github.com/ArmanKhanTech' target='_blank' rel='noreferrer'>
+            <img src={github} alt='github' className='w-8 h-8 object-contain' />
+          </a>
+          <a href='https://www.linkedin.com/in/arman-khan-1b4b3a1a6/' target='_blank' rel='noreferrer'>
+            <img src={linkedin} alt='linkedin' className='linkedin-icon-mobile object-contain' />
+          </a>
+        </div>
         <div className='mr-5 my-3 fixed bottom-0 font-bold text-base orange-gradient-text'>
           <span>
             Click on the icon at the top to learn more.
@@ -109,6 +118,14 @@ const HomeInfo = () => {
             <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
+          </a>
+        </div>
+        <div className='flex space-x-2 mt-5'>
+          <a href='https://github.com/ArmanKhanTech' target='_blank' rel='noreferrer'>
+            <img src={github} alt='github' className='w-10 h-10 object-contain' />
+          </a>
+          <a href='https://www.linkedin.com/in/arman-khan-1b4b3a1a6/' target='_blank' rel='noreferrer'>
+            <img src={linkedin} alt='linkedin' className='linkedin-icon object-contain' />
           </a>
         </div>
       </section>

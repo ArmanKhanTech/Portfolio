@@ -72,7 +72,7 @@ class Services extends React.Component {
                             <img
                             src={service.iconUrl}
                             alt='threads'
-                            className='w-1/2 h-1/2 object-contain'
+                            className='p-2 object-contain'
                             />
                         </div>
                         </div>

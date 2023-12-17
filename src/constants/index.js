@@ -19,7 +19,13 @@ import {
     tailwindcss,
     threejs,
     react,
-    java
+    java,
+    androidDev,
+    webDev,
+    crossDev,
+    ml,
+    serverless,
+    uiDesign
 } from "../assets/icons";
 
 export const skills = [
@@ -116,14 +122,14 @@ export const education = [
 
 export const socialLinks = [
     {
-        name: 'GitHub',
-        iconUrl: github,
-        link: 'https://github.com/ArmanKhanTech',
-    },
-    {
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/arman-khan-25b624205',
+    },
+    {
+        name: 'GitHub',
+        iconUrl: github,
+        link: 'https://github.com/ArmanKhanTech',
     }
 ];
 
@@ -167,42 +173,42 @@ export const projects = [
 
 export const services = [
     {
-        iconUrl: html,
+        iconUrl: webDev,
         theme: 'btn-back-blue',
         name: 'Full-Stack Web Development',
         description: 'I develop static and dynamic websites and web applications using the latest technologies available in the market.',
         link: 'https://www.mongodb.com/mern-stack',
     },
     {
-        iconUrl: css,
+        iconUrl: uiDesign,
         theme: 'btn-back-blue',
         name: 'UI/UX Design',
         description: 'I design attractive, responsive, and intuitive user interfaces to maximize user experience allowing to create attractive and responsive products.',
         link: 'https://www.browserstack.com/guide/what-is-user-interface',
     },
     {
-        iconUrl: threejs,
+        iconUrl: androidDev,
         theme: 'btn-back-blue',
         name: 'Native Android App Development',
         description: 'I build native Android apps using Java and Kotlin. I utilize the technologies such as Jetpack Compose to create modern Android apps.',
         link: 'https://www.android.com/intl/en_in/',
     },
     {
-        iconUrl: javascript,
+        iconUrl: crossDev,
         theme: 'btn-back-blue',
         name: 'Cross-Platform App Development',
         description: 'I build cross-platform mobile apps using Flutter. Flutter allows us to create responsive apps for Android & iOS using a single codebase.',
         link: 'https://flutter.dev/',
     },
     {
-        iconUrl: react,
+        iconUrl: ml,
         theme: 'btn-back-blue',
         name: 'Machine Learning',
         description: 'I train & fine-tune machine learning models using Python and TensorFlow & also have the ability to integrate existing ML solutions into our products.',
         link: 'https://www.tensorflow.org/',
     },
     {
-        iconUrl: nodejs,
+        iconUrl: serverless,
         theme: 'btn-back-blue',
         name: 'Serverless Computing',
         description: 'I build serverless applications using Serverless Computing. I use Firebase to build serverless applications that scale automatically.',

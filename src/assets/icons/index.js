@@ -11,6 +11,12 @@ import linkedin from './linkedin.svg'
 import arrow from './arrow.svg'
 import threejs from './threejs.svg'
 import java from './java.svg'
+import androidDev from './android-dev.svg'
+import webDev from './web-dev.svg'
+import crossDev from './cross-dev.svg'
+import ml from './ml.svg'
+import serverless from './serverless.svg'
+import uiDesign from './ui-design.svg'
 
 export {
     css,
@@ -25,5 +31,11 @@ export {
     linkedin,
     arrow,
     threejs,
-    java
+    java,
+    androidDev,
+    webDev,
+    crossDev,
+    ml,
+    serverless,
+    uiDesign
 }
