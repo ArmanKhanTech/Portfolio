@@ -19,7 +19,7 @@
     <a href="https://github.com/ArmanKhanTech/Portfolio"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://armankhan.tech">View Demo</a>
+    <a href="https://armankhan.tech">Visit</a>
     ·
     <a href="https://github.com/ArmanKhanTech/Portfolio/issues">Report a Bug</a>
     ·
