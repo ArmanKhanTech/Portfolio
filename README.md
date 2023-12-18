@@ -98,28 +98,38 @@ Follow the below instructions to get started.
 
 ### Setup
 
-1. Clone the repo
+1. Clone this repo
+  
    ```sh
    git clone https://github.com/ArmanKhanTech/Portfolio.git
     ```
+   
 2. Install NPM packages
+   
     ```sh
     npm install
     ```
+    
 3. Create a `.env` file in the root directory
+   
     ```sh
     touch .env
     ```
+    
 4. Add the following variables in `.env` file
+   
     ```sh
     VITE_APP_EMAILJS_SERVICE_ID=service_id_emailjs
     VITE_APP_EMAILJS_TEMPLATE_ID=template_id_emailjs
     VITE_APP_EMAILJS_PUBLIC_KEY=public_key_emailjs
     ```
+    
 5. Run the app
+    
     ```sh
     npm start
     ```
+  
 6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
