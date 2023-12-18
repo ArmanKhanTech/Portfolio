@@ -178,7 +178,7 @@ Follow the below instructions to get started.
    \
     d. Add expriences & testimonals sections in `About.jsx` if you want
    \
-    e. Kindly make sure to modify all the import statements whenever making in changes in `src\constanst\index.js`
+    e. Kindly make sure to modify all the respective import statements whenever making in changes in `src\constanst\index.js`
 
 5. Also, update the title & description in `index.html`
 
@@ -195,7 +195,7 @@ Follow the below instructions to get started.
     and
     ```HTML
     <div className='mt-5'>
-      <a href=resume_link' target='_blank' rel='noreferrer'>
+      <a href='resume_link' target='_blank' rel='noreferrer'>
         <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
           Resume
         </button>
