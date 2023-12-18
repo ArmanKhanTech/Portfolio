@@ -134,7 +134,7 @@ Follow the below instructions to get started.
 
 
 ### Customization
-1. Change the initails in `src/components/Navbar.js` to your initials (line 79 & 88)
+1. Change the initials (icon) in `src/components/Navbar.js` to your initials (line 79 & 88)
     ```HTML
     <header className='header'>
         <button 
