@@ -127,7 +127,7 @@ Follow the below instructions to get started.
 5. Run the app
     
     ```sh
-    npm start
+    npm run dev
     ```
   
 6. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
@@ -140,7 +140,7 @@ Follow the below instructions to get started.
         <button 
           className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'
           onClick={toggleMenu}>
-          AK
+          Your Initials
         </button>
     </header>
     ```
@@ -148,7 +148,7 @@ Follow the below instructions to get started.
     ```HTML
     <NavLink to='/'>
       <button className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'>
-        AK
+        Your Initials
       </button>
     </NavLink>
     ```
@@ -157,14 +157,14 @@ Follow the below instructions to get started.
     ```HTML
     <div className='text-4xl font-bold orange-gradient-text'>
       <h1>Hello,</h1>
-      <h1>I am Arman Khan & I do</h1>
+      <h1>I am {Your Name} & I do</h1>
     </div>
     ```
     and 
     ```HTML
     <div className='text-6xl font-bold orange-gradient-text'>
       <h1>Hello,</h1>
-      <h1>I am Arman Khan & I do</h1>
+      <h1>I am {Your Name} & I do</h1>
     </div>
     ```
 
