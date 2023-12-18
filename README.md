@@ -44,6 +44,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Setup</a></li>
+        <li><a href="#customization">Customization</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
