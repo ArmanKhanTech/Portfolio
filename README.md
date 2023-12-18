@@ -130,7 +130,7 @@ Follow the below instructions to get started.
     npm start
     ```
   
-6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+6. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 
 ### Customization
