@@ -3,7 +3,8 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
 import HireButton from './HireButton';
-import { github, linkedin } from '../assets/icons';
+import { Link } from "react-router-dom";
+import { socialLinks } from "../constants";
 
 const TEXTS = [
   'Web Development', 
@@ -66,13 +67,16 @@ const HomeInfo = () => {
             </button>
           </a>
         </div>
-        <div className='flex space-x-2 mt-3'>
-          <a href='https://github.com/ArmanKhanTech' target='_blank' rel='noreferrer'>
-            <img src={github} alt='github' className='w-8 h-8 object-contain transition-transform hover:scale-110' />
-          </a>
-          <a href='https://www.linkedin.com/in/arman-khan-25b624205/' target='_blank' rel='noreferrer'>
-            <img src={linkedin} alt='linkedin' className='linkedin-icon-mobile object-contain transition-transform hover:scale-110' />
-          </a>
+        <div className='flex gap-2 mt-4'>
+          {socialLinks.map((link) => (
+            <Link key={link.name} to={link.link} target='_blank'>
+              <img
+                src={link.iconUrl}
+                alt={link.name}
+                className={`${link.name === 'LinkedIn' ? 'linkedin-icon-mobile' : 'h-8 w-8'} object-cover`}
+              />
+            </Link>
+          ))}
         </div>
         <div className='mr-5 my-3 fixed bottom-0 font-bold text-base orange-gradient-text'>
           <span>
@@ -120,13 +124,16 @@ const HomeInfo = () => {
             </button>
           </a>
         </div>
-        <div className='flex space-x-2 mt-5'>
-          <a href='https://github.com/ArmanKhanTech' target='_blank' rel='noreferrer'>
-            <img src={github} alt='github' className='w-10 h-10 object-contain' />
-          </a>
-          <a href='https://www.linkedin.com/in/arman-khan-1b4b3a1a6/' target='_blank' rel='noreferrer'>
-            <img src={linkedin} alt='linkedin' className='linkedin-icon object-contain' />
-          </a>
+        <div className='flex gap-2 mt-5'>
+          {socialLinks.map((link) => (
+            <Link key={link.name} to={link.link} target='_blank'>
+              <img
+                src={link.iconUrl}
+                alt={link.name}
+                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-10 w-10'} object-cover`}
+              />
+            </Link>
+          ))}
         </div>
       </section>
     );

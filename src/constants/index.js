@@ -1,10 +1,10 @@
 import { 
     educationIcon, 
-    logo,
     divine,
     dailydoze,
     medicomm,
-    achievix 
+    achievix, 
+    portfolio
 } from "../assets/images";
 
 import {
@@ -156,7 +156,7 @@ export const projects = [
         link: 'https://github.com/armankhantech/achievix',
     },
     {
-        iconUrl: logo,
+        iconUrl: portfolio,
         theme: 'btn-back-blue',
         name: 'Portfolio',
         description: 'My 3D personl portfolio website. It is a portfolio website that showcases my skills, education and projects.',
