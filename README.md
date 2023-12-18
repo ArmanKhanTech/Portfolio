@@ -100,7 +100,7 @@ Follow the below instructions to get started.
 
 1. Clone the repo
    ```sh
-   git clone
+   git clone https://github.com/ArmanKhanTech/Portfolio.git
     ```
 2. Install NPM packages
     ```sh
