@@ -68,10 +68,10 @@ const HomeInfo = () => {
         </div>
         <div className='flex space-x-2 mt-3'>
           <a href='https://github.com/ArmanKhanTech' target='_blank' rel='noreferrer'>
-            <img src={github} alt='github' className='w-8 h-8 object-contain' />
+            <img src={github} alt='github' className='w-8 h-8 object-contain transition-transform hover:scale-110' />
           </a>
-          <a href='https://www.linkedin.com/in/arman-khan-1b4b3a1a6/' target='_blank' rel='noreferrer'>
-            <img src={linkedin} alt='linkedin' className='linkedin-icon-mobile object-contain' />
+          <a href='https://www.linkedin.com/in/arman-khan-25b624205/' target='_blank' rel='noreferrer'>
+            <img src={linkedin} alt='linkedin' className='linkedin-icon-mobile object-contain transition-transform hover:scale-110' />
           </a>
         </div>
         <div className='mr-5 my-3 fixed bottom-0 font-bold text-base orange-gradient-text'>

@@ -124,7 +124,7 @@ export const socialLinks = [
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/arman-khan-25b624205',
+        link: 'https://www.linkedin.com/in/arman-khan-25b624205/',
     },
     {
         name: 'GitHub',
