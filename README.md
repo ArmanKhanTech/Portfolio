@@ -195,11 +195,7 @@ Follow the below instructions to get started.
     and
     ```HTML
     <div className='mt-5'>
-<<<<<<< HEAD
       <a href='resume&#39;s_link' target='_blank' rel='noreferrer'>
-=======
-      <a href='resume_link' target='_blank' rel='noreferrer'>
->>>>>>> 1ce3129c2979a147a013720ee5afbb395d6b7843
         <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
           Resume
         </button>
