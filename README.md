@@ -185,7 +185,7 @@ Follow the below instructions to get started.
 6. Change the link to your resume in `src\components\HomeInfo.js` (line 64  & 121)
     ```HTML
     <div className='my-3'>
-      <a href='resume_link' target='_blank' rel='noreferrer'>
+      <a href='resume&#39;s_link' target='_blank' rel='noreferrer'>
         <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
           Resume
         </button>
@@ -195,7 +195,7 @@ Follow the below instructions to get started.
     and
     ```HTML
     <div className='mt-5'>
-      <a href=resume_link' target='_blank' rel='noreferrer'>
+      <a href='resume&#39;s_link' target='_blank' rel='noreferrer'>
         <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
           Resume
         </button>

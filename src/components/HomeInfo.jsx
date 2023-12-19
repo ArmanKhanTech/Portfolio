@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
 import HireButton from './HireButton';
-import { Link } from "react-router-dom";
 import { socialLinks } from "../constants";
 
 const TEXTS = [

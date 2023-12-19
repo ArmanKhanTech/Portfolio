@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <section className='absolute w-screen h-screen overflow-auto bg-[#131a43]'>
       {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
-      <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-8'}`}>
+      <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-4'}`}>
         <HomeInfo />
       </div>
       <Navbar {
