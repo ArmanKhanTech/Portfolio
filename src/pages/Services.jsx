@@ -41,11 +41,7 @@ class Services extends React.Component {
                 ref={this.vantaRef} 
                 className="fixed inset-0 z-50 w-screen h-screen bg-[#131a43]">
                 <section className='max-container absolute ml-0 inset-0 overflow-y-auto'>
-                    <Navbar {
-                    ...{
-                        textColor: "text-white-100",
-                        }
-                    } />
+                    <Navbar />
                     <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
                         <span className='font-bold orange-gradient-text font-semibold'>
                             Services
@@ -64,40 +60,38 @@ class Services extends React.Component {
                         and machine learning expertise.
                     </p>
                     <div className='flex flex-wrap my-20 gap-16'>
-                    {services.map((service) => (
-                    <div className='lg:w-[400px] w-full' key={service.name}>
-                        <div className='block-container w-12 h-12'>
-                        <div className={`btn-back rounded-xl ${service.theme}`} />
-                        <div className='btn-front rounded-xl flex justify-center items-center'>
-                            <img
-                            src={service.iconUrl}
-                            alt='threads'
-                            className='p-2 object-contain'
-                            />
+                        {services.map((service) => (
+                        <div className='lg:w-[400px] w-full' key={service.name}>
+                            <div className='block-container w-12 h-12'>
+                                <div className={`btn-back rounded-xl ${service.theme}`} />
+                                <div className='btn-front rounded-xl flex justify-center items-center'>
+                                    <img
+                                        src={service.iconUrl}
+                                        alt='threads'
+                                        className='p-2 object-contain'/>
+                                </div>
+                            </div>
+                            <div className='mt-5 flex flex-col bg-blur p-3 rounded-xl'>
+                                <h4 className='text-2xl font-poppins text-white font-semibold'>
+                                    {service.name}
+                                </h4>
+                                <p className='mt-2 text-white'>{service.description}</p>
+                                <div className='mt-5 flex items-center gap-2 font-poppins'>
+                                    <Link
+                                        to={service.link}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        className='font-semibold text-blue-600' >
+                                        Know More
+                                    </Link>
+                                    <img
+                                        src={arrow}
+                                        alt='arrow'
+                                        className='w-4 h-4 object-contain' />
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                        <div className='mt-5 flex flex-col bg-blur p-3 rounded-xl'>
-                        <h4 className='text-2xl font-poppins text-white font-semibold'>
-                            {service.name}
-                        </h4>
-                        <p className='mt-2 text-white'>{service.description}</p>
-                        <div className='mt-5 flex items-center gap-2 font-poppins'>
-                            <Link
-                            to={service.link}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='font-semibold text-blue-600' >
-                            Know More
-                            </Link>
-                            <img
-                            src={arrow}
-                            alt='arrow'
-                            className='w-4 h-4 object-contain'
-                            />
-                        </div>
-                        </div>
-                    </div>
-                    ))}
+                        ))}
                     </div>
                     <hr className='border-slate-200' />
                     <CTA />

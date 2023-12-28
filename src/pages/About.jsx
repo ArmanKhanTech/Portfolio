@@ -6,7 +6,7 @@ import {
     VerticalTimeline,
     VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-  
+
 import { CTA, Navbar } from "../components";
 import { education, skills } from "../constants";
 
@@ -53,11 +53,7 @@ class About extends React.Component {
         ref={this.vantaRef} 
         className="fixed inset-0 z-0">
         <section className="max-container absolute inset-0 overflow-y-auto">
-            <Navbar {
-                ...{
-                textColor: "text-white-100",
-                }
-            } />
+            <Navbar />
             <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
                 <span className='font-bold orange-gradient-text font-semibold'>
                     About Me

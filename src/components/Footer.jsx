@@ -3,13 +3,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { socialLinks } from "../constants";
 
-const Footer = ({
-  textColor
-}) => {
+const Footer = () => {
   return (
     <footer className='footer font-poppins'>
       <hr className='border-white' />
-      <div className={`footer-container ${textColor} text-xl`}>
+      <div className='footer-container text-white text-xl'>
         <p>
           © 2023 <strong>Arman Khan</strong>. All rights reserved.
         </p>

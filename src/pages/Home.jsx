@@ -19,11 +19,7 @@ const Home = () => {
       <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-4'}`}>
         <HomeInfo />
       </div>
-      <Navbar {
-        ...{
-          textColor: "text-white-100",
-        }
-      } />
+      <Navbar />
       <Canvas
         camera={{ near: 0.1, far: 100 }}
         style={{pointerEvents: 'none', position: 'fixed'}}>

@@ -75,11 +75,7 @@ const Contact = () => {
   if(!isMobile) {
     return (
       <section className="relative z-0">
-        <Navbar {
-          ...{
-            textColor: "text-white-100",
-          }
-        } />
+        <Navbar />
         <StarsCanvas />
         <section className='flex lg:flex-row flex-col max-container'>
           {alert.show && <Alert {...alert} />}
@@ -133,25 +129,17 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className='min-w-[75%] h-[80vh] object-cover'>
+          <div className='min-w-[75%] h-[75vh] object-cover'>
             <EarthCanvas />
           </div>
         </section>
-        <Footer {
-          ...{
-            textColor: "text-white-100",
-          }
-        }/>
+        <Footer />
       </section>
     );
   } else {
     return (
       <section className="relative z-0 overflow-y-scroll no-scrollbar">
-        <Navbar {
-          ...{
-            textColor: "text-white-100",
-          }
-        } />
+        <Navbar />
         <StarsCanvas className='fixed'/>
         <section className='flex lg:flex-row flex-col max-container'>
           {alert.show && <Alert {...alert} />}
@@ -206,11 +194,7 @@ const Contact = () => {
             </form>
           </div>
         </section>
-        <Footer {
-          ...{
-            textColor: "text-white-100",
-          }
-        }/>
+        <Footer />
       </section>
     );
   }

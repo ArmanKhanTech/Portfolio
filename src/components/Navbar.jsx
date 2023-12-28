@@ -3,9 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-const Navbar = ({
-  textColor
-}) => {
+const Navbar = () => {
   const isMobile = window.innerWidth <= 640;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,17 +86,17 @@ const Navbar = ({
             AK
           </button>
         </NavLink>
-        <nav className='flex text-xl gap-8 font-medium border py-3.5 px-5 rounded-xl'>
-          <NavLink to='/' className={textColor}>
+        <nav className='flex text-xl gap-8 font-medium text-white border py-3.5 px-5 rounded-xl'>
+          <NavLink to='/'>
             Home
           </NavLink>
-          <NavLink to='/about' className={textColor}>
+          <NavLink to='/about'>
             About
           </NavLink>
-          <NavLink to='/projects' className={textColor}>
+          <NavLink to='/projects'>
             Projects
           </NavLink>
-          <NavLink to='/contact' className={textColor}>
+          <NavLink to='/contact'>
             Contact
           </NavLink>
         </nav>
