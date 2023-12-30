@@ -4,9 +4,8 @@ const Alert = ({ type, text }) => {
   return (
     <div className='absolute top-20 left-0 right-0 flex rounded z-10 justify-center items-center'>
       <div
-        className={`p-2 ${
-          type === "danger" ? "bg-red-800" : "bg-blue-800"
-        } items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex`}
+        className={`p-2 ${type === "danger" ? "bg-red-800" : "bg-blue-800"} 
+          items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex`}
         role='alert'>
         <p
           className={`flex rounded-full ${
