@@ -26,7 +26,7 @@ class Projects extends React.Component {
           mobileScale: 1.00,
           color: 0xea580c,
           backgroundColor: 0x131a43,
-          spacing: 15,
+          spacing: this.isMobile ? 20.00 : 15.00,
           minDistance: 15.00,
       })
   }

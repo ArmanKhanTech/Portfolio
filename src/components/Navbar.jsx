@@ -86,7 +86,7 @@ const Navbar = () => {
             AK
           </button>
         </NavLink>
-        <nav className='flex text-xl gap-8 font-medium text-white border py-3.5 px-5 rounded-xl'>
+        <nav className='flex text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl'>
           <NavLink to='/'>
             Home
           </NavLink>

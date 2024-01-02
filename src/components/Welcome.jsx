@@ -37,10 +37,10 @@ class Welcome extends React.Component {
                 ref={this.vantaRef} 
                 className="fixed inset-0 z-50 w-screen h-screen bg-black">
                 <section className="max-container">
-                    <h1 className={`${this.isMobile ? 'text-5xl' : 'text-6xl'} orange-gradient-text font-semibold`}>
+                    <h1 className={`${this.isMobile ? 'text-5xl' : 'text-7xl'} orange-gradient-text font-bold`}>
                         Welcome
                     </h1>
-                    <h3 className="mt-5 text-3xl text-white-100 font-semibold">
+                    <h3 className={`${this.isMobile ? 'text-3xl' : 'text-5xl'} mt-5 text-3xl text-white-100 font-bold`}>
                         Setting up...
                     </h3>
                 </section>

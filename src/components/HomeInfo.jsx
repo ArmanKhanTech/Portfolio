@@ -54,13 +54,13 @@ const HomeInfo = () => {
         <NavLink to='/services'>
           <HireButton />
         </NavLink>
-        <div className='mt-4 font-bold text-xl orange-gradient-text'>
+        <div className='mt-4 font-bold text-2xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
         </div>
         <div className='my-3'>
-          <a href='https://drive.google.com/file/d/1YE1xMTaAuHudsjBV19AQTOhxgFPclPPY/view?usp=sharing' target='_blank' rel='noreferrer'>
+          <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
             <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
@@ -77,7 +77,7 @@ const HomeInfo = () => {
             </Link>
           ))}
         </div>
-        <div className='mr-5 my-3 fixed bottom-0 font-bold text-base orange-gradient-text'>
+        <div className='mr-5 my-3 mt-5 fixed bottom-0 font-bold text-base text-red-600'>
           <span>
             Click on the icon at the top to learn more.
           </span>
@@ -117,7 +117,7 @@ const HomeInfo = () => {
           </span>
         </div>
         <div className='mt-5'>
-          <a href='https://drive.google.com/file/d/1YE1xMTaAuHudsjBV19AQTOhxgFPclPPY/view?usp=sharing' target='_blank' rel='noreferrer'>
+          <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
             <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
