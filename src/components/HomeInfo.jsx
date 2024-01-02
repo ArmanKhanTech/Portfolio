@@ -10,6 +10,7 @@ const TEXTS = [
   'App Development', 
   'UI/UX Design', 
   'Machine Learning',
+  'Cloud Computing',
   '& much more...'
 ];
 
