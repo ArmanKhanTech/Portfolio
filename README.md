@@ -169,7 +169,7 @@ Follow the below instructions to get started.
     ```
 
 3. Change the skills, projects, education & services in `src\constanst\index.js` according to your requirements
-   \
+   \\
     a. Assets (icons or images) can be added in `src\assets\` folder
    \
     b. Update the `index.js` of respective folders in `src\assets\` whenever making any changes in it
