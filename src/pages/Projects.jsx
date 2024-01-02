@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+
 import { CTA, Navbar } from "../components";
 import { projects } from "../constants";
 import { arrow } from "../assets/icons";

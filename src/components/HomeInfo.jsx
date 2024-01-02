@@ -2,6 +2,7 @@ import React from 'react';
 
 import { NavLink, Link } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
+
 import HireButton from './HireButton';
 import { socialLinks } from "../constants";
 

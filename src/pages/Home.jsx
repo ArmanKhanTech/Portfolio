@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { HomeContext } from '../context';
 import { Canvas } from "@react-three/fiber";
+
 import { HomeInfo, Navbar, Welcome } from "../components";
 import { Sky } from "../models";
 

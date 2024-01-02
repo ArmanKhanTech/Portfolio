@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+
 import { socialLinks } from "../constants";
 
 const Footer = () => {
