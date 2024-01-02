@@ -56,7 +56,7 @@ const HomeInfo = () => {
         <NavLink to='/services'>
           <HireButton />
         </NavLink>
-        <div className='mt-4 font-bold text-2xl orange-gradient-text text-border'>
+        <div className='mt-4 font-bold text-2xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
@@ -113,7 +113,7 @@ const HomeInfo = () => {
           <NavLink to='/services'>
             <HireButton />
           </NavLink>
-        <div className='mt-5 font-bold text-4xl orange-gradient-text text-border'>
+        <div className='mt-5 font-bold text-4xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
