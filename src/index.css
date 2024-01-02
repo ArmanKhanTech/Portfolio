@@ -96,6 +96,9 @@ body {
   width: 34px;
 }
 
+.text-border {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.60);
+}
 
 .gradient-box {
   border-radius: 10px;
