@@ -82,7 +82,7 @@ const Navbar = () => {
     return (
       <header className='header'>
         <NavLink to='/'>
-          <button className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'>
+          <button className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border -webkit-padding px-2 py-2.5'>
             AK
           </button>
         </NavLink>

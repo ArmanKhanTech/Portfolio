@@ -80,10 +80,10 @@ const Contact = () => {
         <section className='flex lg:flex-row flex-col max-container'>
           {alert.show && <Alert {...alert} />}
           <div className='flex-1 min-w-[40%] flex flex-col'>
-          <h1 className='head-text'>
-            <span className='orange-gradient-text font-semibold text-5xl'>
-              Get in Touch
-            </span>
+          <h1 className='text-5xl'>
+              <span className='font-bold orange-gradient-text font-semibold'>
+                  Get in Touch
+              </span>
           </h1>
             <form
               ref={formRef}
@@ -144,7 +144,7 @@ const Contact = () => {
         <section className='flex lg:flex-row flex-col max-container'>
           {alert.show && <Alert {...alert} />}
           <div className='flex-1 min-w-[40%] flex flex-col'>
-          <h1 className='head-text'>
+          <h1 className='text-headingMobile'>
             <span className='orange-gradient-text font-semibold text-headingMobile'>
               Get in Touch
             </span>
