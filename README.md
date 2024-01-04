@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ArmanKhanTech/Portfolio/">
-    <img src="https://github.com/ArmanKhanTech/Portfolio/assets/92728787/1c773079-463f-4cd9-a9b7-a265820cbbc2" alt="Logo" width="80" height="80">
+    <img src="https://github.com/ArmanKhanTech/Portfolio/assets/92728787/cb0292e5-0832-4323-a856-55bee87e3e70" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Portfolio</h3>
