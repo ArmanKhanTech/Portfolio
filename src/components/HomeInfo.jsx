@@ -63,7 +63,7 @@ const HomeInfo = () => {
         </div>
         <div className='my-3'>
           <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
@@ -74,8 +74,7 @@ const HomeInfo = () => {
               <img
                 src={link.iconUrl}
                 alt={link.name}
-                className={`${link.name === 'LinkedIn' ? 'linkedin-icon-mobile' : 'h-8 w-8'} object-cover`}
-              />
+                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-10 w-10'} object-cover`} />
             </Link>
           ))}
         </div>
@@ -131,8 +130,7 @@ const HomeInfo = () => {
               <img
                 src={link.iconUrl}
                 alt={link.name}
-                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-10 w-10'} object-cover`}
-              />
+                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-10 w-10'} object-cover`} />
             </Link>
           ))}
         </div>
