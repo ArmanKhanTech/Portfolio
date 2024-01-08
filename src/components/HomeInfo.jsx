@@ -78,11 +78,6 @@ const HomeInfo = () => {
             </Link>
           ))}
         </div>
-        <div className='mr-5 my-3 mt-5 fixed bottom-0 font-bold text-lg text-red-600'>
-          <span>
-            Click on the icon at the top to learn more.
-          </span>
-        </div>
       </section>
     );
   } else {
