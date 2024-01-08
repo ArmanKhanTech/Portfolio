@@ -86,12 +86,6 @@ body {
   }
 }
 
-.text-border {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #F5F5F5;
-}
-
 .linkedin-icon {
   height: 42px;
   width: 42px;
