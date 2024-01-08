@@ -89,11 +89,13 @@ body {
 .linkedin-icon {
   height: 42px;
   width: 42px;
+  margin-top: 1px;
 }
 
 .linkedin-icon-mobile {
   height: 34px;
   width: 34px;
+  margin-top: 1px;
 }
 
 .gradient-box {
