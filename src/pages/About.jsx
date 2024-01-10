@@ -59,14 +59,11 @@ class About extends React.Component {
                     About Me
                 </span>
             </h1>
-            <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
-                I'm Arman Khan, a passionate third-year Computer Engineering student from India. 
+            <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'> 
                 Fascinated by technology's endless possibilities, my academic journey has built a 
                 strong foundation in computer science and problem-solving. Beyond the classroom, 
                 I'm an avid learner, dedicated to continuous growth in coding, designing, and 
-                exploring cutting-edge technologies. Join me on this exciting journey as 
-                I blend my education with practical skills to contribute meaningfully 
-                to the world of technology.
+                exploring cutting-edge technologies.
             </p>
             <div className='py-10 flex flex-col'>
                 <h1 className='text-4xl blue-gradient_text font-semibold'>My Skills</h1>

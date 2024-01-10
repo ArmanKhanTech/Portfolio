@@ -33,8 +33,8 @@ const HomeInfo = () => {
       <section className='max-container'>
         <div>
           <div className='text-4xl font-bold orange-gradient-text'>
-            <h1>Hello,</h1>
-            <h1>I am Arman Khan & I do</h1>
+            <h1>Hi! there,</h1>
+            <h1>I am Arman Khan and I do</h1>
           </div>
           <TextTransition 
             springConfig={presets.gentle} 
@@ -85,8 +85,8 @@ const HomeInfo = () => {
       <section className='max-container'>
         <div>
           <div className='text-6xl font-bold orange-gradient-text'>
-            <h1>Hello,</h1>
-            <h1>I am Arman Khan & I do</h1>
+            <h1>Hi! there,</h1>
+            <h1>I am Arman Khan and I do</h1>
           </div>
           <TextTransition 
             springConfig={presets.gentle} 

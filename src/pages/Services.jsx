@@ -49,16 +49,11 @@ class Services extends React.Component {
                         </span>
                     </h1>
                     <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
-                        I am a versatile freelancer specializing in app and web development, 
-                        as well as machine learning. With a passion for turning ideas into innovative 
-                        digital solutions, I bring expertise in creating dynamic applications and 
-                        responsive websites using the latest technologies. In machine learning, 
-                        I utilize data-driven approaches to develop intelligent algorithms, enhancing 
-                        application capabilities. Committed to staying current with industry trends, 
-                        my work combines creativity and technology at the forefront of advancements. 
-                        Explore my portfolio for a proven track record in delivering high-quality
-                        solutions that seamlessly blend app development, web development, 
-                        and machine learning expertise.
+                        Passionate about transforming ideas into innovative digital solutions, 
+                        I specialize in creating dynamic applications and responsive websites 
+                        with the latest technologies. In machine learning, I employ data-driven 
+                        approaches to develop intelligent algorithms, enhancing application 
+                        capabilities. 
                     </p>
                     <div className='flex flex-wrap my-20 gap-16'>
                         {services.map((service) => (
