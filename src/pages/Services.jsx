@@ -6,7 +6,7 @@ import { CTA, Navbar } from "../components";
 import { services } from "../constants";
 import { arrow } from "../assets/icons";
 
-import RINGS from 'vanta/dist/vanta.rings.min'
+import BIRDS from 'vanta/dist/vanta.birds.min'
 
 class Services extends React.Component {
     constructor() {
@@ -16,7 +16,7 @@ class Services extends React.Component {
     }
   
     componentDidMount() {
-        this.vantaEffect = RINGS({
+        this.vantaEffect = BIRDS({
             el: this.vantaRef.current,
             mouseControls: false,
             touchControls: false,
@@ -25,8 +25,11 @@ class Services extends React.Component {
             minWidth: 200.00,
             scale: 1.00,
             mobileScale: 1.00,
-            color: 0xea580c,
+            color1: 0xec144a,
+            color2: 0xea580c,
+            colorMode: 'variance',
             backgroundColor: 0x131a43,
+            quantity: this.isMobile ? 3.00 : 4.00,
         })
     }
   
@@ -44,11 +47,11 @@ class Services extends React.Component {
                 <section className='max-container absolute ml-0 inset-0 overflow-y-auto'>
                     <Navbar />
                     <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
-                        <span className='font-bold orange-gradient-text font-semibold'>
+                        <span className='font-bold orange-gradient-text font-bold'>
                             Services
                         </span>
                     </h1>
-                    <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
+                    <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur font-semibold'>
                         Passionate about transforming ideas into innovative digital solutions, 
                         I specialize in creating dynamic applications and responsive websites 
                         with the latest technologies. In machine learning, I employ data-driven 
@@ -71,7 +74,7 @@ class Services extends React.Component {
                                 <h4 className='text-2xl font-poppins text-white font-semibold'>
                                     {service.name}
                                 </h4>
-                                <p className='mt-2 text-white'>{service.description}</p>
+                                <p className='mt-2 text-white font-semibold'>{service.description}</p>
                                 <div className='mt-5 flex items-center gap-2 font-poppins'>
                                     <Link
                                         to={service.link}

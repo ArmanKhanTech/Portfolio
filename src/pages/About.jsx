@@ -55,18 +55,18 @@ class About extends React.Component {
         <section className="max-container absolute inset-0 overflow-y-auto">
             <Navbar />
             <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
-                <span className='font-bold orange-gradient-text font-semibold'>
+                <span className='font-bold orange-gradient-text font-bold'>
                     About Me
                 </span>
             </h1>
-            <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'> 
+            <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur font-semibold'> 
                 Fascinated by technology's endless possibilities, my academic journey has built a 
                 strong foundation in computer science and problem-solving. Beyond the classroom, 
                 I'm an avid learner, dedicated to continuous growth in coding, designing, and 
                 exploring cutting-edge technologies.
             </p>
             <div className='py-10 flex flex-col'>
-                <h1 className='text-4xl blue-gradient_text font-semibold'>My Skills</h1>
+                <h1 className='text-4xl blue-gradient_text font-bold'>My Skills</h1>
                 <div className='mt-10 flex flex-wrap gap-12'>
                 {skills.map((skill) => (
                     <div 
@@ -83,7 +83,7 @@ class About extends React.Component {
                 </div>
             </div>
             <div className='py-2'>
-                <h1 className='text-4xl blue-gradient_text font-semibold'>My Education</h1>
+                <h1 className='text-4xl blue-gradient_text font-bold'>My Education</h1>
                 <div className='mt-10 flex'>
                 <VerticalTimeline>
                     {education.map((education) => (
@@ -121,7 +121,7 @@ class About extends React.Component {
                             </div>
                             <ul className='my-5 list-disc ml-5 space-y-2 text-lg'>
                                 {education.points.map((point, index) => (
-                                    <li className='text-white pl-1'>
+                                    <li className='text-white pl-1 font-semibold'>
                                         {point}
                                     </li>
                                 ))}

@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
         <div
           className="p-2.5 mt-10 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
-          <span className="text-2xl font-medium text-white">
+          <span className="text-2xl font-bold text-white">
             <NavLink to='/'>
               Home
             </NavLink>
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
         <div
           className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
-          <span className="text-2xl font-medium text-white">
+          <span className="text-2xl font-bold text-white">
             <NavLink to='/about'>
               About
             </NavLink>
@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
         <div
           className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
-          <span className="text-2xl font-medium text-white">
+          <span className="text-2xl font-bold text-white">
             <NavLink to='/projects'>
               Projects
             </NavLink>
@@ -58,7 +58,7 @@ const Navbar = () => {
         </div>
         <div
           className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
-          <span className="text-2xl font-medium text-white">
+          <span className="text-2xl font-bold text-white">
             <NavLink to='/contact'>
               Contact
             </NavLink>
@@ -86,7 +86,7 @@ const Navbar = () => {
             AK
           </button>
         </NavLink>
-        <nav className='flex text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl'>
+        <nav className='flex text-xl gap-8 font-bold text-white border py-3.5 px-5 rounded-xl'>
           <NavLink to='/'>
             Home
           </NavLink>

@@ -81,7 +81,7 @@ const Contact = () => {
           {alert.show && <Alert {...alert} />}
           <div className='flex-1 min-w-[40%] flex flex-col'>
           <h1 className='text-5xl'>
-              <span className='font-bold orange-gradient-text font-semibold'>
+              <span className='font-bold orange-gradient-text font-bold'>
                   Get in Touch
               </span>
           </h1>
@@ -89,7 +89,7 @@ const Contact = () => {
               ref={formRef}
               onSubmit={handleSubmit}
               className='w-full flex flex-col gap-7 mt-14'>
-              <label className='text-white-100 font-semibold'>
+              <label className='text-white-100 font-bold text-2xl'>
                 Name
                 <input
                   type='text'
@@ -100,7 +100,7 @@ const Contact = () => {
                   value={form.name}
                   onChange={handleChange} />
               </label>
-              <label className='text-white-100 font-semibold'>
+              <label className='text-white-100 font-bold text-2xl'>
                 Email
                 <input
                   type='email'
@@ -111,7 +111,7 @@ const Contact = () => {
                   placeholder='arman@gmail.com'
                   required />
               </label>
-              <label className='text-white-100 font-semibold'>
+              <label className='text-white-100 font-bold text-2xl'>
                 Your Message
                 <textarea
                   name='message'
@@ -145,7 +145,7 @@ const Contact = () => {
           {alert.show && <Alert {...alert} />}
           <div className='flex-1 min-w-[40%] flex flex-col'>
           <h1 className='text-headingMobile'>
-            <span className='orange-gradient-text font-semibold text-headingMobile'>
+            <span className='orange-gradient-text font-bold text-headingMobile'>
               Get in Touch
             </span>
           </h1>
@@ -153,7 +153,7 @@ const Contact = () => {
               ref={formRef}
               onSubmit={handleSubmit}
               className='w-full flex flex-col gap-7 mt-14'>
-              <label className='text-white-100 font-semibold'>
+              <label className='text-white-100 font-bold text-xl'>
                 Name
                 <input
                   type='text'
@@ -164,7 +164,7 @@ const Contact = () => {
                   value={form.name}
                   onChange={handleChange} />
               </label>
-              <label className='text-white-100 font-semibold'>
+              <label className='text-white-100 font-bold text-xl'>
                 Email
                 <input
                   type='email'
@@ -175,7 +175,7 @@ const Contact = () => {
                   placeholder='arman@gmail.com'
                   required />
               </label>
-              <label className='text-white-100 font-semibold'>
+              <label className='text-white-100 font-bold text-xl'>
                 Your Message
                 <textarea
                   name='message'

@@ -18,7 +18,7 @@ const Footer = () => {
               <img
                 src={link.iconUrl}
                 alt={link.name}
-                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-10 w-10'} object-cover`}
+                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-11 w-11'} object-cover`}
               />
             </Link>
           ))}

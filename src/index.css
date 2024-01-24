@@ -86,9 +86,13 @@ body {
   }
 }
 
+.text-color {
+  color: #ec144a;
+}
+
 .linkedin-icon {
-  height: 42px;
-  width: 42px;
+  height: 46px;
+  width: 46px;
 }
 
 .gradient-box {

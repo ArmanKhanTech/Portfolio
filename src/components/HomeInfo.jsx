@@ -56,7 +56,7 @@ const HomeInfo = () => {
         <NavLink to='/services'>
           <HireButton />
         </NavLink>
-        <div className='mt-4 font-bold text-2xl orange-gradient-text'>
+        <div className='mt-4 font-bold text-2xl text-color'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
@@ -74,7 +74,7 @@ const HomeInfo = () => {
               <img
                 src={link.iconUrl}
                 alt={link.name}
-                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-10 w-10'} object-cover`} />
+                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-11 w-11'} object-cover`} />
             </Link>
           ))}
         </div>
@@ -107,7 +107,7 @@ const HomeInfo = () => {
           <NavLink to='/services'>
             <HireButton />
           </NavLink>
-        <div className='mt-5 font-bold text-4xl orange-gradient-text'>
+        <div className='mt-5 font-bold text-4xl text-color'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
@@ -125,7 +125,7 @@ const HomeInfo = () => {
               <img
                 src={link.iconUrl}
                 alt={link.name}
-                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-10 w-10'} object-cover`} />
+                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-11 w-11'} object-cover`} />
             </Link>
           ))}
         </div>
