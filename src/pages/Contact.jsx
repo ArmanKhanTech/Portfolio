@@ -82,7 +82,7 @@ const Contact = () => {
           <div className='flex-1 min-w-[40%] flex flex-col'>
           <h1 className='text-5xl'>
               <span className='font-bold orange-gradient-text font-bold'>
-                  Get in Touch
+                  Contact
               </span>
           </h1>
             <form

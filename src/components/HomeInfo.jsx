@@ -56,19 +56,19 @@ const HomeInfo = () => {
         <NavLink to='/services'>
           <HireButton />
         </NavLink>
-        <div className='mt-4 font-bold text-2xl text-color'>
+        <div className='mt-4 font-bold text-2xl orange-gradient-text'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
         </div>
         <div className='my-3'>
           <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-1.5 font-bold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
         </div>
-        <div className='flex gap-2 mt-4'>
+        <div className='fixed bottom-0 inline flex gap-2 mb-5'>
           {socialLinks.map((link) => (
             <Link key={link.name} to={link.link} target='_blank'>
               <img
@@ -107,19 +107,19 @@ const HomeInfo = () => {
           <NavLink to='/services'>
             <HireButton />
           </NavLink>
-        <div className='mt-5 font-bold text-4xl text-color'>
+        <div className='mt-5 font-bold text-4xl text-red-600'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
         </div>
         <div className='mt-5'>
           <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-1.5 font-bold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>
         </div>
-        <div className='flex gap-2 mt-5'>
+        <div className='fixed bottom-0 inline flex gap-2 mb-5'>
           {socialLinks.map((link) => (
             <Link key={link.name} to={link.link} target='_blank'>
               <img

@@ -12,9 +12,9 @@ class Welcome extends React.Component {
     componentDidMount() {
         this.vantaEffect = WAVES({
             el: this.vantaRef.current,
-            mouseControls: false,
-            touchControls: false,
-            gyroControls: false,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: true,
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
@@ -40,7 +40,7 @@ class Welcome extends React.Component {
                     <h1 className={`${this.isMobile ? 'text-5xl' : 'text-7xl'} orange-gradient-text font-bold`}>
                         Welcome
                     </h1>
-                    <h3 className={`${this.isMobile ? 'text-3xl' : 'text-5xl'} mt-5 text-3xl text-white-100 font-bold`}>
+                    <h3 className={`${this.isMobile ? 'text-3xl' : 'text-5xl'} mt-5 text-3xl text-white-100`}>
                         Setting up...
                     </h3>
                 </section>

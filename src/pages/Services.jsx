@@ -18,18 +18,18 @@ class Services extends React.Component {
     componentDidMount() {
         this.vantaEffect = BIRDS({
             el: this.vantaRef.current,
-            mouseControls: false,
-            touchControls: false,
-            gyroControls: false,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: true,
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
             mobileScale: 1.00,
-            color1: 0xec144a,
+            color1: 0xdc2626,
             color2: 0xea580c,
-            colorMode: 'variance',
+            colorMode: 'lerp',
             backgroundColor: 0x131a43,
-            quantity: this.isMobile ? 3.00 : 4.00,
+            quantity: this.isMobile ? 4.00 : 5.00,
         })
     }
   
@@ -51,7 +51,7 @@ class Services extends React.Component {
                             Services
                         </span>
                     </h1>
-                    <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur font-semibold'>
+                    <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
                         Passionate about transforming ideas into innovative digital solutions, 
                         I specialize in creating dynamic applications and responsive websites 
                         with the latest technologies. In machine learning, I employ data-driven 
@@ -74,13 +74,13 @@ class Services extends React.Component {
                                 <h4 className='text-2xl font-poppins text-white font-semibold'>
                                     {service.name}
                                 </h4>
-                                <p className='mt-2 text-white font-semibold'>{service.description}</p>
+                                <p className='mt-2 text-white'>{service.description}</p>
                                 <div className='mt-5 flex items-center gap-2 font-poppins'>
                                     <Link
                                         to={service.link}
                                         target='_blank'
                                         rel='noopener noreferrer'
-                                        className='font-semibold text-blue-600' >
+                                        className='font-bold text-blue-600' >
                                         Know More
                                     </Link>
                                     <img

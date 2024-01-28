@@ -22,9 +22,9 @@ class About extends React.Component {
   componentDidMount() {
     this.vantaEffect = HALO({
       el: this.vantaRef.current,
-      mouseControls: false,
-      touchControls: false,
-      gyroControls: false,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: true,
       backgroundColor: 0x131a43,
       amplitudeFactor: 0.25,
       size: 1,
@@ -56,10 +56,10 @@ class About extends React.Component {
             <Navbar />
             <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
                 <span className='font-bold orange-gradient-text font-bold'>
-                    About Me
+                    About
                 </span>
             </h1>
-            <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur font-semibold'> 
+            <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'> 
                 Fascinated by technology's endless possibilities, my academic journey has built a 
                 strong foundation in computer science and problem-solving. Beyond the classroom, 
                 I'm an avid learner, dedicated to continuous growth in coding, designing, and 
@@ -115,13 +115,13 @@ class About extends React.Component {
                                 <h1 className='text-white text-xl font-bold mb-2'>
                                     {education.title}
                                 </h1>
-                                <span className='text-white text-lg font-semibold'>
+                                <span className='text-white text-lg font-bold'>
                                     {education.date}
                                 </span>
                             </div>
                             <ul className='my-5 list-disc ml-5 space-y-2 text-lg'>
                                 {education.points.map((point, index) => (
-                                    <li className='text-white pl-1 font-semibold'>
+                                    <li className='text-white pl-1'>
                                         {point}
                                     </li>
                                 ))}

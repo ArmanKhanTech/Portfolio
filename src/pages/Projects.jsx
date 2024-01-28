@@ -18,9 +18,9 @@ class Projects extends React.Component {
   componentDidMount() {
       this.vantaEffect = GLOBE({
           el: this.vantaRef.current,
-          mouseControls: false,
-          touchControls: false,
-          gyroControls: false,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: true,
           minHeight: 200.00,
           minWidth: 200.00,
           scale: 1.00,
@@ -47,10 +47,10 @@ class Projects extends React.Component {
           <Navbar />
           <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
               <span className='font-bold orange-gradient-text font-bold'>
-                  My Projects
+                  Projects
               </span>
           </h1>
-          <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur font-semibold'>
+          <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
             I've embarked on numerous projects throughout the years, but these are
             the ones I hold closest to my heart. Many of them are open-source, so if
             you come across something that piques your interest, feel free to
@@ -66,7 +66,6 @@ class Projects extends React.Component {
                     <img
                       src={project.iconUrl}
                       alt='threads'
-                      className='object-contain'
                     />
                   </div>
                 </div>
@@ -74,7 +73,7 @@ class Projects extends React.Component {
                   <h4 className='text-2xl font-poppins text-white font-semibold'>
                     {project.name}
                   </h4>
-                  <p className='mt-2 text-white font-semibold'>{project.description}</p>
+                  <p className='mt-2 text-white'>{project.description}</p>
                   <div className='mt-5 flex items-center gap-2 font-poppins'>
                     <Link
                       to={project.link}

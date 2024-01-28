@@ -4,8 +4,8 @@ export default function HireButton() {
     const isMobile = window.innerWidth <= 640;
 
     return (
-        <button className={`relative mt-5 inline-flex items-center justify-center px-3 py-1.5 overflow-hidden font-bold ${isMobile ? 'text-3xl' : 'text-4xl'} transition duration-300 ease-out border-2 border-orange-500 rounded-md shadow-md group`}>
-            <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-orange-500 group-hover:translate-x-0 ease">
+        <button className={`relative mt-5 inline-flex items-center justify-center px-3 py-1.5 overflow-hidden font-bold ${isMobile ? 'text-3xl' : 'text-4xl'} transition duration-300 ease-out border-2 border-orange-600 rounded-md shadow-md group`}>
+            <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-orange-600 group-hover:translate-x-0 ease">
                 <svg 
                     className="w-8 h-8" 
                     fill="none" 
@@ -19,7 +19,7 @@ export default function HireButton() {
                     </path>
                 </svg>
             </span>
-            <span className="absolute flex items-center justify-center w-full h-full text-red-600 transition-all duration-300 transform group-hover:translate-x-full ease">
+            <span className="absolute flex items-center justify-center w-full h-full orange-gradient-text transition-all duration-300 transform group-hover:translate-x-full ease">
                 Hire Me
             </span>
             <span className="relative invisible">
