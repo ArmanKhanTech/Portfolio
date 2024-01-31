@@ -6,7 +6,7 @@ class Welcome extends React.Component {
     constructor() {
         super()
         this.vantaRef = React.createRef()
-        this.isMobile = window.innerWidth < 640;
+        this.isMobile = window.innerWidth < 768;
     }
 
     componentDidMount() {

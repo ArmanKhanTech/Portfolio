@@ -18,7 +18,7 @@ const TEXTS = [
 const HomeInfo = () => {
   const [index, setIndex] = React.useState(0);
 
-  const isMobile = window.innerWidth <= 640;
+  const isMobile = window.innerWidth <= 768;
 
   React.useEffect(() => {
     const intervalId = setInterval(
@@ -114,7 +114,7 @@ const HomeInfo = () => {
         </div>
         <div className='mt-5'>
           <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-1.5 font-bold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            <button className='px-3 py-1.5 font-bold text-3xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
               Resume
             </button>
           </a>

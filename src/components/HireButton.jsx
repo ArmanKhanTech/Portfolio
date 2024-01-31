@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function HireButton() {
-    const isMobile = window.innerWidth <= 640;
+    const isMobile = window.innerWidth <= 768;
 
     return (
         <button className={`relative mt-5 inline-flex items-center justify-center px-3 py-1.5 overflow-hidden font-bold ${isMobile ? 'text-3xl' : 'text-4xl'} transition duration-300 ease-out border-2 border-orange-600 rounded-md shadow-md group`}>

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
-  const isMobile = window.innerWidth <= 640;
+  const isMobile = window.innerWidth <= 768;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

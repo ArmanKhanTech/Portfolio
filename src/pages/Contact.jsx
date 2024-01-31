@@ -18,7 +18,7 @@ const Contact = () => {
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
 
-  const isMobile = window.innerWidth < 640;
+  const isMobile = window.innerWidth < 768;
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });

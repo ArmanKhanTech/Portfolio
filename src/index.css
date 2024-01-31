@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (max-device-width: 640px){
+@media screen and (max-device-width: 768px){
   body{
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -132,7 +132,7 @@ body {
   z-index: 1;
   width: inherit;
   height: inherit;
-  background-color: #ffffff33;
+  background-color: #ffffff;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   transition: 250ms;
