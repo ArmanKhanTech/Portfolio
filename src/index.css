@@ -141,6 +141,21 @@ body {
   overflow: hidden;
 }
 
+.block-container .btn-front-1 {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  background-color: #ffffff00;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transition: 250ms;
+  transform-style: preserve-3d;
+  transform-origin: top left;
+  overflow: hidden;
+}
+
 .project-container {
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);

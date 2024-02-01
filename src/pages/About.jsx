@@ -72,7 +72,7 @@ class About extends React.Component {
                     <div 
                         className={`${this.isMobile ? 'w-16 h-16' : 'w-20 h-20'} block-container`} 
                         key={skill.name}>
-                        <div className='btn-front rounded-xl flex justify-center items-center'>
+                        <div className='btn-front-1 rounded-xl flex justify-center items-center'>
                             <img
                                 src={skill.imageUrl}
                                 alt={skill.name}
