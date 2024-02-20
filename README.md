@@ -98,13 +98,13 @@ Follow the below instructions to get started.
 
 ### Setup
 
-1. Clone this repo
+1. Clone this repository
   
    ```sh
    git clone https://github.com/ArmanKhanTech/Portfolio.git
     ```
    
-2. Install NPM packages
+2. Install dependancies
    
     ```sh
     npm install
@@ -124,7 +124,7 @@ Follow the below instructions to get started.
     VITE_APP_EMAILJS_PUBLIC_KEY=public_key_emailjs
     ```
     
-5. Run the app
+5. Run the project
     
     ```sh
     npm run dev
