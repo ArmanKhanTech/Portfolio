@@ -19,7 +19,7 @@ export default function HireButton() {
                     </path>
                 </svg>
             </span>
-            <span className="absolute flex items-center justify-center w-full h-full orange-gradient-text transition-all duration-300 transform group-hover:translate-x-full ease">
+            <span className="absolute flex items-center justify-center w-full h-full orange-gradient-text transition-all duration-300 transform group-hover:translate-x-full ease drop-shadow-[1.0px_1.0px_rgba(220,38,38,1.0)]">
                 Hire Me
             </span>
             <span className="relative invisible">

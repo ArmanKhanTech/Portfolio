@@ -32,7 +32,7 @@ const HomeInfo = () => {
     return (
       <section className='max-container'>
         <div>
-          <div className='text-4xl font-bold orange-gradient-text'>
+          <div className='text-4xl font-bold orange-gradient-text drop-shadow-[2.0px_2.0px_rgba(220,38,38,1.0)]'>
             <h1>Hi! there,</h1>
             <h1>I am Arman Khan and I do</h1>
           </div>
@@ -45,7 +45,7 @@ const HomeInfo = () => {
               lineHeight: '2.5rem',
               fontWeight: '700',
               display: 'inline',
-              color: '#ec144a' }}>
+              color: '#ec144a'}}>
             {
               <span>
                 {TEXTS[index % TEXTS.length]}
@@ -56,7 +56,7 @@ const HomeInfo = () => {
         <NavLink to='/services'>
           <HireButton />
         </NavLink>
-        <div className='mt-4 font-bold text-2xl text-red-600'>
+        <div className='mt-4 font-bold text-2xl text-red-600 drop-shadow-[1.0px_1.0px_rgba(234,88,12,1.0)]'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>
@@ -84,7 +84,7 @@ const HomeInfo = () => {
     return (
       <section className='max-container'>
         <div>
-          <div className='text-6xl font-bold orange-gradient-text'>
+          <div className='text-6xl font-bold orange-gradient-text drop-shadow-[2.0px_2.0px_rgba(220,38,38,1.0)]'>
             <h1>Hi! there,</h1>
             <h1>I am Arman Khan and I do</h1>
           </div>
@@ -104,10 +104,10 @@ const HomeInfo = () => {
             }
           </TextTransition>
         </div>
-          <NavLink to='/services'>
-            <HireButton />
-          </NavLink>
-        <div className='mt-5 font-bold text-4xl text-red-600'>
+        <NavLink to='/services'>
+          <HireButton />
+        </NavLink>
+        <div className='mt-5 font-bold text-4xl text-red-600 drop-shadow-[1.0px_1.0px_rgba(234,88,12,1.0)]'>
           <span>
             Currently a third year Computer Engineering student from India.
           </span>

@@ -59,6 +59,14 @@ const Navbar = () => {
         <div
           className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
           <span className="text-2xl font-bold text-white">
+            <NavLink to='/services'>
+              Services
+            </NavLink>
+          </span>
+        </div>
+        <div
+          className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer" >
+          <span className="text-2xl font-bold text-white">
             <NavLink to='/contact'>
               Contact
             </NavLink>
@@ -95,6 +103,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink to='/projects'>
             Projects
+          </NavLink>
+          <NavLink to='/services'>
+            Services
           </NavLink>
           <NavLink to='/contact'>
             Contact
