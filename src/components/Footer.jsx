@@ -10,7 +10,7 @@ const Footer = () => {
       <hr className='border-white' />
       <div className='footer-container text-white text-xl'>
         <p>
-          © 2023 <strong>Arman Khan</strong>. All rights reserved.
+          © 2024 <strong>Arman Khan</strong>. All rights reserved.
         </p>
         <div className='flex gap-3 justify-center items-center'>
           {socialLinks.map((link) => (

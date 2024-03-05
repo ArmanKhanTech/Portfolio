@@ -6,7 +6,6 @@ class Welcome extends React.Component {
     constructor() {
         super()
         this.vantaRef = React.createRef()
-        this.isMobile = window.innerWidth < 768;
     }
 
     componentDidMount() {
@@ -37,10 +36,10 @@ class Welcome extends React.Component {
                 ref={this.vantaRef} 
                 className="fixed inset-0 z-50 w-screen h-screen bg-black">
                 <section className="max-container">
-                    <h1 className={`${this.isMobile ? 'text-5xl' : 'text-7xl'} orange-gradient-text font-bold`}>
+                    <h1 className='text-5xl lg:text-7xl orange-gradient-text font-bold'>
                         Welcome
                     </h1>
-                    <h3 className={`${this.isMobile ? 'text-3xl' : 'text-5xl'} mt-5 text-3xl text-white-100`}>
+                    <h3 className='text-3xl lg:text-5xl mt-5 text-3xl text-white-100'>
                         Setting up...
                     </h3>
                 </section>

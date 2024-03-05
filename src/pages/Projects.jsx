@@ -12,7 +12,6 @@ class Projects extends React.Component {
   constructor() {
       super()
       this.vantaRef = React.createRef()
-      this.isMobile = window.innerWidth < 768;
   }
 
   componentDidMount() {
@@ -27,7 +26,7 @@ class Projects extends React.Component {
           mobileScale: 1.00,
           color: 0xea580c,
           backgroundColor: 0x131a43,
-          spacing: this.isMobile ? 20.00 : 15.00,
+          spacing: window.innerWidth < 768 ? 20.00 : 15.00,
           minDistance: 15.00,
       })
   }
@@ -45,12 +44,12 @@ class Projects extends React.Component {
         className="fixed inset-0 z-50 w-screen h-screen bg-[#131a43]">
         <section className='max-container absolute ml-0 inset-0 overflow-y-auto'>
           <Navbar />
-          <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
+          <h1 className='text-headingMobile lg:text-5xl'>
               <span className='font-bold orange-gradient-text font-bold'>
                   Projects
               </span>
           </h1>
-          <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'>
+          <p className='mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl bg-blur'>
             I've embarked on numerous projects throughout the years, but these are
             the ones I hold closest to my heart. Many of them are open-source, so if
             you come across something that piques your interest, feel free to
@@ -73,7 +72,7 @@ class Projects extends React.Component {
                   <h4 className='text-2xl font-poppins text-white font-semibold'>
                     {project.name}
                   </h4>
-                  <p className='mt-2 text-white'>{project.description}</p>
+                  <p className='mt-2 text-white text-lg lg:text-xl'>{project.description}</p>
                   <div className='mt-5 flex items-center gap-2 font-poppins'>
                     <Link
                       to={project.link}

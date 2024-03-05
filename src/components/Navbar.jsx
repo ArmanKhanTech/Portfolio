@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
-  const isMobile = window.innerWidth <= 768;
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -76,44 +74,32 @@ const Navbar = () => {
     );
   }
 
-  if (isMobile) {
-    return (
-      <header className='header'>
-        <button 
-          className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'
-          onClick={toggleMenu}>
-          AK
-        </button>
-      </header>
-    );
-  } else {
-    return (
-      <header className='header'>
+  return (
+    <header className='header'>
+      <button
+        className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'
+        onClick={window.innerWidth < 768 ? toggleMenu : null}>
+        AK
+      </button>
+      <nav className='hidden lg:flex text-xl gap-8 font-bold text-white border py-3.5 px-5 rounded-xl'>
         <NavLink to='/'>
-          <button className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border -webkit-padding px-2 py-2.5'>
-            AK
-          </button>
+          Home
         </NavLink>
-        <nav className='flex text-xl gap-8 font-bold text-white border py-3.5 px-5 rounded-xl'>
-          <NavLink to='/'>
-            Home
-          </NavLink>
-          <NavLink to='/about'>
-            About
-          </NavLink>
-          <NavLink to='/projects'>
-            Projects
-          </NavLink>
-          <NavLink to='/services'>
-            Services
-          </NavLink>
-          <NavLink to='/contact'>
-            Contact
-          </NavLink>
-        </nav>
-      </header>
-    );
-  }
+        <NavLink to='/about'>
+          About
+        </NavLink>
+        <NavLink to='/projects'>
+          Projects
+        </NavLink>
+        <NavLink to='/services'>
+          Services
+        </NavLink>
+        <NavLink to='/contact'>
+          Contact
+        </NavLink>
+      </nav>
+    </header>
+  );
 };
 
 export default Navbar;

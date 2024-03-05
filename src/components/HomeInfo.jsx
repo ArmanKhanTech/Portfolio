@@ -18,8 +18,6 @@ const TEXTS = [
 const HomeInfo = () => {
   const [index, setIndex] = React.useState(0);
 
-  const isMobile = window.innerWidth <= 768;
-
   React.useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((index) => index + 1),
@@ -28,110 +26,56 @@ const HomeInfo = () => {
     return () => clearTimeout(intervalId);
   }, []);
 
-  if(isMobile) {
-    return (
-      <section className='max-container'>
-        <div>
-          <div className='text-4xl font-bold orange-gradient-text drop-shadow-[2.0px_2.0px_rgba(220,38,38,1.0)]'>
-            <h1>Hi! there,</h1>
-            <h1>I am Arman Khan and I do</h1>
-          </div>
-          <TextTransition 
-            springConfig={presets.gentle} 
-            direction="down" 
-            style={{
-              marginTop: '0.5rem',
-              fontSize: '2.25rem',
-              lineHeight: '2.5rem',
-              fontWeight: '700',
-              display: 'inline',
-              color: '#ec144a'}}>
-            {
-              <span>
-                {TEXTS[index % TEXTS.length]}
-              </span>
-            }
-          </TextTransition>
+  return (
+    <section className='max-container'>
+      <div>
+        <div className='text-4xl lg:text-6xl font-bold orange-gradient-text drop-shadow-[1.0px_1.0px_rgba(220,38,38,1.0)]'>
+          <h1>Hi! there,</h1>
+          <h1>I am Arman Khan and I do</h1>
         </div>
-        <NavLink to='/services'>
-          <HireButton />
-        </NavLink>
-        <div className='mt-4 font-bold text-2xl text-red-600 drop-shadow-[1.0px_1.0px_rgba(234,88,12,1.0)]'>
-          <span>
-            Currently a third year Computer Engineering student from India.
-          </span>
-        </div>
-        <div className='my-3'>
-          <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-1.5 font-bold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
-              Resume
-            </button>
-          </a>
-        </div>
-        <div className='fixed bottom-0 inline flex gap-2 mb-5'>
-          {socialLinks.map((link) => (
-            <Link key={link.name} to={link.link} target='_blank'>
-              <img
-                src={link.iconUrl}
-                alt={link.name}
-                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-11 w-11'} object-cover`} />
-            </Link>
-          ))}
-        </div>
-      </section>
-    );
-  } else {
-    return (
-      <section className='max-container'>
-        <div>
-          <div className='text-6xl font-bold orange-gradient-text drop-shadow-[2.0px_2.0px_rgba(220,38,38,1.0)]'>
-            <h1>Hi! there,</h1>
-            <h1>I am Arman Khan and I do</h1>
-          </div>
-          <TextTransition 
-            springConfig={presets.gentle} 
-            direction="down" 
-            style={{
-              marginTop: '1rem',
-              fontSize: '3.75rem',
-              lineHeight: '1',
-              fontWeight: '700',
-              color: '#ec144a'}}>
-            {
-              <span>
-                {TEXTS[index % TEXTS.length]}
-              </span>
-            }
-          </TextTransition>
-        </div>
-        <NavLink to='/services'>
-          <HireButton />
-        </NavLink>
-        <div className='mt-5 font-bold text-4xl text-red-600 drop-shadow-[1.0px_1.0px_rgba(234,88,12,1.0)]'>
-          <span>
-            Currently a third year Computer Engineering student from India.
-          </span>
-        </div>
-        <div className='mt-5'>
-          <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
-            <button className='px-3 py-1.5 font-bold text-3xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
-              Resume
-            </button>
-          </a>
-        </div>
-        <div className='fixed bottom-0 inline flex gap-2 mb-5'>
-          {socialLinks.map((link) => (
-            <Link key={link.name} to={link.link} target='_blank'>
-              <img
-                src={link.iconUrl}
-                alt={link.name}
-                className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-11 w-11'} object-cover`} />
-            </Link>
-          ))}
-        </div>
-      </section>
-    );
-  }
+        <TextTransition 
+          springConfig={presets.gentle} 
+          direction="down" 
+          style={{
+            marginTop: '1rem',
+            fontSize: window.innerWidth <= 768 ? '2.25rem' : '3.75rem',
+            lineHeight: '1',
+            fontWeight: '700',
+            color: '#ec144a'}}>
+          {
+            <span>
+              {TEXTS[index % TEXTS.length]}
+            </span>
+          }
+        </TextTransition>
+      </div>
+      <NavLink to='/services'>
+        <HireButton />
+      </NavLink>
+      <div className='mt-5 font-bold text-2xl lg:text-4xl text-red-600 drop-shadow-[1.0px_1.0px_rgba(234,88,12,1.0)]'>
+        <span>
+          Currently a third year Computer Engineering student from India.
+        </span>
+      </div>
+      <div className='mt-5'>
+        <a href='https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f' target='_blank' rel='noreferrer'>
+          <button className='px-3 py-1.5 font-bold text-2xl lg:text-3xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+            Resume
+          </button>
+        </a>
+      </div>
+      <div className='fixed bottom-0 inline flex gap-2 mb-5'>
+        {socialLinks.map((link) => (
+          <Link key={link.name} to={link.link} target='_blank'>
+            <img
+              src={link.iconUrl}
+              alt={link.name}
+              className={`${link.name === 'LinkedIn' ? 'linkedin-icon' : 'h-11 w-11'} object-cover`} />
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default HomeInfo;

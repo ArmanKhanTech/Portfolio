@@ -18,8 +18,6 @@ const Contact = () => {
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
 
-  const isMobile = window.innerWidth < 768;
-
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
@@ -72,132 +70,70 @@ const Contact = () => {
       );
   };
 
-  if(!isMobile) {
-    return (
-      <section className="relative z-0">
-        <Navbar />
-        <StarsCanvas />
-        <section className='flex lg:flex-row flex-col max-container'>
-          {alert.show && <Alert {...alert} />}
-          <div className='flex-1 min-w-[40%] flex flex-col'>
-          <h1 className='text-5xl'>
-              <span className='font-bold orange-gradient-text font-bold'>
-                  Contact
-              </span>
-          </h1>
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className='w-full flex flex-col gap-7 mt-14'>
-              <label className='text-white-100 font-bold text-2xl'>
-                Name
-                <input
-                  type='text'
-                  name='name'
-                  className='input'
-                  placeholder='Arman Khan'
-                  required
-                  value={form.name}
-                  onChange={handleChange} />
-              </label>
-              <label className='text-white-100 font-bold text-2xl'>
-                Email
-                <input
-                  type='email'
-                  value={form.email}
-                  onChange={handleChange}
-                  name='email'
-                  className='input'
-                  placeholder='arman@gmail.com'
-                  required />
-              </label>
-              <label className='text-white-100 font-bold text-2xl'>
-                Your Message
-                <textarea
-                  name='message'
-                  rows='4'
-                  className='textarea'
-                  placeholder='Write your thoughts here...'
-                  value={form.message}
-                  onChange={handleChange} />
-              </label>
-              <button
-                type='submit'
-                disabled={loading}
-                className='btn mb-10' >
-                {loading ? "Sending..." : "Submit"}
-              </button>
-            </form>
-          </div>
-          <div className='min-w-[75%] h-[75vh] object-cover'>
-            <EarthCanvas />
-          </div>
-        </section>
-        <Footer />
-      </section>
-    );
-  } else {
-    return (
-      <section className="relative z-0 overflow-y-scroll no-scrollbar">
-        <Navbar />
-        <StarsCanvas className='fixed'/>
-        <section className='flex lg:flex-row flex-col max-container'>
-          {alert.show && <Alert {...alert} />}
-          <div className='flex-1 min-w-[40%] flex flex-col'>
-          <h1 className='text-headingMobile'>
-            <span className='orange-gradient-text font-bold text-headingMobile'>
-              Get in Touch
+  return (
+    <section className="relative z-0">
+      <Navbar />
+      <StarsCanvas />
+      <section className='flex lg:flex-row flex-col max-container'>
+        {alert.show && <Alert {...alert} />}
+        <div className='flex-1 min-w-[38%] flex flex-col'>
+        <h1 className='text-5xl'>
+            <span className='font-bold orange-gradient-text font-bold'>
+                Contact
             </span>
-          </h1>
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className='w-full flex flex-col gap-7 mt-14'>
-              <label className='text-white-100 font-bold text-xl'>
-                Name
-                <input
-                  type='text'
-                  name='name'
-                  className='input'
-                  placeholder='Arman Khan'
-                  required
-                  value={form.name}
-                  onChange={handleChange} />
-              </label>
-              <label className='text-white-100 font-bold text-xl'>
-                Email
-                <input
-                  type='email'
-                  value={form.email}
-                  onChange={handleChange}
-                  name='email'
-                  className='input'
-                  placeholder='arman@gmail.com'
-                  required />
-              </label>
-              <label className='text-white-100 font-bold text-xl'>
-                Your Message
-                <textarea
-                  name='message'
-                  rows='4'
-                  className='textarea'
-                  placeholder='Write your thoughts here...'
-                  value={form.message}
-                  onChange={handleChange} />
-              </label>
-              <button
-                type='submit'
-                disabled={loading}
-                className='btn mb-10' >
-                {loading ? "Sending..." : "Submit"}
-              </button>
-            </form>
-          </div>
-        </section>
-        <Footer />
+        </h1>
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className='w-full flex flex-col gap-7 mt-14'>
+            <label className='text-white-100 font-bold text-2xl'>
+              Name
+              <input
+                type='text'
+                name='name'
+                className='input'
+                placeholder='Arman Khan'
+                required
+                value={form.name}
+                onChange={handleChange} />
+            </label>
+            <label className='text-white-100 font-bold text-2xl'>
+              Email
+              <input
+                type='email'
+                value={form.email}
+                onChange={handleChange}
+                name='email'
+                className='input'
+                placeholder='arman@gmail.com'
+                required />
+            </label>
+            <label className='text-white-100 font-bold text-2xl'>
+              Your Message
+              <textarea
+                name='message'
+                rows='4'
+                className='textarea'
+                placeholder='Write your thoughts here...'
+                value={form.message}
+                onChange={handleChange} />
+            </label>
+            <button
+              type='submit'
+              disabled={loading}
+              className='btn mb-10' >
+              {loading ? "Sending..." : "Submit"}
+            </button>
+          </form>
+        </div>
+        {/* Fix */}
+        {/* <div className='min-w-[50%] h-[50vh] lg:min-w-[75%] lg:h-[75vh] object-cover'>
+          <EarthCanvas />
+        </div> */}
       </section>
-    );
-  }
+      <Footer />
+    </section>
+  );
 };
 
 export default Contact;

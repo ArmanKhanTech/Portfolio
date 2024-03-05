@@ -16,7 +16,6 @@ class About extends React.Component {
   constructor() {
     super()
     this.vantaRef = React.createRef()
-    this.isMobile = window.innerWidth < 768;
   }
 
   componentDidMount() {
@@ -54,23 +53,23 @@ class About extends React.Component {
         className="fixed inset-0 z-0">
         <section className="max-container absolute inset-0 overflow-y-auto">
             <Navbar />
-            <h1 className={`${this.isMobile ? 'text-headingMobile' : 'text-5xl'}`}>
+            <h1 className='text-headingMobile lg:text-5xl'>
                 <span className='font-bold orange-gradient-text font-bold'>
                     About
                 </span>
             </h1>
-            <p className='mt-5 text-white p-4 text-xl rounded-xl bg-blur'> 
+            <p className='mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl bg-blur'> 
                 Fascinated by technology's endless possibilities, my academic journey has built a 
                 strong foundation in computer science and problem-solving. Beyond the classroom, 
                 I'm an avid learner, dedicated to continuous growth in coding, designing, and 
                 exploring cutting-edge technologies.
             </p>
             <div className='py-10 flex flex-col'>
-                <h1 className='text-4xl blue-gradient_text font-bold'>My Skills</h1>
+                <h1 className='text-4xl blue-gradient-text font-bold'>My Skills</h1>
                 <div className='mt-10 flex flex-wrap gap-12'>
                 {skills.map((skill) => (
                     <div 
-                        className={`${this.isMobile ? 'w-16 h-16' : 'w-20 h-20'} block-container`} 
+                        className='w-16 h-16 lg:w-20 lg:h-20 block-container'
                         key={skill.name}>
                         <div className='btn-front-1 rounded-xl flex justify-center items-center'>
                             <img
@@ -83,7 +82,7 @@ class About extends React.Component {
                 </div>
             </div>
             <div className='py-2'>
-                <h1 className='text-4xl blue-gradient_text font-bold'>My Education</h1>
+                <h1 className='text-4xl blue-gradient-text font-bold'>My Education</h1>
                 <div className='mt-10 flex'>
                 <VerticalTimeline>
                     {education.map((education) => (
