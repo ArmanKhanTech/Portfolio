@@ -29,7 +29,7 @@ const HomeInfo = () => {
   return (
     <section className='max-container'>
       <div>
-        <div className='text-4xl lg:text-6xl font-bold orange-gradient-text drop-shadow-[1.0px_1.0px_rgba(220,38,38,1.0)]'>
+        <div className='text-4xl lg:text-6xl font-bold orange-gradient-text drop-shadow-[1.5px_1.5px_rgba(220,38,38,1.0)]'>
           <h1>Hi! there,</h1>
           <h1>I am Arman Khan and I do</h1>
         </div>
@@ -41,6 +41,7 @@ const HomeInfo = () => {
             fontSize: window.innerWidth <= 768 ? '2.25rem' : '3.75rem',
             lineHeight: '1',
             fontWeight: '700',
+            textShadow: '1.5px 1.5px rgba(234,88,12,1.0)',
             color: '#ec144a'}}>
           {
             <span>
@@ -52,7 +53,7 @@ const HomeInfo = () => {
       <NavLink to='/services'>
         <HireButton />
       </NavLink>
-      <div className='mt-5 font-bold text-2xl lg:text-4xl text-red-600'>
+      <div className='mt-5 font-bold text-2xl lg:text-4xl text-red-600 drop-shadow-[1.5px_1.5px_rgba(234,88,12,1.0)]'>
         <span>
           Currently a third year Computer Engineering student from India.
         </span>
