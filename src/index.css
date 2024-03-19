@@ -90,6 +90,16 @@ body {
   color: #ec144a;
 }
 
+.text-stroke-red {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ec144a;
+}
+
+.text-stroke-orange {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ea580c;
+}
+
 .linkedin-icon {
   height: 46px;
   width: 46px;
@@ -97,10 +107,10 @@ body {
 
 .gradient-box {
   border-radius: 10px;
-  border: 3px solid #FB923C;
+  border: 3px solid #fb923c;
   width: fit-content;
   font-weight: bold;
-  color: #DC2626;
+  color: #dc2626;
 }
 
 .block-container {

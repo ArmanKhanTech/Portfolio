@@ -76,7 +76,7 @@ const Contact = () => {
       <StarsCanvas />
       <section className='flex lg:flex-row flex-col max-container'>
         {alert.show && <Alert {...alert} />}
-        <div className='flex-1 min-w-[38%] flex flex-col'>
+        <div className='flex-1 min-w-[40%] flex flex-col'>
         <h1 className='text-5xl'>
             <span className='font-bold orange-gradient-text font-bold'>
                 Contact
@@ -126,10 +126,9 @@ const Contact = () => {
             </button>
           </form>
         </div>
-        {/* Fix */}
-        {/* <div className='min-w-[50%] h-[50vh] lg:min-w-[75%] lg:h-[75vh] object-cover'>
+        <div className='hidden lg:flex lg:min-w-[75%] lg:h-[75vh] object-cover'>
           <EarthCanvas />
-        </div> */}
+        </div>
       </section>
       <Footer />
     </section>
