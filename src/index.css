@@ -46,15 +46,15 @@ body {
   }
 
   .input {
-    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
+    @apply bg-white border border-gray-200 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
   }
 
   .textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
+    @apply block p-2.5 w-full text-base text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
   }
 
   .btn {
-    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center;
+    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center;
   }
 
   .header {
@@ -78,7 +78,7 @@ body {
   }
 
   .cta-text {
-    @apply text-white font-extrabold flex-1 text-3xl max-md:text-center;
+    @apply text-white font-bold flex-1 text-3xl max-md:text-center;
   }
 
   .orange-gradient-text {
@@ -90,14 +90,19 @@ body {
   color: #ec144a;
 }
 
-.text-stroke-red {
+.text-stroke-red-lg {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ec144a;
 }
 
-.text-stroke-orange {
+.text-stroke-red-md {
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ea580c;
+  -webkit-text-stroke-color: rgba(236, 20, 74, 0.75);
+}
+
+.text-stroke-orange-md {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(234, 88, 12, 0.75);
 }
 
 .linkedin-icon {

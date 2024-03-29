@@ -77,11 +77,11 @@ const Navbar = () => {
   return (
     <header className='header'>
       <button
-        className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'
+        className='text-3xl orange-gradient-text font-bold rounded-xl border px-2 py-2.5'
         onClick={window.innerWidth < 768 ? toggleMenu : null}>
         AK
       </button>
-      <nav className='hidden lg:flex text-xl gap-8 font-bold text-white border py-3.5 px-5 rounded-xl'>
+      <nav className='hidden lg:flex text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl'>
         <NavLink to='/'>
           Home
         </NavLink>

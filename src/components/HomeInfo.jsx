@@ -29,7 +29,7 @@ const HomeInfo = () => {
   return (
     <section className='max-container'>
       <div>
-        <div className='text-4xl lg:text-6xl font-bold orange-gradient-text text-stroke-red'>
+        <div className='text-4xl lg:text-6xl font-bold orange-gradient-text text-stroke-red-lg'>
           <h1>Hi! there,</h1>
           <h1>I am Arman Khan and I do</h1>
         </div>
@@ -53,7 +53,7 @@ const HomeInfo = () => {
       <NavLink to='/services'>
         <HireButton />
       </NavLink>
-      <div className='mt-5 font-bold text-2xl lg:text-4xl text-red-600 text-stroke-orange'>
+      <div className='mt-5 font-bold text-2xl lg:text-4xl text-red-600 text-stroke-orange-md'>
         <span>
           Currently a third year Computer Engineering student from India.
         </span>

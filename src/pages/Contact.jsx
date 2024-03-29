@@ -74,60 +74,62 @@ const Contact = () => {
     <section className="relative z-0">
       <Navbar />
       <StarsCanvas />
-      <section className='flex lg:flex-row flex-col max-container'>
+      <section className='max-container'>
         {alert.show && <Alert {...alert} />}
-        <div className='flex-1 min-w-[40%] flex flex-col'>
-        <h1 className='text-5xl'>
-            <span className='font-bold orange-gradient-text font-bold'>
-                Contact
-            </span>
-        </h1>
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className='w-full flex flex-col gap-7 mt-14'>
-            <label className='text-white-100 font-bold text-2xl'>
-              Name
-              <input
-                type='text'
-                name='name'
-                className='input'
-                placeholder='Arman Khan'
-                required
-                value={form.name}
-                onChange={handleChange} />
-            </label>
-            <label className='text-white-100 font-bold text-2xl'>
-              Email
-              <input
-                type='email'
-                value={form.email}
-                onChange={handleChange}
-                name='email'
-                className='input'
-                placeholder='arman@gmail.com'
-                required />
-            </label>
-            <label className='text-white-100 font-bold text-2xl'>
-              Your Message
-              <textarea
-                name='message'
-                rows='4'
-                className='textarea'
-                placeholder='Write your thoughts here...'
-                value={form.message}
-                onChange={handleChange} />
-            </label>
-            <button
-              type='submit'
-              disabled={loading}
-              className='btn mb-10' >
-              {loading ? "Sending..." : "Submit"}
-            </button>
-          </form>
-        </div>
-        <div className='hidden lg:flex lg:min-w-[75%] lg:h-[75vh] object-cover'>
-          <EarthCanvas />
+        <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:py-10">
+          <div className='flex flex-col lg:min-w-[40%] lg:pl-10'>
+            <h1 className='text-5xl'>
+                <span className='font-bold orange-gradient-text font-bold'>
+                    Contact
+                </span>
+            </h1>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className='w-full flex flex-col gap-7 mt-14'>
+              <label className='text-white-100 text-2xl'>
+                Name
+                <input
+                  type='text'
+                  name='name'
+                  className='input'
+                  placeholder='Arman Khan'
+                  required
+                  value={form.name}
+                  onChange={handleChange} />
+              </label>
+              <label className='text-white-100 text-2xl'>
+                Email
+                <input
+                  type='email'
+                  value={form.email}
+                  onChange={handleChange}
+                  name='email'
+                  className='input'
+                  placeholder='arman@gmail.com'
+                  required />
+              </label>
+              <label className='text-white-100 text-2xl'>
+                Your Message
+                <textarea
+                  name='message'
+                  rows='4'
+                  className='textarea'
+                  placeholder='Write your thoughts here...'
+                  value={form.message}
+                  onChange={handleChange} />
+              </label>
+              <button
+                type='submit'
+                disabled={loading}
+                className='btn' >
+                {loading ? "Sending..." : "Submit"}
+              </button>
+            </form>
+          </div>
+          <div className='hidden lg:flex lg:min-w-[60%] lg:h-[75vh] lg:object-cover lg:m-auto'>
+            <EarthCanvas />
+          </div>
         </div>
       </section>
       <Footer />
