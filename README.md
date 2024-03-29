@@ -87,7 +87,7 @@ Follow the below instructions to get started.
 
 <ol>
   <li>
-    <p>NPM</a>
+    <p>NPM v.10.5.0</a>
   </li>
   <li>
     <p>Email.js Account</a>
