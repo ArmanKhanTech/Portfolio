@@ -57,12 +57,12 @@
 
 
 
-## About The Project
+## About the Project
 
 A 3D personal portfolio website is an immersive and interactive online exhibition of your skills and accomplishments. It goes beyond the static text and images of traditional portfolios by utilizing the power of 3D graphics and animation to wow viewers and leave a lasting impression.
 
 
-### Built With
+### Built with
 
 <ul>
   <li>
