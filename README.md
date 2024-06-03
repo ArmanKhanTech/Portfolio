@@ -208,7 +208,7 @@ Follow the below instructions to get started.
 ## Roadmap
 
 - [x] Home Page
-- [x] Welome Page
+- [x] Welcome Page
 - [x] About Page
 - [x] Service Page
 - [x] Contact Page
