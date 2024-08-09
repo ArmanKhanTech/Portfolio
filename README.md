@@ -52,9 +52,12 @@
   </ol>
 </details>
 
-## About The Project
+
+
+## About the Project
 
 A 3D personal portfolio website is an immersive and interactive online exhibition of your skills and accomplishments. It goes beyond the static text and images of traditional portfolios by utilizing the power of 3D graphics and animation to wow viewers and leave a lasting impression.
+
 
 ### Built With
 
@@ -78,7 +81,7 @@ Follow the below instructions to get started.
 
 <ol>
   <li>
-    <p>NPM</a>
+    <p>NPM v.10.5.0</a>
   </li>
   <li>
     <p>Email.js Account</a>
@@ -201,7 +204,7 @@ Follow the below instructions to get started.
 ## Roadmap
 
 - [x] Home Page
-- [x] Welome Page
+- [x] Welcome Page
 - [x] About Page
 - [x] Service Page
 - [x] Contact Page
