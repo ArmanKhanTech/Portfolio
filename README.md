@@ -5,7 +5,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
 <br />
 <div align="center">
   <a href="https://github.com/ArmanKhanTech/Portfolio/">
@@ -27,8 +26,6 @@
     <a href="https://github.com/ArmanKhanTech/Portfolio/issues">Request new Feature</a>
   </p>
 </div>
-
-
 
 <details>
   <summary>Table of Contents</summary>
@@ -55,12 +52,9 @@
   </ol>
 </details>
 
-
-
 ## About The Project
 
 A 3D personal portfolio website is an immersive and interactive online exhibition of your skills and accomplishments. It goes beyond the static text and images of traditional portfolios by utilizing the power of 3D graphics and animation to wow viewers and leave a lasting impression.
-
 
 ### Built With
 
@@ -76,12 +70,9 @@ A 3D personal portfolio website is an immersive and interactive online exhibitio
   </li>
 </ul>
 
-
-
 ## Getting Started
 
 Follow the below instructions to get started.
-
 
 ### Prerequisites
 
@@ -94,116 +85,118 @@ Follow the below instructions to get started.
   </li>
 </ol>
 
-
-
 ### Setup
 
 1. Clone this repository
-  
+
    ```sh
    git clone https://github.com/ArmanKhanTech/Portfolio.git
-    ```
-   
+   ```
+
 2. Install dependancies
-   
-    ```sh
-    npm install
-    ```
-    
+
+   ```sh
+   npm install
+   ```
+
 3. Create a `.env` file in the root directory
-   
-    ```sh
-    touch .env
-    ```
-    
+
+   ```sh
+   touch .env
+   ```
+
 4. Add the following variables in `.env` file
-   
-    ```sh
-    VITE_APP_EMAILJS_SERVICE_ID=service_id_emailjs
-    VITE_APP_EMAILJS_TEMPLATE_ID=template_id_emailjs
-    VITE_APP_EMAILJS_PUBLIC_KEY=public_key_emailjs
-    ```
-    
+
+   ```sh
+   VITE_APP_EMAILJS_SERVICE_ID=service_id_emailjs
+   VITE_APP_EMAILJS_TEMPLATE_ID=template_id_emailjs
+   VITE_APP_EMAILJS_PUBLIC_KEY=public_key_emailjs
+   ```
+
 5. Run the project
-    
-    ```sh
-    npm run dev
-    ```
-  
+
+   ```sh
+   npm run dev
+   ```
+
 6. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-
 ### Customization
+
 1. Change the initials (icon) in `src/components/Navbar.js` to your initials (line 79 & 88)
-    ```HTML
-    <header className='header'>
-        <button 
-          className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'
-          onClick={toggleMenu}>
-          Your Initials
-        </button>
-    </header>
-    ```
-    and 
-    ```HTML
-    <NavLink to='/'>
-      <button className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'>
-        Your Initials
-      </button>
-    </NavLink>
-    ```
+
+   ```HTML
+   <header className='header'>
+       <button
+         className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'
+         onClick={toggleMenu}>
+         Your Initials
+       </button>
+   </header>
+   ```
+
+   and
+
+   ```HTML
+   <NavLink to='/'>
+     <button className='text-3xl orange-gradient-text font-bold font-sans rounded-xl border px-2 py-2.5'>
+       Your Initials
+     </button>
+   </NavLink>
+   ```
 
 2. Change the name in `src/components/HomeInfo.js` to your name (line 35 & 90)
-    ```HTML
-    <div className='text-4xl font-bold orange-gradient-text'>
-      <h1>Hello,</h1>
-      <h1>I am {Your Name} & I do</h1>
-    </div>
-    ```
-    and 
-    ```HTML
-    <div className='text-6xl font-bold orange-gradient-text'>
-      <h1>Hello,</h1>
-      <h1>I am {Your Name} & I do</h1>
-    </div>
-    ```
+
+   ```HTML
+   <div className='text-4xl font-bold orange-gradient-text'>
+     <h1>Hello,</h1>
+     <h1>I am {Your Name} & I do</h1>
+   </div>
+   ```
+
+   and
+
+   ```HTML
+   <div className='text-6xl font-bold orange-gradient-text'>
+     <h1>Hello,</h1>
+     <h1>I am {Your Name} & I do</h1>
+   </div>
+   ```
 
 3. Change the skills, projects, education & services in `src\constanst\index.js` according to your requirements :
-   
-    a. Assets (icons or images) can be added in `src\assets\` folder
-   
-    b. Update the `index.js` of respective folders in `src\assets\` whenever making any changes in it
-   
-    c. Also, change the `favicon.ico` in `src\assets\` folder accrodingly
-   
-    d. Add expriences & testimonals sections in `About.jsx` if you want
-   
-    e. Kindly make sure to modify all the respective import statements whenever making in changes in `src\constanst\index.js`
 
-5. Also, update the title & description in `index.html`
+   a. Assets (icons or images) can be added in `src\assets\` folder
 
-6. Change the link to your resume in `src\components\HomeInfo.js` (line 64  & 121)
-    ```HTML
-    <div className='my-3'>
-      <a href='resume_link' target='_blank' rel='noreferrer'>
-        <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
-          Resume
-        </button>
-      </a>
-    </div>
-    ```
-    and
-    ```HTML
-    <div className='mt-5'>
-      <a href='resume_link' target='_blank' rel='noreferrer'>
-        <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
-          Resume
-        </button>
-      </a>
-    </div>
-    ```
+   b. Update the `index.js` of respective folders in `src\assets\` whenever making any changes in it
 
+   c. Also, change the `favicon.ico` in `src\assets\` folder accrodingly
 
+   d. Add expriences & testimonals sections in `About.jsx` if you want
+
+   e. Kindly make sure to modify all the respective import statements whenever making in changes in `src\constanst\index.js`
+
+4. Also, update the title & description in `index.html`
+
+5. Change the link to your resume in `src\components\HomeInfo.js` (line 64 & 121)
+   ```HTML
+   <div className='my-3'>
+     <a href='resume_link' target='_blank' rel='noreferrer'>
+       <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+         Resume
+       </button>
+     </a>
+   </div>
+   ```
+   and
+   ```HTML
+   <div className='mt-5'>
+     <a href='resume_link' target='_blank' rel='noreferrer'>
+       <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+         Resume
+       </button>
+     </a>
+   </div>
+   ```
 
 ## Roadmap
 
@@ -216,32 +209,25 @@ Follow the below instructions to get started.
 
 See the [open issues](https://github.com/ArmanKhanTech/Portfolio/issues) for a full list of proposed features (and known issues)
 
-
-
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-Don't forget to give the project a star! 
+Don't forget to give the project a star!
 
 Thanks again!
-
-
 
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-
 
 ## Contact
 
 Arman Khan - ak2341776@gmail.com
 
 Project Link - [https://github.com/ArmanKhanTech/Portfolio](https://github.com/ArmanKhanTech/Portfolio)
-
 
 ## Acknowledgements
 
@@ -262,8 +248,6 @@ Project Link - [https://github.com/ArmanKhanTech/Portfolio](https://github.com/A
     </a>
   </li>
 </ul>
-
-
 
 [contributors-shield]: https://img.shields.io/github/contributors/ArmanKhanTech/Portfolio.svg?style=for-the-badge
 [contributors-url]: https://github.com/ArmanKhanTech/Portfolio/graphs/contributors

@@ -1,42 +1,42 @@
 import React, { useContext } from "react";
 
-import { HomeContext } from '../context';
+import { HomeContext } from "../context";
 import { Canvas } from "@react-three/fiber";
 
-import { HomeInfo, Navbar, Welcome } from "../components";
+import { HomeInfo, Welcome } from "../components";
 import { Sky } from "../models";
 
 const Home = () => {
-  const { 
-    isMobile, 
-    loadingProgress, 
-    setLoadingProgress, 
-    hasWelcomeShown 
-  } = useContext(HomeContext); 
+  const { loadingProgress, setLoadingProgress, hasWelcomeShown } =
+    useContext(HomeContext);
 
   return (
-    <section className='absolute w-screen h-screen overflow-auto bg-[#131a43]'>
+    <section className="w-screen h-screen overflow-auto bg-[#131a43]">
       {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
-      <div className={`absolute right-0 left-0 z-10 ${isMobile ? 'top-0' : 'top-4'}`}>
+      <div
+        className='absolute right-0 left-0 z-10 top-0'
+      >
         <HomeInfo />
       </div>
-      <Navbar />
       <Canvas
         camera={{ near: 0.1, far: 100 }}
-        style={{pointerEvents: 'none', position: 'fixed'}}>
+        style={{ pointerEvents: "none", position: "fixed" }}
+      >
         <directionalLight position={[1, 1, 1]} intensity={2} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 5, 10]} intensity={2} />
-          <spotLight
-            position={[0, 50, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={2} />
-          <hemisphereLight
-            skyColor='#000000'
-            groundColor='#000000'
-            intensity={2} />
-          <Sky setLoadingProgress={setLoadingProgress} />
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 5, 10]} intensity={2} />
+        <spotLight
+          position={[0, 50, 10]}
+          angle={0.15}
+          penumbra={1}
+          intensity={2}
+        />
+        <hemisphereLight
+          skyColor="#000000"
+          groundColor="#000000"
+          intensity={2}
+        />
+        <Sky setLoadingProgress={setLoadingProgress} />
       </Canvas>
     </section>
   );

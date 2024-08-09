@@ -6,12 +6,4 @@ import HomeInfo from "./HomeInfo";
 import Welcome from "./Welcome";
 import HireButton from "./HireButton";
 
-export {
-    CTA,
-    Alert,
-    Navbar,
-    Footer,
-    HomeInfo,
-    Welcome,
-    HireButton
-}
+export { CTA, Alert, Navbar, Footer, HomeInfo, Welcome, HireButton };

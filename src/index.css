@@ -1,24 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (max-device-width: 768px){
-  body{
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-  }
-}
-
-body {
-  font-family: 'open sans', sans-serif;
-}
-
-*::-webkit-scrollbar {
-  display: none;
-}
-
 * {
   scrollbar-width: none;
+  font-family: 'Montserrat', sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -86,23 +74,16 @@ body {
   }
 }
 
-.text-color {
-  color: #ec144a;
-}
-
-.text-stroke-red-lg {
-  -webkit-text-stroke-width: 1px;
+.text-stroke-red {
+  -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #ec144a;
+  paint-order: stroke fill;
 }
 
-.text-stroke-red-md {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(236, 20, 74, 0.75);
-}
-
-.text-stroke-orange-md {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(234, 88, 12, 0.75);
+.text-stroke-orange {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #ea580c;
+  paint-order: stroke fill;
 }
 
 .linkedin-icon {
@@ -189,6 +170,10 @@ body {
   position: relative;
   border-radius: 10px;
   border: #2b77e7;
-  box-shadow: 0.6vmin 0.6vmin #336cc1, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
-    0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
+  box-shadow:
+    0.6vmin 0.6vmin #336cc1,
+    1vmin 1vmin #0092db,
+    1vmin 1vmin #0092db,
+    0.65vmin 1vmin #0092db,
+    1vmin 0.65vmin #0092db;
 }

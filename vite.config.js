@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
 export default defineConfig({
-    build: {
-        chunkSizeWarningLimit: 1600,
-        sourcemap: true,
-    }
+  build: {
+    chunkSizeWarningLimit: 1600,
+    sourcemap: true,
+  },
 });
