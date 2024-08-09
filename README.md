@@ -237,11 +237,6 @@ Project Link - [https://github.com/ArmanKhanTech/Portfolio](https://github.com/A
 
 <ul>
   <li>
-    <a href="https://www.youtube.com/c/JavaScriptMastery">
-      JS Mystery
-    </a>
-  </li>
-  <li>
     <a href="https://sketchfab.com/3d-models/alien-terrain-05-hdri-7ba0da88576d4f4592beaaa0e9e3ff2d">
       3D Model (Home Page)
     </a>
