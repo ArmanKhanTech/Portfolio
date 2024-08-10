@@ -22,11 +22,10 @@ class About extends React.Component {
       mouseControls: true,
       touchControls: true,
       gyroControls: true,
-      backgroundColor: 0x000000,
-      amplitudeFactor: 0.25,
-      size: 1,
-      scale: 1.0,
-      mobileScale: 1.0,
+      backgroundColor: 0x1B1212,
+      amplitudeFactor: 2.0,
+      size: 2.0,
+      xOffset: 0,
     });
     this.frameId = requestAnimationFrame(this.animateFrame);
   }
@@ -49,11 +48,11 @@ class About extends React.Component {
       <section ref={this.vantaRef} className="fixed inset-0 z-0">
           <div className="max-container absolute ml-0 inset-0 overflow-y-auto">
           <h1 className="text-headingMobile lg:text-5xl">
-            <span className="font-bold orange-gradient-text font-bold">
-              About
+            <span className="font-semibold orange-gradient-text">
+              About Me
             </span>
           </h1>
-          <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl bg-blur">
+          <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-xl">
             Fascinated by technology's endless possibilities, my academic
             journey has built a strong foundation in computer science and
             problem-solving. Beyond the classroom, I'm an avid learner,
@@ -61,18 +60,18 @@ class About extends React.Component {
             cutting-edge technologies.
           </p>
           <div className="py-10 flex flex-col">
-            <h1 className="text-4xl blue-gradient-text font-bold">My Skills</h1>
+            <h1 className="text-4xl blue-gradient-text font-semibold">My Skills</h1>
             <div className="mt-10 flex flex-wrap gap-12">
               {skills.map((skill) => (
                 <div
-                  className="w-16 h-16 lg:w-20 lg:h-20 block-container"
+                  className="w-16 h-16 lg:w-20 lg:h-20 backdrop-blur-xl p-2 bg-black bg-opacity-25 rounded-xl flex justify-center items-center"
                   key={skill.name}
                 >
                   <div className="btn-front-1 rounded-xl flex justify-center items-center">
                     <img
                       src={skill.imageUrl}
                       alt={skill.name}
-                      className="w-1/2 h-1/2 object-contain"
+                      className="w-[80%] h-[80%] object-cover"
                     />
                   </div>
                 </div>
@@ -80,7 +79,7 @@ class About extends React.Component {
             </div>
           </div>
           <div className="py-2">
-            <h1 className="text-4xl blue-gradient-text font-bold">
+            <h1 className="text-4xl blue-gradient-text font-semibold">
               My Education
             </h1>
             <div className="mt-10 flex">
@@ -106,17 +105,17 @@ class About extends React.Component {
                       borderStyle: "solid",
                       borderBottomColor: "#00c6ff",
                       borderRadius: "10px",
-                      backdropFilter: "blur(50px)",
-                      WebkitBackdropFilter: "blur(50px)",
-                      backgroundColor: "rgba(255, 255, 255, 0.2)",
+                      backdropFilter: "blur(60px)",
+                      WebkitBackdropFilter: "blur(60px)",
+                      backgroundColor: "rgba(0, 0, 0, 0.25)",
                       boxShadow: "none",
                     }}
                   >
                     <div>
-                      <h1 className="text-white text-xl font-bold mb-2">
+                      <h1 className="text-white text-xl font-semibold mb-2">
                         {education.title}
                       </h1>
-                      <span className="text-white text-lg font-bold">
+                      <span className="text-white text-lg font-semibold">
                         {education.date}
                       </span>
                     </div>

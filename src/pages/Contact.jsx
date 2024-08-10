@@ -72,21 +72,20 @@ const Contact = () => {
 
   return (
     <section className="relative z-0">
-      <Navbar />
       <StarsCanvas />
       <section className="max-container">
         {alert.show && <Alert {...alert} />}
         <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:py-10">
           <div className="flex flex-col lg:min-w-[40%] lg:pl-10">
             <h1 className="text-5xl">
-              <span className="font-bold orange-gradient-text font-bold">
+              <span className="font-bold orange-gradient-text font-semibold">
                 Contact
               </span>
             </h1>
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="w-full flex flex-col gap-7 mt-14"
+              className="w-full flex flex-col gap-6 mt-14"
             >
               <label className="text-white-100 text-2xl">
                 Name

@@ -25,8 +25,7 @@ class Projects extends React.Component {
       scale: 1.0,
       mobileScale: 1.0,
       color: 0xea580c,
-      backgroundColor: 0x000000,
-      spacing: window.innerWidth < 768 ? 20.0 : 15.0,
+      backgroundColor: 0x1B1212,
       minDistance: 15.0,
     });
   }
@@ -46,7 +45,7 @@ class Projects extends React.Component {
         <section className="max-container absolute ml-0 inset-0 overflow-y-auto">
           <Navbar />
           <h1 className="text-headingMobile lg:text-5xl">
-            <span className="font-bold orange-gradient-text font-bold">
+            <span className="font-bold orange-gradient-text font-semibold">
               Projects
             </span>
           </h1>
@@ -67,13 +66,13 @@ class Projects extends React.Component {
                   </div>
                 </div>
                 <div className="mt-5 flex flex-col bg-blur p-3 rounded-xl">
-                  <h4 className="text-2xl font-poppins text-white font-semibold">
+                  <h4 className="text-2xl text-white font-semibold">
                     {project.name}
                   </h4>
                   <p className="mt-2 text-white text-lg lg:text-xl">
                     {project.description}
                   </p>
-                  <div className="mt-5 flex items-center gap-2 font-poppins">
+                  <div className="mt-5 flex items-center gap-2">
                     <Link
                       to={project.link}
                       target="_blank"

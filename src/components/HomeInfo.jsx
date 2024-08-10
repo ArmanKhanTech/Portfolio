@@ -26,7 +26,7 @@ const HomeInfo = () => {
   return (
     <section className="max-container">
       <div className="mb-8 lg:mb-5 backdrop-blur-[2px]">
-        <div className="text-4xl lg:text-6xl font-semibold text-orange-600">
+        <div className="text-4xl lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
           <h1>I am Arman Khan and I do</h1>
         </div>
@@ -35,7 +35,7 @@ const HomeInfo = () => {
           direction="down"
           style={{
             marginTop: "1rem",
-            fontSize: window.innerWidth <= 768 ? "2.25rem" : "3.75rem",
+            fontSize: window.innerWidth <= 1024 ? "2.25rem" : "3.75rem",
             lineHeight: "1",
             fontWeight: "600",
             color: "#dc2626"
@@ -44,10 +44,12 @@ const HomeInfo = () => {
           {<span>{TEXTS[index % TEXTS.length]}</span>}
         </TextTransition>
       </div>
-      <NavLink 
-        to="/services">
-        <HireButton />
-      </NavLink>
+      <div className="mt-5">
+        <NavLink 
+          to="/services">
+          <HireButton />
+        </NavLink>
+      </div>
       <div className="mt-5 backdrop-blur-[2px] font-semibold text-2xl lg:text-4xl text-red-600">
         <span>
           Currently a final year Computer Engineering student from India.
@@ -64,7 +66,7 @@ const HomeInfo = () => {
           </button>
         </a>
       </div>
-      <div className="fixed bottom-0 inline flex gap-2 mb-5">
+      <div className="fixed bottom-0 right-8 lg:right-auto inline flex gap-2 mb-5">
         {socialLinks.map((link) => (
           <Link key={link.name} to={link.link} target="_blank">
             <img

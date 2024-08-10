@@ -16,7 +16,7 @@ import webDev from "./web-dev.svg";
 import crossDev from "./cross-dev.svg";
 import ml from "./ml.svg";
 import serverless from "./serverless.svg";
-import uiDesign from "./ui-design.svg";
+import desktopDev from "./desktop-dev.svg";
 
 export {
   css,
@@ -37,5 +37,5 @@ export {
   crossDev,
   ml,
   serverless,
-  uiDesign,
+  desktopDev,
 };

@@ -1,5 +1,4 @@
 import React from "react";
-
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
@@ -10,12 +9,16 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   if (isMenuOpen) {
     return (
-      <div className="fixed backdrop-blur-lg top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center">
+      <div className="fixed backdrop-blur-sm z-50 top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center">
         <div className="text-xl">
           <div
-            className="p-2.5 mt-1 ml-1 flex items-center"
+            className="p-2.5 mt-1 flex items-center"
             onClick={toggleMenu}
           >
             <svg
@@ -23,7 +26,7 @@ const Navbar = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="w-8 h-8"
+              className="w-8 h-8 text-white cursor-pointer"
             >
               <path
                 strokeLinecap="round"
@@ -36,27 +39,27 @@ const Navbar = () => {
         </div>
         <div className="p-2.5 mt-10 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" onClick={closeMenu}>Home</NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about" onClick={closeMenu}>About</NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/services">Services</NavLink>
+            <NavLink to="/services" onClick={closeMenu}>Services</NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
           </span>
         </div>
       </div>
@@ -64,20 +67,22 @@ const Navbar = () => {
   }
 
   return (
-    <header className="header">
-      <button
-        className="text-3xl orange-gradient-text font-bold rounded-xl border px-2 py-2.5"
-        onClick={window.innerWidth < 768 ? toggleMenu : null}
-      >
-        AK
-      </button>
-      <nav className="hidden lg:flex text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/services">Services</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </nav>
+    <header className="fixed backdrop-blur-[2px] m-auto max-w-5xl lg:px-12 top-0 left-0 right-0 w-[100%] z-50 bg-transparent">
+      <div className="container flex justify-between items-center py-4 px-5 lg:px-0">
+        <button
+          className="text-3xl backdrop-blur-sm orange-gradient-text font-semibold rounded-xl border px-2 py-2.5"
+          onClick={window.innerWidth < 768 ? toggleMenu : null}
+        >
+          AK
+        </button>
+        <nav className="hidden lg:flex backdrop-blur-sm text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About Me</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </nav>
+      </div>
     </header>
   );
 };

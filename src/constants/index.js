@@ -4,7 +4,8 @@ import {
   dailydoze,
   medicomm,
   achievix,
-  portfolio,
+  nimbus,
+  lumos
 } from "../assets/images";
 
 import {
@@ -25,7 +26,7 @@ import {
   crossDev,
   ml,
   serverless,
-  uiDesign,
+  desktopDev,
 } from "../assets/icons";
 
 export const skills = [
@@ -89,7 +90,7 @@ export const skills = [
 export const education = [
   {
     title: "Anjuman-I-Islam's Kalsekar Technical Campus",
-    date: "Dec 2022 - Aug 2025",
+    date: "Dec 2022 - Aug 2025   |   CGPA: 9.33",
     icon: educationIcon,
     iconBg: "#00c6ff",
     points: [
@@ -99,7 +100,7 @@ export const education = [
   },
   {
     title: "Anjuman-I-Islam's Abdul Razzak Kalsekar Polytechnic",
-    date: "Aug 2019 - July 2022",
+    date: "Aug 2019 - July 2022   |   Grade: 88 %",
     icon: educationIcon,
     iconBg: "#00c6ff",
     points: [
@@ -109,7 +110,7 @@ export const education = [
   },
   {
     title: "J.M Rathi English School & Junior College",
-    date: "June 2013 - Mar 2019",
+    date: "June 2013 - Mar 2019   |   Percentage: 89 %",
     icon: educationIcon,
     iconBg: "#00c6ff",
     points: [
@@ -152,18 +153,26 @@ export const projects = [
   {
     iconUrl: achievix,
     theme: "btn-back-blue",
-    name: "Achievix",
+    name: "MindMaster",
     description:
       "An Android productivity app. It is a productivity app that helps you to keep track of your daily tasks.",
-    link: "https://github.com/armankhantech/achievix",
+    link: "https://github.com/armankhantech/mindmaster",
   },
   {
-    iconUrl: portfolio,
+    iconUrl: lumos,
     theme: "btn-back-blue",
-    name: "Portfolio",
+    name: "Lumos",
     description:
-      "My 3D personl portfolio website. It is a portfolio website that showcases my skills, education and projects.",
-    link: "https://github.com/armankhantech/portfolio",
+      "A image editor plugin for Flutter. It is a plugin that allows you to edit images in your Flutter app.",
+    link: "https://pub.dev/packages/lumos",
+  },
+  {
+    iconUrl: nimbus,
+    theme: "btn-back-blue",
+    name: "Nimbus",
+    description:
+      "A summarized news & weather app. It provides you with the latest news in summarized format.",
+    link: "https://github.com/armankhantech/nimbus",
   },
   {
     iconUrl: medicomm,
@@ -185,11 +194,11 @@ export const services = [
     link: "https://www.mongodb.com/mern-stack",
   },
   {
-    iconUrl: uiDesign,
+    iconUrl: desktopDev,
     theme: "btn-back-blue",
-    name: "UI/UX Design",
+    name: "Desktop Development",
     description:
-      "I design attractive, responsive, and intuitive user interfaces to maximize user experience allowing to create attractive and responsive products.",
+      "I build desktop applications using Electron.js. I use Electron.js to build desktop applications compatible with Windows, macOS, and Linux.",
     link: "https://www.browserstack.com/guide/what-is-user-interface",
   },
   {

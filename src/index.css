@@ -12,13 +12,13 @@
 }
 
 .bg-blur {
-  backdrop-filter: blur(50px);
-  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-5xl mx-5 lg:mx-auto lg:px-12 !pt-[126px] min-h-[calc(100vh-80px)];
   }
 
   .head-text {
@@ -50,7 +50,7 @@
   }
 
   .footer {
-    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
+    @apply max-w-5xl mx-auto px-12 pb-8 flex flex-col gap-6;
   }
 
   .footer-container {
@@ -62,11 +62,11 @@
   }
 
   .cta {
-    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
+    @apply w-full flex items-center md:flex-row flex-col mt-10 gap-6;
   }
 
   .cta-text {
-    @apply text-white font-bold flex-1 text-3xl max-md:text-center;
+    @apply text-white font-semibold flex-1 text-3xl max-md:text-center;
   }
 
   .orange-gradient-text {
@@ -119,7 +119,7 @@
 }
 
 .block-container .btn-back-blue {
-  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+  background: linear-gradient(135deg, #ea580c -20%, #dc2626 120%);
 }
 
 .block-container .btn-front {
@@ -128,11 +128,9 @@
   z-index: 1;
   width: inherit;
   height: inherit;
-  background-color: #ffffff;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
   transition: 250ms;
   transform-style: preserve-3d;
+  background-color: #ffffff;
   transform-origin: top left;
   overflow: hidden;
 }

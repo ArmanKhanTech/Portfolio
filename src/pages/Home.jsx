@@ -11,11 +11,9 @@ const Home = () => {
     useContext(HomeContext);
 
   return (
-    <section className="w-screen h-screen overflow-auto bg-[#131a43]">
+    <section className="bg-gradient-to-r from-slate-900 to-slate-700 min-h-screen relative">
       {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
-      <div
-        className='absolute right-0 left-0 z-10 top-0'
-      >
+      <div className="absolute inset-0 z-10">
         <HomeInfo />
       </div>
       <Canvas

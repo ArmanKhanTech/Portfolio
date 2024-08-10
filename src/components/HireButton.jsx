@@ -3,7 +3,7 @@ import React from "react";
 export default function HireButton() {
   return (
     <button className="relative backdrop-blur-[2px] inline-flex items-center justify-center px-3 py-1.5 overflow-hidden font-semibold text-3xl lg:text-4xl transition duration-300 ease-out border-2 border-orange-600 rounded-md shadow-md group">
-      <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-orange-600 group-hover:translate-x-0 ease">
+      <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-gradient-to-br from-orange-400 to-red-600 group-hover:translate-x-0 ease">
         <svg
           className="w-8 h-8"
           fill="none"
@@ -19,7 +19,7 @@ export default function HireButton() {
           ></path>
         </svg>
       </span>
-      <span className="absolute flex items-center justify-center w-full h-full text-orange-600 transition-all duration-300 transform group-hover:translate-x-full ease">
+      <span className="absolute flex items-center justify-center w-full h-full orange-gradient-text transition-all duration-300 transform group-hover:translate-x-full ease">
         Hire Me
       </span>
       <span className="relative invisible">Hire Me</span>
