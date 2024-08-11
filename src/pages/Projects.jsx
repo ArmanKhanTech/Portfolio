@@ -44,12 +44,12 @@ class Projects extends React.Component {
       >
         <section className="max-container absolute ml-0 inset-0 overflow-y-auto">
           <Navbar />
-          <h1 className="text-headingMobile lg:text-5xl">
-            <span className="font-bold orange-gradient-text font-semibold">
+          <h1 className="text-5xl">
+            <span className="font-semibold orange-gradient-text">
               Projects
             </span>
           </h1>
-          <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl bg-blur">
+          <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-xl bg-black bg-opacity-25">
             I've embarked on numerous projects throughout the years, but these
             are the ones I hold closest to my heart. Many of them are
             open-source, so if you come across something that piques your
@@ -58,14 +58,13 @@ class Projects extends React.Component {
           </p>
           <div className="flex flex-wrap my-20 gap-16">
             {projects.map((project) => (
-              <div className="lg:w-[400px] w-full" key={project.name}>
+              <div className="lg:w-[432px] w-full" key={project.name}>
                 <div className="block-container w-12 h-12">
-                  <div className={`btn-back rounded-xl ${project.theme}`} />
                   <div className="btn-front rounded-xl flex justify-center items-center">
                     <img src={project.iconUrl} alt="threads" />
                   </div>
                 </div>
-                <div className="mt-5 flex flex-col bg-blur p-3 rounded-xl">
+                <div className="mt-5 flex flex-col backdrop-blur-xl bg-black bg-opacity-25 p-3 rounded-xl">
                   <h4 className="text-2xl text-white font-semibold">
                     {project.name}
                   </h4>
@@ -77,22 +76,29 @@ class Projects extends React.Component {
                       to={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-bold text-blue-600"
+                      className="font-medium text-orange-600"
                     >
                       Live Link
                     </Link>
-                    <img
-                      src={arrow}
-                      alt="arrow"
-                      className="w-4 h-4 object-contain"
-                    />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-orange-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d={arrow}
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
             ))}
           </div>
           <hr className="border-slate-200" />
-          <CTA />
+          <CTA color={"bg-orange-600"} />
         </section>
       </div>
     );

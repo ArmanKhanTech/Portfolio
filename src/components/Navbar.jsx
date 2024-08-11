@@ -15,7 +15,7 @@ const Navbar = () => {
 
   if (isMenuOpen) {
     return (
-      <div className="fixed backdrop-blur-sm z-50 top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center">
+      <div className="fixed backdrop-blur-lg bg-black bg-opacity-50 z-50 font-semibold top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center">
         <div className="text-xl">
           <div
             className="p-2.5 mt-1 flex items-center"
@@ -44,7 +44,12 @@ const Navbar = () => {
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/about" onClick={closeMenu}>About</NavLink>
+            <NavLink to="/about" onClick={closeMenu}>About Me</NavLink>
+          </span>
+        </div>
+        <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
+          <span className="text-2xl text-white">
+            <NavLink to="/experience" onClick={closeMenu}>Experience</NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">

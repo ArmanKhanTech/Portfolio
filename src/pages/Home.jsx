@@ -11,7 +11,7 @@ const Home = () => {
     useContext(HomeContext);
 
   return (
-    <section className="bg-gradient-to-r from-slate-900 to-slate-700 min-h-screen relative">
+    <section className="bg-gradient-to-r from-slate-900 to-[#1B1212] min-h-screen relative">
       {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
       <div className="absolute inset-0 z-10">
         <HomeInfo />

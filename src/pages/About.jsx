@@ -6,7 +6,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import { CTA, Navbar } from "../components";
+import { CTA } from "../components";
 import { education, skills } from "../constants";
 
 
@@ -60,14 +60,14 @@ class About extends React.Component {
             cutting-edge technologies.
           </p>
           <div className="py-10 flex flex-col">
-            <h1 className="text-4xl blue-gradient-text font-semibold">My Skills</h1>
+            <h1 className="text-4xl blue-gradient-text font-semibold backdrop-blur-[2px]">My Skills</h1>
             <div className="mt-10 flex flex-wrap gap-12">
               {skills.map((skill) => (
                 <div
                   className="w-16 h-16 lg:w-20 lg:h-20 backdrop-blur-xl p-2 bg-black bg-opacity-25 rounded-xl flex justify-center items-center"
                   key={skill.name}
                 >
-                  <div className="btn-front-1 rounded-xl flex justify-center items-center">
+                  <div className="btn-front rounded-xl flex justify-center items-center">
                     <img
                       src={skill.imageUrl}
                       alt={skill.name}
@@ -79,7 +79,7 @@ class About extends React.Component {
             </div>
           </div>
           <div className="py-2">
-            <h1 className="text-4xl blue-gradient-text font-semibold">
+            <h1 className="text-4xl blue-gradient-text font-semibold backdrop-blur-[2px]">
               My Education
             </h1>
             <div className="mt-10 flex">
@@ -129,8 +129,8 @@ class About extends React.Component {
               </VerticalTimeline>
             </div>
           </div>
-          <hr className="border-slate-200" />
-          <CTA />
+          <hr className="border-slate-200 mt-10" />
+          <CTA color={"bg-blue-600"} />
         </div>
         </section>
     );

@@ -50,7 +50,7 @@
   }
 
   .footer {
-    @apply max-w-5xl mx-auto px-12 pb-8 flex flex-col gap-6;
+    @apply max-w-5xl m-auto px-5 lg:px-12 mt-10 pb-8 flex flex-col gap-6;
   }
 
   .footer-container {
@@ -74,18 +74,6 @@
   }
 }
 
-.text-stroke-red {
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #ec144a;
-  paint-order: stroke fill;
-}
-
-.text-stroke-orange {
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #ea580c;
-  paint-order: stroke fill;
-}
-
 .linkedin-icon {
   height: 46px;
   width: 46px;
@@ -105,23 +93,6 @@
   perspective: 500px;
 }
 
-.block-container .btn-back {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: inherit;
-  height: inherit;
-  transition: 250ms;
-  transform-style: preserve-3d;
-  transform-origin: bottom right;
-  transform: rotateZ(15deg);
-  will-change: transform;
-}
-
-.block-container .btn-back-blue {
-  background: linear-gradient(135deg, #ea580c -20%, #dc2626 120%);
-}
-
 .block-container .btn-front {
   position: absolute;
   inset: 0;
@@ -131,21 +102,6 @@
   transition: 250ms;
   transform-style: preserve-3d;
   background-color: #ffffff;
-  transform-origin: top left;
-  overflow: hidden;
-}
-
-.block-container .btn-front-1 {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: inherit;
-  height: inherit;
-  background-color: #ffffff00;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  transition: 250ms;
-  transform-style: preserve-3d;
   transform-origin: top left;
   overflow: hidden;
 }

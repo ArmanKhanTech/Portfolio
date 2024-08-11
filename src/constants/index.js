@@ -190,7 +190,7 @@ export const services = [
     theme: "btn-back-blue",
     name: "Full-Stack Web Development",
     description:
-      "I develop static and dynamic websites and web applications using the latest technologies available in the market.",
+      "I develop static and dynamic websites and web applications using the latest technologies available in the market along with responsive design.",
     link: "https://www.mongodb.com/mern-stack",
   },
   {
@@ -199,7 +199,7 @@ export const services = [
     name: "Desktop Development",
     description:
       "I build desktop applications using Electron.js. I use Electron.js to build desktop applications compatible with Windows, macOS, and Linux.",
-    link: "https://www.browserstack.com/guide/what-is-user-interface",
+    link: "https://en.wikipedia.org/wiki/Electron_(software_framework)",
   },
   {
     iconUrl: androidDev,

@@ -25,26 +25,21 @@ const HomeInfo = () => {
 
   return (
     <section className="max-container">
-      <div className="mb-8 lg:mb-5 backdrop-blur-[2px]">
-        <div className="text-4xl lg:text-6xl font-semibold orange-gradient-text">
+      <div className="backdrop-blur-[2px]">
+        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
           <h1>I am Arman Khan and I do</h1>
         </div>
-        <TextTransition
-          springConfig={presets.gentle}
-          direction="down"
-          style={{
-            marginTop: "1rem",
-            fontSize: window.innerWidth <= 1024 ? "2.25rem" : "3.75rem",
-            lineHeight: "1",
-            fontWeight: "600",
-            color: "#dc2626"
-          }}
-        >
-          {<span>{TEXTS[index % TEXTS.length]}</span>}
-        </TextTransition>
+        <div className="mb-5 text-4xl lg:text-6xl text-red-600 font-semibold">
+          <TextTransition
+            springConfig={presets.gentle}
+            direction="down"
+          >
+            {<span>{TEXTS[index % TEXTS.length]}</span>}
+          </TextTransition>
+        </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-5 lg:mt-3">
         <NavLink 
           to="/services">
           <HireButton />
