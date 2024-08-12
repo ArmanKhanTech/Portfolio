@@ -1,8 +1,5 @@
 import React from "react";
-
 import { NavLink, Link } from "react-router-dom";
-import TextTransition, { presets } from "react-text-transition";
-
 import HireButton from "./HireButton";
 import { socialLinks } from "../constants";
 
@@ -19,8 +16,8 @@ const HomeInfo = () => {
   const [index, setIndex] = React.useState(0);
 
   React.useEffect(() => {
-    const intervalId = setInterval(() => setIndex((index) => index + 1), 3000);
-    return () => clearTimeout(intervalId);
+    const intervalId = setInterval(() => setIndex((index) => (index + 1) % TEXTS.length), 2000);
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -28,22 +25,38 @@ const HomeInfo = () => {
       <div className="backdrop-blur-[2px]">
         <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
-          <h1>I am Arman Khan and I do</h1>
+          <h1>
+            I am{" "}
+            <span className="relative inline-block">
+              <span className="orange-gradient-text relative inline-block stroke-current">
+                Arman Khan
+                <svg
+                  className="absolute -bottom-0.5 w-full max-h-1.5"
+                  viewBox="0 0 55 5"
+                  color="rgb(255, 99, 71)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002"
+                    strokeWidth="3"
+                  ></path>
+                </svg>
+              </span>
+            </span>{" "}
+            and I do
+          </h1>
         </div>
-        <div className="mb-5 text-4xl lg:text-6xl text-red-600 font-semibold">
-          <TextTransition
-            springConfig={presets.gentle}
-            direction="down"
-          >
-            {<span>{TEXTS[index % TEXTS.length]}</span>}
-          </TextTransition>
+        <div className="min-h-24 lg:min-h-0 mb-5 text-4xl lg:text-6xl text-red-600 font-semibold break-words leading-tight">
+          <span className="animate-tada">
+            {TEXTS[index]}
+          </span>
         </div>
-      </div>
-      <div className="mt-5 lg:mt-3">
-        <NavLink 
-          to="/services">
-          <HireButton />
-        </NavLink>
+        <div className="sm:mt-10 lg:mt-3">
+          <NavLink to="/services">
+            <HireButton />
+          </NavLink>
+        </div>
       </div>
       <div className="mt-5 backdrop-blur-[2px] font-semibold text-2xl lg:text-4xl text-red-600">
         <span>
@@ -52,12 +65,12 @@ const HomeInfo = () => {
       </div>
       <div className="mt-5">
         <a
-          href="https://ak2341776.hackerresume.io/f4f17b26-462c-4ae4-94a7-1e900998a02f"
+          href="https://drive.google.com/file/d/1odc_-0mQGWoS2iaOZRPimx6JlsZMfGVj/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
         >
           <button className="px-3 py-1.5 font-semibold text-2xl lg:text-3xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110">
-            Resume
+            My Resume
           </button>
         </a>
       </div>

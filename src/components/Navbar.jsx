@@ -17,10 +17,7 @@ const Navbar = () => {
     return (
       <div className="fixed backdrop-blur-lg bg-black bg-opacity-50 z-50 font-semibold top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center">
         <div className="text-xl">
-          <div
-            className="p-2.5 mt-1 flex items-center"
-            onClick={toggleMenu}
-          >
+          <div className="p-2.5 mt-1 flex items-center" onClick={toggleMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -39,32 +36,44 @@ const Navbar = () => {
         </div>
         <div className="p-2.5 mt-10 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/" onClick={closeMenu}>Home</NavLink>
+            <NavLink to="/" onClick={closeMenu}>
+              Home
+            </NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/about" onClick={closeMenu}>About Me</NavLink>
+            <NavLink to="/about" onClick={closeMenu}>
+              About Me
+            </NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/experience" onClick={closeMenu}>Experience</NavLink>
+            <NavLink to="/experience" onClick={closeMenu}>
+              Experience
+            </NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
+            <NavLink to="/projects" onClick={closeMenu}>
+              Projects
+            </NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/services" onClick={closeMenu}>Services</NavLink>
+            <NavLink to="/services" onClick={closeMenu}>
+              Services
+            </NavLink>
           </span>
         </div>
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
-            <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
+            <NavLink to="/contact" onClick={closeMenu}>
+              Contact
+            </NavLink>
           </span>
         </div>
       </div>

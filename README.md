@@ -51,12 +51,9 @@
   </ol>
 </details>
 
-
-
 ## About the Project
 
 A 3D personal portfolio website is an immersive and interactive online exhibition of your skills and accomplishments. It goes beyond the static text and images of traditional portfolios by utilizing the power of 3D graphics and animation to wow viewers and leave a lasting impression.
-
 
 ### Built with
 
@@ -72,12 +69,9 @@ A 3D personal portfolio website is an immersive and interactive online exhibitio
   </li>
 </ul>
 
-
-
 ## Getting Started
 
 Follow the below instructions to get started.
-
 
 ### Prerequisites
 
@@ -89,7 +83,6 @@ Follow the below instructions to get started.
     <p>Email.js Account</a>
   </li>
 </ol>
-
 
 ### Setup
 
@@ -126,7 +119,6 @@ Follow the below instructions to get started.
    ```
 
 6. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
 
 ### Customization
 
@@ -205,8 +197,6 @@ Follow the below instructions to get started.
    </div>
    ```
 
-
-
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -217,21 +207,15 @@ Don't forget to give the project a star!
 
 Thanks again!
 
-
-
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-
 
 ## Contact
 
 Arman Khan - ak2341776@gmail.com
 
 Project Link - [https://github.com/ArmanKhanTech/Portfolio](https://github.com/ArmanKhanTech/Portfolio)
-
-
 
 ## Acknowledgements
 

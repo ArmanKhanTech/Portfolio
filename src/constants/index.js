@@ -5,7 +5,7 @@ import {
   medicomm,
   achievix,
   nimbus,
-  lumos
+  lumos,
 } from "../assets/images";
 
 import {
