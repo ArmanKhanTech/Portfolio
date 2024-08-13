@@ -1,5 +1,4 @@
 import React, { memo, useEffect, useRef } from "react";
-
 import { useProgress } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -9,14 +8,15 @@ export const Sky = memo(({ setLoadingProgress }) => {
   const sky = useLoader(GLTFLoader, "./sky.glb");
   const skyRef = useRef();
 
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (skyRef.current) {
       skyRef.current.rotation.y += delta / 50;
     }
   });
 
   useEffect(() => {
-    setLoadingProgress(progress);
+    const handler = setTimeout(() => setLoadingProgress(progress), 100);
+    return () => clearTimeout(handler);
   }, [progress, setLoadingProgress]);
 
   return (

@@ -21,8 +21,8 @@ const HomeInfo = () => {
   }, []);
 
   return (
-    <section className="max-container">
-      <div className="backdrop-blur-[2px]">
+    <section className="max-container backdrop-blur-[2px]">
+      <div>
         <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
           <h1>
@@ -58,7 +58,7 @@ const HomeInfo = () => {
           </NavLink>
         </div>
       </div>
-      <div className="mt-5 backdrop-blur-[2px] font-semibold text-2xl lg:text-4xl text-red-600">
+      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600">
         <span>
           Currently a final year Computer Engineering student from India.
         </span>
@@ -74,7 +74,7 @@ const HomeInfo = () => {
           </button>
         </a>
       </div>
-      <div className="fixed bottom-0 right-8 lg:right-auto inline flex gap-2 mb-5">
+      <div className="self-end justify-end my-0 lg:my-10 flex gap-3">
         {socialLinks.map((link) => (
           <Link key={link.name} to={link.link} target="_blank">
             <img
