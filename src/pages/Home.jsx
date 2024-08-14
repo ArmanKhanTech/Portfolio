@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-
-import { HomeContext } from "../context";
 import { Canvas } from "@react-three/fiber";
 
+import { HomeContext } from "../context";
 import { HomeInfo, Welcome } from "../components";
 import { Sky } from "../models";
 

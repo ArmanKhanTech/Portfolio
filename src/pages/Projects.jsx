@@ -46,14 +46,17 @@ class Projects extends React.Component {
           <section className="max-container absolute inset-0">
             <Navbar />
             <h1 className="text-5xl">
-              <span className="font-semibold orange-gradient-text">Projects</span>
+              <span className="font-semibold orange-gradient-text">
+                Projects
+              </span>
             </h1>
             <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-xl bg-black bg-opacity-25">
               I've embarked on numerous projects throughout the years, but these
               are the ones I hold closest to my heart. Many of them are
               open-source, so if you come across something that piques your
               interest, feel free to explore the codebase and contribute your
-              ideas for further enhancements. Your collaboration is highly valued!
+              ideas for further enhancements. Your collaboration is highly
+              valued!
             </p>
             <div className="flex flex-wrap my-20 gap-16">
               {projects.map((project) => (

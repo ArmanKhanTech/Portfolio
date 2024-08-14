@@ -48,7 +48,9 @@ class About extends React.Component {
         <div className="relative w-full h-full overflow-y-auto">
           <div className="max-container absolute inset-0">
             <h1 className="text-headingMobile lg:text-5xl">
-              <span className="font-semibold orange-gradient-text">About Me</span>
+              <span className="font-semibold orange-gradient-text">
+                About Me
+              </span>
             </h1>
             <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-xl">
               Fascinated by technology's endless possibilities, my academic

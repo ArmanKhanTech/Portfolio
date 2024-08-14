@@ -5,5 +5,15 @@ import medicomm from "./medicomm.png";
 import achievix from "./achievix.png";
 import lumos from "./lumos.png";
 import nimbus from "./nimbus.png";
+import experianceIcon from "./experience-icon.png";
 
-export { educationIcon, divine, dailydoze, medicomm, achievix, lumos, nimbus };
+export {
+  educationIcon,
+  divine,
+  dailydoze,
+  medicomm,
+  achievix,
+  lumos,
+  nimbus,
+  experianceIcon,
+};

@@ -37,7 +37,10 @@ class Services extends React.Component {
 
   render() {
     return (
-      <div ref={this.vantaRef} className="fixed inset-0 z-50 w-screen h-screen bg-[#131a43]">
+      <div
+        ref={this.vantaRef}
+        className="fixed inset-0 z-50 w-screen h-screen bg-[#131a43]"
+      >
         <div className="relative w-full h-full overflow-y-auto">
           <section className="max-container absolute inset-0">
             <Navbar />

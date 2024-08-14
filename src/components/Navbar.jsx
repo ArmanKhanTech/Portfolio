@@ -92,6 +92,7 @@ const Navbar = () => {
         <nav className="hidden lg:flex backdrop-blur-sm text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About Me</NavLink>
+          <NavLink to="/experience">Experience</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/contact">Contact</NavLink>

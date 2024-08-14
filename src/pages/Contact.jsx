@@ -9,7 +9,6 @@ import StarsCanvas from "../components/Stars";
 import EarthCanvas from "../models/Earth";
 
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 
 const Contact = () => {
   const formRef = useRef();
@@ -24,6 +23,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setLoading(true);
 
     emailjs

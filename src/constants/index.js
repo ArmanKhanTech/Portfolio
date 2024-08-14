@@ -1,5 +1,6 @@
 import {
   educationIcon,
+  experianceIcon,
   divine,
   dailydoze,
   medicomm,
@@ -28,6 +29,7 @@ import {
   serverless,
   desktopDev,
 } from "../assets/icons";
+import { e } from "maath/dist/index-0332b2ed.esm";
 
 export const skills = [
   {
@@ -116,6 +118,43 @@ export const education = [
     points: [
       "I successfully navigated a rigorous high school curriculum, demonstrating exceptional academic aptitude and a commitment to excellence.",
       "Engaging in diverse extracurricular activities, I honed leadership and interpersonal skills, fostering a well-rounded educational experience.",
+    ],
+  },
+];
+
+export const experiance = [
+  {
+    title: "Freelancer",
+    date: "Dec 2022 - Aug 2025",
+    empolyer: "Self-Employed",
+    icon: experianceIcon,
+    iconBg: "#00c6ff",
+    points: [
+      "Engaged in freelancing for various clients, crafting creative solutions tailored to their requirements",
+      "Specializes in multi-domain software development.",
+      "Completed four distinct projects to date.",
+    ],
+  },
+  {
+    title: "App Lead",
+    date: "Aug 2023 - July 2024",
+    empolyer: "GDSC AIKTC",
+    icon: experianceIcon,
+    iconBg: "#00c6ff",
+    points: [
+      "Organized multiple workshops on Android Development, covering Kotlin, Jetpack Compose, and Flutter, for students from two colleges.",
+      "Acted as a facilitator for Gen-AI Study Jams.",
+    ],
+  },
+  {
+    title: "Tech Lead",
+    date: "Jan 2024 - Feb 2024",
+    empolyer: "Algorithm 8.0",
+    icon: experianceIcon,
+    iconBg: "#00c6ff",
+    points: [
+      "Managed a team of 10 individuals to create the official registration and management system for Algorithm 8.0, a yearly national hackathon hosted by our college.",
+      "The system comprised an Android application for event organization and a website for registration.",
     ],
   },
 ];
