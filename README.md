@@ -12,12 +12,11 @@
   </a>
 
   <h3 align="center">Portfolio</h3>
+  <p align="center">Status: Completed</p>
+  <p align="center">My 3D personal portfolio website.e.</p>
 
   <p align="center">
-    My 3D personal portfolio website.
-    <br />
     <a href="https://github.com/ArmanKhanTech/Portfolio"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://armankhan.tech">Visit</a>
     ·
@@ -26,6 +25,9 @@
     <a href="https://github.com/ArmanKhanTech/Portfolio/issues">Request new Feature</a>
   </p>
 </div>
+<br />
+
+
 
 <details>
   <summary>Table of Contents</summary>
