@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+
 import HireButton from "./HireButton";
 import { socialLinks } from "../constants";
 
@@ -21,9 +22,9 @@ const HomeInfo = () => {
   }, []);
 
   return (
-    <section className="max-container backdrop-blur-[2px]">
+    <section className="max-container pb-5">
       <div>
-        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
+        <div className="text-4xl mb-3 backdrop-blur-[2px] lg:text-6xl rounded-lg font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
           <h1>
             I am{" "}
@@ -47,7 +48,7 @@ const HomeInfo = () => {
             and I do
           </h1>
         </div>
-        <div className="min-h-24 lg:min-h-0 mb-5 text-4xl lg:text-6xl text-red-600 font-semibold break-words leading-tight">
+        <div className="min-h-24 backdrop-blur-[2px] rounded-lg lg:min-h-0 mb-5 text-4xl lg:text-6xl text-red-600 font-semibold break-words leading-tight">
           <span className="animate-tada">
             {TEXTS[index]}
           </span>
@@ -58,7 +59,7 @@ const HomeInfo = () => {
           </NavLink>
         </div>
       </div>
-      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600">
+      <div className="mt-5 font-semibold backdrop-blur-[2px] rounded-lg text-2xl lg:text-4xl text-red-600">
         <span>
           Currently a final year Computer Engineering student from India.
         </span>
@@ -74,7 +75,7 @@ const HomeInfo = () => {
           </button>
         </a>
       </div>
-      <div className="self-end justify-end my-0 lg:my-10 flex gap-3">
+     <div className="mt-10 self-end flex gap-2 rounded-lg backdrop-blur-[2px]">
         {socialLinks.map((link) => (
           <Link key={link.name} to={link.link} target="_blank">
             <img
