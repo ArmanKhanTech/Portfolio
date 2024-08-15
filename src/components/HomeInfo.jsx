@@ -19,7 +19,7 @@ const HomeInfo = () => {
   React.useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((index) => (index + 1) % TEXTS.length),
-      2000,
+      2500,
     );
     return () => clearInterval(intervalId);
   }, []);
@@ -52,7 +52,7 @@ const HomeInfo = () => {
           </h1>
         </div>
         <div className="min-h-24 backdrop-blur-[2px] rounded-lg lg:min-h-0 mb-5 text-4xl lg:text-6xl text-red-600 font-semibold break-words leading-tight">
-          <span className="animate-tada">{TEXTS[index]}</span>
+          <p>{TEXTS[index]}</p>
         </div>
         <div className="sm:mt-10 lg:mt-3">
           <NavLink to="/services">

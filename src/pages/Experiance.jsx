@@ -67,7 +67,7 @@ class Experiance extends React.Component {
                     <VerticalTimelineElement
                       iconStyle={{
                         background: experiance.iconBg,
-                        padding: "10px",
+                        padding: "5px",
                       }}
                       animateFrame={this.animateFrame}
                       icon={
