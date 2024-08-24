@@ -28,65 +28,158 @@ import {
   ml,
   serverless,
   desktopDev,
+  android,
+  cpp,
+  dart,
+  docker,
+  electron,
+  flutter,
+  firebase,
+  flask,
+  gcp,
+  jetpack,
+  kotlin,
+  linux,
+  mysql,
+  nginx,
+  postgresql,
+  python,
+  redis,
+  sql,
+  ts,
+  sqlite,
+  xml
 } from "../assets/icons";
-import { e } from "maath/dist/index-0332b2ed.esm";
 
 export const skills = [
   {
+    imageUrl: cpp,
+    name: "C++"
+  },
+  {
+    imageUrl: python,
+    name: "Python"
+  },
+  {
     imageUrl: html,
-    name: "HTML",
-    type: "Frontend",
+    name: "HTML"
   },
   {
     imageUrl: css,
-    name: "CSS",
-    type: "Frontend",
+    name: "CSS"
   },
   {
     imageUrl: javascript,
-    name: "JavaScript",
-    type: "Frontend",
+    name: "JS"
   },
   {
-    imageUrl: react,
-    name: "React",
-    type: "Frontend",
+    imageUrl: ts,
+    name: "TS"
   },
   {
-    imageUrl: threejs,
-    name: "Three.js",
-    type: "Frontend",
-  },
-  {
-    imageUrl: tailwindcss,
-    name: "Tailwind CSS",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend",
-  },
-  {
-    imageUrl: express,
-    name: "Express",
-    type: "Backend",
-  },
-  {
-    imageUrl: git,
-    name: "Git",
-    type: "Version Control",
-  },
-  {
-    imageUrl: github,
-    name: "GitHub",
-    type: "Version Control",
+    imageUrl: sql,
+    name: "SQL"
   },
   {
     imageUrl: java,
-    name: "Java",
-    type: "Programming Language",
+    name: "Java"
   },
+  {
+    imageUrl: kotlin,
+    name: "Kotlin"
+  },
+  {
+    imageUrl: xml,
+    name: "XML"
+  },
+  {
+    imageUrl: dart,
+    name: "Dart"
+  },
+  {
+    imageUrl: flutter,
+    name: "Flutter"
+  },
+  {
+    imageUrl: jetpack,
+    name: "Jetpack"
+  },
+  {
+    imageUrl: android,
+    name: "Android"
+  },
+  {
+    imageUrl: linux,
+    name: "Linux"
+  },
+  {
+    imageUrl: docker,
+    name: "Docker"
+  },
+  {
+    imageUrl: nginx,
+    name: "Nginx"
+  },
+  {
+    imageUrl: git,
+    name: "Git"
+  },
+  {
+    imageUrl: github,
+    name: "GitHub"
+  },
+  {
+    imageUrl: mysql,
+    name: "MySQL"
+  },
+  {
+    imageUrl: sqlite,
+    name: "SQLite"
+  },
+  {
+    imageUrl: postgresql,
+    name: "Postgres"
+  },
+  {
+    imageUrl: redis,  
+    name: "Redis"
+  },
+  {
+    imageUrl: gcp,
+    name: "GCP"
+  },
+  {
+    imageUrl: firebase,
+    name: "Firebase"
+  },
+  {
+    imageUrl: react,
+    name: "ReactJS"
+  },
+  {
+    imageUrl: electron,
+    name: "Electron"
+  },
+  {
+    imageUrl: threejs,
+    name: "ThreeJS"
+  },
+  {
+    imageUrl: tailwindcss,
+    name: "Tailwind"
+  },
+  {
+    imageUrl: nodejs,
+    name: "NodeJS"
+  },
+  {
+    imageUrl: express,
+    name: "Express"
+  },
+  {
+    imageUrl: flask,
+    name: "Flask"
+  }
 ];
 
 export const education = [

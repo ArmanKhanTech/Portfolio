@@ -17,12 +17,12 @@ class Experiance extends React.Component {
 
   componentDidMount() {
     this.vantaEffect = RINGS({
-        el: this.vantaRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: true,
-        backgroundColor: 0x1b1212,
-        color: 0xea580c,
+      el: this.vantaRef.current,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: true,
+      backgroundColor: 0x1b1212,
+      color: 0xea580c,
     });
     this.frameId = requestAnimationFrame(this.animateFrame);
   }

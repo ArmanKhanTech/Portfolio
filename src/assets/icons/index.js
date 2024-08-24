@@ -17,6 +17,27 @@ import crossDev from "./cross-dev.svg";
 import ml from "./ml.svg";
 import serverless from "./serverless.svg";
 import desktopDev from "./desktop-dev.svg";
+import android from "./android.svg";
+import cpp from "./cpp.svg";
+import dart from "./dart.svg";
+import docker from "./docker.svg";
+import electron from "./electron.svg";
+import flutter from "./flutter.svg";
+import firebase from "./firebase.svg";
+import flask from "./flask.svg";
+import gcp from "./gcp.svg";
+import jetpack from "./jetpack-compose.svg";
+import kotlin from "./kotlin.svg";
+import linux from "./linux.svg";
+import mysql from "./mysql.svg";
+import nginx from "./nginx.svg";
+import postgresql from "./postgresql.svg";
+import python from "./python.svg";
+import redis from "./redis.svg";
+import sql from "./sql.svg";
+import ts from "./ts.svg";
+import sqlite from "./sqlite.svg";
+import xml from "./xml.svg";
 
 export {
   css,
@@ -38,4 +59,25 @@ export {
   ml,
   serverless,
   desktopDev,
+  android,
+  cpp,
+  dart,
+  docker,
+  electron,
+  flutter,
+  firebase,
+  flask,
+  gcp,
+  jetpack,
+  kotlin,
+  linux,
+  mysql,
+  nginx,
+  postgresql,
+  python,
+  redis,
+  sql,
+  ts,
+  sqlite,
+  xml
 };

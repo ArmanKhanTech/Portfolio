@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { Canvas } from "@react-three/fiber";
 
 import { HomeContext } from "../context";
 import { HomeInfo, Welcome } from "../components";
-import { Sky } from "../models";
+import SkyCanvas from "../models/Sky";
 
 const Home = () => {
   const { loadingProgress, setLoadingProgress, hasWelcomeShown } =
@@ -15,26 +14,7 @@ const Home = () => {
       <div className="absolute inset-0 z-10">
         <HomeInfo />
       </div>
-      <Canvas
-        camera={{ near: 0.1, far: 100 }}
-        style={{ pointerEvents: "none", position: "fixed" }}
-      >
-        <directionalLight position={[1, 1, 1]} intensity={2} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 5, 10]} intensity={2} />
-        <spotLight
-          position={[0, 50, 10]}
-          angle={0.15}
-          penumbra={1}
-          intensity={2}
-        />
-        <hemisphereLight
-          skyColor="#000000"
-          groundColor="#000000"
-          intensity={2}
-        />
-        <Sky setLoadingProgress={setLoadingProgress} />
-      </Canvas>
+      <SkyCanvas setLoadingProgress={setLoadingProgress} />
     </section>
   );
 };

@@ -25,7 +25,7 @@ const HomeInfo = () => {
   }, []);
 
   return (
-    <section className="max-container pb-5">
+    <section className="max-container flex flex-col items-start justify-center py-10">
       <div>
         <div className="text-4xl mb-3 backdrop-blur-[2px] lg:text-6xl rounded-lg font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
@@ -72,11 +72,11 @@ const HomeInfo = () => {
           rel="noreferrer"
         >
           <button className="px-3 py-1.5 font-semibold text-2xl lg:text-3xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110">
-            My Resume
+            Résumé
           </button>
         </a>
       </div>
-      <div className="mt-10 self-end flex gap-2 rounded-lg backdrop-blur-[2px]">
+      <div className="mt-10 self-end lg:self-start flex gap-2 rounded-lg backdrop-blur-[2px]">
         {socialLinks.map((link) => (
           <Link key={link.name} to={link.link} target="_blank">
             <img

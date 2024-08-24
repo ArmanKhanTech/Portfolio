@@ -57,10 +57,8 @@ const Contact = () => {
             });
           }, [3000]);
         },
-        (error) => {
+        () => {
           setLoading(false);
-          console.error(error);
-
           showAlert({
             show: true,
             text: "I didn't receive your message 😢",
@@ -72,11 +70,14 @@ const Contact = () => {
 
   return (
     <section className="relative z-0">
-      <StarsCanvas />
-      <section className="max-container">
+      <div className="absolute inset-0 z-[-1]">
+        <StarsCanvas />
+        <EarthCanvas />
+      </div>
+      <section className="max-container relative z-10">
         {alert.show && <Alert {...alert} />}
-        <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:py-10">
-          <div className="flex flex-col lg:min-w-[40%] lg:pl-10">
+        <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:p-10 gap-6 lg:gap-20">
+          <div className="flex flex-col lg:w-1/2">
             <h1 className="text-5xl">
               <span className="font-bold orange-gradient-text font-semibold">
                 Contact
@@ -127,8 +128,33 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="hidden lg:flex lg:min-w-[60%] lg:h-[75vh] lg:object-cover lg:m-auto">
-            <EarthCanvas />
+          <div className="flex flex-col justify-start items-start lg:w-1/2 lg:items-start py-10">
+            <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
+              Additional Details
+            </p>
+            <div className="flex flex-col gap-4 mt-4">
+              <p className="text-white-100 text-xl">
+                <span className="font-light">Email:</span>
+                <br />
+                <a
+                  href="mailto:ak2341776@gmail.com"
+                  className="orange-gradient-text font-semibold"
+                >
+                  {" "}
+                  ak2341776@gmail.com
+                </a>
+              </p>
+              <p className="text-white-100 text-xl">
+                <span className="font-light">Location:</span>
+                <p className="orange-gradient-text font-semibold">India</p>
+              </p>
+              <p className="text-white-100 text-xl">
+                <span className="font-light">Phone:</span>
+                <p className="orange-gradient-text font-semibold">
+                  +91 91754 16203
+                </p>
+              </p>
+            </div>
           </div>
         </div>
       </section>
