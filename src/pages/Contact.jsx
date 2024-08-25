@@ -8,10 +8,11 @@ import Footer from "../components/Footer";
 
 const Contact = () => {
   const formRef = useRef();
+
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
-  const [canvasKey, setCanvasKey] = useState(0);
+
+  const { alert, showAlert, hideAlert } = useAlert();
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -19,6 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setLoading(true);
 
     emailjs
@@ -63,18 +65,13 @@ const Contact = () => {
       );
   };
 
-  useEffect(() => {
-    // Force re-render of Canvas component
-    setCanvasKey((prevKey) => prevKey + 1);
-  }, []);
-
   return (
-    <section className="relative z-0">
+    <section className="relative z-0 overflow-hidden">
       <div className="fixed w-full h-full inset-0 z-[-1]">
         <StarsCanvas />
-        <EarthCanvas key={canvasKey} />
+        <EarthCanvas />
       </div>
-      <section className="max-container relative z-10">
+      <section className="max-container relative z-10 overflow-auto">
         {alert.show && <Alert {...alert} />}
         <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:p-10 gap-6 lg:gap-20">
           <div className="flex flex-col lg:w-1/2">
@@ -128,7 +125,7 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="flex flex-col justify-start border border-orange-600 backdrop-blur-sm p-5 rounded-md items-start lg:w-1/2 lg:items-start py-10">
+          <div className="flex flex-col justify-start border border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
             <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
               Additional Details
             </p>

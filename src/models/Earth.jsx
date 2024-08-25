@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -14,7 +14,7 @@ const Earth = () => {
   useEffect(() => {
     if (actions) {
       const action = actions[Object.keys(actions)[0]];
-      action.reset().fadeIn(0.5).play();
+      action.play();
     }
   }, [actions]);
 
@@ -23,7 +23,6 @@ const Earth = () => {
       object={earth.scene}
       scale={2}
       position-y={0}
-      rotation-y={0}
       position-x={3}
     />
   );
@@ -58,6 +57,7 @@ const EarthCanvas = () => {
       />
       <OrbitControls
         autoRotate={true}
+        autoRotateSpeed={1.0}
         enableZoom={false}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
