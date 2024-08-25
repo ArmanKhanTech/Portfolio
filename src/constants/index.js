@@ -48,7 +48,8 @@ import {
   sql,
   ts,
   sqlite,
-  xml
+  xml,
+  nextjs
 } from "../assets/icons";
 
 export const skills = [
@@ -155,6 +156,10 @@ export const skills = [
   {
     imageUrl: react,
     name: "ReactJS"
+  },
+  {
+    imageUrl: nextjs,
+    name: "NextJS"
   },
   {
     imageUrl: electron,

@@ -38,6 +38,7 @@ import sql from "./sql.svg";
 import ts from "./ts.svg";
 import sqlite from "./sqlite.svg";
 import xml from "./xml.svg";
+import nextjs from "./nextjs.svg";
 
 export {
   css,
@@ -79,5 +80,6 @@ export {
   sql,
   ts,
   sqlite,
-  xml
+  xml,
+  nextjs,
 };

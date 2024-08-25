@@ -1,21 +1,17 @@
-import React, { useRef, useState } from "react";
-
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-
 import useAlert from "../hooks/useAlert";
 import { Alert } from "../components";
-
 import StarsCanvas from "../components/Stars";
 import EarthCanvas from "../models/Earth";
-
 import Footer from "../components/Footer";
 
 const Contact = () => {
   const formRef = useRef();
-
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
+  const [canvasKey, setCanvasKey] = useState(0);
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -23,7 +19,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setLoading(true);
 
     emailjs
@@ -68,11 +63,16 @@ const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    // Force re-render of Canvas component
+    setCanvasKey((prevKey) => prevKey + 1);
+  }, []);
+
   return (
     <section className="relative z-0">
-      <div className="absolute inset-0 z-[-1]">
+      <div className="fixed w-full h-full inset-0 z-[-1]">
         <StarsCanvas />
-        <EarthCanvas />
+        <EarthCanvas key={canvasKey} />
       </div>
       <section className="max-container relative z-10">
         {alert.show && <Alert {...alert} />}
@@ -128,29 +128,29 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="flex flex-col justify-start items-start lg:w-1/2 lg:items-start py-10">
+          <div className="flex flex-col justify-start border border-orange-600 backdrop-blur-sm p-5 rounded-md items-start lg:w-1/2 lg:items-start py-10">
             <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
               Additional Details
             </p>
             <div className="flex flex-col gap-4 mt-4">
-              <p className="text-white-100 text-xl">
-                <span className="font-light">Email:</span>
+              <p className="text-white-100">
+                <span className="font-light text-lg">Email:</span>
                 <br />
                 <a
                   href="mailto:ak2341776@gmail.com"
-                  className="orange-gradient-text font-semibold"
+                  className="orange-gradient-text font-semibold text-xl"
                 >
                   {" "}
                   ak2341776@gmail.com
                 </a>
               </p>
-              <p className="text-white-100 text-xl">
-                <span className="font-light">Location:</span>
-                <p className="orange-gradient-text font-semibold">India</p>
+              <p className="text-white-100">
+                <span className="font-light text-lg">Location:</span>
+                <p className="orange-gradient-text font-semibold text-xl">India</p>
               </p>
-              <p className="text-white-100 text-xl">
-                <span className="font-light">Phone:</span>
-                <p className="orange-gradient-text font-semibold">
+              <p className="text-white-100">
+                <span className="font-light text-lg">Phone:</span>
+                <p className="orange-gradient-text font-semibold text-xl">
                   +91 91754 16203
                 </p>
               </p>
