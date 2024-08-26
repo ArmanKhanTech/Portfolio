@@ -71,10 +71,10 @@ const Contact = () => {
         <StarsCanvas />
         <EarthCanvas />
       </div>
-      <section className="max-container relative z-10 overflow-auto">
+      <section className="max-container relative z-10">
         {alert.show && <Alert {...alert} />}
         <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:p-10 gap-6 lg:gap-20">
-          <div className="flex flex-col lg:w-1/2">
+          <div className="flex flex-col lg:w-1/2 overflow-auto max-h-screen">
             <h1 className="text-5xl">
               <span className="font-bold orange-gradient-text font-semibold">
                 Contact

@@ -25,7 +25,7 @@ const HomeInfo = () => {
   }, []);
 
   return (
-    <section className="max-container flex flex-col items-start justify-center py-10 h-full overflow-y-auto">
+    <section className="max-container flex flex-col items-start justify-center py-10 h-full">
       <div>
         <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
@@ -76,7 +76,7 @@ const HomeInfo = () => {
           </button>
         </a>
       </div>
-      <div className="mt-10 self-end lg:self-start flex gap-2 rounded-lg backdrop-blur-[2px]">
+      <div className="mt-10 self-start flex gap-2 rounded-lg">
         {socialLinks.map((link) => (
           <Link key={link.name} to={link.link} target="_blank">
             <img

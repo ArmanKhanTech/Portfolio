@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <section className="bg-gradient-to-r from-slate-900 to-[#1B1212] min-h-screen relative">
       {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute inset-0 z-10 overflow-y-auto">
         <HomeInfo />
       </div>
       <SkyCanvas setLoadingProgress={setLoadingProgress} />
