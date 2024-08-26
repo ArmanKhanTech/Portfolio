@@ -9,12 +9,14 @@ const Home = () => {
     useContext(HomeContext);
 
   return (
-    <section className="bg-gradient-to-r from-slate-900 to-[#1B1212] min-h-screen relative">
+    <section className="min-h-screen relative flex items-center justify-center">
       {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
-      <div className="absolute inset-0 z-10 overflow-y-auto">
+      <div className="max-w-5xl mx-5 lg:mx-auto lg:px-12 py-[126px] relative inset-0 z-1 overflow-y-auto">
         <HomeInfo />
       </div>
-      <SkyCanvas setLoadingProgress={setLoadingProgress} />
+      <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-slate-900 to-[#1B1212]">
+        <SkyCanvas setLoadingProgress={setLoadingProgress} />
+      </div>
     </section>
   );
 };

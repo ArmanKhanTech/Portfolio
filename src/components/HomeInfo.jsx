@@ -25,7 +25,7 @@ const HomeInfo = () => {
   }, []);
 
   return (
-    <section className="max-container flex flex-col items-start justify-center py-10 h-full">
+    <section className="flex flex-col items-start justify-center h-full w-full overflow-y-auto">
       <div>
         <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
