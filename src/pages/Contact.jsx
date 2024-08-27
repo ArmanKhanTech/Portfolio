@@ -66,98 +66,100 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative z-0 overflow-hidden">
-      <div className="fixed w-full h-full inset-0 z-[-1]">
+    <section className="fixed inset-0 z-0">
+      <div className="absolute w-full h-full inset-0 z-[-1]">
         <StarsCanvas />
         <EarthCanvas />
       </div>
       <div className="relative w-full h-full overflow-y-auto">
-      <section className="max-container relative inset-0">
-        {alert.show && <Alert {...alert} />}
-        <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:p-10 gap-6 lg:gap-20">
-          <div className="flex flex-col lg:w-1/2">
-            <h1 className="text-5xl">
-              <span className="font-bold orange-gradient-text font-semibold">
-                Contact
-              </span>
-            </h1>
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className="w-full flex flex-col gap-6 mt-14"
-            >
-              <label className="text-white-100 text-2xl">
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  className="input"
-                  placeholder="Arman Khan"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                />
-              </label>
-              <label className="text-white-100 text-2xl">
-                Email
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  name="email"
-                  className="input"
-                  placeholder="arman@gmail.com"
-                  required
-                />
-              </label>
-              <label className="text-white-100 text-2xl">
-                Your Message
-                <textarea
-                  name="message"
-                  rows="4"
-                  className="textarea"
-                  placeholder="Write your thoughts here..."
-                  value={form.message}
-                  onChange={handleChange}
-                />
-              </label>
-              <button type="submit" disabled={loading} className="btn">
-                {loading ? "Sending..." : "Submit"}
-              </button>
-            </form>
-          </div>
-          <div className="flex flex-col justify-start border border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
-            <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
-              Additional Details
-            </p>
-            <div className="flex flex-col gap-4 mt-4">
-              <p className="text-white-100">
-                <span className="font-light text-lg">Email:</span>
-                <br />
-                <a
-                  href="mailto:ak2341776@gmail.com"
-                  className="orange-gradient-text font-semibold text-xl"
-                >
-                  {" "}
-                  ak2341776@gmail.com
-                </a>
+        <div className="max-container absolute inset-0">
+          {alert.show && <Alert {...alert} />}
+          <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:p-10 gap-6 lg:gap-20">
+            <div className="flex flex-col lg:w-1/2">
+              <h1 className="text-5xl">
+                <span className="font-bold orange-gradient-text font-semibold">
+                  Contact
+                </span>
+              </h1>
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="w-full flex flex-col gap-6 mt-14"
+              >
+                <label className="text-white-100 text-2xl">
+                  Name
+                  <input
+                    type="text"
+                    name="name"
+                    className="input"
+                    placeholder="Arman Khan"
+                    required
+                    value={form.name}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label className="text-white-100 text-2xl">
+                  Email
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    name="email"
+                    className="input"
+                    placeholder="arman@gmail.com"
+                    required
+                  />
+                </label>
+                <label className="text-white-100 text-2xl">
+                  Your Message
+                  <textarea
+                    name="message"
+                    rows="4"
+                    className="textarea"
+                    placeholder="Write your thoughts here..."
+                    value={form.message}
+                    onChange={handleChange}
+                  />
+                </label>
+                <button type="submit" disabled={loading} className="btn">
+                  {loading ? "Sending..." : "Submit"}
+                </button>
+              </form>
+            </div>
+            <div className="flex flex-col justify-start border border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
+              <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
+                Additional Details
               </p>
-              <p className="text-white-100">
-                <span className="font-light text-lg">Location:</span>
-                <p className="orange-gradient-text font-semibold text-xl">India</p>
-              </p>
-              <p className="text-white-100">
-                <span className="font-light text-lg">Phone:</span>
-                <p className="orange-gradient-text font-semibold text-xl">
-                  +91 91754 16203
+              <div className="flex flex-col gap-4 mt-4">
+                <p className="text-white-100">
+                  <span className="font-light text-lg">Email:</span>
+                  <br />
+                  <a
+                    href="mailto:ak2341776@gmail.com"
+                    className="orange-gradient-text font-semibold text-xl"
+                  >
+                    {" "}
+                    ak2341776@gmail.com
+                  </a>
                 </p>
-              </p>
+                <p className="text-white-100">
+                  <span className="font-light text-lg">Location:</span>
+                  <p className="orange-gradient-text font-semibold text-xl">
+                    India
+                  </p>
+                </p>
+                <p className="text-white-100">
+                  <span className="font-light text-lg">Phone:</span>
+                  <p className="orange-gradient-text font-semibold text-xl">
+                    +91 91754 16203
+                  </p>
+                </p>
+              </div>
             </div>
           </div>
+          <Footer />
         </div>
-      </section>
       </div>
-      <Footer />
     </section>
   );
 };

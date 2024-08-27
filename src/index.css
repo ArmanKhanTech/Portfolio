@@ -49,10 +49,6 @@
     @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
   }
 
-  .footer {
-    @apply max-w-5xl m-auto px-5 lg:px-12 mt-10 pb-8 flex flex-col gap-6;
-  }
-
   .footer-container {
     @apply flex flex-wrap gap-7 items-center justify-between;
   }

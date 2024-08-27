@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -8,8 +8,8 @@ import {
 } from "@react-three/drei";
 
 const Earth = () => {
-  const earth = useGLTF("./planet.glb");
-  const { actions } = useAnimations(earth.animations, earth.scene);
+  const { scene, animations } = useGLTF("./planet.glb");
+  const { actions } = useAnimations(animations, scene);
 
   useEffect(() => {
     if (actions) {
@@ -18,14 +18,7 @@ const Earth = () => {
     }
   }, [actions]);
 
-  return (
-    <primitive
-      object={earth.scene}
-      scale={2}
-      position-y={0}
-      position-x={3}
-    />
-  );
+  return <primitive object={scene} scale={2} position-y={0} position-x={3} />;
 };
 
 const EarthCanvas = () => {
@@ -59,8 +52,6 @@ const EarthCanvas = () => {
         autoRotate={true}
         autoRotateSpeed={1.0}
         enableZoom={false}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
       />
       <Earth />
       <Preload all />

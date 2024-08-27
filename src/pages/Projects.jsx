@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { CTA, Navbar } from "../components";
+import { CTA } from "../components";
 import { projects } from "../constants";
 import { arrow } from "../assets/icons";
 
@@ -38,13 +38,9 @@ class Projects extends React.Component {
 
   render() {
     return (
-      <div
-        ref={this.vantaRef}
-        className="fixed inset-0 z-50 w-screen h-screen bg-[#131a43]"
-      >
+      <section ref={this.vantaRef} className="fixed inset-0 z-0">
         <div className="relative w-full h-full overflow-y-auto">
-          <section className="max-container absolute inset-0">
-            <Navbar />
+          <div className="max-container absolute inset-0">
             <h1 className="text-5xl">
               <span className="font-semibold orange-gradient-text">
                 Projects
@@ -98,9 +94,9 @@ class Projects extends React.Component {
             <hr className="border-slate-200" />
             <CTA color={"bg-orange-600"} />
             <hr className="h-2 border-transparent" />
-          </section>
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

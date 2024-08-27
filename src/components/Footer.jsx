@@ -6,9 +6,9 @@ import { socialLinks } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="footer mt-10">
+    <footer className="mt-10">
       <hr className="border-white" />
-      <div className="footer-container text-white text-xl">
+      <div className="footer-container py-10 text-white text-xl">
         <p>
           © 2024 <strong>Arman Khan</strong>. All rights reserved.
         </p>

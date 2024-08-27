@@ -1,5 +1,5 @@
 import React from "react";
-import RINGS from "vanta/dist/vanta.rings.min";
+import BIRDS from "vanta/dist/vanta.birds.min";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -8,6 +8,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 import { CTA } from "../components";
 import { experiance } from "../constants";
+import { color } from "three/examples/jsm/nodes/Nodes.js";
 
 class Experiance extends React.Component {
   constructor() {
@@ -16,13 +17,21 @@ class Experiance extends React.Component {
   }
 
   componentDidMount() {
-    this.vantaEffect = RINGS({
+    this.vantaEffect = BIRDS({
       el: this.vantaRef.current,
       mouseControls: true,
       touchControls: true,
       gyroControls: true,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      colorMode: "variance",
+      birdSize: 1.0,
+      quantity: 4.0,
+      color1: 0xea580c,
+      color2: 0xdc2626,
       backgroundColor: 0x1b1212,
-      color: 0xea580c,
     });
     this.frameId = requestAnimationFrame(this.animateFrame);
   }

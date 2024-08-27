@@ -49,142 +49,142 @@ import {
   ts,
   sqlite,
   xml,
-  nextjs
+  nextjs,
 } from "../assets/icons";
 
 export const skills = [
   {
     imageUrl: cpp,
-    name: "C++"
+    name: "C++",
   },
   {
     imageUrl: python,
-    name: "Python"
+    name: "Python",
   },
   {
     imageUrl: html,
-    name: "HTML"
+    name: "HTML",
   },
   {
     imageUrl: css,
-    name: "CSS"
+    name: "CSS",
   },
   {
     imageUrl: javascript,
-    name: "JS"
+    name: "JS",
   },
   {
     imageUrl: ts,
-    name: "TS"
+    name: "TS",
   },
   {
     imageUrl: sql,
-    name: "SQL"
+    name: "SQL",
   },
   {
     imageUrl: java,
-    name: "Java"
+    name: "Java",
   },
   {
     imageUrl: kotlin,
-    name: "Kotlin"
+    name: "Kotlin",
   },
   {
     imageUrl: xml,
-    name: "XML"
+    name: "XML",
   },
   {
     imageUrl: dart,
-    name: "Dart"
+    name: "Dart",
   },
   {
     imageUrl: flutter,
-    name: "Flutter"
+    name: "Flutter",
   },
   {
     imageUrl: jetpack,
-    name: "Jetpack"
+    name: "Jetpack",
   },
   {
     imageUrl: android,
-    name: "Android"
+    name: "Android",
   },
   {
     imageUrl: linux,
-    name: "Linux"
+    name: "Linux",
   },
   {
     imageUrl: docker,
-    name: "Docker"
+    name: "Docker",
   },
   {
     imageUrl: nginx,
-    name: "Nginx"
+    name: "Nginx",
   },
   {
     imageUrl: git,
-    name: "Git"
+    name: "Git",
   },
   {
     imageUrl: github,
-    name: "GitHub"
+    name: "GitHub",
   },
   {
     imageUrl: mysql,
-    name: "MySQL"
+    name: "MySQL",
   },
   {
     imageUrl: sqlite,
-    name: "SQLite"
+    name: "SQLite",
   },
   {
     imageUrl: postgresql,
-    name: "Postgres"
+    name: "Postgres",
   },
   {
-    imageUrl: redis,  
-    name: "Redis"
+    imageUrl: redis,
+    name: "Redis",
   },
   {
     imageUrl: gcp,
-    name: "GCP"
+    name: "GCP",
   },
   {
     imageUrl: firebase,
-    name: "Firebase"
+    name: "Firebase",
   },
   {
     imageUrl: react,
-    name: "ReactJS"
+    name: "ReactJS",
   },
   {
     imageUrl: nextjs,
-    name: "NextJS"
+    name: "NextJS",
   },
   {
     imageUrl: electron,
-    name: "Electron"
+    name: "Electron",
   },
   {
     imageUrl: threejs,
-    name: "ThreeJS"
+    name: "ThreeJS",
   },
   {
     imageUrl: tailwindcss,
-    name: "Tailwind"
+    name: "Tailwind",
   },
   {
     imageUrl: nodejs,
-    name: "NodeJS"
+    name: "NodeJS",
   },
   {
     imageUrl: express,
-    name: "Express"
+    name: "Express",
   },
   {
     imageUrl: flask,
-    name: "Flask"
-  }
+    name: "Flask",
+  },
 ];
 
 export const education = [
