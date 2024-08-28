@@ -25,7 +25,7 @@ const HomeInfo = () => {
   }, []);
 
   return (
-    <section className="flex flex-col items-start justify-center h-full w-full overflow-y-auto">
+    <div className="max-container absolute inset-0">
       <div>
         <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
@@ -87,7 +87,8 @@ const HomeInfo = () => {
           </Link>
         ))}
       </div>
-    </section>
+      <div className="h-12" />
+    </div>
   );
 };
 
