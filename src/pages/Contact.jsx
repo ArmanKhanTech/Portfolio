@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import useAlert from "../hooks/useAlert";
 import { Alert } from "../components";
-import StarsCanvas from "../components/Stars";
+import StarsCanvas from "../models/Stars";
 import EarthCanvas from "../models/Earth";
 import Footer from "../components/Footer";
 
@@ -67,7 +67,7 @@ const Contact = () => {
 
   return (
     <section className="fixed inset-0 z-0">
-      <div className="absolute w-full h-full inset-0 z-[-1]">
+      <div className="fixed w-full h-full inset-0 z-[-1] bg-[#1B1212]">
         <StarsCanvas />
         <EarthCanvas />
       </div>
@@ -126,7 +126,7 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-            <div className="flex flex-col justify-start border border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
+            <div className="flex flex-col justify-start border backdrop-blur-sm border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
               <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
                 Additional Details
               </p>
