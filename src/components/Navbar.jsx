@@ -18,7 +18,9 @@ const Navbar = () => {
 
   if (isMenuOpen) {
     return (
-      <div className={`${!hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"} backdrop-blur-lg bg-black bg-opacity-50 z-50 font-semibold top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center`}>
+      <div
+        className={`${!hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"} backdrop-blur-lg bg-black bg-opacity-50 z-50 font-semibold top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center`}
+      >
         <div className="text-xl">
           <div className="p-2.5 mt-1 flex items-center" onClick={toggleMenu}>
             <svg
@@ -84,7 +86,9 @@ const Navbar = () => {
   }
 
   return (
-    <header className={`${!hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"} backdrop-blur-[2px] m-auto max-w-5xl lg:px-12 top-0 left-0 right-0 w-[100%] z-50 bg-transparent`}>
+    <header
+      className={`${!hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"} backdrop-blur-[2px] m-auto max-w-5xl lg:px-12 top-0 left-0 right-0 w-[100%] z-50 bg-transparent`}
+    >
       <div className="container flex justify-between items-center py-4 px-5 lg:px-0">
         <button
           className="text-3xl backdrop-blur-sm orange-gradient-text font-semibold rounded-xl border px-2 py-2.5"

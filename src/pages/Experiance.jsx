@@ -8,7 +8,6 @@ import "react-vertical-timeline-component/style.min.css";
 
 import { CTA } from "../components";
 import { experiance } from "../constants";
-import { color } from "three/examples/jsm/nodes/Nodes.js";
 
 class Experiance extends React.Component {
   constructor() {

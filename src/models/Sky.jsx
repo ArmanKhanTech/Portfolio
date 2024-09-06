@@ -28,8 +28,7 @@ const Sky = memo(({ setLoadingProgress }) => {
 
 const SkyCanvas = ({ setLoadingProgress }) => {
   return (
-    <Canvas
-      camera={{ near: 0.1, far: 100 }} style={{ position: "fixed" }}>
+    <Canvas camera={{ near: 0.1, far: 100 }} style={{ position: "fixed" }}>
       <directionalLight position={[1, 1, 1]} intensity={3} />
       <ambientLight intensity={1} />
       <pointLight position={[10, 5, 10]} intensity={3} />

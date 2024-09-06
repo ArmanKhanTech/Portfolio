@@ -1,6 +1,5 @@
 import React from "react";
-
-import WAVES from "vanta/dist/vanta.waves.min";
+import WAVES from "../models/vanta/waves";
 
 class Welcome extends React.Component {
   constructor() {
