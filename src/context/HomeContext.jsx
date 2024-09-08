@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 export const HomeContext = React.createContext();
 
 export const HomeProvider = ({ children }) => {
-  const isMobile = window.innerWidth < 768;
-
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [hasWelcomeShown, setHasWelcomeShown] = useState(false);
 
@@ -17,7 +15,6 @@ export const HomeProvider = ({ children }) => {
   return (
     <HomeContext.Provider
       value={{
-        isMobile,
         loadingProgress,
         setLoadingProgress,
         hasWelcomeShown,

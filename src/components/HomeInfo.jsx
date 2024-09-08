@@ -4,13 +4,20 @@ import { NavLink, Link } from "react-router-dom";
 import HireButton from "./HireButton";
 import { socialLinks } from "../constants";
 
-const TEXTS = [
-  "Web Development",
-  "App Development",
-  "Desktop Development",
-  "Machine Learning",
-  "Serverless Computing",
-  "& much more...",
+const domain = [
+  "Web",
+  "App",
+  "Desktop",
+  "Machine",
+  "Serverless",
+];
+
+const suffix = [
+  "Development",
+  "Development",
+  "Development",
+  "Learning",
+  "Computing",
 ];
 
 const HomeInfo = () => {
@@ -18,14 +25,14 @@ const HomeInfo = () => {
 
   React.useEffect(() => {
     const intervalId = setInterval(
-      () => setIndex((index) => (index + 1) % TEXTS.length),
+      () => setIndex((index) => (index + 1) % domain.length),
       2500,
     );
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="max-container absolute inset-0">
+    <div className="max-container flex flex-col items-start justify-center">
       <div>
         <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
           <h1>Hello! there,</h1>
@@ -51,10 +58,15 @@ const HomeInfo = () => {
             and I do
           </h1>
         </div>
-        <div className="min-h-24 lg:min-h-0 mb-5 text-4xl lg:text-6xl text-red-600 font-semibold break-words leading-tight">
-          <p>{TEXTS[index]}</p>
+        <div className="flex flex-col md:flex-row mb-5 md:gap-4 text-4xl lg:text-6xl text-red-600 font-semibold break-words leading-tight">
+          <div className="animate-pulse">
+            <p>{domain[index]}</p>
+          </div>
+          <div className="animate-pulse">
+            <p>{suffix[index]}</p>
+          </div>
         </div>
-        <div className="sm:mt-10 lg:mt-3">
+        <div className="sm:mt-10 md:mt-3">
           <NavLink to="/services">
             <HireButton />
           </NavLink>
