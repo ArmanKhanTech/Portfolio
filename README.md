@@ -80,6 +80,9 @@ Follow the below instructions to get started.
     <p>NPM v.10.5.0</a>
   </li>
   <li>
+    <p>Nodejs v.21+</a>
+  </li>
+  <li>
     <p>Email.js Account</a>
   </li>
 </ol>
