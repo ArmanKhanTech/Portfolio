@@ -11,6 +11,6 @@ const Welcome = () => {
       </h3>
     </section>
   );
-}
+};
 
 export default Welcome;

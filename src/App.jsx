@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { About, Contact, Home, Projects, Services, Experiance } from "./pages";
 import { HomeProvider } from "./context/HomeContext";
 import Navbar from "./components/Navbar";
+import Audio from "./components/Audio";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
         </Routes>
+        <Audio />
       </Router>
     </HomeProvider>
   );

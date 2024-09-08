@@ -11,7 +11,7 @@ const CTA = ({ color }) => {
       </p>
       <Link
         to="/contact"
-        className={`cta-button ${color} w-full text-center lg:w-28 bg-opacity-25 bg-blur p-2 lg:px-5 text-white font-semibold rounded-xl`}
+        className={`cta-button w-full text-center text-xl lg:w-32 text-orange-600 border border-orange-600 bg-blur p-2 lg:px-5 font-semibold rounded-xl`}
       >
         Contact
       </Link>

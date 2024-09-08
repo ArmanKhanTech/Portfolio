@@ -4,13 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import HireButton from "./HireButton";
 import { socialLinks } from "../constants";
 
-const domain = [
-  "Web",
-  "App",
-  "Desktop",
-  "Machine",
-  "Serverless",
-];
+const domain = ["Web", "App", "Desktop", "Machine", "Serverless"];
 
 const suffix = [
   "Development",
@@ -59,10 +53,10 @@ const HomeInfo = () => {
           </h1>
         </div>
         <div className="flex flex-col md:flex-row mb-5 md:gap-4 text-4xl lg:text-6xl text-red-600 font-semibold break-words leading-tight">
-          <div className="animate-pulse">
+          <div>
             <p>{domain[index]}</p>
           </div>
-          <div className="animate-pulse">
+          <div>
             <p>{suffix[index]}</p>
           </div>
         </div>

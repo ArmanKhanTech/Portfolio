@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <section className="fixed inset-0 z-0">
-      {!hasWelcomeShown && loadingProgress < 100 ? <Welcome /> : null}
+      {!hasWelcomeShown && loadingProgress < 100 && <Welcome />}
       <div className="relative w-full h-full overflow-y-auto">
         <HomeInfo />
       </div>

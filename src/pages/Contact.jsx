@@ -1,10 +1,13 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { TbSourceCode } from "react-icons/tb";
+
 import useAlert from "../hooks/useAlert";
 import { Alert } from "../components";
 import StarsCanvas from "../models/Stars";
 import EarthCanvas from "../models/Earth";
 import Footer from "../components/Footer";
+import { react, threejs, tailwindcss } from "../assets/icons";
 
 const Contact = () => {
   const formRef = useRef();
@@ -126,34 +129,54 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-            <div className="flex flex-col justify-start border backdrop-blur-sm border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
-              <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
-                Additional Details
-              </p>
-              <div className="flex flex-col gap-4 mt-4">
-                <p className="text-white-100">
-                  <span className="font-light text-lg">Email:</span>
-                  <br />
+            <div className="flex flex-col justify-between border border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
+              <div>
+                <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
+                  Additional Details
+                </p>
+                <div className="flex flex-col gap-4 mt-4">
+                  <p className="text-white-100">
+                    <span className="font-light text-lg">Email:</span>
+                    <br />
+                    <a
+                      href="mailto:ak2341776@gmail.com"
+                      className="orange-gradient-text font-semibold text-xl"
+                    >
+                      {" "}
+                      ak2341776@gmail.com
+                    </a>
+                  </p>
+                  <p className="text-white-100">
+                    <span className="font-light text-lg">Location:</span>
+                    <p className="orange-gradient-text font-semibold text-xl">
+                      India
+                    </p>
+                  </p>
+                  <p className="text-white-100">
+                    <span className="font-light text-lg">Phone:</span>
+                    <p className="orange-gradient-text font-semibold text-xl">
+                      +91 91754 16203
+                    </p>
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col w-full">
+                <p className="text-white-100 mt-4 text-2xl font-semibold orange-gradient-text">
+                  Technologies Used
+                </p>
+                <div className="flex flex-row items-center justify-between mt-4 w-full">
+                  <div className="flex flex-row gap-4">
+                    <img src={react} className="w-10 h-10" />
+                    <img src={threejs} className="w-10 h-10" />
+                    <img src={tailwindcss} className="w-10 h-10" />
+                  </div>
                   <a
-                    href="mailto:ak2341776@gmail.com"
-                    className="orange-gradient-text font-semibold text-xl"
+                    href="https://github.com/ArmanKhanTech/Portfolio"
+                    target="_blank"
                   >
-                    {" "}
-                    ak2341776@gmail.com
+                    <TbSourceCode className="w-11 h-11 text-orange-600" />
                   </a>
-                </p>
-                <p className="text-white-100">
-                  <span className="font-light text-lg">Location:</span>
-                  <p className="orange-gradient-text font-semibold text-xl">
-                    India
-                  </p>
-                </p>
-                <p className="text-white-100">
-                  <span className="font-light text-lg">Phone:</span>
-                  <p className="orange-gradient-text font-semibold text-xl">
-                    +91 91754 16203
-                  </p>
-                </p>
+                </div>
               </div>
             </div>
           </div>

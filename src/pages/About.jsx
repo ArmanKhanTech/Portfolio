@@ -22,9 +22,8 @@ class About extends React.Component {
       touchControls: true,
       gyroControls: true,
       backgroundColor: 0x1b1212,
-      amplitudeFactor: 2.0,
-      size: 2.0,
-      xOffset: 0,
+      amplitudeFactor: 3.0,
+      size: 2.5,
     });
     this.frameId = requestAnimationFrame(this.animateFrame);
   }
