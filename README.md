@@ -147,19 +147,10 @@ Follow the below instructions to get started.
    </NavLink>
    ```
 
-2. Change the name in `src/components/HomeInfo.js` to your name (line 35 & 90)
+2. Change the name in `src/components/HomeInfo.js` to your name 
 
    ```HTML
    <div className='text-4xl font-bold orange-gradient-text'>
-     <h1>Hello,</h1>
-     <h1>I am {Your Name} & I do</h1>
-   </div>
-   ```
-
-   and
-
-   ```HTML
-   <div className='text-6xl font-bold orange-gradient-text'>
      <h1>Hello,</h1>
      <h1>I am {Your Name} & I do</h1>
    </div>
@@ -173,13 +164,11 @@ Follow the below instructions to get started.
 
    c. Also, change the `favicon.ico` in `src\assets\` folder accrodingly
 
-   d. Add expriences & testimonals sections in `About.jsx` if you want
-
-   e. Kindly make sure to modify all the respective import statements whenever making in changes in `src\constanst\index.js`
+   d. Kindly make sure to modify all the respective import statements whenever making in changes in `src\constanst\index.js`
 
 4. Also, update the title & description in `index.html`
 
-5. Change the link to your resume in `src\components\HomeInfo.js` (line 64 & 121)
+5. Change the link to your resume in `src\components\HomeInfo.js`
    ```HTML
    <div className='my-3'>
      <a href='resume_link' target='_blank' rel='noreferrer'>
@@ -189,16 +178,8 @@ Follow the below instructions to get started.
      </a>
    </div>
    ```
-   and
-   ```HTML
-   <div className='mt-5'>
-     <a href='resume_link' target='_blank' rel='noreferrer'>
-       <button className='px-3 py-1.5 font-semibold text-2xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
-         Resume
-       </button>
-     </a>
-   </div>
-   ```
+
+
 
 ## Contributing
 
