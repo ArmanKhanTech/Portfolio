@@ -73,7 +73,7 @@ const HomeInfo = () => {
       </div>
       <div className="mt-5">
         <a
-          href="https://drive.google.com/file/d/1odc_-0mQGWoS2iaOZRPimx6JlsZMfGVj/view?usp=sharing"
+          href="https://www.canva.com/design/DAGNKrVaNyU/xvCXoOEob1C66t5xcqjhIw/view?utm_content=DAGNKrVaNyU&utm_campaign=designshare&utm_medium=link&utm_source=editor"
           target="_blank"
           rel="noreferrer"
         >
