@@ -7,9 +7,9 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 import { CTA } from "../components";
-import { experiance } from "../constants";
+import { experience } from "../constants";
 
-class Experiance extends React.Component {
+class Experience extends React.Component {
   constructor() {
     super();
     this.vantaRef = React.createRef();
@@ -60,7 +60,7 @@ class Experiance extends React.Component {
           <div className="max-container absolute inset-0">
             <h1 className="text-headingMobile lg:text-5xl">
               <span className="font-semibold orange-gradient-text">
-                Experiance
+                Experience
               </span>
             </h1>
             <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-xl">

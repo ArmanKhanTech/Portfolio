@@ -220,7 +220,7 @@ export const education = [
   },
 ];
 
-export const experiance = [
+export const experience = [
   {
     title: "Freelancer",
     date: "Dec 2022 - Aug 2025",
