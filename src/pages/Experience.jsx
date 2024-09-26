@@ -76,17 +76,17 @@ class Experience extends React.Component {
             <div className="py-2">
               <div className="mt-10 flex">
                 <VerticalTimeline>
-                  {experiance.map((experiance) => (
+                  {experience.map((experience) => (
                     <VerticalTimelineElement
                       iconStyle={{
-                        background: experiance.iconBg,
+                        background: experience.iconBg,
                         padding: "5px",
                       }}
                       animateFrame={this.animateFrame}
                       icon={
                         <div className="flex justify-center items-center w-full h-full">
                           <img
-                            src={experiance.icon}
+                            src={experience.icon}
                             className="w-[60%] h-[60%] object-contain"
                           />
                         </div>
@@ -104,17 +104,17 @@ class Experience extends React.Component {
                     >
                       <div>
                         <h1 className="text-white text-xl font-semibold">
-                          {experiance.title}
+                          {experience.title}
                         </h1>
                         <h3 className="text-white text-base font-medium mb-2">
-                          {experiance.empolyer}
+                          {experience.empolyer}
                         </h3>
                         <span className="text-white text-lg font-semibold">
-                          {experiance.date}
+                          {experience.date}
                         </span>
                       </div>
                       <ul className="my-5 list-disc ml-5 space-y-2 text-lg">
-                        {experiance.points.map((point, index) => (
+                        {experience.points.map((point, index) => (
                           <li className="text-white pl-1">{point}</li>
                         ))}
                       </ul>
@@ -133,4 +133,4 @@ class Experience extends React.Component {
   }
 }
 
-export default Experiance;
+export default Experience;
