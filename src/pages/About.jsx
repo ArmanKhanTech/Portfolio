@@ -107,7 +107,7 @@ class About extends React.Component {
                       contentStyle={{
                         borderBottom: "8px",
                         borderStyle: "solid",
-                        borderBottomColor: "#00c6ff",
+                        borderBottomColor: "#ea580c",
                         borderRadius: "10px",
                         backdropFilter: "blur(60px)",
                         WebkitBackdropFilter: "blur(60px)",

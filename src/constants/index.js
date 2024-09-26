@@ -192,7 +192,7 @@ export const education = [
     title: "Anjuman-I-Islam's Kalsekar Technical Campus",
     date: "Dec 2022 - Aug 2025   |   CGPA: 9.33",
     icon: educationIcon,
-    iconBg: "#00c6ff",
+    iconBg: "#ea580c",
     points: [
       "I am currently pursuing my undergraduate degree with a focus on B.E. in Computer Engineering at Mumbai University.",
       "Through rigorous coursework and hands-on projects, I am developing a strong foundation in various domians of Computer Science, preparing myself for a successful career in Software Development.",
@@ -202,7 +202,7 @@ export const education = [
     title: "Anjuman-I-Islam's Abdul Razzak Kalsekar Polytechnic",
     date: "Aug 2019 - July 2022   |   Grade: 88 %",
     icon: educationIcon,
-    iconBg: "#00c6ff",
+    iconBg: "#ea580c",
     points: [
       "I successfully completed the Maharashtra State Board of Technical Education (MSBTE) Diploma program, acquiring comprehensive knowledge and practical skills in Computer Engineering.",
       "This educational foundation equips me to excel in my professional endeavors and contribute effectively to the field.",
@@ -212,7 +212,7 @@ export const education = [
     title: "J.M Rathi English School & Junior College",
     date: "June 2013 - Mar 2019   |   Percentage: 89 %",
     icon: educationIcon,
-    iconBg: "#00c6ff",
+    iconBg: "#ea580c",
     points: [
       "I successfully navigated a rigorous high school curriculum, demonstrating exceptional academic aptitude and a commitment to excellence.",
       "Engaging in diverse extracurricular activities, I honed leadership and interpersonal skills, fostering a well-rounded educational experience.",
@@ -223,33 +223,65 @@ export const education = [
 export const experience = [
   {
     title: "Freelancer",
-    date: "Dec 2022 - Aug 2025",
+    date: "Aug 2023 - Present",
     empolyer: "Self-Employed",
     icon: experianceIcon,
-    iconBg: "#00c6ff",
+    iconBg: "#ea580c",
     points: [
-      "Engaged in freelancing for various clients, crafting creative solutions tailored to their requirements",
+      "Engaged in freelancing for various clients, crafting creative solutions tailored to their requirements.",
       "Specializes in multi-domain software development.",
       "Completed four distinct projects to date.",
     ],
   },
   {
-    title: "App Lead",
-    date: "Aug 2023 - July 2024",
+    title: "Technology Lead",
+    date: "May 2024 - Present",
+    empolyer: "Stealth Research | Self-Employed",
+    icon: experianceIcon,
+    iconBg: "#ea580c",
+    points: [
+      "Shipping IT and CyberSecurity services to the clients across the world.",
+      "Visit https://alt.stealthresear.ch to know more.",
+    ],
+  },
+  {
+    title: "Product Developer",
+    date: "July 24 - Present",
+    empolyer: "NetraX | Self-Employed",
+    icon: experianceIcon,
+    iconBg: "#ea580c",
+    points: [
+      "Building an OCT device to detect Glaucoma and Diabetes through the eyes.",
+    ],
+  },
+  {
+    title: "Back End Developer",
+    date: "Aug 2024 - Present",
+    empolyer: "Techcraft Electronics LLC",
+    icon: experianceIcon,
+    iconBg: "#ea580c",
+    points: [
+      "Lead the charge of re-developing of the company’s website.",
+      "Improved the overall online presence of the company by segregating the data and enhancing the user experience.",
+    ],
+  },
+  {
+    title: "Mobile App Lead",
+    date: "Aug 2023 - June 2024",
     empolyer: "GDSC AIKTC",
     icon: experianceIcon,
-    iconBg: "#00c6ff",
+    iconBg: "#ea580c",
     points: [
       "Organized multiple workshops on Android Development, covering Kotlin, Jetpack Compose, and Flutter, for students from two colleges.",
       "Acted as a facilitator for Gen-AI Study Jams.",
     ],
   },
   {
-    title: "Tech Lead",
+    title: "Techical Lead",
     date: "Jan 2024 - Feb 2024",
     empolyer: "Algorithm 8.0",
     icon: experianceIcon,
-    iconBg: "#00c6ff",
+    iconBg: "#ea580c",
     points: [
       "Managed a team of 10 individuals to create the official registration and management system for Algorithm 8.0, a yearly national hackathon hosted by our college.",
       "The system comprised an Android application for event organization and a website for registration.",
