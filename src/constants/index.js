@@ -252,6 +252,7 @@ export const experience = [
     iconBg: "#ea580c",
     points: [
       "Building an OCT device to detect Glaucoma and Diabetes through the eyes.",
+      "Currently developing the prototype."
     ],
   },
   {
