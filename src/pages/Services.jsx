@@ -76,7 +76,7 @@ class Services extends React.Component {
                         to={service.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-orange-600"
+                        className="font-semibold text-orange-600 text-lg"
                       >
                         Know More
                       </Link>

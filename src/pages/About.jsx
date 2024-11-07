@@ -1,5 +1,5 @@
 import React from "react";
-import HALO from "vanta/dist/vanta.halo.min";
+import NET from "vanta/dist/vanta.net.min";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -8,6 +8,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 import { CTA } from "../components";
 import { education, skills } from "../constants";
+import { color } from "three/examples/jsm/nodes/Nodes.js";
 
 class About extends React.Component {
   constructor() {
@@ -16,14 +17,19 @@ class About extends React.Component {
   }
 
   componentDidMount() {
-    this.vantaEffect = HALO({
+    this.vantaEffect = NET({
       el: this.vantaRef.current,
       mouseControls: true,
       touchControls: true,
       gyroControls: true,
+      scale: 1.0,
+      mobileScale: 1.0,
+      points: 12,
+      maxDistance: 18,
+      showDots: false,
+      spacing: 18,
       backgroundColor: 0x1b1212,
-      amplitudeFactor: 3.0,
-      size: 2.5,
+      color: 0xea580c,
     });
     this.frameId = requestAnimationFrame(this.animateFrame);
   }
@@ -59,8 +65,8 @@ class About extends React.Component {
               cutting-edge technologies.
             </p>
             <div className="py-10 flex flex-col">
-              <h1 className="text-4xl blue-gradient-text font-semibold backdrop-blur-[2px]">
-                My Skills
+              <h1 className="text-4xl orange-gradient-text font-semibold backdrop-blur-[2px]">
+                Skills
               </h1>
               <div className="mt-10 grid grid-cols-3 lg:grid-rows-3 lg:grid-cols-6 gap-6">
                 {skills.map((skill) => (
@@ -83,8 +89,8 @@ class About extends React.Component {
               </div>
             </div>
             <div className="py-2">
-              <h1 className="text-4xl blue-gradient-text font-semibold backdrop-blur-[2px]">
-                My Education
+              <h1 className="text-4xl orange-gradient-text font-semibold backdrop-blur-[2px]">
+                Education
               </h1>
               <div className="mt-10 flex">
                 <VerticalTimeline>

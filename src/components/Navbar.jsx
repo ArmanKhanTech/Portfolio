@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="p-2.5 mt-3 flex items-center justify-center rounded-md px-4 duration-300 cursor-pointer">
           <span className="text-2xl text-white">
             <NavLink to="/about" onClick={closeMenu}>
-              About Me
+              About
             </NavLink>
           </span>
         </div>
@@ -98,7 +98,7 @@ const Navbar = () => {
         </button>
         <nav className="hidden lg:flex backdrop-blur-sm text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About Me</NavLink>
+          <NavLink to="/about">About</NavLink>
           <NavLink to="/experience">Experience</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/services">Services</NavLink>

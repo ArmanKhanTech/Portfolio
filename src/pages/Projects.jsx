@@ -74,7 +74,7 @@ class Projects extends React.Component {
                         to={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-orange-600"
+                        className="font-semibold text-orange-600 text-lg"
                       >
                         Link
                       </Link>
