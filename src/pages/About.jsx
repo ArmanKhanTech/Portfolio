@@ -8,7 +8,6 @@ import "react-vertical-timeline-component/style.min.css";
 
 import { CTA } from "../components";
 import { education, skills } from "../constants";
-import { color } from "three/examples/jsm/nodes/Nodes.js";
 
 class About extends React.Component {
   constructor() {
@@ -17,6 +16,8 @@ class About extends React.Component {
   }
 
   componentDidMount() {
+    const isMobile = window.innerWidth < 1024;
+
     this.vantaEffect = NET({
       el: this.vantaRef.current,
       mouseControls: true,
@@ -24,10 +25,10 @@ class About extends React.Component {
       gyroControls: true,
       scale: 1.0,
       mobileScale: 1.0,
-      points: 12,
+      points: 15,
       maxDistance: 18,
       showDots: false,
-      spacing: 18,
+      spacing: isMobile ? 36 : 18,
       backgroundColor: 0x1b1212,
       color: 0xea580c,
     });
@@ -65,13 +66,13 @@ class About extends React.Component {
               cutting-edge technologies.
             </p>
             <div className="py-10 flex flex-col">
-              <h1 className="text-4xl orange-gradient-text font-semibold backdrop-blur-[2px]">
+              <h1 className="text-4xl orange-gradient-text font-semibold">
                 Skills
               </h1>
               <div className="mt-10 grid grid-cols-3 lg:grid-rows-3 lg:grid-cols-6 gap-6">
                 {skills.map((skill) => (
                   <div
-                    className="h-24 w-24 backdrop-blur-xl p-2 bg-black bg-opacity-25 rounded-xl flex justify-center items-center"
+                    className="h-24 w-24 p-2 bg-black bg-opacity-25 rounded-xl flex justify-center items-center"
                     key={skill.name}
                   >
                     <div className="btn-front rounded-xl flex flex-col gap-2 justify-center items-center">
@@ -89,7 +90,7 @@ class About extends React.Component {
               </div>
             </div>
             <div className="py-2">
-              <h1 className="text-4xl orange-gradient-text font-semibold backdrop-blur-[2px]">
+              <h1 className="text-4xl orange-gradient-text font-semibold">
                 Education
               </h1>
               <div className="mt-10 flex">
