@@ -91,7 +91,7 @@ const Navbar = () => {
     >
       <div className="container flex justify-between items-center py-4 px-5 lg:px-0">
         <button
-          className="text-3xl backdrop-blur-sm orange-gradient-text font-semibold rounded-xl border px-2 py-2.5"
+          className="text-3xl backdrop-blur-sm orange-gradient-text font-bold rounded-xl border px-2 py-2.5"
           onClick={window.innerWidth < 768 ? toggleMenu : null}
         >
           AK

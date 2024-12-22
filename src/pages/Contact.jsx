@@ -129,7 +129,7 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-            <div className="flex flex-col justify-between border border-orange-600 p-5 rounded-md items-start lg:w-1/2 lg:items-start">
+            <div className="flex flex-col justify-between border border-orange-600 p-5 rounded-xl items-start lg:w-1/2 lg:items-start hover:backdrop-blur-md transition-colors duration-500">
               <div>
                 <p className="text-white-100 text-2xl font-semibold orange-gradient-text">
                   Additional Details
@@ -174,7 +174,7 @@ const Contact = () => {
                     href="https://github.com/ArmanKhanTech/Portfolio"
                     target="_blank"
                   >
-                    <TbSourceCode className="w-11 h-11 text-orange-600" />
+                    <TbSourceCode className="w-12 h-12 text-orange-600" />
                   </a>
                 </div>
               </div>

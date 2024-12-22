@@ -26,9 +26,9 @@ class About extends React.Component {
       scale: 1.0,
       mobileScale: 1.0,
       points: 15,
-      maxDistance: 18,
+      maxDistance: 20,
       showDots: false,
-      spacing: isMobile ? 36 : 18,
+      spacing: isMobile ? 40 : 18,
       backgroundColor: 0x1b1212,
       color: 0xea580c,
     });
@@ -58,7 +58,7 @@ class About extends React.Component {
                 About Me
               </span>
             </h1>
-            <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-xl">
+            <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-md">
               Fascinated by technology's endless possibilities, my academic
               journey has built a strong foundation in computer science and
               problem-solving. Beyond the classroom, I'm an avid learner,
@@ -72,7 +72,7 @@ class About extends React.Component {
               <div className="mt-10 grid grid-cols-3 lg:grid-rows-3 lg:grid-cols-6 gap-6">
                 {skills.map((skill) => (
                   <div
-                    className="h-24 w-24 p-2 bg-black bg-opacity-25 rounded-xl flex justify-center items-center"
+                    className="h-24 w-24 p-2 backdrop-blur-md rounded-xl flex justify-center items-center"
                     key={skill.name}
                   >
                     <div className="btn-front rounded-xl flex flex-col gap-2 justify-center items-center">
@@ -116,9 +116,9 @@ class About extends React.Component {
                         borderStyle: "solid",
                         borderBottomColor: "#ea580c",
                         borderRadius: "10px",
-                        backdropFilter: "blur(60px)",
-                        WebkitBackdropFilter: "blur(60px)",
-                        backgroundColor: "rgba(0, 0, 0, 0.25)",
+                        backdropFilter: "blur(40px)",
+                        WebkitBackdropFilter: "blur(40px)",
+                        backgroundColor: "rgba(0, 0, 0, 0.10)",
                         boxShadow: "none",
                       }}
                     >

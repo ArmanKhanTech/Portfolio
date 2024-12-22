@@ -63,7 +63,7 @@ class Experience extends React.Component {
                 Experience
               </span>
             </h1>
-            <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-xl">
+            <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-lg">
               I am a skilled software developer with two years of freelance experience,
               specializing in diverse domain solutions. With a strong Computer Engineering
               background and proficiency in multiple technologies, I am eager to contribute
@@ -92,9 +92,9 @@ class Experience extends React.Component {
                         borderStyle: "solid",
                         borderBottomColor: "#ea580c",
                         borderRadius: "10px",
-                        backdropFilter: "blur(60px)",
-                        WebkitBackdropFilter: "blur(60px)",
-                        backgroundColor: "rgba(0, 0, 0, 0.25)",
+                        backdropFilter: "blur(40px)",
+                        WebkitBackdropFilter: "blur(40px)",
+                        backgroundColor: "rgba(0, 0, 0, 0.10)",
                         boxShadow: "none",
                       }}
                     >

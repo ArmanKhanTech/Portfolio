@@ -28,12 +28,12 @@ const HomeInfo = () => {
   return (
     <div className="max-container flex flex-col items-start justify-center">
       <div>
-        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text">
+        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text hover:backdrop-blur-md hover:rounded-md hover:px-5 hover:py-1 transition-colors duration-500">
           <h1>Hello! there,</h1>
           <h1>
             I am{" "}
             <span className="relative inline-block">
-              <span className="orange-gradient-text relative inline-block stroke-current">
+              <span className="orange-gradient-text font-bold relative inline-block stroke-current">
                 Arman Khan
                 <svg
                   className="absolute -bottom-0.5 w-full max-h-1.5"
@@ -66,7 +66,7 @@ const HomeInfo = () => {
           </NavLink>
         </div>
       </div>
-      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600">
+      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600 hover:backdrop-blur-md hover:rounded-md hover:px-5 hover:py-1 transition-colors duration-500">
         <span>
           Currently a final year Computer Engineering student from India.
         </span>
@@ -88,7 +88,7 @@ const HomeInfo = () => {
             <img
               src={link.iconUrl}
               alt={link.name}
-              className={`${link.name === "LinkedIn" ? "linkedin-icon" : "h-11 w-11"} object-cover`}
+              className='h-12 w-12 object-cover transition-transform duration-300 hover:scale-110 hover:opacity-90'
             />
           </Link>
         ))}

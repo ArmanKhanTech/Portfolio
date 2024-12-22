@@ -18,7 +18,7 @@ const Footer = () => {
               <img
                 src={link.iconUrl}
                 alt={link.name}
-                className={`${link.name === "LinkedIn" ? "linkedin-icon" : "h-11 w-11"} object-cover`}
+                className='h-12 w-12 object-cover transition-transform duration-300 hover:scale-110 hover:opacity-90'
               />
             </Link>
           ))}

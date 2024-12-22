@@ -19,10 +19,10 @@ export default function HireButton() {
           ></path>
         </svg>
       </span>
-      <span className="absolute flex items-center justify-center w-full h-full orange-gradient-text transition-all duration-300 transform group-hover:translate-x-full ease">
+      <span className="absolute font-bold flex items-center justify-center w-full h-full orange-gradient-text transition-all duration-300 transform group-hover:translate-x-full ease">
         Hire Me
       </span>
-      <span className="relative invisible">Hire Me</span>
+      <span className="relative invisible font-bold">Hire Me</span>
     </button>
   );
 }

@@ -34,15 +34,15 @@
   }
 
   .input {
-    @apply bg-white border border-gray-200 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
+    @apply bg-white border border-gray-200 text-gray-900 text-base rounded-lg block w-full p-2.5 mt-2.5 font-normal shadow-card;
   }
 
   .textarea {
-    @apply block p-2.5 w-full text-base text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
+    @apply block p-2.5 w-full text-base text-gray-900 bg-white rounded-lg border border-gray-200 mt-2.5 font-normal shadow-card;
   }
 
   .btn {
-    @apply text-white bg-gradient-to-r from-orange-600 to-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center;
+    @apply text-white bg-gradient-to-r from-orange-600 to-red-600 hover:ring-4 hover:ring-red-600 font-semibold rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center;
   }
 
   .header {
@@ -68,11 +68,6 @@
   .orange-gradient-text {
     @apply text-transparent bg-clip-text bg-gradient-to-br from-orange-400 to-red-600;
   }
-}
-
-.linkedin-icon {
-  height: 46px;
-  width: 46px;
 }
 
 .gradient-box {
