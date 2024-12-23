@@ -28,7 +28,7 @@ const HomeInfo = () => {
   return (
     <div className="max-container flex flex-col items-start justify-center">
       <div>
-        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text hover:backdrop-blur-md hover:rounded-md hover:px-5 hover:py-1 transition-colors duration-500">
+        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text hover:backdrop-blur-md hover:rounded-md lg:hover:px-5 lg:hover:py-1 transition-colors duration-500">
           <h1>Hello! there,</h1>
           <h1>
             I am{" "}
@@ -66,7 +66,7 @@ const HomeInfo = () => {
           </NavLink>
         </div>
       </div>
-      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600 hover:backdrop-blur-md hover:rounded-md hover:px-5 hover:py-1 transition-colors duration-500">
+      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600 hover:backdrop-blur-md hover:rounded-md lg:hover:px-5 lg:hover:py-1 transition-colors duration-500">
         <span>
           Currently a final year Computer Engineering student from India.
         </span>
