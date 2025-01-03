@@ -58,7 +58,7 @@ class About extends React.Component {
                 About Me
               </span>
             </h1>
-            <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-md">
+            <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-md">
               Fascinated by technology's endless possibilities, my academic
               journey has built a strong foundation in computer science and
               problem-solving. Beyond the classroom, I'm an avid learner,
@@ -79,7 +79,7 @@ class About extends React.Component {
                       <img
                         src={skill.imageUrl}
                         alt={skill.name}
-                        className="w-12 h-12 object-contain"
+                        className="w-12 h-12 object-contain hover:scale-110 transition-transform"
                       />
                       <p className="text-white text-xs lg:text-sm font-semibold text-center">
                         {skill.name}

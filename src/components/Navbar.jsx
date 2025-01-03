@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 
 import { HomeContext } from "../context";
@@ -7,6 +7,8 @@ import { HomeContext } from "../context";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { loadingProgress, hasWelcomeShown } = useContext(HomeContext);
+
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,10 +18,15 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const navigateToHome = () => {
+    navigate("/");
+  };
+
   if (isMenuOpen) {
     return (
       <div
-        className={`${!hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"} backdrop-blur-lg bg-black bg-opacity-50 z-50 font-semibold top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center`}
+        className={`${!hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"} 
+          backdrop-blur-md bg-black bg-opacity-50 z-50 font-semibold top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center`}
       >
         <div className="text-xl">
           <div className="p-2.5 mt-1 flex items-center" onClick={toggleMenu}>
@@ -92,7 +99,7 @@ const Navbar = () => {
       <div className="container flex justify-between items-center py-4 px-5 lg:px-0">
         <button
           className="text-3xl backdrop-blur-sm orange-gradient-text font-bold rounded-xl border px-2 py-2.5"
-          onClick={window.innerWidth < 768 ? toggleMenu : null}
+          onClick={window.innerWidth < 768 ? toggleMenu : navigateToHome}
         >
           AK
         </button>

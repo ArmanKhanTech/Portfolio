@@ -14,7 +14,7 @@ const Home = () => {
       <div className="relative w-full h-full overflow-y-auto">
         <HomeInfo />
       </div>
-      <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-slate-900 h-full w-full to-[#1B1212]">
+      <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-[#1b1212] to-black h-full w-full">
         <SkyCanvas setLoadingProgress={setLoadingProgress} />
       </div>
     </section>

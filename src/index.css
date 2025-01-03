@@ -11,11 +11,6 @@
   margin: 0;
 }
 
-.bg-blur {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
 @layer utilities {
   .max-container {
     @apply max-w-5xl mx-5 lg:mx-auto lg:px-12 !pt-[126px] min-h-[calc(100vh-80px)];

@@ -63,7 +63,7 @@ class Experience extends React.Component {
                 Experience
               </span>
             </h1>
-            <p className="mt-5 bg-black bg-opacity-25 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-lg">
+            <p className="mt-5 backdrop-blur-md text-white p-4 text-xl lg:text-2xl rounded-xl">
               I am a skilled software developer with two years of freelance experience,
               specializing in diverse domain solutions. With a strong Computer Engineering
               background and proficiency in multiple technologies, I am eager to contribute

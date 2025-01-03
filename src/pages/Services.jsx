@@ -44,7 +44,7 @@ class Services extends React.Component {
                 Services
               </span>
             </h1>
-            <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-lg">
+            <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-md">
               Passionate about innovation, I specialize in building dynamic applications and
               responsive websites using cutting-edge technologies. Leveraging machine learning,
               I create intelligent, data-driven algorithms to enhance application functionality
@@ -63,7 +63,7 @@ class Services extends React.Component {
                       />
                     </div>
                   </div>
-                  <div className="mt-5 flex flex-col backdrop-blur-lg rounded-xl">
+                  <div className="mt-5 flex flex-col backdrop-blur-md rounded-xl">
                     <h4 className="text-2xl font-poppins text-white font-semibold">
                       {service.name}
                     </h4>

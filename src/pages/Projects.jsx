@@ -46,7 +46,7 @@ class Projects extends React.Component {
                 Projects
               </span>
             </h1>
-            <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-lg">
+            <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-md">
               I've worked on many projects, with some being open-source. Feel free to explore
               the codebases, contribute ideas, and collaborate on enhancements. These projects
               are especially meaningful to me, and your involvement is greatly appreciated!
@@ -59,7 +59,7 @@ class Projects extends React.Component {
                       <img src={project.iconUrl} alt="threads" />
                     </div>
                   </div>
-                  <div className="mt-5 flex flex-col backdrop-blur-lg p-3 rounded-xl">
+                  <div className="mt-5 flex flex-col backdrop-blur-md p-3 rounded-xl">
                     <h4 className="text-2xl text-white font-semibold">
                       {project.name}
                     </h4>
