@@ -8,7 +8,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/ArmanKhanTech/Portfolio/">
-    <img src="https://github.com/ArmanKhanTech/Portfolio/assets/92728787/cb0292e5-0832-4323-a856-55bee87e3e70" alt="Logo" width="80" height="80">
+    <img src="https://github.com/ArmanKhanTech/Portfolio/assets/92728787/cb0292e5-0832-4323-a856-55bee87e3e70" alt="Logo" width="80" height="80"> <br><br>
+    <img src="https://api.netlify.com/api/v1/badges/82e09da2-2cc8-4b40-be8d-9f1ab414f665/deploy-status">
   </a>
 
   <h3 align="center">Portfolio</h3>
