@@ -1,4 +1,3 @@
-import educationIcon from "./education-icon.png";
 import divine from "./divine.png";
 import dailydoze from "./dailydoze.png";
 import medicomm from "./medicomm.png";
@@ -8,7 +7,6 @@ import nimbus from "./nimbus.png";
 import experianceIcon from "./experience-icon.png";
 
 export {
-  educationIcon,
   divine,
   dailydoze,
   medicomm,

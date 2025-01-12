@@ -36,16 +36,18 @@ const HomeInfo = () => {
               <span className="orange-gradient-text font-bold relative inline-block stroke-current">
                 Arman Khan
                 <svg
-                  className="absolute -bottom-0.5 w-full max-h-1.5"
-                  viewBox="0 0 55 5"
-                  color="rgb(255, 99, 71)"
+                  className="absolute -bottom-2 left-0 w-full h-[10px] md:h-[15px] rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 10"
                   preserveAspectRatio="none"
                 >
                   <path
-                    d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002"
-                    strokeWidth="3"
-                  ></path>
+                    d="M5 5 C20 10, 80 10, 95 5"
+                    fill="transparent"
+                    stroke="rgb(255, 99, 71)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </span>
             </span>{" "}

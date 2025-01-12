@@ -107,7 +107,7 @@ class About extends React.Component {
                         <div className="flex justify-center items-center w-full h-full">
                           <img
                             src={education.icon}
-                            className="w-[60%] h-[60%] object-contain"
+                            className="w-[60%] h-[60%]"
                           />
                         </div>
                       }

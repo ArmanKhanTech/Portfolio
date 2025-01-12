@@ -39,6 +39,7 @@ import ts from "./ts.svg";
 import sqlite from "./sqlite.svg";
 import xml from "./xml.svg";
 import nextjs from "./nextjs.svg";
+import educationIcon from "./education.svg";
 
 export {
   css,
@@ -82,4 +83,5 @@ export {
   sqlite,
   xml,
   nextjs,
+  educationIcon,
 };
