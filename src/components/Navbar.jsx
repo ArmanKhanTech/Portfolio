@@ -98,18 +98,48 @@ const Navbar = () => {
     >
       <div className="container flex justify-between items-center py-4 px-5 lg:px-0">
         <button
-          className="text-3xl backdrop-blur-sm orange-gradient-text font-bold rounded-xl border px-2 py-2.5"
+          className="text-3xl backdrop-blur-sm orange-gradient-text font-bold rounded-xl border px-2 py-2.5 hover:scale-125 transition-transform duration-300"
           onClick={window.innerWidth < 768 ? toggleMenu : navigateToHome}
         >
           AK
         </button>
-        <nav className="hidden lg:flex backdrop-blur-sm text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/experience">Experience</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+        <nav className="hidden lg:flex backdrop-blur-sm hover:backdrop-blur-2xl text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
+          <NavLink
+            className="hover:orange-gradient-text hover:font-bold"
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className="hover:orange-gradient-text hover:font-bold"
+            to="/about"
+          >
+            About
+          </NavLink>
+          <NavLink
+            className="hover:orange-gradient-text hover:font-bold"
+            to="/experience"
+          >
+            Experience
+          </NavLink>
+          <NavLink
+            className="hover:orange-gradient-text hover:font-bold"
+            to="/projects"
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            className="hover:orange-gradient-text hover:font-bold"
+            to="/services"
+          >
+            Services
+          </NavLink>
+          <NavLink
+            className="hover:orange-gradient-text hover:font-bold"
+            to="/contact"
+          >
+            Contact
+          </NavLink>
         </nav>
       </div>
     </header>

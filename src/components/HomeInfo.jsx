@@ -90,7 +90,7 @@ const HomeInfo = () => {
             <img
               src={link.iconUrl}
               alt={link.name}
-              className='h-12 w-12 object-cover transition-transform duration-300 hover:scale-110 hover:opacity-90'
+              className="h-12 w-12 object-cover transition-transform duration-300 hover:scale-110 hover:opacity-90"
             />
           </Link>
         ))}

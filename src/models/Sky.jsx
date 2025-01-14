@@ -1,18 +1,50 @@
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { useProgress, OrbitControls } from "@react-three/drei";
 import { useFrame, useLoader, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const Sky = memo(({ setLoadingProgress }) => {
+const Sky = memo(({ setLoadingProgress, isDraggable }) => {
   const { progress } = useProgress();
   const sky = useLoader(GLTFLoader, "./sky.glb");
   const skyRef = useRef();
+  const [previousMousePosition, setPreviousMousePosition] = useState(null);
 
   useFrame((state, delta) => {
-    if (skyRef.current) {
-      skyRef.current.rotation.y += delta / 50;
+    if (!isDraggable && skyRef.current) {
+      skyRef.current.rotation.y += delta * 0.02;
     }
   });
+
+  const handleMouseMove = (event) => {
+    if (isDraggable && skyRef.current) {
+      const { clientX, clientY } = event;
+
+      if (previousMousePosition) {
+        const deltaX = clientX - previousMousePosition.x;
+        const deltaY = clientY - previousMousePosition.y;
+
+        skyRef.current.rotation.y += deltaX * 0.002;
+        skyRef.current.rotation.x = Math.max(
+          -Math.PI / 4,
+          Math.min(Math.PI / 4, skyRef.current.rotation.x + deltaY * 0.002),
+        );
+      }
+
+      setPreviousMousePosition({ x: clientX, y: clientY });
+    }
+  };
+
+  useEffect(() => {
+    if (isDraggable) {
+      window.addEventListener("mousemove", handleMouseMove);
+    } else {
+      setPreviousMousePosition(null);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [isDraggable, previousMousePosition]);
 
   useEffect(() => {
     const handler = setTimeout(() => setLoadingProgress(progress), 100);
@@ -26,7 +58,7 @@ const Sky = memo(({ setLoadingProgress }) => {
   );
 });
 
-const SkyCanvas = ({ setLoadingProgress }) => {
+const SkyCanvas = ({ setLoadingProgress, isDraggable }) => {
   return (
     <Canvas camera={{ near: 0.1, far: 100 }} style={{ position: "fixed" }}>
       <directionalLight position={[1, 1, 1]} intensity={3} />
@@ -43,8 +75,12 @@ const SkyCanvas = ({ setLoadingProgress }) => {
         groundColor="#ffffff"
         intensity={1.5}
       />
-      <Sky setLoadingProgress={setLoadingProgress} />
-      <OrbitControls enableZoom={false} enablePan={true} enableRotate={true} />
+      <Sky setLoadingProgress={setLoadingProgress} isDraggable={isDraggable} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={false}
+      />
     </Canvas>
   );
 };

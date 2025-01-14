@@ -49,7 +49,7 @@ import {
   sqlite,
   xml,
   nextjs,
-  educationIcon
+  educationIcon,
 } from "../assets/icons";
 
 export const skills = [
@@ -252,7 +252,7 @@ export const experience = [
     iconBg: "#ea580c",
     points: [
       "Building an OCT device to detect Glaucoma and Diabetes through the eyes.",
-      "Currently developing the prototype."
+      "Currently developing the prototype.",
     ],
   },
   {

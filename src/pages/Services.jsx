@@ -45,10 +45,11 @@ class Services extends React.Component {
               </span>
             </h1>
             <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-md">
-              Passionate about innovation, I specialize in building dynamic applications and
-              responsive websites using cutting-edge technologies. Leveraging machine learning,
-              I create intelligent, data-driven algorithms to enhance application functionality
-              and deliver impactful digital solutions.
+              Passionate about innovation, I specialize in building dynamic
+              applications and responsive websites using cutting-edge
+              technologies. Leveraging machine learning, I create intelligent,
+              data-driven algorithms to enhance application functionality and
+              deliver impactful digital solutions.
             </p>
             <div className="flex flex-wrap my-20 gap-16">
               {services.map((service) => (

@@ -148,7 +148,7 @@ Follow the below instructions to get started.
    </NavLink>
    ```
 
-2. Change the name in `src/components/HomeInfo.js` to your name 
+2. Change the name in `src/components/HomeInfo.js` to your name
 
    ```HTML
    <div className='text-4xl font-bold orange-gradient-text'>
@@ -179,8 +179,6 @@ Follow the below instructions to get started.
      </a>
    </div>
    ```
-
-
 
 ## Contributing
 

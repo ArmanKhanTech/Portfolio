@@ -63,8 +63,9 @@ const Audio = () => {
 
   return (
     <div
-      className={`${!hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"
-        } bottom-0 right-0 flex justify-end items-end`}
+      className={`${
+        !hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"
+      } bottom-0 right-0 flex justify-end items-end`}
     >
       <Canvas
         style={{ background: "transparent", width: "125px", height: "125px" }}

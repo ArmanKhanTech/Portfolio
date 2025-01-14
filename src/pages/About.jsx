@@ -28,7 +28,7 @@ class About extends React.Component {
       points: 15,
       maxDistance: 20,
       showDots: false,
-      spacing: isMobile ? 40 : 18,
+      spacing: isMobile ? 36 : 20,
       backgroundColor: 0x1b1212,
       color: 0xea580c,
     });
