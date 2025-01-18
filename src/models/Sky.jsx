@@ -9,7 +9,7 @@ const Sky = memo(({ setLoadingProgress, isDraggable }) => {
   const skyRef = useRef();
   const [previousMousePosition, setPreviousMousePosition] = useState(null);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (!isDraggable && skyRef.current) {
       skyRef.current.rotation.y += delta * 0.02;
     }

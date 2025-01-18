@@ -25,10 +25,17 @@ const Home = () => {
       onMouseUp={handleMouseUpOrLeave}
       onMouseLeave={handleMouseUpOrLeave}
     >
-      {!hasWelcomeShown && loadingProgress < 100 && <Welcome />}
+      {!hasWelcomeShown && loadingProgress < 100 && (
+        <Welcome
+          loadingProgress={loadingProgress}
+        />
+      )}
       {!isDraggable && (
         <div className="relative w-full h-full overflow-y-auto">
           <HomeInfo />
+          <p className="absolute bottom-2 right-0 left-0 text-xl text-red-600 font-semibold text-center hidden lg:block">
+            Hold & drag to see the magic!
+          </p>
         </div>
       )}
       <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-[#1b1212] to-black h-full w-full">
