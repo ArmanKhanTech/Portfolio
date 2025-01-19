@@ -190,7 +190,7 @@ export const skills = [
 export const education = [
   {
     title: "Anjuman-I-Islam's Kalsekar Technical Campus",
-    date: "Dec 2022 - Aug 2025   |   CGPA: 9.18",
+    date: "Dec 2022 - May 2025   |   CGPA: 9.18",
     icon: educationIcon,
     iconBg: "#ea580c",
     points: [
@@ -241,7 +241,7 @@ export const experience = [
     iconBg: "#ea580c",
     points: [
       "Shipping IT and CyberSecurity services to the clients across the world.",
-      "Visit https://alt.stealthresear.ch to know more.",
+      "Visit https://stealthresear.ch to know more.",
     ],
   },
   {
@@ -257,7 +257,7 @@ export const experience = [
   },
   {
     title: "Back End Developer",
-    date: "Aug 2024 - Present",
+    date: "Aug 2024 - Sept 2024",
     empolyer: "Techcraft Electronics LLC",
     icon: experianceIcon,
     iconBg: "#ea580c",
@@ -267,7 +267,7 @@ export const experience = [
     ],
   },
   {
-    title: "Mobile App Lead",
+    title: "Technical Lead",
     date: "Aug 2023 - June 2024",
     empolyer: "GDSC AIKTC",
     icon: experianceIcon,
@@ -278,7 +278,7 @@ export const experience = [
     ],
   },
   {
-    title: "Techical Lead",
+    title: "Technical Lead",
     date: "Jan 2024 - Feb 2024",
     empolyer: "Algorithm 8.0",
     icon: experianceIcon,

@@ -43,12 +43,12 @@ class Welcome extends React.Component {
     }
 
     return (
-      <section ref={this.vantaRef} className="fixed inset-0 z-50 p-5">
-        <div className="h-screen w-screen flex flex-col gap-5 items-start md:items-center justify-center">
+      <section ref={this.vantaRef} className="fixed inset-0 z-50">
+        <div className="h-screen w-screen flex flex-col items-start md:items-center justify-center p-5">
           <h1 className="text-5xl lg:text-7xl orange-gradient-text font-semibold">
             Welcome to my Portfolio
           </h1>
-          <h3 className="text-3xl lg:text-5xl text-3xl text-white-100">
+          <h3 className="text-3xl lg:text-5xl mt-5 text-3xl text-white-100">
             Setting up...
           </h3>
         </div>

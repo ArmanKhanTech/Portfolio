@@ -30,14 +30,15 @@ const Home = () => {
           loadingProgress={loadingProgress}
         />
       )}
-      {!isDraggable && (
-        <div className="relative w-full h-full overflow-y-auto">
-          <HomeInfo />
-          <p className="absolute bottom-2 right-0 left-0 text-xl text-red-600 font-semibold text-center hidden lg:block">
-            Hold & drag to see the magic!
-          </p>
-        </div>
-      )}
+      <div
+        className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? 'opacity-0' : 'opacity-100'
+          }`}
+      >
+        <HomeInfo />
+        <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block">
+          Hold & drag to see the magic!
+        </p>
+      </div>
       <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-[#1b1212] to-black h-full w-full">
         <SkyCanvas
           setLoadingProgress={setLoadingProgress}
