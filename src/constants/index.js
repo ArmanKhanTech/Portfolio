@@ -190,7 +190,7 @@ export const skills = [
 export const education = [
   {
     title: "Anjuman-I-Islam's Kalsekar Technical Campus",
-    date: "Dec 2022 - May 2025   |   CGPA: 9.18",
+    date: "Dec 2022 - May 2025   |   CGPA: 9.01",
     icon: educationIcon,
     iconBg: "#ea580c",
     points: [
