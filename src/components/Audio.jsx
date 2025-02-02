@@ -4,7 +4,6 @@ import * as THREE from "three";
 import { Html } from "@react-three/drei";
 import { FaPlay, FaPause } from "react-icons/fa";
 
-import { HomeContext } from "../context";
 import piano from "../assets/audio/piano.mp3";
 
 const AudioComponent = () => {
@@ -59,14 +58,8 @@ const AudioComponent = () => {
 };
 
 const Audio = () => {
-  const { loadingProgress, hasWelcomeShown } = useContext(HomeContext);
-
   return (
-    <div
-      className={`${
-        !hasWelcomeShown && loadingProgress < 100 ? "hidden" : "fixed"
-      } bottom-0 right-0 flex justify-end items-end`}
-    >
+    <div className={`fixed bottom-0 right-0`}>
       <Canvas
         style={{ background: "transparent", width: "125px", height: "125px" }}
       >

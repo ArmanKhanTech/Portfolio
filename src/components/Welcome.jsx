@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
 
 import WAVES from "vanta/dist/vanta.waves.min";
 import "react-vertical-timeline-component/style.min.css";
@@ -37,11 +36,7 @@ class Welcome extends React.Component {
   }
 
   render() {
-    const { loadingProgress } = this.props;
-    if (loadingProgress >= 100) {
-      return null;
-    }
-
+    console.log("Welcome rendered");
     return (
       <section ref={this.vantaRef} className="fixed inset-0 z-50">
         <div className="h-screen w-screen flex flex-col items-start md:items-center justify-center p-5">
@@ -56,9 +51,5 @@ class Welcome extends React.Component {
     );
   }
 }
-
-Welcome.propTypes = {
-  loadingProgress: PropTypes.number.isRequired
-};
 
 export default Welcome;

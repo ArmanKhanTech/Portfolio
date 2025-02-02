@@ -1,12 +1,12 @@
 import React, { memo, useEffect, useRef, useState } from "react";
-import { useProgress, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { useFrame, useLoader, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const Sky = memo(({ setLoadingProgress, isDraggable }) => {
-  const { progress } = useProgress();
+const Sky = memo(({ isDraggable }) => {
   const sky = useLoader(GLTFLoader, "./sky.glb");
   const skyRef = useRef();
+
   const [previousMousePosition, setPreviousMousePosition] = useState(null);
 
   useFrame((_, delta) => {
@@ -46,11 +46,6 @@ const Sky = memo(({ setLoadingProgress, isDraggable }) => {
     };
   }, [isDraggable, previousMousePosition]);
 
-  useEffect(() => {
-    const handler = setTimeout(() => setLoadingProgress(progress), 100);
-    return () => clearTimeout(handler);
-  }, [progress, setLoadingProgress]);
-
   return (
     <mesh ref={skyRef} scale={[40, 40, 40]}>
       <primitive object={sky.scene} />
@@ -58,7 +53,7 @@ const Sky = memo(({ setLoadingProgress, isDraggable }) => {
   );
 });
 
-const SkyCanvas = ({ setLoadingProgress, isDraggable }) => {
+const SkyCanvas = ({ isDraggable }) => {
   return (
     <Canvas camera={{ near: 0.1, far: 100 }} style={{ position: "fixed" }}>
       <directionalLight position={[1, 1, 1]} intensity={3} />
@@ -75,7 +70,7 @@ const SkyCanvas = ({ setLoadingProgress, isDraggable }) => {
         groundColor="#ffffff"
         intensity={1.5}
       />
-      <Sky setLoadingProgress={setLoadingProgress} isDraggable={isDraggable} />
+      <Sky isDraggable={isDraggable} />
       <OrbitControls
         enableZoom={false}
         enablePan={false}

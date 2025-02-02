@@ -1,51 +1,73 @@
-import React, { useContext, useState } from "react";
+import React, { Suspense, useEffect, useState, useCallback, memo } from "react";
+import { Welcome } from "../components";
 
-import { HomeContext } from "../context";
-import { HomeInfo, Welcome } from "../components";
-import SkyCanvas from "../models/Sky";
+const SkyCanvas = React.lazy(() => import("../models/Sky"));
+const HomeInfo = React.lazy(() => import("../components/HomeInfo"));
 
-const Home = () => {
-  const { loadingProgress, setLoadingProgress, hasWelcomeShown } =
-    useContext(HomeContext);
+// Memoized HomeInfo component to prevent unnecessary re-renders
+const MemoizedHomeInfo = memo(() => <HomeInfo />);
+
+// Separate component for the drag instruction text
+const DragInstruction = memo(() => (
+  <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block">
+    Hold & drag to see the magic!
+  </p>
+));
+
+const HomeSection = memo(({ isLoaded, setIsLoaded }) => {
   const [isDraggable, setIsDraggable] = useState(false);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = useCallback((e) => {
     e.preventDefault();
     setIsDraggable(true);
-  };
+  }, []);
 
-  const handleMouseUpOrLeave = () => {
+  const handleMouseUpOrLeave = useCallback(() => {
     setIsDraggable(false);
-  };
+  }, []);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, [setIsLoaded]);
 
   return (
     <section
-      className="fixed inset-0 z-0"
+      className="relative min-h-screen w-full bg-gradient-to-r from-[#1b1212] to-black"
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUpOrLeave}
       onMouseLeave={handleMouseUpOrLeave}
     >
-      {!hasWelcomeShown && loadingProgress < 100 && (
-        <Welcome
-          loadingProgress={loadingProgress}
-        />
-      )}
-      <div
-        className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? 'opacity-0' : 'opacity-100'
+      {isLoaded && (
+        <div
+          className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
+            isDraggable ? "opacity-0" : "opacity-100"
           }`}
-      >
-        <HomeInfo />
-        <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block">
-          Hold & drag to see the magic!
-        </p>
-      </div>
-      <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-[#1b1212] to-black h-full w-full">
-        <SkyCanvas
-          setLoadingProgress={setLoadingProgress}
-          isDraggable={isDraggable}
-        />
+        >
+          <Suspense fallback={<div className="h-screen" />}>
+            <MemoizedHomeInfo />
+          </Suspense>
+          <DragInstruction />
+        </div>
+      )}
+      <div className="absolute inset-0 z-0">
+        <Suspense fallback={<div className="h-screen" />}>
+          <SkyCanvas isDraggable={isDraggable} />
+        </Suspense>
       </div>
     </section>
+  );
+});
+
+const Home = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <>
+      <Suspense fallback={<div className="h-screen" />}>
+        <HomeSection isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
+      </Suspense>
+      {!isLoaded && <Welcome />}
+    </>
   );
 };
 

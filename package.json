@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build --mode production --sourcemap",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
