@@ -4,15 +4,10 @@ import { useFrame, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const LoadingProgress = ({ progress }) => {
+  console.log(progress);
   return (
-    <div className="fixed bottom-0 left-1/2 transform orange-gradient-text -translate-x-1/2 text-white p-4">
-      <p>Loading: {Math.round(progress)}%</p>
-      <div className="w-48 h-2 bg-transparent border rounded-full overflow-hidden">
-        <div
-          className="h-full bg-orange-600 rounded-full"
-          style={{ width: `${progress}%` }}
-        ></div>
-      </div>
+    <div className="fixed bottom-0 left-1/2 transform text-xl font-bold orange-gradient-text -translate-x-1/2 text-white p-4">
+      <p>{Math.round(progress)}%</p>
     </div>
   );
 };
@@ -86,8 +81,14 @@ const Sky = memo(({ isDraggable, setLoadingProgress }) => {
   ) : null;
 });
 
-const SkyCanvas = ({ isDraggable }) => {
+const SkyCanvas = ({ isDraggable, onLoad }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
+
+  useEffect(() => {
+    if (loadingProgress === 100) {
+      onLoad(true);
+    }
+  }, [loadingProgress, onLoad]);
 
   return (
     <>

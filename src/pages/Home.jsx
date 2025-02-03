@@ -13,6 +13,7 @@ const DragInstruction = memo(() => (
 
 const HomeSection = memo(() => {
   const [isDraggable, setIsDraggable] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const handleMouseDown = useCallback((e) => {
     e.preventDefault();
@@ -37,11 +38,11 @@ const HomeSection = memo(() => {
         <Suspense fallback={<div className="h-screen" />}>
           <MemoizedHomeInfo />
         </Suspense>
-        <DragInstruction />
+        {loaded && <DragInstruction />}
       </div>
       <div className="absolute inset-0 z-0">
         <Suspense fallback={<div className="h-screen" />}>
-          <SkyCanvas isDraggable={isDraggable} />
+          <SkyCanvas isDraggable={isDraggable} onLoad={setLoaded} />
         </Suspense>
       </div>
     </section>
