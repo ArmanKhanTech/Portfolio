@@ -4,14 +4,14 @@ import { useFrame, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const LoadingProgress = ({ progress }) => {
-  console.log(progress);
   return (
-    <div className="fixed bottom-0 left-1/2 transform text-xl font-bold orange-gradient-text -translate-x-1/2 text-white p-4">
-      <p>{Math.round(progress)}%</p>
+    <div className="fixed inset-0 h-screen w-screen backdrop-blur-xl z-[9999] flex items-center justify-center">
+      <p className="text-4xl font-bold orange-gradient-text">
+        {Math.round(progress)}%
+      </p>
     </div>
   );
 };
-
 
 const Sky = memo(({ isDraggable, setLoadingProgress }) => {
   const skyRef = useRef();

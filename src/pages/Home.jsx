@@ -31,15 +31,19 @@ const HomeSection = memo(() => {
       onMouseUp={handleMouseUpOrLeave}
       onMouseLeave={handleMouseUpOrLeave}
     >
-      <div
-        className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
-          }`}
-      >
-        <Suspense fallback={<div className="h-screen" />}>
-          <MemoizedHomeInfo />
-        </Suspense>
-        {loaded && <DragInstruction />}
-      </div>
+      {
+        loaded && (
+          <div
+            className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
+              }`}
+          >
+            <Suspense fallback={<div className="h-screen" />}>
+              <MemoizedHomeInfo />
+            </Suspense>
+            <DragInstruction />
+          </div>
+        )
+      }
       <div className="absolute inset-0 z-0">
         <Suspense fallback={<div className="h-screen" />}>
           <SkyCanvas isDraggable={isDraggable} onLoad={setLoaded} />
