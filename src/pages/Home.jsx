@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useCallback, memo } from "react";
+import React, { Suspense, useState, useCallback, memo, useEffect } from "react";
 
 const SkyCanvas = React.lazy(() => import("../models/Sky"));
 const HomeInfo = React.lazy(() => import("../components/HomeInfo"));
@@ -13,7 +13,7 @@ const DragInstruction = memo(() => (
 
 const HomeSection = memo(() => {
   const [isDraggable, setIsDraggable] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleMouseDown = useCallback((e) => {
     e.preventDefault();
@@ -24,6 +24,10 @@ const HomeSection = memo(() => {
     setIsDraggable(false);
   }, []);
 
+  const handleLoad = useCallback((status) => {
+    setIsLoaded(status);
+  }, []);
+
   return (
     <section
       className="relative min-h-screen w-full bg-gradient-to-r from-[#1b1212] to-black"
@@ -31,34 +35,30 @@ const HomeSection = memo(() => {
       onMouseUp={handleMouseUpOrLeave}
       onMouseLeave={handleMouseUpOrLeave}
     >
-      {
-        loaded && (
-          <div
-            className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
-              }`}
-          >
-            <Suspense fallback={<div className="h-screen" />}>
-              <MemoizedHomeInfo />
-            </Suspense>
-            <DragInstruction />
-          </div>
-        )
-      }
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0">
         <Suspense fallback={<div className="h-screen" />}>
-          <SkyCanvas isDraggable={isDraggable} onLoad={setLoaded} />
+          <SkyCanvas isDraggable={isDraggable} onLoad={handleLoad} />
         </Suspense>
       </div>
+      {isLoaded && (
+        <div
+          className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
+            }`}
+        >
+          <Suspense fallback={<div className="h-screen" />}>
+            <MemoizedHomeInfo />
+          </Suspense>
+          <DragInstruction />
+        </div>
+      )}
     </section>
   );
 });
 
-const Home = () => {
-  return (
-    <Suspense fallback={<div className="h-screen" />}>
-      <HomeSection />
-    </Suspense>
-  );
-};
+const Home = memo(() => (
+  <Suspense fallback={<div className="h-screen" />}>
+    <HomeSection />
+  </Suspense>
+));
 
 export default Home;
