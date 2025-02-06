@@ -73,8 +73,9 @@ class Experience extends React.Component {
             <div className="py-2">
               <div className="mt-10 flex">
                 <VerticalTimeline>
-                  {experience.map((experience) => (
+                  {experience.map((experience, index) => (
                     <VerticalTimelineElement
+                      key={index}
                       iconStyle={{
                         background: experience.iconBg,
                         padding: "5px",
@@ -112,7 +113,9 @@ class Experience extends React.Component {
                       </div>
                       <ul className="my-5 list-disc ml-5 space-y-2 text-lg">
                         {experience.points.map((point, index) => (
-                          <li className="text-white pl-1">{point}</li>
+                          <li className="text-white pl-1" key={index}>
+                            {point}
+                          </li>
                         ))}
                       </ul>
                     </VerticalTimelineElement>

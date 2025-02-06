@@ -42,8 +42,9 @@ const HomeSection = memo(() => {
       </div>
       {isLoaded && (
         <div
-          className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
-            }`}
+          className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
+            isDraggable ? "opacity-0" : "opacity-100"
+          }`}
         >
           <Suspense fallback={<div className="h-screen" />}>
             <MemoizedHomeInfo />

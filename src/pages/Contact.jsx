@@ -148,15 +148,17 @@ const Contact = () => {
                   </p>
                   <p className="text-white-100">
                     <span className="font-light text-lg">Location:</span>
-                    <p className="orange-gradient-text font-semibold text-xl">
+                    <br />
+                    <span className="orange-gradient-text font-semibold text-xl">
                       India
-                    </p>
+                    </span>
                   </p>
                   <p className="text-white-100">
                     <span className="font-light text-lg">Phone:</span>
-                    <p className="orange-gradient-text font-semibold text-xl">
+                    <br />
+                    <span className="orange-gradient-text font-semibold text-xl">
                       +91 91754 16203
-                    </p>
+                    </span>
                   </p>
                 </div>
               </div>

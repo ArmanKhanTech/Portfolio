@@ -97,6 +97,7 @@ class About extends React.Component {
                 <VerticalTimeline>
                   {education.map((education) => (
                     <VerticalTimelineElement
+                      key={education.title}
                       iconStyle={{
                         background: education.iconBg,
                         innerWidth: "100%",
@@ -132,7 +133,9 @@ class About extends React.Component {
                       </div>
                       <ul className="my-5 list-disc ml-5 space-y-2 text-lg">
                         {education.points.map((point, index) => (
-                          <li className="text-white pl-1">{point}</li>
+                          <li className="text-white pl-1" key={index}>
+                            {point}
+                          </li>
                         ))}
                       </ul>
                     </VerticalTimelineElement>

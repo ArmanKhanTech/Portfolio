@@ -4,6 +4,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import HomeInfo from "./HomeInfo";
 import HireButton from "./HireButton";
-import LoadingProgress from "./LoadingProgress";
+import Welcome from "./Welcome";
 
-export { CTA, Alert, Navbar, Footer, HomeInfo, HireButton, LoadingProgress };
+export { CTA, Alert, Navbar, Footer, HomeInfo, HireButton, Welcome };
