@@ -3,10 +3,8 @@ import emailjs from "@emailjs/browser";
 import { TbSourceCode } from "react-icons/tb";
 
 import useAlert from "../hooks/useAlert";
-import { Alert } from "../components";
-import StarsCanvas from "../models/Stars";
-import EarthCanvas from "../models/Earth";
-import Footer from "../components/Footer";
+import { Alert, Footer } from "../components";
+import { StarsCanvas, EarthCanvas } from "../models";
 import { react, threejs, tailwindcss } from "../assets/icons";
 
 const Contact = () => {

@@ -1,17 +1,9 @@
-import React, { Suspense, useState, useCallback, memo, useEffect } from "react";
+import React, { Suspense, useState, useCallback } from "react";
 
-const SkyCanvas = React.lazy(() => import("../models/Sky"));
-const HomeInfo = React.lazy(() => import("../components/HomeInfo"));
+import { SkyCanvas } from "../models";
+import { HomeInfo } from "../components";
 
-const MemoizedHomeInfo = memo(() => <HomeInfo />);
-
-const DragInstruction = memo(() => (
-  <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block">
-    Hold & drag to see the magic!
-  </p>
-));
-
-const HomeSection = memo(() => {
+const Home = () => {
   const [isDraggable, setIsDraggable] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -42,24 +34,17 @@ const HomeSection = memo(() => {
       </div>
       {isLoaded && (
         <div
-          className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
-            isDraggable ? "opacity-0" : "opacity-100"
-          }`}
+          className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
+            }`}
         >
-          <Suspense fallback={<div className="h-screen" />}>
-            <MemoizedHomeInfo />
-          </Suspense>
-          <DragInstruction />
+          <HomeInfo />
+          <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block">
+            Hold & drag to see the magic!
+          </p>
         </div>
       )}
     </section>
   );
-});
-
-const Home = memo(() => (
-  <Suspense fallback={<div className="h-screen" />}>
-    <HomeSection />
-  </Suspense>
-));
+};
 
 export default Home;

@@ -2,8 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { About, Contact, Home, Projects, Services, Experience } from "./pages";
-import Navbar from "./components/Navbar";
-import Audio from "./components/Audio";
+import { Navbar, Audio } from "./components";
 
 const App = () => {
   return (
