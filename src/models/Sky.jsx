@@ -7,7 +7,7 @@ import { Welcome } from "../components";
 
 const modelCache = {};
 
-const Sky = memo(({ isDraggable, setLoadingProgress }) => {
+const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
   const skyRef = useRef();
   const [previousMousePosition, setPreviousMousePosition] = useState(null);
   const [sky, setSky] = useState(null);
@@ -16,9 +16,9 @@ const Sky = memo(({ isDraggable, setLoadingProgress }) => {
     (gltf) => {
       modelCache["sky"] = gltf;
       setSky(gltf);
-      setLoadingProgress(100);
+      requestAnimationFrame(() => setRendered(true));
     },
-    [setLoadingProgress],
+    [setRendered]
   );
 
   const handleLoadProgress = useCallback(
@@ -26,42 +26,20 @@ const Sky = memo(({ isDraggable, setLoadingProgress }) => {
       const progress = (xhr.loaded / xhr.total) * 100;
       setLoadingProgress(progress);
     },
-    [setLoadingProgress],
+    [setLoadingProgress]
   );
 
   const handleLoadError = useCallback(
     (_) => {
       setLoadingProgress(0);
     },
-    [setLoadingProgress],
+    [setLoadingProgress]
   );
-
-  useEffect(() => {
-    if (modelCache["sky"]) {
-      setSky(modelCache["sky"]);
-      setLoadingProgress(100);
-    } else {
-      const loader = new GLTFLoader();
-      loader.load(
-        "./sky.glb",
-        handleModelLoad,
-        handleLoadProgress,
-        handleLoadError,
-      );
-    }
-  }, [handleModelLoad, handleLoadProgress, handleLoadError]);
-
-  useFrame((_, delta) => {
-    if (!isDraggable && skyRef.current) {
-      skyRef.current.rotation.y += delta * 0.02;
-    }
-  });
 
   const handleMouseMove = useCallback(
     (event) => {
       if (isDraggable && skyRef.current) {
         const { clientX, clientY } = event;
-
         if (previousMousePosition) {
           const deltaX = clientX - previousMousePosition.x;
           const deltaY = clientY - previousMousePosition.y;
@@ -69,14 +47,13 @@ const Sky = memo(({ isDraggable, setLoadingProgress }) => {
           skyRef.current.rotation.y += deltaX * 0.002;
           skyRef.current.rotation.x = Math.max(
             -Math.PI / 4,
-            Math.min(Math.PI / 4, skyRef.current.rotation.x + deltaY * 0.002),
+            Math.min(Math.PI / 4, skyRef.current.rotation.x + deltaY * 0.002)
           );
         }
-
         setPreviousMousePosition({ x: clientX, y: clientY });
       }
     },
-    [isDraggable, previousMousePosition],
+    [isDraggable, previousMousePosition]
   );
 
   useEffect(() => {
@@ -87,6 +64,27 @@ const Sky = memo(({ isDraggable, setLoadingProgress }) => {
       setPreviousMousePosition(null);
     }
   }, [isDraggable, handleMouseMove]);
+
+  useEffect(() => {
+    if (modelCache["sky"]) {
+      setSky(modelCache["sky"]);
+      requestAnimationFrame(() => setRendered(true));
+    } else {
+      const loader = new GLTFLoader();
+      loader.load(
+        "./sky.glb",
+        handleModelLoad,
+        handleLoadProgress,
+        handleLoadError
+      );
+    }
+  }, [handleModelLoad, handleLoadProgress, handleLoadError]);
+
+  useFrame((_, delta) => {
+    if (!isDraggable && skyRef.current) {
+      skyRef.current.rotation.y += delta * 0.02;
+    }
+  });
 
   if (!sky) return null;
 
@@ -99,17 +97,18 @@ const Sky = memo(({ isDraggable, setLoadingProgress }) => {
 
 const SkyCanvas = memo(({ isDraggable, onLoad }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isRendered, setRendered] = useState(false);
   const [showWelcome, setShowWelcome] = useState(() => {
     return sessionStorage.getItem("hasSeenWelcome") ? false : true;
   });
 
   useEffect(() => {
-    if (loadingProgress === 100) {
+    if (isRendered) {
       sessionStorage.setItem("hasSeenWelcome", "true");
       setShowWelcome(false);
       onLoad(true);
     }
-  }, [loadingProgress, onLoad]);
+  }, [isRendered, onLoad]);
 
   return (
     <>
@@ -134,6 +133,7 @@ const SkyCanvas = memo(({ isDraggable, onLoad }) => {
         <Sky
           isDraggable={isDraggable}
           setLoadingProgress={setLoadingProgress}
+          setRendered={setRendered}
         />
         <OrbitControls
           enableZoom={false}
