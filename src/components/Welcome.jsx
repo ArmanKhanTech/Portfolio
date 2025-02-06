@@ -42,7 +42,7 @@ class Welcome extends React.Component {
             Welcome to my Portfolio
           </h1>
           <h3 className="text-3xl lg:text-5xl mt-5 text-3xl text-white-100">
-            Setting up {this.props.progress}%{" "}
+            Setting up {Math.round(this.props.progress)}%
           </h3>
         </div>
       </section>
