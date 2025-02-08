@@ -2,6 +2,7 @@ import React, { memo, useEffect, useRef, useState, useCallback } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { useFrame, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 import { Welcome } from "../components";
 
@@ -23,15 +24,8 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
 
   const handleLoadProgress = useCallback(
     (xhr) => {
-      const progress = (xhr.loaded / xhr.total) * 100;
+      let progress = xhr.total ? (xhr.loaded / xhr.total) * 100 : 50;
       setLoadingProgress(progress);
-    },
-    [setLoadingProgress]
-  );
-
-  const handleLoadError = useCallback(
-    (_) => {
-      setLoadingProgress(0);
     },
     [setLoadingProgress]
   );
@@ -65,14 +59,25 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
     }
   }, [isDraggable, handleMouseMove]);
 
+  const handleLoadError = useCallback(
+    (_) => {
+      setLoadingProgress(100); // Assume completed if error occurs
+    },
+    [setLoadingProgress]
+  );
+
   useEffect(() => {
     if (modelCache["sky"]) {
       setSky(modelCache["sky"]);
       requestAnimationFrame(() => setRendered(true));
     } else {
       const loader = new GLTFLoader();
+      const dracoLoader = new DRACOLoader();
+      dracoLoader.setDecoderPath("/draco/");
+      loader.setDRACOLoader(dracoLoader);
+
       loader.load(
-        "./sky.glb",
+        "./sky-v1.glb",
         handleModelLoad,
         handleLoadProgress,
         handleLoadError
@@ -98,9 +103,9 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
 const SkyCanvas = memo(({ isDraggable, onLoad }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isRendered, setRendered] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(() => {
-    return sessionStorage.getItem("hasSeenWelcome") ? false : true;
-  });
+  const [showWelcome, setShowWelcome] = useState(
+    !sessionStorage.getItem("hasSeenWelcome")
+  );
 
   useEffect(() => {
     if (isRendered) {
