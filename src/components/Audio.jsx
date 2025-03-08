@@ -45,7 +45,7 @@ const AudioComponent = () => {
 
   return (
     <Html>
-      <div className="flex justify-end items-end hover:scale-110 transform duration-300">
+      <div className="flex justify-end items-end lg:hover:scale-110 transform duration-300">
         <button
           onClick={handlePlayPause}
           className="p-4 bg-gradient-to-br from-orange-400 to-red-600 text-white rounded-full"
@@ -59,7 +59,7 @@ const AudioComponent = () => {
 
 const Audio = () => {
   return (
-    <div className={`fixed bottom-0 right-0`}>
+    <div className={`fixed bottom-0 right-0 z-[50]`}>
       <Canvas
         style={{ background: "transparent", width: "125px", height: "125px" }}
       >

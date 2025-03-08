@@ -79,7 +79,7 @@ class About extends React.Component {
                       <img
                         src={skill.imageUrl}
                         alt={skill.name}
-                        className="w-12 h-12 object-contain hover:scale-110 transition-transform"
+                        className="w-12 h-12 object-contain lg:lg:hover:scale-110 transition-transform"
                       />
                       <p className="text-white text-xs lg:text-sm font-semibold text-center">
                         {skill.name}

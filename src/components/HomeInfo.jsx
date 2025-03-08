@@ -28,7 +28,7 @@ const HomeInfo = () => {
   return (
     <div className="max-container flex flex-col items-start justify-center">
       <div>
-        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text lg:hover:backdrop-blur-md hover:rounded-md lg:hover:px-5 lg:hover:py-1 transition-colors duration-500">
+        <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text lg:lg:hover:backdrop-blur-md lg:hover:rounded-md lg:lg:hover:px-5 lg:lg:hover:py-1 transition-colors duration-500">
           <h1>Hello! there,</h1>
           <h1>
             I am{" "}
@@ -68,7 +68,7 @@ const HomeInfo = () => {
           </NavLink>
         </div>
       </div>
-      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600 lg:hover:backdrop-blur-md hover:rounded-md lg:hover:px-5 lg:hover:py-1 transition-colors duration-500">
+      <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600 lg:lg:hover:backdrop-blur-md lg:hover:rounded-md lg:lg:hover:px-5 lg:lg:hover:py-1 transition-colors duration-500">
         <span>
           Currently a final year Computer Engineering student from India.
         </span>
@@ -79,7 +79,7 @@ const HomeInfo = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <button className="px-3 py-1.5 font-semibold text-2xl lg:text-3xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110">
+          <button className="px-3 py-1.5 font-semibold text-2xl lg:text-3xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md lg:hover:scale-110">
             Résumé
           </button>
         </a>
@@ -90,7 +90,7 @@ const HomeInfo = () => {
             <img
               src={link.iconUrl}
               alt={link.name}
-              className="h-12 w-12 object-cover transition-transform duration-300 hover:scale-110 hover:opacity-90"
+              className="h-12 w-12 object-cover transition-transform duration-300 lg:hover:scale-110 lg:hover:opacity-90"
             />
           </Link>
         ))}

@@ -173,7 +173,7 @@ Follow the below instructions to get started.
    ```HTML
    <div className='my-3'>
      <a href='resume_link' target='_blank' rel='noreferrer'>
-       <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md hover:scale-110'>
+       <button className='px-3 py-1.5 font-semibold text-xl text-white transition duration-500 ease-in-out transform bg-gradient-to-r from-orange-400 to-red-600 rounded-md lg:hover:scale-110'>
          Resume
        </button>
      </a>
