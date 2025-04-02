@@ -75,7 +75,7 @@ const HomeInfo = () => {
       </div>
       <div className="mt-5">
         <a
-          href="https://drive.google.com/file/d/1tXzrGUdosQ6EQx_r-gvTSnanRULUBuJb/view?usp=sharing"
+          href="https://drive.google.com/file/d/1CsDFl_rkrlEPFqTcMkM0nS9pndhbIEJ3/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
         >
