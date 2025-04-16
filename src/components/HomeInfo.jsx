@@ -75,7 +75,7 @@ const HomeInfo = () => {
       </div>
       <div className="mt-5">
         <a
-          href="https://www.canva.com/design/DAGNKrVaNyU/xvCXoOEob1C66t5xcqjhIw/view?utm_content=DAGNKrVaNyU&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+          href="https://drive.google.com/file/d/1OesV0IzHp5j9P2IGHTexCrXLGq7sGp_o/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
         >
