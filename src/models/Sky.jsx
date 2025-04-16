@@ -19,7 +19,7 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
       setSky(gltf);
       requestAnimationFrame(() => setRendered(true));
     },
-    [setRendered]
+    [setRendered],
   );
 
   const handleLoadProgress = useCallback(
@@ -27,7 +27,7 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
       let progress = xhr.total ? (xhr.loaded / xhr.total) * 100 : 50;
       setLoadingProgress(progress);
     },
-    [setLoadingProgress]
+    [setLoadingProgress],
   );
 
   const handleMouseMove = useCallback(
@@ -41,13 +41,13 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
           skyRef.current.rotation.y += deltaX * 0.002;
           skyRef.current.rotation.x = Math.max(
             -Math.PI / 4,
-            Math.min(Math.PI / 4, skyRef.current.rotation.x + deltaY * 0.002)
+            Math.min(Math.PI / 4, skyRef.current.rotation.x + deltaY * 0.002),
           );
         }
         setPreviousMousePosition({ x: clientX, y: clientY });
       }
     },
-    [isDraggable, previousMousePosition]
+    [isDraggable, previousMousePosition],
   );
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
     (_) => {
       setLoadingProgress(100); // Assume completed if error occurs
     },
-    [setLoadingProgress]
+    [setLoadingProgress],
   );
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
         "./sky-v1.glb",
         handleModelLoad,
         handleLoadProgress,
-        handleLoadError
+        handleLoadError,
       );
     }
   }, [handleModelLoad, handleLoadProgress, handleLoadError]);
@@ -104,7 +104,7 @@ const SkyCanvas = memo(({ isDraggable, onLoad }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isRendered, setRendered] = useState(false);
   const [showWelcome, setShowWelcome] = useState(
-    !sessionStorage.getItem("hasSeenWelcome")
+    !sessionStorage.getItem("hasSeenWelcome"),
   );
 
   useEffect(() => {

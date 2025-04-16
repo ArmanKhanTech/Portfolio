@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, useAnimations } from "@react-three/drei";
+import {
+  OrbitControls,
+  Preload,
+  useGLTF,
+  useAnimations,
+} from "@react-three/drei";
 
 const Earth = () => {
   const { scene, animations } = useGLTF("./planet-v1.glb", "/draco/");
@@ -30,9 +35,22 @@ const EarthCanvas = () => {
         <directionalLight position={[1, 1, 1]} intensity={3} />
         <ambientLight intensity={1} />
         <pointLight position={[10, 5, 10]} intensity={3} />
-        <spotLight position={[0, 50, 10]} angle={0.15} penumbra={1} intensity={3} />
-        <hemisphereLight skyColor="#ffffff" groundColor="#ffffff" intensity={1.5} />
-        <OrbitControls autoRotate={true} autoRotateSpeed={1.0} enableZoom={false} />
+        <spotLight
+          position={[0, 50, 10]}
+          angle={0.15}
+          penumbra={1}
+          intensity={3}
+        />
+        <hemisphereLight
+          skyColor="#ffffff"
+          groundColor="#ffffff"
+          intensity={1.5}
+        />
+        <OrbitControls
+          autoRotate={true}
+          autoRotateSpeed={1.0}
+          enableZoom={false}
+        />
         <Earth />
         <Preload all />
       </Canvas>
