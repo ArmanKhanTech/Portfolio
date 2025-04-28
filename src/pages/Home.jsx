@@ -3,9 +3,11 @@ import React, { Suspense, useState, useCallback } from "react";
 import { SkyCanvas } from "../models";
 import { HomeInfo } from "../components";
 
-const Home = () => {
+const Home = ({
+  isLoaded,
+  handleLoad
+}) => {
   const [isDraggable, setIsDraggable] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleMouseDown = useCallback((e) => {
     e.preventDefault();
@@ -16,10 +18,6 @@ const Home = () => {
     setIsDraggable(false);
   }, []);
 
-  const handleLoad = useCallback((status) => {
-    setIsLoaded(status);
-  }, []);
-
   return (
     <section className="fixed inset-0 z-0">
       <div
@@ -28,14 +26,14 @@ const Home = () => {
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
       >
-        <div className="relative inset-0">
+        <div className="absolute inset-0">
           <Suspense fallback={<div className="h-screen" />}>
             <SkyCanvas isDraggable={isDraggable} onLoad={handleLoad} />
           </Suspense>
         </div>
         {isLoaded && (
           <div
-            className={`relative w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
+            className={`relative w-full min-h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
               }`}
           >
             <HomeInfo />

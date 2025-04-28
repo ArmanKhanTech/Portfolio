@@ -57,15 +57,17 @@ const AudioComponent = () => {
   );
 };
 
-const Audio = () => {
+const Audio = ({ isLoaded }) => {
   return (
-    <div className={`fixed bottom-0 right-0 z-[10]`}>
-      <Canvas
-        style={{ background: "transparent", width: "125px", height: "125px" }}
-      >
-        <AudioComponent />
-      </Canvas>
-    </div>
+    (isLoaded &&
+      <div className={`fixed bottom-0 right-0 z-[10]`}>
+        <Canvas
+          style={{ background: "transparent", width: "125px", height: "125px" }}
+        >
+          <AudioComponent />
+        </Canvas>
+      </div>
+    )
   );
 };
 

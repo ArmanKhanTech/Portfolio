@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ isLoaded }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -89,56 +89,58 @@ const Navbar = () => {
   }
 
   return (
-    <header
-      className={`fixed z-[50] backdrop-blur-[2px] m-auto max-w-5xl lg:px-12 top-0 left-0 right-0 w-[100%] z-50 bg-transparent`}
-    >
-      <div className="container flex justify-between items-center py-4 px-5 lg:px-0">
-        <button
-          className="text-3xl backdrop-blur-sm orange-gradient-text font-bold rounded-xl border px-2 py-2.5 lg:hover:scale-125 transition-transform duration-300"
-          onClick={window.innerWidth < 768 ? toggleMenu : navigateToHome}
-        >
-          AK
-        </button>
-        <nav className="hidden lg:flex backdrop-blur-sm lg:hover:backdrop-blur-2xl text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
-          <NavLink
-            className="lg:hover:orange-gradient-text lg:hover:font-bold"
-            to="/"
+    (isLoaded &&
+      <header
+        className={`fixed z-[50] backdrop-blur-[2px] m-auto max-w-5xl lg:px-12 top-0 left-0 right-0 w-[100%] z-50 bg-transparent`}
+      >
+        <div className="container flex justify-between items-center py-4 px-5 lg:px-0">
+          <button
+            className="text-3xl backdrop-blur-sm orange-gradient-text font-bold rounded-xl border px-2 py-2.5 lg:hover:scale-125 transition-transform duration-300"
+            onClick={window.innerWidth < 768 ? toggleMenu : navigateToHome}
           >
-            Home
-          </NavLink>
-          <NavLink
-            className="lg:hover:orange-gradient-text lg:hover:font-bold"
-            to="/about"
-          >
-            About
-          </NavLink>
-          <NavLink
-            className="lg:hover:orange-gradient-text lg:hover:font-bold"
-            to="/experience"
-          >
-            Experience
-          </NavLink>
-          <NavLink
-            className="lg:hover:orange-gradient-text lg:hover:font-bold"
-            to="/projects"
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            className="lg:hover:orange-gradient-text lg:hover:font-bold"
-            to="/services"
-          >
-            Services
-          </NavLink>
-          <NavLink
-            className="lg:hover:orange-gradient-text lg:hover:font-bold"
-            to="/contact"
-          >
-            Contact
-          </NavLink>
-        </nav>
-      </div>
-    </header>
+            AK
+          </button>
+          <nav className="hidden lg:flex backdrop-blur-sm lg:hover:backdrop-blur-2xl text-xl gap-8 font-semibold text-white border py-3.5 px-5 rounded-xl">
+            <NavLink
+              className="lg:hover:orange-gradient-text lg:hover:font-bold"
+              to="/"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className="lg:hover:orange-gradient-text lg:hover:font-bold"
+              to="/about"
+            >
+              About
+            </NavLink>
+            <NavLink
+              className="lg:hover:orange-gradient-text lg:hover:font-bold"
+              to="/experience"
+            >
+              Experience
+            </NavLink>
+            <NavLink
+              className="lg:hover:orange-gradient-text lg:hover:font-bold"
+              to="/projects"
+            >
+              Projects
+            </NavLink>
+            <NavLink
+              className="lg:hover:orange-gradient-text lg:hover:font-bold"
+              to="/services"
+            >
+              Services
+            </NavLink>
+            <NavLink
+              className="lg:hover:orange-gradient-text lg:hover:font-bold"
+              to="/contact"
+            >
+              Contact
+            </NavLink>
+          </nav>
+        </div>
+      </header>
+    )
   );
 };
 
