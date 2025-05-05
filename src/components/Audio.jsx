@@ -57,9 +57,10 @@ const AudioComponent = () => {
   );
 };
 
-const Audio = ({ isLoaded }) => {
+const Audio = ({ isLoaded, isDraggable }) => {
   return (
-    (isLoaded &&
+    isLoaded &&
+    !isDraggable && (
       <div className={`fixed bottom-0 right-0 z-[10]`}>
         <Canvas
           style={{ background: "transparent", width: "125px", height: "125px" }}

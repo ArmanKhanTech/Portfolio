@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const Navbar = ({ isLoaded }) => {
+const Navbar = ({ isLoaded, isDraggable }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -89,7 +89,8 @@ const Navbar = ({ isLoaded }) => {
   }
 
   return (
-    (isLoaded &&
+    isLoaded &&
+    !isDraggable && (
       <header
         className={`fixed z-[50] backdrop-blur-[2px] m-auto max-w-5xl lg:px-12 top-0 left-0 right-0 w-[100%] z-50 bg-transparent`}
       >

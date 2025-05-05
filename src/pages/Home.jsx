@@ -3,12 +3,7 @@ import React, { Suspense, useState, useCallback } from "react";
 import { SkyCanvas } from "../models";
 import { HomeInfo } from "../components";
 
-const Home = ({
-  isLoaded,
-  handleLoad
-}) => {
-  const [isDraggable, setIsDraggable] = useState(false);
-
+const Home = ({ isLoaded, handleLoad, isDraggable, setIsDraggable }) => {
   const handleMouseDown = useCallback((e) => {
     e.preventDefault();
     setIsDraggable(true);
@@ -33,8 +28,9 @@ const Home = ({
         </div>
         {isLoaded && (
           <div
-            className={`absolute w-full min-h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
-              }`}
+            className={`absolute inset-0 w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
+              isDraggable ? "opacity-0" : "opacity-100"
+            }`}
           >
             <HomeInfo />
             <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block">
