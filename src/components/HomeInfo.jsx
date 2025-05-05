@@ -26,7 +26,7 @@ const HomeInfo = () => {
   }, []);
 
   return (
-    <div className="max-container flex flex-col items-start justify-center">
+    <div className="max-container flex flex-col items-start justify-center h-full overflow-y-auto">
       <div>
         <div className="text-4xl mb-3 lg:text-6xl font-semibold orange-gradient-text lg:lg:hover:backdrop-blur-md lg:hover:rounded-md lg:lg:hover:px-5 lg:lg:hover:py-1 transition-colors duration-500">
           <h1>Hello! there,</h1>

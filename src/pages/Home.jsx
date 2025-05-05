@@ -33,7 +33,7 @@ const Home = ({
         </div>
         {isLoaded && (
           <div
-            className={`relative w-full min-h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
+            className={`absolute w-full min-h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
               }`}
           >
             <HomeInfo />
