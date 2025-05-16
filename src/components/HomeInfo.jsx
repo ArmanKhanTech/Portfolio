@@ -84,7 +84,7 @@ const HomeInfo = () => {
           </button>
         </a>
       </div>
-      <div className="mt-10 self-start flex gap-2 rounded-lg">
+      <div className="mt-10 lg:mt-6 self-start flex gap-2 rounded-lg mb-10 lg:mb-0">
         {socialLinks.map((link) => (
           <Link key={link.name} to={link.link} target="_blank">
             <img
