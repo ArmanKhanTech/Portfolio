@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://portfolioarman.netlify.app</loc>
+    <lastmod>2025-05-22</lastmod>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Services Page -->
+  <url>
+    <loc>https://portfolioarman.netlify.app/services</loc>
+    <lastmod>2025-05-22</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Projects Page -->
+  <url>
+    <loc>https://portfolioarman.netlify.app/projects</loc>
+    <lastmod>2025-05-22</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://portfolioarman.netlify.app/about</loc>
+    <lastmod>2025-05-22</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://portfolioarman.netlify.app/contact</loc>
+    <lastmod>2025-05-22</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Experience Page -->
+  <url>
+    <loc>https://portfolioarman.netlify.app/experience</loc>
+    <lastmod>2025-05-22</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>
