@@ -1,1 +1,3 @@
 User-agent: *
+Allow: /
+Sitemap: https://portfolioarman.netlify.app/sitemap.xml
