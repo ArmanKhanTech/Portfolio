@@ -58,17 +58,31 @@ const AudioComponent = () => {
 };
 
 const Audio = ({ isLoaded, isDraggable }) => {
+  const isHomePage = window.location.pathname === "/";
+
+  if (isHomePage) {
+    return (
+      isLoaded &&
+      !isDraggable && (
+        <div className={`fixed bottom-0 right-0 z-[10]`}>
+          <Canvas
+            style={{ background: "transparent", width: "125px", height: "125px" }}
+          >
+            <AudioComponent />
+          </Canvas>
+        </div>
+      )
+    );
+  }
+
   return (
-    isLoaded &&
-    !isDraggable && (
-      <div className={`fixed bottom-0 right-0 z-[10]`}>
-        <Canvas
-          style={{ background: "transparent", width: "125px", height: "125px" }}
-        >
-          <AudioComponent />
-        </Canvas>
-      </div>
-    )
+    <div className={`fixed bottom-0 right-0 z-[10]`}>
+      <Canvas
+        style={{ background: "transparent", width: "125px", height: "125px" }}
+      >
+        <AudioComponent />
+      </Canvas>
+    </div>
   );
 };
 
