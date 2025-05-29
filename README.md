@@ -14,7 +14,7 @@
 
   <h3 align="center">Portfolio</h3>
   <p align="center">Status: Completed</p>
-  <p align="center">My 3D personal portfolio website.e.</p>
+  <p align="center">My 3D personal portfolio website.</p>
 
   <p align="center">
     <a href="https://github.com/ArmanKhanTech/Portfolio"><strong>Explore the docs »</strong></a>
