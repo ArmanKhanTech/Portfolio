@@ -100,20 +100,16 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
   );
 });
 
-const SkyCanvas = memo(({ isDraggable, onLoad }) => {
+const SkyCanvas = memo(({ isDraggable, setIsLoaded, showWelcome, setShowWelcome }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isRendered, setRendered] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(
-    !sessionStorage.getItem("hasSeenWelcome"),
-  );
 
   useEffect(() => {
     if (isRendered) {
-      sessionStorage.setItem("hasSeenWelcome", "true");
       setShowWelcome(false);
-      onLoad(true);
+      setIsLoaded(true);
     }
-  }, [isRendered, onLoad]);
+  }, [isRendered, setIsLoaded]);
 
   return (
     <>

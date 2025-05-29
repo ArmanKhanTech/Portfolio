@@ -7,23 +7,22 @@ import { Navbar, Audio } from "./components";
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isDraggable, setIsDraggable] = useState(false);
-
-  const handleLoad = useCallback((status) => {
-    setIsLoaded(status);
-  }, []);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   return (
     <Router>
-      <Navbar isLoaded={isLoaded} isDraggable={isDraggable} />
+      <Navbar isLoaded={isLoaded} isDraggable={isDraggable} showWelcome={showWelcome} />
       <Routes>
         <Route
           path="/"
           element={
             <Home
               isLoaded={isLoaded}
-              handleLoad={handleLoad}
+              setIsLoaded={setIsLoaded}
               isDraggable={isDraggable}
               setIsDraggable={setIsDraggable}
+              showWelcome={showWelcome}
+              setShowWelcome={setShowWelcome}
             />
           }
         />
@@ -34,7 +33,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
       </Routes>
-      <Audio isLoaded={isLoaded} isDraggable={isDraggable} />
+      <Audio isLoaded={isLoaded} isDraggable={isDraggable} showWelcome={showWelcome} />
     </Router>
   );
 };

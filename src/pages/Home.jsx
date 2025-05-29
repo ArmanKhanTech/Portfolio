@@ -1,9 +1,9 @@
-import React, { Suspense, useState, useCallback } from "react";
+import React, { Suspense, useCallback } from "react";
 
 import { SkyCanvas } from "../models";
 import { HomeInfo } from "../components";
 
-const Home = ({ isLoaded, handleLoad, isDraggable, setIsDraggable }) => {
+const Home = ({ isLoaded, setIsLoaded, isDraggable, setIsDraggable, showWelcome, setShowWelcome }) => {
   const handleMouseDown = useCallback((e) => {
     e.preventDefault();
     setIsDraggable(true);
@@ -23,14 +23,13 @@ const Home = ({ isLoaded, handleLoad, isDraggable, setIsDraggable }) => {
       >
         <div className="absolute inset-0">
           <Suspense fallback={<div className="h-screen" />}>
-            <SkyCanvas isDraggable={isDraggable} onLoad={handleLoad} />
+            <SkyCanvas isDraggable={isDraggable} setIsLoaded={setIsLoaded} showWelcome={showWelcome} setShowWelcome={setShowWelcome} />s
           </Suspense>
         </div>
         {isLoaded && (
           <div
-            className={`absolute inset-0 w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
-              isDraggable ? "opacity-0" : "opacity-100"
-            }`}
+            className={`absolute inset-0 w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${isDraggable ? "opacity-0" : "opacity-100"
+              }`}
           >
             <HomeInfo />
             <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block">

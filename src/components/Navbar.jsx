@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const MobileMenu = ({ toggleMenu }) => {
+const BurgerMenu = ({ toggleMenu }) => {
   return (
     <div
       className={`fixed z-[50] backdrop-blur-md bg-black bg-opacity-50 z-50 font-semibold top-0 bottom-0 right-0 left-0 p-2 w-[100%] overflow-y-auto text-center`}
@@ -70,7 +70,7 @@ const MobileMenu = ({ toggleMenu }) => {
   );
 }
 
-const PCMenu = ({ toggleMenu }) => {
+const Menu = ({ toggleMenu }) => {
   const navigate = useNavigate();
   const navigateToHome = () => {
     navigate("/");
@@ -130,7 +130,7 @@ const PCMenu = ({ toggleMenu }) => {
   )
 }
 
-const Navbar = ({ isLoaded, isDraggable }) => {
+const Navbar = ({ isLoaded, isDraggable, showWelcome }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isHomePage = window.location.pathname === "/";
 
@@ -139,14 +139,14 @@ const Navbar = ({ isLoaded, isDraggable }) => {
   };
 
   if (isMenuOpen) {
-    return <MobileMenu toggleMenu={toggleMenu} />;
+    return <BurgerMenu toggleMenu={toggleMenu} />;
   }
 
   if (isHomePage) {
-    return isLoaded && !isDraggable ? <PCMenu toggleMenu={toggleMenu} /> : null;
+    return isLoaded && !isDraggable && !showWelcome ? <Menu toggleMenu={toggleMenu} /> : null;
   }
 
-  return <PCMenu toggleMenu={toggleMenu} />;
+  return <Menu toggleMenu={toggleMenu} />;
 };
 
 export default Navbar;

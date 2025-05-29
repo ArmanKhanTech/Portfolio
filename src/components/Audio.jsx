@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useContext } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { Html } from "@react-three/drei";
@@ -57,24 +57,7 @@ const AudioComponent = () => {
   );
 };
 
-const Audio = ({ isLoaded, isDraggable }) => {
-  const isHomePage = window.location.pathname === "/";
-
-  if (isHomePage) {
-    return (
-      isLoaded &&
-      !isDraggable && (
-        <div className={`fixed bottom-0 right-0 z-[10]`}>
-          <Canvas
-            style={{ background: "transparent", width: "125px", height: "125px" }}
-          >
-            <AudioComponent />
-          </Canvas>
-        </div>
-      )
-    );
-  }
-
+const AudioComponentWrapper = () => {
   return (
     <div className={`fixed bottom-0 right-0 z-[10]`}>
       <Canvas
@@ -84,6 +67,17 @@ const Audio = ({ isLoaded, isDraggable }) => {
       </Canvas>
     </div>
   );
+}
+
+const Audio = ({ isLoaded, isDraggable, showWelcome }) => {
+  const isHomePage = window.location.pathname === "/";
+
+  if (isHomePage) {
+    return isLoaded && !isDraggable && !showWelcome ? <AudioComponentWrapper /> : null;
+  }
+
+  return <AudioComponentWrapper />
+
 };
 
 export default Audio;
