@@ -70,7 +70,7 @@ const HomeInfo = () => {
       </div>
       <div className="mt-5 font-semibold text-2xl lg:text-4xl text-red-600 lg:lg:hover:backdrop-blur-md lg:hover:rounded-md lg:lg:hover:px-5 lg:lg:hover:py-1 transition-colors duration-500">
         <span>
-          Currently a final year Computer Engineering student from India.
+          I am a Software Engineer & Computer Engineering Gradaute from India.
         </span>
       </div>
       <div className="mt-5">

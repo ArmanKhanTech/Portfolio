@@ -40,6 +40,9 @@ import sqlite from "./sqlite.svg";
 import xml from "./xml.svg";
 import nextjs from "./nextjs.svg";
 import educationIcon from "./education.svg";
+import csharp from "./c-sharp.svg";
+import aspnet from "./asp-net.svg";
+import sqlserver from "./sql-server.svg";
 
 export {
   css,
@@ -83,5 +86,8 @@ export {
   sqlite,
   xml,
   nextjs,
+  csharp,
+  aspnet,
+  sqlserver,
   educationIcon,
 };

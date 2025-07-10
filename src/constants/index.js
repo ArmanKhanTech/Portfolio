@@ -9,6 +9,9 @@ import {
 } from "../assets/images";
 
 import {
+  csharp,
+  aspnet,
+  sqlserver,
   css,
   express,
   git,
@@ -90,6 +93,10 @@ export const skills = [
     name: "Kotlin",
   },
   {
+    imageUrl: csharp,
+    name: "C#",
+  },
+  {
     imageUrl: xml,
     name: "XML",
   },
@@ -132,6 +139,10 @@ export const skills = [
   {
     imageUrl: mysql,
     name: "MySQL",
+  },
+  {
+    imageUrl: sqlserver,
+    name: "SQL Server",
   },
   {
     imageUrl: sqlite,
@@ -185,22 +196,26 @@ export const skills = [
     imageUrl: flask,
     name: "Flask",
   },
+  {
+    imageUrl: aspnet,
+    name: "ASP.NET",
+  },
 ];
 
 export const education = [
   {
     title: "Anjuman-I-Islam's Kalsekar Technical Campus",
-    date: "Dec 2022 - May 2025   |   CGPA: 9.01",
+    date: "Nov 2022 - May 2025   |   CGPA: 9.06",
     icon: educationIcon,
     iconBg: "#ea580c",
     points: [
-      "I am currently pursuing my undergraduate degree with a focus on B.E. in Computer Engineering at Mumbai University.",
-      "Through rigorous coursework and hands-on projects, I am developing a strong foundation in various domians of Computer Science, preparing myself for a successful career in Software Development.",
+      "I have completed my B.E. in Computer Engineering at Mumbai University.",
+      "Through rigorous coursework and hands-on projects, I am developed a strong foundation in various domians of Computer Science, preparing myself for a successful career in Software Development.",
     ],
   },
   {
     title: "Anjuman-I-Islam's Abdul Razzak Kalsekar Polytechnic",
-    date: "Aug 2019 - July 2022   |   Grade: 88 %",
+    date: "Aug 2019 - July 2022   |   Grade: 88%",
     icon: educationIcon,
     iconBg: "#ea580c",
     points: [
@@ -210,7 +225,7 @@ export const education = [
   },
   {
     title: "J.M Rathi English School & Junior College",
-    date: "June 2013 - Mar 2019   |   Percentage: 89 %",
+    date: "June 2013 - Mar 2019   |   Grade: 89%",
     icon: educationIcon,
     iconBg: "#ea580c",
     points: [
@@ -222,8 +237,18 @@ export const education = [
 
 export const experience = [
   {
+    title: "Software Engineer",
+    date: "June 2025 - Present",
+    empolyer: "Decision Tree Consulting",
+    icon: experianceIcon,
+    iconBg: "#ea580c",
+    points: [
+      "Currently working as a Backend Developer at DTC with C# and ASP.NET being the primary tech stack.",
+    ],
+  },
+  {
     title: "Freelancer",
-    date: "Aug 2023 - Present",
+    date: "Aug 2023 - May 2025",
     empolyer: "Self-Employed",
     icon: experianceIcon,
     iconBg: "#ea580c",
@@ -234,7 +259,7 @@ export const experience = [
     ],
   },
   {
-    title: "Technology Lead",
+    title: "Co-founder & Technology Lead",
     date: "May 2024 - Present",
     empolyer: "Stealth Research | Self-Employed",
     icon: experianceIcon,
@@ -245,7 +270,7 @@ export const experience = [
     ],
   },
   {
-    title: "Product Developer",
+    title: "Co-founder & Product Developer",
     date: "July 24 - Present",
     empolyer: "NetraX | Self-Employed",
     icon: experianceIcon,
@@ -257,7 +282,7 @@ export const experience = [
   },
   {
     title: "Back End Developer",
-    date: "Aug 2024 - Sept 2024",
+    date: "Aug 2024 - Oct 2024",
     empolyer: "Techcraft Electronics LLC",
     icon: experianceIcon,
     iconBg: "#ea580c",
@@ -268,24 +293,13 @@ export const experience = [
   },
   {
     title: "Technical Lead",
-    date: "Aug 2023 - June 2024",
+    date: "Aug 2023 - May 2024",
     empolyer: "GDSC AIKTC",
     icon: experianceIcon,
     iconBg: "#ea580c",
     points: [
       "Organized multiple workshops on Android Development, covering Kotlin, Jetpack Compose, and Flutter, for students from two colleges.",
       "Acted as a facilitator for Gen-AI Study Jams.",
-    ],
-  },
-  {
-    title: "Technical Lead",
-    date: "Jan 2024 - Feb 2024",
-    empolyer: "Algorithm 8.0",
-    icon: experianceIcon,
-    iconBg: "#ea580c",
-    points: [
-      "Managed a team of 10 individuals to create the official registration and management system for Algorithm 8.0, a yearly national hackathon hosted by our college.",
-      "The system comprised an Android application for event organization and a website for registration.",
     ],
   },
 ];
