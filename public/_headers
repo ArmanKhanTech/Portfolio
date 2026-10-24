@@ -1,0 +1,12 @@
+# Netlify response headers.
+
+# Build output has content hashes in its file names, so it can be cached forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 3D models and the Draco decoder change rarely; cache for a week, then revalidate.
+/models/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/vendor/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

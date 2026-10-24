@@ -11,12 +11,7 @@ import linkedin from "./linkedin.svg";
 import arrow from "./arrow.svg";
 import threejs from "./threejs.svg";
 import java from "./java.svg";
-import androidDev from "./android-dev.svg";
-import webDev from "./web-dev.svg";
-import crossDev from "./cross-dev.svg";
 import ml from "./ml.svg";
-import serverless from "./serverless.svg";
-import desktopDev from "./desktop-dev.svg";
 import android from "./android.svg";
 import cpp from "./cpp.svg";
 import dart from "./dart.svg";
@@ -39,10 +34,16 @@ import ts from "./ts.svg";
 import sqlite from "./sqlite.svg";
 import xml from "./xml.svg";
 import nextjs from "./nextjs.svg";
-import educationIcon from "./education.svg";
 import csharp from "./c-sharp.svg";
 import aspnet from "./asp-net.svg";
 import sqlserver from "./sql-server.svg";
+import dotnet from "./dotnet.svg";
+import fastapi from "./fastapi.svg";
+import php from "./php.svg";
+import azureDevops from "./azuredevops.svg";
+import playwright from "./playwright.svg";
+import postman from "./postman.svg";
+import raspberryPi from "./raspberrypi.svg";
 
 export {
   css,
@@ -58,12 +59,7 @@ export {
   arrow,
   threejs,
   java,
-  androidDev,
-  webDev,
-  crossDev,
   ml,
-  serverless,
-  desktopDev,
   android,
   cpp,
   dart,
@@ -89,5 +85,11 @@ export {
   csharp,
   aspnet,
   sqlserver,
-  educationIcon,
+  dotnet,
+  fastapi,
+  php,
+  azureDevops,
+  playwright,
+  postman,
+  raspberryPi,
 };

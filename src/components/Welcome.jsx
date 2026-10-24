@@ -1,53 +1,30 @@
 import React from "react";
-import WAVES from "vanta/dist/vanta.waves.min";
-import "react-vertical-timeline-component/style.min.css";
 
-class Welcome extends React.Component {
-  constructor(props) {
-    super(props);
-    this.vantaRef = React.createRef();
-  }
+import useVanta from "../hooks/useVanta";
 
-  componentDidMount() {
-    this.vantaEffect = WAVES({
-      el: this.vantaRef.current,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: true,
-      color: 0x000000,
-      waveHeight: 20,
-      shininess: 100,
-    });
-    this.frameId = requestAnimationFrame(this.animateFrame);
-  }
+const Welcome = ({ progress }) => {
+  const vantaRef = useVanta(() => import("vanta/dist/vanta.waves.min"), {
+    color: 0x000000,
+    waveHeight: 20,
+    shininess: 100,
+  });
 
-  animateFrame = () => {
-    this.frameId = requestAnimationFrame(this.animateFrame);
-  };
-
-  componentWillUnmount() {
-    if (this.frameId) {
-      cancelAnimationFrame(this.frameId);
-    }
-    if (this.vantaEffect) {
-      this.vantaEffect.destroy();
-    }
-  }
-
-  render() {
-    return (
-      <section ref={this.vantaRef} className="fixed inset-0 z-50">
-        <div className="h-screen w-screen flex flex-col items-start md:items-center justify-center p-5">
-          <h1 className="text-5xl lg:text-7xl orange-gradient-text font-semibold">
-            Welcome to my Portfolio
-          </h1>
-          <h3 className="text-3xl lg:text-5xl mt-5 text-3xl text-white-100">
-            Setting up {Math.round(this.props.progress)}%
-          </h3>
-        </div>
-      </section>
-    );
-  }
-}
+  return (
+    <section ref={vantaRef} className="fixed inset-0 z-50 bg-black">
+      <div className="h-screen w-screen flex flex-col items-start md:items-center justify-center p-5">
+        <h1 className="text-5xl lg:text-7xl orange-gradient-text font-semibold">
+          Welcome to my Portfolio
+        </h1>
+        <p
+          className="text-3xl lg:text-5xl mt-5 text-white-100"
+          role="status"
+          aria-live="polite"
+        >
+          Setting up {Math.round(progress)}%
+        </p>
+      </div>
+    </section>
+  );
+};
 
 export default Welcome;

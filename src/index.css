@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +7,60 @@
   font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
+}
+
+html,
+body {
+  background-color: #1b1212;
+}
+
+/* Shared building blocks so every page reads with the same rhythm. */
+@layer components {
+  .page-title {
+    @apply text-headingMobile lg:text-5xl font-semibold orange-gradient-text;
+  }
+
+  .page-intro {
+    @apply mt-5 text-white p-4 text-lg lg:text-2xl leading-relaxed rounded-xl backdrop-blur-md bg-black/20 border border-white/10;
+  }
+
+  .section-title {
+    @apply text-3xl lg:text-4xl font-semibold orange-gradient-text;
+  }
+
+  .card {
+    @apply flex flex-col backdrop-blur-md bg-black/20 border border-white/10 rounded-xl p-5 transition-colors duration-300 lg:hover:border-orange-600/60;
+  }
+
+  .card-title {
+    @apply text-xl lg:text-2xl text-white font-semibold;
+  }
+
+  .card-subtitle {
+    @apply text-orange-400 font-medium;
+  }
+
+  .tag {
+    @apply text-sm text-white border border-orange-600/60 rounded-full px-2.5 py-0.5;
+  }
+
+  .icon-tile {
+    @apply shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #fb923c;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer utilities {

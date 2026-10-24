@@ -1,89 +1,76 @@
-import React, { memo, useEffect, useRef, useState, useCallback } from "react";
-import { OrbitControls } from "@react-three/drei";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { useFrame, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 import { Welcome } from "../components";
 
+const SKY_MODEL = "/models/sky.glb";
+
 const modelCache = {};
 
 const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
   const skyRef = useRef();
-  const [previousMousePosition, setPreviousMousePosition] = useState(null);
-  const [sky, setSky] = useState(null);
+  const previousMousePosition = useRef(null);
+  const [sky, setSky] = useState(() => modelCache.sky ?? null);
 
-  const handleModelLoad = useCallback(
-    (gltf) => {
-      modelCache["sky"] = gltf;
-      setSky(gltf);
-      requestAnimationFrame(() => setRendered(true));
-    },
-    [setRendered],
-  );
+  // Rotate with the mouse while dragging. Positions live in a ref so a drag
+  // doesn't re-render React on every mouse move.
+  useEffect(() => {
+    if (!isDraggable) {
+      previousMousePosition.current = null;
+      return;
+    }
 
-  const handleLoadProgress = useCallback(
-    (xhr) => {
-      let progress = xhr.total ? (xhr.loaded / xhr.total) * 100 : 50;
-      setLoadingProgress(progress);
-    },
-    [setLoadingProgress],
-  );
+    const handleMouseMove = ({ clientX, clientY }) => {
+      const previous = previousMousePosition.current;
+      if (previous && skyRef.current) {
+        const deltaX = clientX - previous.x;
+        const deltaY = clientY - previous.y;
 
-  const handleMouseMove = useCallback(
-    (event) => {
-      if (isDraggable && skyRef.current) {
-        const { clientX, clientY } = event;
-        if (previousMousePosition) {
-          const deltaX = clientX - previousMousePosition.x;
-          const deltaY = clientY - previousMousePosition.y;
-
-          skyRef.current.rotation.y += deltaX * 0.002;
-          skyRef.current.rotation.x = Math.max(
-            -Math.PI / 4,
-            Math.min(Math.PI / 4, skyRef.current.rotation.x + deltaY * 0.002),
-          );
-        }
-        setPreviousMousePosition({ x: clientX, y: clientY });
+        skyRef.current.rotation.y += deltaX * 0.002;
+        skyRef.current.rotation.x = Math.max(
+          -Math.PI / 4,
+          Math.min(Math.PI / 4, skyRef.current.rotation.x + deltaY * 0.002),
+        );
       }
-    },
-    [isDraggable, previousMousePosition],
-  );
+      previousMousePosition.current = { x: clientX, y: clientY };
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [isDraggable]);
 
   useEffect(() => {
-    if (isDraggable) {
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
-    } else {
-      setPreviousMousePosition(null);
-    }
-  }, [isDraggable, handleMouseMove]);
-
-  const handleLoadError = useCallback(
-    (_) => {
-      setLoadingProgress(100); // Assume completed if error occurs
-    },
-    [setLoadingProgress],
-  );
-
-  useEffect(() => {
-    if (modelCache["sky"]) {
-      setSky(modelCache["sky"]);
+    if (modelCache.sky) {
       requestAnimationFrame(() => setRendered(true));
-    } else {
-      const loader = new GLTFLoader();
-      const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath("/draco/");
-      loader.setDRACOLoader(dracoLoader);
-
-      loader.load(
-        "./sky-v1.glb",
-        handleModelLoad,
-        handleLoadProgress,
-        handleLoadError,
-      );
+      return;
     }
-  }, [handleModelLoad, handleLoadProgress, handleLoadError]);
+
+    const loader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/vendor/draco/");
+    loader.setDRACOLoader(dracoLoader);
+
+    loader.load(
+      SKY_MODEL,
+      (gltf) => {
+        modelCache.sky = gltf;
+        setSky(gltf);
+        requestAnimationFrame(() => setRendered(true));
+      },
+      (xhr) => {
+        setLoadingProgress(xhr.total ? (xhr.loaded / xhr.total) * 100 : 50);
+      },
+      () => {
+        // Don't leave the visitor stuck on the loading screen.
+        setLoadingProgress(100);
+        setRendered(true);
+      },
+    );
+
+    return () => dracoLoader.dispose();
+  }, [setLoadingProgress, setRendered]);
 
   useFrame((_, delta) => {
     if (!isDraggable && skyRef.current) {
@@ -100,50 +87,51 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
   );
 });
 
-const SkyCanvas = memo(({ isDraggable, setIsLoaded, showWelcome, setShowWelcome }) => {
-  const [loadingProgress, setLoadingProgress] = useState(0);
-  const [isRendered, setRendered] = useState(false);
+const SkyCanvas = memo(
+  ({ isDraggable, setIsLoaded, showWelcome, setShowWelcome }) => {
+    const [loadingProgress, setLoadingProgress] = useState(0);
+    const [isRendered, setRendered] = useState(false);
 
-  useEffect(() => {
-    if (isRendered) {
-      setShowWelcome(false);
-      setIsLoaded(true);
-    }
-  }, [isRendered, setIsLoaded]);
+    useEffect(() => {
+      if (isRendered) {
+        setShowWelcome(false);
+        setIsLoaded(true);
+      }
+    }, [isRendered, setIsLoaded, setShowWelcome]);
 
-  return (
-    <>
-      {showWelcome && loadingProgress < 100 && (
-        <Welcome progress={loadingProgress} />
-      )}
-      <Canvas camera={{ near: 0.1, far: 100 }} style={{ position: "fixed" }}>
-        <directionalLight position={[1, 1, 1]} intensity={3} />
-        <ambientLight intensity={1} />
-        <pointLight position={[10, 5, 10]} intensity={3} />
-        <spotLight
-          position={[0, 50, 10]}
-          angle={0.15}
-          penumbra={1}
-          intensity={3}
-        />
-        <hemisphereLight
-          skyColor="#ffffff"
-          groundColor="#ffffff"
-          intensity={1.5}
-        />
-        <Sky
-          isDraggable={isDraggable}
-          setLoadingProgress={setLoadingProgress}
-          setRendered={setRendered}
-        />
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          enableRotate={false}
-        />
-      </Canvas>
-    </>
-  );
-});
+    return (
+      <>
+        {showWelcome && loadingProgress < 100 && (
+          <Welcome progress={loadingProgress} />
+        )}
+        <Canvas
+          camera={{ near: 0.1, far: 100 }}
+          dpr={[1, 1.5]}
+          style={{ position: "fixed" }}
+        >
+          <directionalLight position={[1, 1, 1]} intensity={3} />
+          <ambientLight intensity={1} />
+          <pointLight position={[10, 5, 10]} intensity={3} />
+          <spotLight
+            position={[0, 50, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={3}
+          />
+          <hemisphereLight
+            skyColor="#ffffff"
+            groundColor="#ffffff"
+            intensity={1.5}
+          />
+          <Sky
+            isDraggable={isDraggable}
+            setLoadingProgress={setLoadingProgress}
+            setRendered={setRendered}
+          />
+        </Canvas>
+      </>
+    );
+  },
+);
 
 export default SkyCanvas;

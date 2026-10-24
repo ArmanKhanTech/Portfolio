@@ -8,7 +8,7 @@ import {
 } from "@react-three/drei";
 
 const Earth = () => {
-  const { scene, animations } = useGLTF("./planet-v1.glb", "/draco/");
+  const { scene, animations } = useGLTF("/models/planet.glb", "/vendor/draco/");
   const { actions } = useAnimations(animations, scene);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const EarthCanvas = () => {
   return (
     <div className="w-full h-full fixed inset-0">
       <Canvas
+        dpr={[1, 1.5]}
         camera={{
           position: [0, 0, 5],
           fov: 50,

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const CTA = ({ color }) => {
+const CTA = () => {
   return (
     <section className="cta rounded-xl my-10 backdrop-blur-md p-3 lg:px-5">
       <p className="cta-text">
@@ -11,7 +11,7 @@ const CTA = ({ color }) => {
       </p>
       <Link
         to="/contact"
-        className={`cta-button w-full text-center text-xl lg:w-32 text-orange-600 border border-orange-600 p-2 lg:px-5 font-semibold rounded-xl`}
+        className="cta-button w-full text-center text-xl lg:w-32 text-orange-600 border border-orange-600 p-2 lg:px-5 font-semibold rounded-xl lg:hover:bg-orange-600 lg:hover:text-white transition-colors"
       >
         Contact
       </Link>
