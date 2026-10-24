@@ -53,9 +53,85 @@
         document.head.appendChild(l);
       }
     </script>
+    <style>
+      /* Splash painted on the first frame, before any JavaScript arrives.
+         React replaces it as soon as the app mounts. */
+      .splash {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        background-color: #1b1212;
+        background-image: radial-gradient(
+            ellipse 60% 50% at 85% 15%,
+            rgba(234, 88, 12, 0.22),
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 50% 45% at 10% 90%,
+            rgba(220, 38, 38, 0.14),
+            transparent 70%
+          );
+        font-family: "Montserrat", system-ui, sans-serif;
+      }
+      .splash-mark {
+        padding: 0.4rem 0.6rem;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 0.75rem;
+        font-size: 2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #fb923c, #dc2626);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: splash-pulse 1.4s ease-in-out infinite;
+      }
+      .splash-bar {
+        width: 8rem;
+        height: 3px;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.12);
+        overflow: hidden;
+      }
+      .splash-bar::after {
+        content: "";
+        display: block;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(90deg, #fb923c, #dc2626);
+        animation: splash-slide 1.1s ease-in-out infinite;
+      }
+      @keyframes splash-pulse {
+        50% {
+          opacity: 0.55;
+        }
+      }
+      @keyframes splash-slide {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(250%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .splash-mark,
+        .splash-bar::after {
+          animation: none;
+        }
+      }
+    </style>
   </head>
   <body class="bg-[#1b1212]">
-    <div id="root"></div>
+    <div id="root">
+      <div class="splash" role="status" aria-label="Loading">
+        <span class="splash-mark">AK</span>
+        <span class="splash-bar"></span>
+      </div>
+    </div>
     <noscript>
       <div style="color: #fff; padding: 2rem; font-family: sans-serif">
         <h1 style="color: #ea580c">__PAGE_HEADING__</h1>

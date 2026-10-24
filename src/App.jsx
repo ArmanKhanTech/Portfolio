@@ -45,20 +45,17 @@ const Projects = lazyPage(loadProjects);
 const Services = lazyPage(loadServices);
 const Contact = lazyPage(loadContact);
 
-const PageFallback = () => <div className="fixed inset-0 bg-[#1b1212]" />;
+const PageFallback = () => <div className="fixed inset-0 page-backdrop" />;
 
 const AppRoutes = () => {
   const { pathname } = useLocation();
-  const [isLoaded, setIsLoaded] = useState(false);
   const [isDraggable, setIsDraggable] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(true);
 
   usePageMeta(pathname);
 
-  // Once the landing scene is ready, warm up the other pages in the background.
+  // Once the first page is up, warm up the others in the background.
   useEffect(() => {
-    if (!isLoaded) return;
-    const idle = window.requestIdleCallback ?? ((cb) => setTimeout(cb, 1500));
+    const idle = window.requestIdleCallback ?? ((cb) => setTimeout(cb, 2000));
     idle(() => {
       [
         loadAbout,
@@ -68,10 +65,11 @@ const AppRoutes = () => {
         loadContact,
       ].forEach((load) => load());
     });
-  }, [isLoaded]);
+  }, []);
 
   const isHomePage = pathname === "/";
-  const hideChrome = isHomePage && (!isLoaded || isDraggable || showWelcome);
+  // While the visitor drags the sky, get everything else out of the way.
+  const hideChrome = isHomePage && isDraggable;
 
   return (
     <>
@@ -83,12 +81,8 @@ const AppRoutes = () => {
               path="/"
               element={
                 <Home
-                  isLoaded={isLoaded}
-                  setIsLoaded={setIsLoaded}
                   isDraggable={isDraggable}
                   setIsDraggable={setIsDraggable}
-                  showWelcome={showWelcome}
-                  setShowWelcome={setShowWelcome}
                 />
               }
             />

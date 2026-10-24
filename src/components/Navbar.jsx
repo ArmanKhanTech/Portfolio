@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { TbMenu2, TbX } from "react-icons/tb";
 
 const links = [
@@ -61,8 +61,26 @@ const BurgerMenu = ({ closeMenu }) => {
 };
 
 const Navbar = ({ hidden, overlay }) => {
+  const { pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
+
+  // Pages scroll inside their own container, so listen in the capture phase
+  // to hear scrolls from any element. Start each page unscrolled.
+  useEffect(() => {
+    setIsScrolled(false);
+    const onScroll = (e) => {
+      const top = e.target === document ? window.scrollY : e.target.scrollTop;
+      setIsScrolled(top > 8);
+    };
+    document.addEventListener("scroll", onScroll, {
+      capture: true,
+      passive: true,
+    });
+    return () =>
+      document.removeEventListener("scroll", onScroll, { capture: true });
+  }, [pathname]);
 
   if (isMenuOpen) {
     return <BurgerMenu closeMenu={closeMenu} />;
@@ -70,12 +88,16 @@ const Navbar = ({ hidden, overlay }) => {
 
   if (hidden) return null;
 
+  // Transparent at the top so the animated background runs edge to edge;
+  // a frosted backdrop appears only once content scrolls under the links.
+  const showBackdrop = overlay && isScrolled;
+
   return (
     <header
-      className={`fixed z-[50] top-0 left-0 right-0 w-full ${
-        overlay
-          ? "bg-gradient-to-b from-[#1b1212] from-60% to-transparent"
-          : "bg-transparent"
+      className={`fixed z-[50] top-0 left-0 right-0 w-full transition-colors duration-300 ${
+        showBackdrop
+          ? "bg-[#1b1212]/70 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container max-w-5xl mx-auto lg:px-12 flex justify-between items-center py-4 px-5 backdrop-blur-[2px]">

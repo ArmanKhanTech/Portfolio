@@ -1,37 +1,76 @@
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
 
-// Older three.js uploaded every new DataTexture automatically; BIRDS' GPU
-// simulation depends on that, or its birds never get a starting position.
-class LegacyDataTexture extends THREE.DataTexture {
-  constructor(...args) {
-    super(...args);
-    this.needsUpdate = true;
+// Vanta targets an older three.js. This loads the bundled three.js on demand
+// (so page content never waits for it) and patches back what Vanta relies on.
+let vantaThreePromise;
+const loadVantaThree = () =>
+  (vantaThreePromise ??= import("three").then((THREE) => {
+    // BIRDS (phone path) sizes its colour buffer from attribute.length, which
+    // newer three.js dropped; without it every bird renders black.
+    if (!("length" in THREE.BufferAttribute.prototype)) {
+      Object.defineProperty(THREE.BufferAttribute.prototype, "length", {
+        get() {
+          return this.array.length;
+        },
+        configurable: true,
+      });
+    }
+
+    // Older three.js uploaded every new DataTexture automatically; BIRDS' GPU
+    // simulation depends on that, or its birds never get a starting position.
+    class LegacyDataTexture extends THREE.DataTexture {
+      constructor(...args) {
+        super(...args);
+        this.needsUpdate = true;
+      }
+    }
+
+    // VertexColors (removed in r125; without it NET/GLOBE/BIRDS render white)
+    // and PlaneBufferGeometry (removed in r144; BIRDS crashes without it).
+    const vantaThree = {
+      ...THREE,
+      VertexColors: true,
+      PlaneBufferGeometry: THREE.PlaneGeometry,
+      DataTexture: LegacyDataTexture,
+    };
+
+    // DOTS ignores the THREE option and only reads window.THREE, captured when
+    // its chunk is first evaluated, so it must be set before effects load.
+    if (!window.THREE) window.THREE = vantaThree;
+    return vantaThree;
+  }));
+
+// BIRDS simulates its flock on the GPU unless the browser looks like a phone.
+// That path needs float render targets, which many GPUs (iPads, older laptops,
+// some tablets) lack: the birds then silently never appear.
+let gpuBirdsSupported;
+export const canRunBirds = () => {
+  if (gpuBirdsSupported !== undefined) return gpuBirdsSupported;
+
+  // Same test Vanta uses to pick its CPU (phone) path, which works everywhere.
+  const usesCpuPath =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    ) || window.innerWidth < 600;
+
+  let floatTargets = false;
+  try {
+    const gl = document.createElement("canvas").getContext("webgl2");
+    floatTargets = !!gl?.getExtension("EXT_color_buffer_float");
+    gl?.getExtension("WEBGL_lose_context")?.loseContext();
+  } catch {
+    floatTargets = false;
   }
-}
 
-// Vanta targets an older three.js. Re-add the APIs it still relies on:
-// VertexColors (removed in r125; without it NET/GLOBE/BIRDS render white),
-// PlaneBufferGeometry (removed in r144; BIRDS crashes without it) and the
-// auto-uploading DataTexture above.
-const VANTA_THREE = {
-  ...THREE,
-  VertexColors: true,
-  PlaneBufferGeometry: THREE.PlaneGeometry,
-  DataTexture: LegacyDataTexture,
+  gpuBirdsSupported = usesCpuPath || floatTargets;
+  return gpuBirdsSupported;
 };
-
-// DOTS ignores the THREE option and only reads window.THREE, captured when its
-// chunk is first evaluated, so it must be in place before any effect loads.
-if (typeof window !== "undefined" && !window.THREE) {
-  window.THREE = VANTA_THREE;
-}
 
 const prefersReducedMotion = () =>
   window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-// Lazily loads a Vanta effect and attaches it to the returned ref.
-// Vanta is given the bundled three.js so no extra copy is fetched from a CDN.
+// Lazily loads a Vanta effect and attaches it to the returned ref. Until it
+// starts (or if it can't), the element's CSS background shows instead.
 const useVanta = (loadEffect, options) => {
   const ref = useRef(null);
 
@@ -41,32 +80,38 @@ const useVanta = (loadEffect, options) => {
     let effect;
     let cancelled = false;
 
-    loadEffect()
-      .then(({ default: createEffect }) => {
-        if (cancelled || !ref.current) return;
-        effect = createEffect({
-          el: ref.current,
-          THREE: VANTA_THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          ...options,
-        });
-      })
+    loadVantaThree()
+      .then((THREE) =>
+        loadEffect().then(({ default: createEffect }) => {
+          if (cancelled || !ref.current) return;
+          effect = createEffect({
+            el: ref.current,
+            THREE,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            ...options,
+          });
+        }),
+      )
       .catch((error) => {
-        // The page keeps its solid background colour if the effect can't start.
         console.warn("[useVanta] background effect failed to start", error);
       });
 
     return () => {
       cancelled = true;
-      // Vanta's destroy() throws if its init failed part-way; never let that
-      // escape into React's cleanup, which would unmount the whole app.
+      if (!effect) return;
+      // Vanta's destroy() never releases its WebGL context. Browsers cap live
+      // contexts (phones especially), so leaked ones eventually make new
+      // backgrounds fail after a few page changes. Free it explicitly.
+      const renderer = effect.renderer;
       try {
-        effect?.destroy();
+        effect.destroy();
       } catch {
-        // Nothing left to clean up.
+        // destroy() throws if init failed part-way; nothing left to clean up.
       }
+      renderer?.dispose();
+      renderer?.forceContextLoss();
     };
     // The effect is created once per mount.
     // eslint-disable-next-line react-hooks/exhaustive-deps

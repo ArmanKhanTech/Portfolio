@@ -3,13 +3,11 @@ import { useFrame, Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
-import { Welcome } from "../components";
-
 const SKY_MODEL = "/models/sky.glb";
 
 const modelCache = {};
 
-const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
+const Sky = memo(({ isDraggable, onReady }) => {
   const skyRef = useRef();
   const previousMousePosition = useRef(null);
   const [sky, setSky] = useState(() => modelCache.sky ?? null);
@@ -43,7 +41,7 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
 
   useEffect(() => {
     if (modelCache.sky) {
-      requestAnimationFrame(() => setRendered(true));
+      requestAnimationFrame(onReady);
       return;
     }
 
@@ -57,20 +55,17 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
       (gltf) => {
         modelCache.sky = gltf;
         setSky(gltf);
-        requestAnimationFrame(() => setRendered(true));
+        // Wait a frame so the first render has happened before fading in.
+        requestAnimationFrame(onReady);
       },
-      (xhr) => {
-        setLoadingProgress(xhr.total ? (xhr.loaded / xhr.total) * 100 : 50);
-      },
+      undefined,
       () => {
-        // Don't leave the visitor stuck on the loading screen.
-        setLoadingProgress(100);
-        setRendered(true);
+        // The page content is already visible; keep the gradient backdrop.
       },
     );
 
     return () => dracoLoader.dispose();
-  }, [setLoadingProgress, setRendered]);
+  }, [onReady]);
 
   useFrame((_, delta) => {
     if (!isDraggable && skyRef.current) {
@@ -87,51 +82,30 @@ const Sky = memo(({ isDraggable, setLoadingProgress, setRendered }) => {
   );
 });
 
-const SkyCanvas = memo(
-  ({ isDraggable, setIsLoaded, showWelcome, setShowWelcome }) => {
-    const [loadingProgress, setLoadingProgress] = useState(0);
-    const [isRendered, setRendered] = useState(false);
-
-    useEffect(() => {
-      if (isRendered) {
-        setShowWelcome(false);
-        setIsLoaded(true);
-      }
-    }, [isRendered, setIsLoaded, setShowWelcome]);
-
-    return (
-      <>
-        {showWelcome && loadingProgress < 100 && (
-          <Welcome progress={loadingProgress} />
-        )}
-        <Canvas
-          camera={{ near: 0.1, far: 100 }}
-          dpr={[1, 1.5]}
-          style={{ position: "fixed" }}
-        >
-          <directionalLight position={[1, 1, 1]} intensity={3} />
-          <ambientLight intensity={1} />
-          <pointLight position={[10, 5, 10]} intensity={3} />
-          <spotLight
-            position={[0, 50, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={3}
-          />
-          <hemisphereLight
-            skyColor="#ffffff"
-            groundColor="#ffffff"
-            intensity={1.5}
-          />
-          <Sky
-            isDraggable={isDraggable}
-            setLoadingProgress={setLoadingProgress}
-            setRendered={setRendered}
-          />
-        </Canvas>
-      </>
-    );
-  },
-);
+// The scene stays transparent until the model is ready, then fades in behind
+// content that is already on screen.
+const SkyCanvas = memo(({ isDraggable, isReady, onReady }) => {
+  return (
+    <div className={`fixed inset-0 ${isReady ? "scene-fade-in" : "opacity-0"}`}>
+      <Canvas camera={{ near: 0.1, far: 100 }} dpr={[1, 1.5]}>
+        <directionalLight position={[1, 1, 1]} intensity={3} />
+        <ambientLight intensity={1} />
+        <pointLight position={[10, 5, 10]} intensity={3} />
+        <spotLight
+          position={[0, 50, 10]}
+          angle={0.15}
+          penumbra={1}
+          intensity={3}
+        />
+        <hemisphereLight
+          skyColor="#ffffff"
+          groundColor="#ffffff"
+          intensity={1.5}
+        />
+        <Sky isDraggable={isDraggable} onReady={onReady} />
+      </Canvas>
+    </div>
+  );
+});
 
 export default SkyCanvas;
