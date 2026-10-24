@@ -19,7 +19,7 @@
   <p align="center">
     <a href="https://github.com/ArmanKhanTech/Portfolio"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://armankhan.tech">Visit</a>
+    <a href="https://portfolioarman.netlify.app">Visit</a>
     ·
     <a href="https://github.com/ArmanKhanTech/Portfolio/issues">Report a Bug</a>
     ·
