@@ -91,6 +91,13 @@ export default defineConfig({
       output: {
         // Keep large, rarely-changing libraries in their own long-cached chunks.
         manualChunks(id) {
+          // Bundler helpers are shared by every chunk; keep them with React so
+          // the entry never has to pull in the 3D libraries to get them.
+          if (
+            id.includes("vite/preload-helper") ||
+            id.includes("commonjsHelpers")
+          )
+            return "react";
           if (!id.includes("node_modules")) return;
           if (id.includes("/three/")) return "three";
           if (id.includes("@react-three") || id.includes("three-stdlib"))

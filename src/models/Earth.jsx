@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useCallback, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -7,7 +7,7 @@ import {
   useAnimations,
 } from "@react-three/drei";
 
-const Earth = () => {
+const Earth = ({ onReady }) => {
   const { scene, animations } = useGLTF("/models/planet.glb", "/vendor/draco/");
   const { actions } = useAnimations(animations, scene);
 
@@ -18,12 +18,24 @@ const Earth = () => {
     }
   }, [actions]);
 
+  // Runs once the model has loaded and mounted; wait a frame so it is drawn.
+  useEffect(() => {
+    const frame = requestAnimationFrame(onReady);
+    return () => cancelAnimationFrame(frame);
+  }, [onReady]);
+
   return <primitive object={scene} scale={2} position-y={0} position-x={3} />;
 };
 
+// Stays transparent until the planet has loaded, then fades in.
 const EarthCanvas = () => {
+  const [isReady, setIsReady] = useState(false);
+  const handleReady = useCallback(() => setIsReady(true), []);
+
   return (
-    <div className="w-full h-full fixed inset-0">
+    <div
+      className={`w-full h-full fixed inset-0 ${isReady ? "scene-fade-in" : "opacity-0"}`}
+    >
       <Canvas
         dpr={[1, 1.5]}
         camera={{
@@ -52,7 +64,11 @@ const EarthCanvas = () => {
           autoRotateSpeed={1.0}
           enableZoom={false}
         />
-        <Earth />
+        {/* Catch the model load here; otherwise the Canvas suspends the page
+            around it and hides the whole scene area while the planet loads. */}
+        <Suspense fallback={null}>
+          <Earth onReady={handleReady} />
+        </Suspense>
         <Preload all />
       </Canvas>
     </div>

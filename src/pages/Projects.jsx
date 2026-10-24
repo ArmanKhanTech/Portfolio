@@ -27,7 +27,7 @@ const Projects = () => {
   });
 
   return (
-    <section ref={vantaRef} className="fixed inset-0 z-0 bg-[#1b1212]">
+    <section ref={vantaRef} className="fixed inset-0 z-0 page-backdrop">
       <div className="relative w-full h-full overflow-y-auto">
         <div className="max-container absolute inset-0">
           <PageHeader title="Projects" intro={intros.projects} />

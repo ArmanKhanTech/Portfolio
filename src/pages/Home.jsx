@@ -1,24 +1,23 @@
-import React, { useCallback } from "react";
+import React, { Suspense, lazy, useCallback, useState } from "react";
 
-import { SkyCanvas } from "../models";
 import { HomeInfo } from "../components";
 
-const Home = ({
-  isLoaded,
-  setIsLoaded,
-  isDraggable,
-  setIsDraggable,
-  showWelcome,
-  setShowWelcome,
-}) => {
+// The 3D scene (and three.js) loads in parallel; the hero text never waits.
+const SkyCanvas = lazy(() => import("../models/Sky"));
+
+const Home = ({ isDraggable, setIsDraggable }) => {
+  const [isSkyReady, setIsSkyReady] = useState(false);
+  const handleSkyReady = useCallback(() => setIsSkyReady(true), []);
+
   const handleMouseDown = useCallback(
     (e) => {
-      // Let links and buttons behave normally; drag only from empty space.
-      if (e.target.closest("a, button")) return;
+      // Let links and buttons behave normally; drag only from empty space,
+      // and only once there is a scene to look at.
+      if (!isSkyReady || e.target.closest("a, button")) return;
       e.preventDefault();
       setIsDraggable(true);
     },
-    [setIsDraggable],
+    [isSkyReady, setIsDraggable],
   );
 
   const handleMouseUpOrLeave = useCallback(() => {
@@ -26,33 +25,32 @@ const Home = ({
   }, [setIsDraggable]);
 
   return (
-    <section className="fixed inset-0 z-0">
+    <section className="fixed inset-0 z-0 page-backdrop">
       <div
-        className="relative min-h-screen w-full bg-gradient-to-r from-[#1b1212] to-black"
+        className="relative min-h-screen w-full"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
       >
-        <div className="absolute inset-0">
+        <Suspense fallback={null}>
           <SkyCanvas
             isDraggable={isDraggable}
-            setIsLoaded={setIsLoaded}
-            showWelcome={showWelcome}
-            setShowWelcome={setShowWelcome}
+            isReady={isSkyReady}
+            onReady={handleSkyReady}
           />
-        </div>
-        {isLoaded && (
-          <div
-            className={`absolute inset-0 w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
-              isDraggable ? "opacity-0" : "opacity-100"
-            }`}
-          >
-            <HomeInfo />
-            <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block select-none">
+        </Suspense>
+        <div
+          className={`absolute inset-0 w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
+            isDraggable ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <HomeInfo />
+          {isSkyReady && (
+            <p className="absolute bottom-4 right-0 left-0 text-2xl text-red-600 font-semibold text-center hidden lg:block select-none animate-[canvas-fade-in_0.9s_ease-out_both]">
               Hold & drag to see the magic!
             </p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );

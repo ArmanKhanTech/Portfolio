@@ -49,6 +49,41 @@ body {
   }
 }
 
+/* Painted instantly and kept as the fallback when a WebGL background can't
+   run (no GPU support, reduced motion); the animated canvas fades in over it. */
+.page-backdrop {
+  background-color: #1b1212;
+  background-image: radial-gradient(
+      ellipse 60% 50% at 85% 15%,
+      rgba(234, 88, 12, 0.22),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 10% 90%,
+      rgba(220, 38, 38, 0.14),
+      transparent 70%
+    );
+}
+
+.vanta-canvas {
+  animation: canvas-fade-in 0.9s ease-out both;
+}
+
+/* Added to a 3D scene once it has drawn. An animation (unlike a transition)
+   always plays from 0, even if the element was just inserted or un-hidden. */
+.scene-fade-in {
+  animation: canvas-fade-in 1s ease-out both;
+}
+
+@keyframes canvas-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 :focus-visible {
   outline: 2px solid #fb923c;
   outline-offset: 3px;
