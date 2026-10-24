@@ -1,25 +1,71 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Arman Khan's Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.ico" />
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <meta name="title" content="Arman Khan's Portfolio" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The __PAGE_*__ tokens are filled per route from src/seo.js (see vite.config.js). -->
+    <title>__PAGE_TITLE__</title>
+    <meta name="description" content="__PAGE_DESCRIPTION__" />
+    <link rel="canonical" href="__PAGE_URL__" />
+    <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico" />
+
     <meta name="author" content="Arman Khan" />
-    <meta
-      name="description"
-      content="Hi! I am Arman Khan. Welcome to my Portfolio. Let's Connect."
-    />
     <meta name="theme-color" content="#ea580c" />
-    <meta name="robots" content="index, follow" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Arman Khan" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="__PAGE_URL__" />
+    <meta property="og:title" content="__PAGE_TITLE__" />
+    <meta property="og:description" content="__PAGE_DESCRIPTION__" />
+    <meta property="og:image" content="__OG_IMAGE__" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Arman Khan, Backend Software Engineer"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="__PAGE_TITLE__" />
+    <meta name="twitter:description" content="__PAGE_DESCRIPTION__" />
+    <meta name="twitter:image" content="__OG_IMAGE__" />
+
+    <script type="application/ld+json">
+      __STRUCTURED_DATA__
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..800&display=swap"
+    />
+    <script>
+      // Start fetching the landing scene before the app bundle runs (home page only).
+      if (location.pathname === "/") {
+        var l = document.createElement("link");
+        l.rel = "preload";
+        l.as = "fetch";
+        l.href = "/models/sky.glb";
+        l.crossOrigin = "anonymous";
+        document.head.appendChild(l);
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-[#1b1212]">
     <div id="root"></div>
+    <noscript>
+      <div style="color: #fff; padding: 2rem; font-family: sans-serif">
+        <h1 style="color: #ea580c">__PAGE_HEADING__</h1>
+        <p>__PAGE_DESCRIPTION__</p>
+        <nav>__NOSCRIPT_LINKS__</nav>
+        <p>
+          This portfolio needs JavaScript for its interactive 3D experience.
+        </p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   </body>
 </html>

@@ -1,83 +1,54 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
-import * as THREE from "three";
-import { Html } from "@react-three/drei";
 import { FaPlay, FaPause } from "react-icons/fa";
 
 import piano from "../assets/audio/piano.mp3";
 
-const AudioComponent = () => {
-  const { camera } = useThree();
-  const audioRef = useRef();
-
+// A plain <audio> element: nothing is downloaded until the visitor presses play.
+const Audio = ({ hidden }) => {
+  const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    const listener = new THREE.AudioListener();
-    camera.add(listener);
-
-    const sound = new THREE.Audio(listener);
-    audioRef.current = sound;
-
-    const audioLoader = new THREE.AudioLoader();
-    audioLoader.load(piano, (buffer) => {
-      sound.setBuffer(buffer);
-      sound.setLoop(true);
-      sound.setVolume(0.5);
-    });
-
-    return () => {
-      sound.stop();
-      camera.remove(listener);
-    };
-  }, [camera]);
+    if (audioRef.current) audioRef.current.volume = 0.5;
+  }, []);
 
   const handlePlayPause = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
+    } else {
+      audio.pause();
+      setIsPlaying(false);
     }
   };
 
   return (
-    <Html>
-      <div className="flex justify-end items-end lg:hover:scale-110 transform duration-300">
-        <button
-          onClick={handlePlayPause}
-          className="p-4 bg-gradient-to-br from-orange-400 to-red-600 text-white rounded-full"
-        >
-          {isPlaying ? <FaPause /> : <FaPlay />}
-        </button>
-      </div>
-    </Html>
-  );
-};
-
-const AudioComponentWrapper = () => {
-  return (
-    <div className={`fixed bottom-0 right-0 z-[10]`}>
-      <Canvas
-        style={{ background: "transparent", width: "125px", height: "125px" }}
+    <div
+      className={`fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-[10] ${hidden ? "hidden" : ""}`}
+    >
+      <audio ref={audioRef} src={piano} loop preload="none" />
+      <button
+        type="button"
+        onClick={handlePlayPause}
+        aria-label={
+          isPlaying ? "Pause background music" : "Play background music"
+        }
+        aria-pressed={isPlaying}
+        className="p-4 bg-gradient-to-br from-orange-400 to-red-600 text-white rounded-full lg:hover:scale-110 transition-transform duration-300"
       >
-        <AudioComponent />
-      </Canvas>
+        {isPlaying ? (
+          <FaPause aria-hidden="true" />
+        ) : (
+          <FaPlay aria-hidden="true" />
+        )}
+      </button>
     </div>
   );
-}
-
-const Audio = ({ isLoaded, isDraggable, showWelcome }) => {
-  const isHomePage = window.location.pathname === "/";
-
-  if (isHomePage) {
-    return isLoaded && !isDraggable && !showWelcome ? <AudioComponentWrapper /> : null;
-  }
-
-  return <AudioComponentWrapper />
-
 };
 
 export default Audio;

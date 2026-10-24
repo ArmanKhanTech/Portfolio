@@ -6,6 +6,7 @@ import useAlert from "../hooks/useAlert";
 import { Alert, Footer } from "../components";
 import { StarsCanvas, EarthCanvas } from "../models";
 import { react, threejs, tailwindcss } from "../assets/icons";
+import { intros } from "../constants";
 
 const Contact = () => {
   const formRef = useRef();
@@ -53,7 +54,7 @@ const Contact = () => {
               email: "",
               message: "",
             });
-          }, [3000]);
+          }, 3000);
         },
         () => {
           setLoading(false);
@@ -62,6 +63,7 @@ const Contact = () => {
             text: "I didn't receive your message 😢",
             type: "danger",
           });
+          setTimeout(hideAlert, 3000);
         },
       );
   };
@@ -77,15 +79,14 @@ const Contact = () => {
           {alert.show && <Alert {...alert} />}
           <div className="flex flex-col justify-center lg:border-white lg:border lg:rounded-xl lg:flex-row lg:p-10 gap-6 lg:gap-20">
             <div className="flex flex-col lg:w-1/2">
-              <h1 className="text-5xl">
-                <span className="font-bold orange-gradient-text font-semibold">
-                  Contact
-                </span>
-              </h1>
+              <h1 className="page-title">Contact</h1>
+              <p className="mt-4 text-white text-lg lg:text-xl">
+                {intros.contact}
+              </p>
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-6 mt-14"
+                className="w-full flex flex-col gap-6 mt-8"
               >
                 <label className="text-white-100 text-2xl">
                   Name
@@ -120,6 +121,7 @@ const Contact = () => {
                     placeholder="Write your thoughts here..."
                     value={form.message}
                     onChange={handleChange}
+                    required
                   />
                 </label>
                 <button type="submit" disabled={loading} className="btn">
@@ -154,9 +156,12 @@ const Contact = () => {
                   <p className="text-white-100">
                     <span className="font-light text-lg">Phone:</span>
                     <br />
-                    <span className="orange-gradient-text font-semibold text-xl">
+                    <a
+                      href="tel:+919175416203"
+                      className="orange-gradient-text font-semibold text-xl"
+                    >
                       +91 91754 16203
-                    </span>
+                    </a>
                   </p>
                 </div>
               </div>
@@ -166,13 +171,19 @@ const Contact = () => {
                 </p>
                 <div className="flex flex-row items-center justify-between mt-4 w-full">
                   <div className="flex flex-row gap-4">
-                    <img src={react} className="w-10 h-10" />
-                    <img src={threejs} className="w-10 h-10" />
-                    <img src={tailwindcss} className="w-10 h-10" />
+                    <img src={react} alt="React" className="w-10 h-10" />
+                    <img src={threejs} alt="Three.js" className="w-10 h-10" />
+                    <img
+                      src={tailwindcss}
+                      alt="Tailwind CSS"
+                      className="w-10 h-10"
+                    />
                   </div>
                   <a
                     href="https://github.com/ArmanKhanTech/Portfolio"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View this site's source code on GitHub"
                   >
                     <TbSourceCode className="w-12 h-12 text-orange-600" />
                   </a>

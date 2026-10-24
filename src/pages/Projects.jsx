@@ -1,102 +1,88 @@
 import React from "react";
+import { TbBrandGithub, TbExternalLink, TbLock } from "react-icons/tb";
 
-import { Link } from "react-router-dom";
+import { CTA, IconBadge, PageHeader } from "../components";
+import useVanta from "../hooks/useVanta";
+import { intros, projects } from "../constants";
 
-import { CTA } from "../components";
-import { projects } from "../constants";
-import { arrow } from "../assets/icons";
+const ProjectLink = ({ href, Icon, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-1.5 font-semibold text-orange-600 text-lg lg:hover:text-orange-400 transition-colors"
+  >
+    <Icon className="w-5 h-5" aria-hidden="true" />
+    {children}
+  </a>
+);
 
-import GLOBE from "vanta/dist/vanta.globe.min";
+const Projects = () => {
+  const vantaRef = useVanta(() => import("vanta/dist/vanta.globe.min"), {
+    minHeight: 200.0,
+    minWidth: 200.0,
+    color: 0xea580c,
+    backgroundColor: 0x1b1212,
+    minDistance: 15.0,
+  });
 
-class Projects extends React.Component {
-  constructor() {
-    super();
-    this.vantaRef = React.createRef();
-  }
-
-  componentDidMount() {
-    this.vantaEffect = GLOBE({
-      el: this.vantaRef.current,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: true,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      mobileScale: 1.0,
-      color: 0xea580c,
-      backgroundColor: 0x1b1212,
-      minDistance: 15.0,
-    });
-  }
-
-  componentWillUnmount() {
-    if (this.vantaEffect) {
-      this.vantaEffect.destroy();
-    }
-  }
-
-  render() {
-    return (
-      <section ref={this.vantaRef} className="fixed inset-0 z-0">
-        <div className="relative w-full h-full overflow-y-auto">
-          <div className="max-container absolute inset-0">
-            <h1 className="text-5xl">
-              <span className="font-semibold orange-gradient-text">
-                Projects
-              </span>
-            </h1>
-            <p className="mt-5 text-white p-4 text-xl lg:text-2xl rounded-xl backdrop-blur-md">
-              I've worked on many projects, with some being open-source. Feel
-              free to explore the codebases, contribute ideas, and collaborate
-              on enhancements. These projects are especially meaningful to me,
-              and your involvement is greatly appreciated!
-            </p>
-            <div className="flex flex-wrap my-20 gap-16">
-              {projects.map((project) => (
-                <div className="lg:w-[432px] w-full" key={project.name}>
-                  <div className="block-container w-12 h-12">
-                    <div className="btn-front rounded-xl flex justify-center items-center">
-                      <img src={project.iconUrl} alt="threads" />
-                    </div>
-                  </div>
-                  <div className="mt-5 flex flex-col backdrop-blur-md p-3 rounded-xl">
-                    <h4 className="text-2xl text-white font-semibold">
-                      {project.name}
-                    </h4>
-                    <p className="mt-2 text-white text-lg lg:text-xl">
-                      {project.description}
-                    </p>
-                    <div className="mt-5 flex items-center gap-2">
-                      <Link
-                        to={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold text-orange-600 text-lg"
-                      >
-                        Link
-                      </Link>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 text-orange-600"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path fillRule="evenodd" d={arrow} clipRule="evenodd" />
-                      </svg>
-                    </div>
+  return (
+    <section ref={vantaRef} className="fixed inset-0 z-0 bg-[#1b1212]">
+      <div className="relative w-full h-full overflow-y-auto">
+        <div className="max-container absolute inset-0">
+          <PageHeader title="Projects" intro={intros.projects} />
+          <ul className="grid grid-cols-1 lg:grid-cols-2 my-12 gap-8">
+            {projects.map((project) => (
+              <li key={project.name} className="card">
+                <div className="flex items-start gap-4">
+                  <IconBadge Icon={project.Icon} />
+                  <div>
+                    <h2 className="card-title">{project.name}</h2>
+                    <p className="card-subtitle">{project.subtitle}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-            <hr className="border-slate-200" />
-            <CTA color={"bg-orange-600"} />
-            <hr className="h-2 border-transparent" />
-          </div>
+                <ul className="mt-4 list-disc ml-5 space-y-2 text-white text-base lg:text-lg">
+                  {project.points.map((point) => (
+                    <li key={point} className="pl-1">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="mt-auto pt-5 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <li key={tag} className="tag">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex items-center gap-5">
+                  {project.source && (
+                    <ProjectLink href={project.source} Icon={TbBrandGithub}>
+                      Source
+                    </ProjectLink>
+                  )}
+                  {project.live && (
+                    <ProjectLink href={project.live} Icon={TbExternalLink}>
+                      Live
+                    </ProjectLink>
+                  )}
+                  {!project.source && !project.live && (
+                    <span className="flex items-center gap-1.5 font-semibold text-white/70 text-lg">
+                      <TbLock className="w-5 h-5" aria-hidden="true" />
+                      Private
+                    </span>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+          <hr className="border-slate-200" />
+          <CTA />
+          <hr className="h-2 border-transparent" />
         </div>
-      </section>
-    );
-  }
-}
+      </div>
+    </section>
+  );
+};
 
 export default Projects;
