@@ -70,11 +70,11 @@ export const intros = {
   about:
     "Backend-focused Software Engineer who builds, architects and scales high-performance server applications and enterprise infrastructure. I specialize in system architecture, database and API design, and reliability engineering, cutting latency and raising quality wherever I work.",
   experience:
-    "I design and scale production backends that businesses run on. I own the full lifecycle, from system architecture and APIs to automated deployments, monitoring and testing, and I lead and mentor engineers so teams ship faster with fewer defects.",
+    "I design and scale production backends that businesses run on. I own the full lifecycle, from system architecture to automated deployments, monitoring and testing, and I lead and mentor engineers so teams ship faster with fewer defects.",
   projects:
-    "I build complete products, not just features. My work spans network security, AI-powered healthcare, real-time messaging and mobile apps, covering everything from low-level software and backend services to polished interfaces and custom hardware.",
+    "I build complete products, not just features. My work spans diverse domains and every layer of the stack, from low-level software and backend services to polished interfaces and custom hardware, built to solve real problems for real users.",
   services:
-    "I build the backbone of your product: high-performance APIs, scalable data layers and event-driven systems on automated CI/CD. I bring AI into real workflows, keep quality high with automated testing, and ship the web, mobile and desktop apps that sit on top.",
+    "I build the backbone of your product: fast, reliable backends and the infrastructure that keeps them running smoothly at scale. I bring AI into real workflows, keep quality high with automated testing, and ship the web, mobile and desktop apps that sit on top.",
   contact:
     "Have a system to build, scale or rescue? Tell me what you're working on and where you're stuck, and let's get it into production.",
 };
