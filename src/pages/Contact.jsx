@@ -1,15 +1,16 @@
-import React, { Suspense, lazy, useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { TbSourceCode } from "react-icons/tb";
 
 import useAlert from "../hooks/useAlert";
-import { Alert, Footer } from "../components";
-
-// The form renders straight away; the 3D scene (and three.js) streams in.
-const StarsCanvas = lazy(() => import("../models/Stars"));
-const EarthCanvas = lazy(() => import("../models/Earth"));
+import { Alert, ErrorBoundary, Footer } from "../components";
+import lazyWithReload from "../lazyWithReload";
 import { react, threejs, tailwindcss } from "../assets/icons";
 import { intros } from "../constants";
+
+// The form renders straight away; the 3D scene (and three.js) streams in.
+const StarsCanvas = lazyWithReload(() => import("../models/Stars"));
+const EarthCanvas = lazyWithReload(() => import("../models/Earth"));
 
 const Contact = () => {
   const formRef = useRef();
@@ -74,13 +75,18 @@ const Contact = () => {
   return (
     <section className="fixed inset-0 z-0">
       <div className="fixed w-full h-full inset-0 z-[-1] page-backdrop">
-        {/* Separate boundaries so neither scene waits for the other. */}
-        <Suspense fallback={null}>
-          <StarsCanvas />
-        </Suspense>
-        <Suspense fallback={null}>
-          <EarthCanvas />
-        </Suspense>
+        {/* Separate boundaries so neither scene waits for, or breaks, the
+            other; a scene that can't load just leaves the backdrop. */}
+        <ErrorBoundary fallback={null}>
+          <Suspense fallback={null}>
+            <StarsCanvas />
+          </Suspense>
+        </ErrorBoundary>
+        <ErrorBoundary fallback={null}>
+          <Suspense fallback={null}>
+            <EarthCanvas />
+          </Suspense>
+        </ErrorBoundary>
       </div>
       <div className="relative w-full h-full overflow-y-auto">
         <div className="max-container absolute inset-0">

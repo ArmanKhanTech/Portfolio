@@ -1,9 +1,10 @@
-import React, { Suspense, lazy, useCallback, useState } from "react";
+import React, { Suspense, useCallback, useState } from "react";
 
-import { HomeInfo } from "../components";
+import { ErrorBoundary, HomeInfo } from "../components";
+import lazyWithReload from "../lazyWithReload";
 
 // The 3D scene (and three.js) loads in parallel; the hero text never waits.
-const SkyCanvas = lazy(() => import("../models/Sky"));
+const SkyCanvas = lazyWithReload(() => import("../models/Sky"));
 
 const Home = ({ isDraggable, setIsDraggable }) => {
   const [isSkyReady, setIsSkyReady] = useState(false);
@@ -32,13 +33,16 @@ const Home = ({ isDraggable, setIsDraggable }) => {
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
       >
-        <Suspense fallback={null}>
-          <SkyCanvas
-            isDraggable={isDraggable}
-            isReady={isSkyReady}
-            onReady={handleSkyReady}
-          />
-        </Suspense>
+        {/* The scene is decoration: if it can't load, keep the backdrop. */}
+        <ErrorBoundary fallback={null}>
+          <Suspense fallback={null}>
+            <SkyCanvas
+              isDraggable={isDraggable}
+              isReady={isSkyReady}
+              onReady={handleSkyReady}
+            />
+          </Suspense>
+        </ErrorBoundary>
         <div
           className={`absolute inset-0 w-full h-full overflow-y-auto pointer-events-auto z-10 transition-opacity duration-300 ${
             isDraggable ? "opacity-0" : "opacity-100"

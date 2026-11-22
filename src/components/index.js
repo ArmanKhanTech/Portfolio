@@ -9,6 +9,7 @@ import Timeline from "./Timeline";
 import IconBadge from "./IconBadge";
 import SocialLinks from "./SocialLinks";
 import PageHeader from "./PageHeader";
+import ErrorBoundary from "./ErrorBoundary";
 
 export {
   PageHeader,
@@ -22,4 +23,5 @@ export {
   Timeline,
   IconBadge,
   SocialLinks,
+  ErrorBoundary,
 };

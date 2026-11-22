@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import {
   Navigate,
   Route,
@@ -8,8 +8,9 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import { Navbar, Audio } from "./components";
+import { Navbar, Audio, ErrorBoundary } from "./components";
 import usePageMeta from "./hooks/usePageMeta";
+import lazyWithReload from "./lazyWithReload";
 
 // Secondary pages are split into their own chunks so the landing page loads less.
 const loadAbout = () => import("./pages/About");
@@ -18,34 +19,27 @@ const loadProjects = () => import("./pages/Projects");
 const loadServices = () => import("./pages/Services");
 const loadContact = () => import("./pages/Contact");
 
-// After a redeploy, an open tab may ask for chunk names that no longer exist.
-// Reload once to pick up the new build instead of showing a blank page.
-const lazyPage = (load) =>
-  lazy(() =>
-    load().catch((error) => {
-      const key = "chunk-reload";
-      let alreadyReloaded = true;
-      try {
-        alreadyReloaded = sessionStorage.getItem(key) === "1";
-        sessionStorage.setItem(key, "1");
-      } catch {
-        // Storage unavailable (e.g. private mode): don't risk a reload loop.
-      }
-      if (!alreadyReloaded) {
-        window.location.reload();
-        return new Promise(() => {});
-      }
-      throw error;
-    }),
-  );
-
-const About = lazyPage(loadAbout);
-const Experience = lazyPage(loadExperience);
-const Projects = lazyPage(loadProjects);
-const Services = lazyPage(loadServices);
-const Contact = lazyPage(loadContact);
+const About = lazyWithReload(loadAbout);
+const Experience = lazyWithReload(loadExperience);
+const Projects = lazyWithReload(loadProjects);
+const Services = lazyWithReload(loadServices);
+const Contact = lazyWithReload(loadContact);
 
 const PageFallback = () => <div className="fixed inset-0 page-backdrop" />;
+
+// Shown if a page still can't load after the automatic reload.
+const PageError = () => (
+  <div className="fixed inset-0 page-backdrop flex flex-col items-center justify-center gap-4 text-white text-xl p-5 text-center">
+    <p>This page couldn&apos;t load.</p>
+    <button
+      type="button"
+      onClick={() => window.location.reload()}
+      className="text-orange-600 border border-orange-600 px-4 py-2 rounded-xl font-semibold"
+    >
+      Reload
+    </button>
+  </div>
+);
 
 const AppRoutes = () => {
   const { pathname } = useLocation();
@@ -75,8 +69,10 @@ const AppRoutes = () => {
     <>
       <Navbar hidden={hideChrome} overlay={!isHomePage} />
       <main>
-        <Suspense fallback={<PageFallback />}>
-          <Routes>
+        {/* Keyed by route so navigating away clears a failed page. */}
+        <ErrorBoundary key={pathname} fallback={<PageError />}>
+          <Suspense fallback={<PageFallback />}>
+            <Routes>
             <Route
               path="/"
               element={
@@ -92,8 +88,9 @@ const AppRoutes = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
             <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </Suspense>
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <Audio hidden={hideChrome} />
     </>
